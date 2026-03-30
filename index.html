@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navia â Digitale Versicherungsberaterin</title>
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', Arial, sans-serif;
+      background: #f4f6fa;
+      color: #1a2233;
+      min-height: 100vh;
+    }
+
+    header {
+      background: #fff;
+      border-bottom: 2px solid #e8edf5;
+      padding: 18px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    .logo {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: #1a2233;
+      letter-spacing: -0.5px;
+    }
+
+    .logo span {
+      color: #3b6ef5;
+    }
+
+    .lang-switcher {
+      display: flex;
+      gap: 8px;
+    }
+
+    .lang-btn {
+      padding: 8px 20px;
+      border: 2px solid #e0e6f0;
+      border-radius: 24px;
+      background: #fff;
+      color: #5a6a88;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .lang-btn:hover {
+      border-color: #3b6ef5;
+      color: #3b6ef5;
+    }
+
+    .lang-btn.active {
+      background: #3b6ef5;
+      border-color: #3b6ef5;
+      color: #fff;
+    }
+
+    .hero {
+      max-width: 1100px;
+      margin: 60px auto 0;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .hero-text h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #1a2233;
+      margin-bottom: 20px;
+    }
+
+    .hero-text h1 em {
+      color: #3b6ef5;
+      font-style: normal;
+    }
+
+    .hero-text p {
+      font-size: 1.1rem;
+      color: #5a6a88;
+      line-height: 1.7;
+      margin-bottom: 32px;
+    }
+
+    .cta-btn {
+      display: inline-block;
+      padding: 14px 36px;
+      background: #3b6ef5;
+      color: #fff;
+      border-radius: 30px;
+      font-size: 1.05rem;
+      font-weight: 700;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      border: none;
+      cursor: pointer;
+    }
+
+    .cta-btn:hover {
+      background: #2553d4;
+      transform: translateY(-2px);
+    }
+
+    .video-wrapper {
+      position: relative;
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(59,110,245,0.15);
+      background: #000;
+      aspect-ratio: 9/16;
+      max-width: 320px;
+      margin: 0 auto;
+    }
+
+    .video-wrapper iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+
+    .lang-content { display: none; }
+    .lang-content.active { display: contents; }
+
+    .features {
+      max-width: 1100px;
+      margin: 80px auto 60px;
+      padding: 0 24px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+    }
+
+    .feature-card {
+      background: #fff;
+      border-radius: 16px;
+      padding: 32px 28px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border: 1px solid #e8edf5;
+    }
+
+    .feature-icon {
+      font-size: 2rem;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+      color: #1a2233;
+    }
+
+    .feature-card p {
+      font-size: 0.95rem;
+      color: #5a6a88;
+      line-height: 1.6;
+    }
+
+    footer {
+      background: #1a2233;
+      color: #8899bb;
+      text-align: center;
+      padding: 28px;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        margin-top: 40px;
+        text-align: center;
+      }
+      .hero-text { order: 1; }
+      .video-wrapper { order: 0; max-width: 260px; }
+      .features { grid-template-columns: 1fr; }
+      header { padding: 14px 20px; }
+      .hero-text h1 { font-size: 1.8rem; }
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">Navia<span>.</span></div>
+  <div class="lang-switcher">
+    <button class="lang-btn active" onclick="setLang('de')">DE</button>
+    <button class="lang-btn" onclick="setLang('fr')">FR</button>
+    <button class="lang-btn" onclick="setLang('it')">IT</button>
+  </div>
+</header>
+
+<!-- DEUTSCH -->
+<div id="content-de" class="lang-content active">
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Ihre persÃ¶nliche<br/><em>Versicherungs&shy;beraterin</em><br/>fÃ¼r die Schweiz</h1>
+      <p>
+        Navia analysiert Ihr Profil und findet die besten Schweizer Versicherungen â
+        unabhÃ¤ngig, transparent und kostenlos. Erhalten Sie in 3 Minuten massgeschneiderte
+        Empfehlungen von Ã¼ber 30 Versicherern.
+      </p>
+      <a href="#" class="cta-btn">Kostenlose Beratung starten</a>
+    </div>
+    <div class="video-wrapper">
+      <iframe
+        src="https://app.heygen.com/embed/93b37c854b8d4395a5134d3c805de861"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+        title="Navia â Digitale Versicherungsberaterin (Deutsch)"
+      ></iframe>
+    </div>
+  </section>
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon">ð¡ï¸</div>
+      <h3>UnabhÃ¤ngige Beratung</h3>
+      <p>Wir vergleichen Angebote von Ã¼ber 30 Schweizer Versicherern â ohne versteckte Interessen.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">â¡</div>
+      <h3>3 Minuten Beratung</h3>
+      <p>Schnell, einfach und prÃ¤zise: Ihre persÃ¶nlichen Empfehlungen in nur 3 Minuten.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">ð</div>
+      <h3>Datenschutz garantiert</h3>
+      <p>Ihre Daten sind bei uns sicher. 100% DSGVO-konform und nach Schweizer Recht.</p>
+    </div>
+  </section>
+</div>
+
+<!-- FRANÃAIS -->
+<div id="content-fr" class="lang-content">
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Votre conseillÃ¨re<br/><em>en assurances</em><br/>digitale en Suisse</h1>
+      <p>
+        Navia, votre conseillÃ¨re en assurances digitale. Obtenez des recommandations
+        sur mesure de plus de 30 assureurs suisses en 3 minutes. Conseil gratuit,
+        indÃ©pendant et transparent.
+      </p>
+      <a href="#" class="cta-btn">Commencer le conseil gratuit</a>
+    </div>
+    <div class="video-wrapper">
+      <iframe
+        src="https://app.heygen.com/embed/0fe2d536683846ccbc19aed71a1e8f4b"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+        title="Navia â ConseillÃ¨re en assurances (FranÃ§ais)"
+      ></iframe>
+    </div>
+  </section>
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon">ð¡ï¸</div>
+      <h3>Conseil indÃ©pendant</h3>
+      <p>Nous comparons les offres de plus de 30 assureurs suisses â sans intÃ©rÃªts cachÃ©s.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">â¡</div>
+      <h3>3 minutes suffisent</h3>
+      <p>Rapide, simple et prÃ©cis: vos recommandations personnelles en seulement 3 minutes.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">ð</div>
+      <h3>Protection des donnÃ©es</h3>
+      <p>Vos donnÃ©es sont en sÃ©curitÃ©. 100% conforme au RGPD et au droit suisse.</p>
+    </div>
+  </section>
+</div>
+
+<!-- ITALIANO -->
+<div id="content-it" class="lang-content">
+  <section class="hero">
+    <div class="hero-text">
+      <h1>La tua consulente<br/><em>assicurativa</em><br/>digitale in Svizzera</h1>
+      <p>
+        Trova le migliori assicurazioni svizzere in 3 minuti con Navia, la tua
+        consulente digitale indipendente. Raccomandazioni su misura da oltre
+        30 assicuratori. Consulenza gratuita.
+      </p>
+      <a href="#" class="cta-btn">Inizia la consulenza gratuita</a>
+    </div>
+    <div class="video-wrapper">
+      <iframe
+        src="https://app.heygen.com/embed/e9146cc0f2054269b6db8156d1ea5fcf"
+        allow="autoplay; fullscreen"
+        allowfullscreen
+        title="Navia â Consulente assicurativa (Italiano)"
+      ></iframe>
+    </div>
+  </section>
+  <section class="features">
+    <div class="feature-card">
+      <div class="feature-icon">ð¡ï¸</div>
+      <h3>Consulenza indipendente</h3>
+      <p>Confrontiamo le offerte di oltre 30 assicuratori svizzeri â senza interessi nascosti.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">â¡</div>
+      <h3>3 minuti bastano</h3>
+      <p>Rapido, semplice e preciso: le tue raccomandazioni personali in soli 3 minuti.</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">ð</div>
+      <h3>Protezione dei dati</h3>
+      <p>I tuoi dati sono al sicuro. 100% conforme al GDPR e al diritto svizzero.</p>
+    </div>
+  </section>
+</div>
+
+<footer>
+  Â© 2026 Navia â Digitale Versicherungsberaterin fÃ¼r die Schweiz (DE / FR / IT)
+</footer>
+
+<script>
+  function setLang(lang) {
+    document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+    document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+    document.getElementById('content-' + lang).classList.add('active');
+    document.querySelectorAll('.lang-btn').forEach(btn => {
+      if (btn.textContent.toLowerCase() === lang) btn.classList.add('active');
+    });
+    document.documentElement.lang = lang;
+  }
+</script>
+
+</body>
+</html>
