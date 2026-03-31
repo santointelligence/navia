@@ -1,2 +1,2 @@
 # navia-digitaler-versicherungsberater
-Navia – Digitale Versicherungsberaterin für die Schwiz (DE/FR/IT)
+Navia – Digitale Versicherungsberaterin für die Schweiz (DE/FR/IT)
