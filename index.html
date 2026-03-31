@@ -3,383 +3,419 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#FFFFFF" />
-  <title>Navia – Digitale Versicherungsberaterin</title>
+  <meta name="theme-color" content="#09090E" />
+  <title>Navia â Ihre digitale Versicherungsberaterin fÃ¼r die Schweiz</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <style>
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      --gold: #C4A44A;
-      --gold-light: #E8D08A;
-      --gold-dark: #9A7C2E;
-      --white: #FFFFFF;
-      --off-white: #FAFAF7;
-      --cream: #F5F0E8;
-      --dark: #1C1C1C;
-      --gray: #6B6B6B;
-      --light-gray: #E8E4DC;
-      --border: #DDD8CC;
-      --safe-bottom: env(safe-area-inset-bottom, 0px);
+      --gold:          #C4A44A;
+      --gold-light:    #DFC07A;
+      --gold-lighter:  #EDD9A3;
+      --gold-dark:     #9A7C2E;
+      --bg:            #09090E;
+      --bg-2:          #0D0D14;
+      --bg-3:          #12121A;
+      --bg-4:          #181820;
+      --white:         #FFFFFF;
+      --text:          #DEDAD2;
+      --text-muted:    #837F78;
+      --text-subtle:   #4E4B46;
+      --border:        rgba(255,255,255,0.07);
+      --border-gold:   rgba(196,164,74,0.22);
+      --glass:         rgba(255,255,255,0.035);
+      --glass-hover:   rgba(255,255,255,0.065);
+      --glow-gold:     rgba(196,164,74,0.13);
+      --safe-top:      env(safe-area-inset-top, 0px);
+      --safe-bottom:   env(safe-area-inset-bottom, 0px);
+      --header-h:      68px;
     }
 
-    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    html {
+      scroll-behavior: smooth;
+      -webkit-text-size-adjust: 100%;
+    }
 
     body {
-      font-family: 'Inter', sans-serif;
-      background: var(--white);
-      color: var(--dark);
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+      background: var(--bg);
+      color: var(--text);
       min-height: 100vh;
       overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
-    /* ─────────────── HEADER ─────────────── */
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       HEADER
+    âââââââââââââââââââââââââââââââââââââââââââ */
     header {
-      position: sticky;
-      top: 0;
-      z-index: 100;
-      background: var(--white);
-      border-bottom: 1px solid var(--border);
-      padding: 0 48px;
-      height: 64px;
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 300;
+      height: var(--header-h);
+      padding: 0 52px;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      box-shadow: 0 1px 12px rgba(0,0,0,0.06);
+      background: rgba(9,9,14,0.78);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid var(--border);
+      transition: background 0.4s ease, border-color 0.4s ease;
+    }
+
+    header.scrolled {
+      background: rgba(9,9,14,0.97);
+      border-bottom-color: rgba(255,255,255,0.1);
+    }
+
+    .logo-wrap {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      text-decoration: none;
     }
 
     .logo {
       font-family: 'Playfair Display', serif;
-      font-size: 1.65rem;
+      font-size: 1.75rem;
       font-weight: 700;
-      color: var(--dark);
-      letter-spacing: 0.5px;
-    }
-
-    .logo span { color: var(--gold); }
-
-    .logo-tagline {
-      font-size: 0.6rem;
-      font-weight: 500;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-      color: var(--gray);
-      margin-top: 1px;
-    }
-
-    .logo-wrap { display: flex; flex-direction: column; }
-
-    /* ─────────────── LANG SWITCHER ─────────────── */
-    .lang-switcher {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-      background: var(--cream);
-      border-radius: 32px;
-      padding: 3px;
-      border: 1px solid var(--border);
-    }
-
-    .lang-btn {
-      padding: 6px 16px;
-      border-radius: 28px;
-      border: none;
-      background: transparent;
-      color: var(--gray);
-      font-size: 0.82rem;
-      font-weight: 600;
-      font-family: 'Inter', sans-serif;
-      cursor: pointer;
-      letter-spacing: 0.5px;
-      transition: all 0.25s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .lang-btn:hover { color: var(--gold-dark); }
-
-    .lang-btn.active {
-      background: var(--gold);
       color: var(--white);
-      box-shadow: 0 2px 8px rgba(196,164,74,0.35);
+      letter-spacing: 0.2px;
+      line-height: 1;
     }
 
-    /* ─────────────── HERO ─────────────── */
-    .hero {
-      max-width: 1160px;
-      margin: 0 auto;
-      padding: 72px 48px 56px;
-      display: grid;
-      grid-template-columns: 1fr 420px;
-      gap: 56px;
-      align-items: center;
-    }
-
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: var(--cream);
-      border: 1px solid var(--gold-light);
-      border-radius: 32px;
-      padding: 5px 14px;
-      font-size: 0.75rem;
-      font-weight: 600;
-      color: var(--gold-dark);
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    .hero-badge::before {
-      content: '';
-      width: 6px;
-      height: 6px;
-      background: var(--gold);
-      border-radius: 50%;
-      animation: pulse 2s infinite;
-    }
-
-    @keyframes pulse {
-      0%, 100% { opacity: 1; transform: scale(1); }
-      50% { opacity: 0.6; transform: scale(1.3); }
-    }
-
-    .hero-text h1 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
-      font-weight: 700;
-      line-height: 1.2;
-      color: var(--dark);
-      margin-bottom: 20px;
-    }
-
-    .hero-text h1 em {
+    .logo em {
       color: var(--gold);
       font-style: normal;
     }
 
-    .hero-text p {
-      font-size: 1rem;
-      color: var(--gray);
-      line-height: 1.75;
-      margin-bottom: 36px;
-      font-weight: 400;
-      max-width: 460px;
+    .logo-sub {
+      font-size: 0.58rem;
+      font-weight: 500;
+      letter-spacing: 2.8px;
+      text-transform: uppercase;
+      color: var(--text-subtle);
+      line-height: 1;
     }
 
+    /* Lang switcher */
+    .lang-switcher {
+      display: flex;
+      align-items: center;
+      gap: 2px;
+      background: rgba(255,255,255,0.04);
+      border: 1px solid var(--border);
+      border-radius: 40px;
+      padding: 4px;
+    }
+
+    .lang-btn {
+      padding: 7px 20px;
+      border-radius: 36px;
+      border: none;
+      background: transparent;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      font-weight: 600;
+      font-family: 'Inter', sans-serif;
+      cursor: pointer;
+      letter-spacing: 0.8px;
+      text-transform: uppercase;
+      transition: color 0.2s ease, background 0.2s ease;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    .lang-btn:hover { color: var(--gold-light); }
+
+    .lang-btn.active {
+      background: var(--gold);
+      color: #0A0A0E;
+      font-weight: 700;
+    }
+
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       HERO
+    âââââââââââââââââââââââââââââââââââââââââââ */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding-top: var(--header-h);
+    }
+
+    /* Atmospheric glow blobs */
+    .hero-glow-1 {
+      position: absolute;
+      top: 5%;
+      right: -5%;
+      width: 55%;
+      height: 70%;
+      background: radial-gradient(ellipse at 70% 30%, rgba(196,164,74,0.08) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-glow-2 {
+      position: absolute;
+      bottom: -10%;
+      left: -5%;
+      width: 45%;
+      height: 55%;
+      background: radial-gradient(ellipse at 30% 70%, rgba(196,164,74,0.05) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      max-width: 1200px;
+      margin: 0 auto;
+      width: 100%;
+      padding: 72px 52px;
+      display: grid;
+      grid-template-columns: 1fr 360px;
+      gap: 88px;
+      align-items: center;
+    }
+
+    /* Hero badge */
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      background: rgba(196,164,74,0.08);
+      border: 1px solid rgba(196,164,74,0.25);
+      border-radius: 40px;
+      padding: 6px 18px 6px 12px;
+      font-size: 0.7rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--gold-light);
+      margin-bottom: 32px;
+    }
+
+    .badge-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--gold);
+      border-radius: 50%;
+      flex-shrink: 0;
+      animation: blink 2.8s ease-in-out infinite;
+    }
+
+    @keyframes blink {
+      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(196,164,74,0.6); }
+      50%       { opacity: 0.65; box-shadow: 0 0 0 5px rgba(196,164,74,0); }
+    }
+
+    /* Headline */
+    .hero-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 3.5rem;
+      font-weight: 700;
+      line-height: 1.13;
+      color: var(--white);
+      margin-bottom: 26px;
+      letter-spacing: -0.3px;
+    }
+
+    .hero-title em {
+      color: var(--gold);
+      font-style: italic;
+    }
+
+    /* Description */
+    .hero-desc {
+      font-size: 1.05rem;
+      color: var(--text-muted);
+      line-height: 1.82;
+      max-width: 480px;
+      margin-bottom: 44px;
+      font-weight: 400;
+    }
+
+    /* CTA Button */
     .cta-btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 15px 32px;
-      background: var(--gold);
-      color: var(--white);
+      padding: 17px 36px;
+      background: linear-gradient(135deg, var(--gold-lighter) 0%, var(--gold) 50%, var(--gold-dark) 100%);
+      color: #0A0906;
       border-radius: 50px;
-      font-size: 0.95rem;
-      font-weight: 600;
+      font-size: 0.93rem;
+      font-weight: 700;
       font-family: 'Inter', sans-serif;
+      letter-spacing: 0.2px;
       text-decoration: none;
       border: none;
       cursor: pointer;
-      transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
-      box-shadow: 0 4px 20px rgba(196,164,74,0.35);
+      transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
+      box-shadow: 0 4px 28px rgba(196,164,74,0.28), 0 1px 4px rgba(0,0,0,0.4);
       -webkit-tap-highlight-color: transparent;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta-btn::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 60%);
+      opacity: 1;
     }
 
     .cta-btn:hover {
-      background: var(--gold-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 8px 28px rgba(154,124,46,0.4);
+      transform: translateY(-3px);
+      box-shadow: 0 10px 40px rgba(196,164,74,0.42), 0 2px 8px rgba(0,0,0,0.5);
+      filter: brightness(1.06);
     }
 
-    .cta-btn::after { content: '→'; }
+    .cta-btn:active {
+      transform: translateY(-1px);
+    }
 
-    /* ─────────────── VIDEO WRAP ─────────────── */
-    .video-wrap {
+    .cta-btn svg {
+      width: 16px;
+      height: 16px;
+      position: relative;
+      z-index: 1;
+      transition: transform 0.25s ease;
+    }
+
+    .cta-btn span { position: relative; z-index: 1; }
+
+    .cta-btn:hover svg { transform: translateX(4px); }
+
+    /* Trust row */
+    .trust-row {
+      display: flex;
+      align-items: center;
+      gap: 22px;
+      margin-top: 26px;
+      flex-wrap: wrap;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: var(--text-subtle);
+      font-weight: 500;
+    }
+
+    .trust-check {
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      background: rgba(196,164,74,0.12);
+      border: 1px solid rgba(196,164,74,0.28);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .trust-check::after {
+      content: 'â';
+      font-size: 0.58rem;
+      color: var(--gold);
+      font-weight: 800;
+    }
+
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       VIDEO CARD
+    âââââââââââââââââââââââââââââââââââââââââââ */
+    .video-col {
       display: flex;
       flex-direction: column;
       align-items: center;
-      gap: 14px;
+      position: relative;
     }
 
-    /* ─────────────── VIDEO CARD (FaceTime Style) ─────────────── */
+    /* Outer glow halo */
+    .video-halo {
+      position: absolute;
+      inset: -50px;
+      background: radial-gradient(ellipse at 50% 50%, rgba(196,164,74,0.14) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
     .video-card {
       position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 330px;
+      aspect-ratio: 9 / 16;
       border-radius: 28px;
       overflow: hidden;
-      background: #0A0A0A;
-      aspect-ratio: 9/16;
-      width: 100%;
-      max-width: 340px;
+      background: #000;
       box-shadow:
-        0 0 0 1px var(--gold-light),
-        0 0 0 4px var(--gold),
-        0 24px 64px rgba(0,0,0,0.22),
-        0 4px 16px rgba(196,164,74,0.2);
+        0 0 0 1px rgba(196,164,74,0.5),
+        0 0 0 6px rgba(196,164,74,0.07),
+        0 40px 100px rgba(0,0,0,0.7),
+        0 0 80px rgba(196,164,74,0.1);
     }
 
     .video-card iframe {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
       border: none;
       display: block;
     }
 
-    /* Mobile sound hint overlay */
-    .sound-hint {
-      display: none;
+    /* Subtitle overlay */
+    .subtitle-overlay {
       position: absolute;
-      bottom: 16px;
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(0,0,0,0.75);
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      color: #fff;
-      font-size: 0.75rem;
-      font-weight: 600;
-      padding: 7px 14px;
-      border-radius: 20px;
-      white-space: nowrap;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 10;
       pointer-events: none;
-      z-index: 5;
-      animation: fadeOut 1s ease 3s forwards;
+      padding: 60px 18px 26px;
+      background: linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.5) 40%, rgba(0,0,0,0.88) 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      min-height: 110px;
     }
 
-    @keyframes fadeOut {
-      to { opacity: 0; }
-    }
-
-    /* ─────────────── TRANSCRIPT PANEL ─────────────── */
-    .transcript-panel {
+    .subtitle-text {
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: #fff;
+      text-align: center;
       width: 100%;
-      max-width: 340px;
-    }
-
-    .transcript-toggle {
-      width: 100%;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 8px;
-      padding: 11px 16px;
-      background: var(--off-white);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      font-size: 0.82rem;
-      font-weight: 600;
-      color: var(--dark);
-      cursor: pointer;
-      font-family: 'Inter', sans-serif;
-      transition: border-color 0.2s, background 0.2s;
-      -webkit-tap-highlight-color: transparent;
-      text-align: left;
-    }
-
-    .transcript-toggle:hover {
-      border-color: var(--gold-light);
-      background: var(--cream);
-    }
-
-    .transcript-toggle .tt-left {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .transcript-toggle .tt-icon {
-      font-size: 1rem;
-    }
-
-    .transcript-toggle .tt-arrow {
-      font-size: 0.7rem;
-      color: var(--gray);
-      transition: transform 0.3s;
-    }
-
-    .transcript-panel.open .tt-arrow {
-      transform: rotate(180deg);
-    }
-
-    .transcript-box {
-      display: none;
-      margin-top: 8px;
-      background: var(--off-white);
-      border: 1px solid var(--border);
-      border-radius: 14px;
-      overflow: hidden;
-    }
-
-    .transcript-panel.open .transcript-box {
-      display: block;
-    }
-
-    .transcript-header {
-      padding: 12px 16px;
-      background: var(--cream);
-      border-bottom: 1px solid var(--border);
-      font-size: 0.72rem;
-      font-weight: 600;
-      color: var(--gray);
-      letter-spacing: 1px;
-      text-transform: uppercase;
-    }
-
-    .transcript-lines {
-      max-height: 220px;
-      overflow-y: auto;
-      padding: 12px 16px;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    .transcript-lines::-webkit-scrollbar { width: 4px; }
-    .transcript-lines::-webkit-scrollbar-track { background: transparent; }
-    .transcript-lines::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
-
-    .t-line {
-      font-size: 0.85rem;
-      color: var(--gray);
       line-height: 1.55;
-      padding: 6px 10px;
-      border-radius: 8px;
-      transition: all 0.3s ease;
-      cursor: default;
+      letter-spacing: 0.15px;
+      text-shadow: 0 1px 8px rgba(0,0,0,0.95), 0 0 20px rgba(0,0,0,0.7);
+      transition: opacity 0.35s ease;
+      min-height: 2.6em;
     }
 
-    .t-line.speaking {
-      color: var(--dark);
-      font-weight: 600;
-      background: var(--cream);
-      border-left: 3px solid var(--gold);
-      padding-left: 10px;
-    }
-
-    .t-line.done {
-      color: #AAA;
-    }
-
-    .transcript-placeholder {
-      padding: 16px;
-      font-size: 0.82rem;
-      color: var(--gray);
-      line-height: 1.6;
-      font-style: italic;
-    }
-
-    /* ─────────────── STATS BAR ─────────────── */
-    .stats-bar {
-      background: var(--cream);
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       STATS SECTION
+    âââââââââââââââââââââââââââââââââââââââââââ */
+    .stats-section {
+      background: var(--bg-2);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      padding: 28px 48px;
+      padding: 52px;
     }
 
     .stats-inner {
-      max-width: 1160px;
+      max-width: 1000px;
       margin: 0 auto;
       display: flex;
       justify-content: space-around;
@@ -389,440 +425,470 @@
 
     .stat-item { text-align: center; }
 
-    .stat-number {
+    .stat-num {
       font-family: 'Playfair Display', serif;
-      font-size: 2rem;
+      font-size: 2.6rem;
       font-weight: 700;
       color: var(--gold);
       line-height: 1;
+      letter-spacing: -0.5px;
     }
 
     .stat-label {
-      font-size: 0.78rem;
-      color: var(--gray);
-      margin-top: 5px;
+      font-size: 0.72rem;
+      color: var(--text-subtle);
+      margin-top: 9px;
       font-weight: 500;
-      letter-spacing: 0.3px;
+      letter-spacing: 1px;
+      text-transform: uppercase;
     }
 
-    .stat-divider {
+    .stat-div {
       width: 1px;
-      height: 44px;
-      background: var(--border);
+      height: 52px;
+      background: linear-gradient(to bottom, transparent, var(--border), transparent);
       flex-shrink: 0;
     }
 
-    /* ─────────────── FEATURES ─────────────── */
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       FEATURES SECTION
+    âââââââââââââââââââââââââââââââââââââââââââ */
     .features-section {
-      max-width: 1160px;
-      margin: 64px auto;
-      padding: 0 48px;
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 100px 52px;
     }
 
-    .section-label {
-      font-size: 0.72rem;
-      font-weight: 600;
-      letter-spacing: 2.5px;
+    .section-eyebrow {
+      font-size: 0.68rem;
+      font-weight: 700;
+      letter-spacing: 3.5px;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 10px;
+      margin-bottom: 16px;
     }
 
     .section-title {
       font-family: 'Playfair Display', serif;
-      font-size: 1.9rem;
+      font-size: 2.4rem;
       font-weight: 700;
-      color: var(--dark);
-      margin-bottom: 40px;
+      color: var(--white);
+      margin-bottom: 56px;
+      line-height: 1.2;
+      max-width: 500px;
     }
 
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
+      gap: 18px;
     }
 
     .feature-card {
-      background: var(--off-white);
+      background: var(--glass);
       border: 1px solid var(--border);
-      border-radius: 20px;
-      padding: 32px 24px;
-      transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
+      border-radius: 22px;
+      padding: 38px 28px;
+      transition: border-color 0.3s, background 0.3s, transform 0.3s, box-shadow 0.3s;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .feature-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent 10%, var(--gold) 50%, transparent 90%);
+      opacity: 0;
+      transition: opacity 0.3s;
     }
 
     .feature-card:hover {
-      border-color: var(--gold-light);
-      box-shadow: 0 8px 32px rgba(196,164,74,0.12);
-      transform: translateY(-4px);
+      background: var(--glass-hover);
+      border-color: var(--border-gold);
+      transform: translateY(-7px);
+      box-shadow: 0 24px 64px rgba(0,0,0,0.45), 0 0 40px var(--glow-gold);
     }
 
-    .feature-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 12px;
-      background: var(--cream);
-      border: 1px solid var(--gold-light);
+    .feature-card:hover::before { opacity: 1; }
+
+    .feat-icon {
+      width: 54px;
+      height: 54px;
+      border-radius: 15px;
+      background: rgba(196,164,74,0.08);
+      border: 1px solid var(--border-gold);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.4rem;
-      margin-bottom: 18px;
+      font-size: 1.55rem;
+      margin-bottom: 24px;
     }
 
     .feature-card h3 {
-      font-size: 1rem;
+      font-size: 1.02rem;
       font-weight: 600;
-      color: var(--dark);
-      margin-bottom: 8px;
+      color: var(--white);
+      margin-bottom: 11px;
+      letter-spacing: 0.1px;
     }
 
     .feature-card p {
       font-size: 0.88rem;
-      color: var(--gray);
-      line-height: 1.65;
+      color: var(--text-muted);
+      line-height: 1.72;
     }
 
-    /* ─────────────── HOW IT WORKS ─────────────── */
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       HOW IT WORKS
+    âââââââââââââââââââââââââââââââââââââââââââ */
     .how-section {
-      background: var(--cream);
+      background: var(--bg-2);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      padding: 64px 48px;
+      padding: 100px 52px;
     }
 
-    .how-inner { max-width: 1160px; margin: 0 auto; }
+    .how-inner {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
 
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 32px;
-      margin-top: 40px;
+      gap: 64px;
+      margin-top: 60px;
+      position: relative;
     }
 
-    .step { display: flex; flex-direction: column; align-items: flex-start; }
+    /* Connector line between steps */
+    .steps-grid::before {
+      content: '';
+      position: absolute;
+      top: 23px;
+      left: calc(16.7% + 10px);
+      right: calc(16.7% + 10px);
+      height: 1px;
+      background: linear-gradient(90deg, var(--border-gold), rgba(196,164,74,0.06), var(--border-gold));
+    }
 
-    .step-number {
+    .step {}
+
+    .step-num {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      border: 1px solid var(--border-gold);
+      background: rgba(196,164,74,0.07);
+      display: flex;
+      align-items: center;
+      justify-content: center;
       font-family: 'Playfair Display', serif;
-      font-size: 2.8rem;
+      font-size: 1rem;
       font-weight: 700;
-      color: var(--gold-light);
-      line-height: 1;
-      margin-bottom: 14px;
+      color: var(--gold);
+      margin-bottom: 26px;
     }
 
     .step h3 {
       font-size: 1rem;
       font-weight: 600;
-      color: var(--dark);
-      margin-bottom: 8px;
+      color: var(--white);
+      margin-bottom: 11px;
     }
 
     .step p {
       font-size: 0.88rem;
-      color: var(--gray);
-      line-height: 1.65;
+      color: var(--text-muted);
+      line-height: 1.72;
     }
 
-    /* ─────────────── CTA ─────────────── */
-    .cta-section-wrap { padding: 64px 48px; }
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       FINAL CTA
+    âââââââââââââââââââââââââââââââââââââââââââ */
+    .cta-section-wrap {
+      padding: 100px 52px;
+    }
 
-    .cta-section {
+    .cta-box {
       max-width: 680px;
       margin: 0 auto;
-      padding: 56px 40px;
+      padding: 72px 60px;
       text-align: center;
-      background: var(--dark);
-      border-radius: 28px;
+      background: var(--bg-3);
+      border-radius: 32px;
+      border: 1px solid var(--border);
       position: relative;
       overflow: hidden;
     }
 
-    .cta-section::before {
+    /* Gold top bar */
+    .cta-box::before {
       content: '';
       position: absolute;
       top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light), var(--gold), var(--gold-dark));
+      height: 2px;
+      background: linear-gradient(90deg,
+        transparent 0%,
+        var(--gold-dark) 15%,
+        var(--gold) 40%,
+        var(--gold-lighter) 55%,
+        var(--gold) 70%,
+        var(--gold-dark) 85%,
+        transparent 100%
+      );
     }
 
-    .cta-section h2 {
+    /* Background radial glow */
+    .cta-box::after {
+      content: '';
+      position: absolute;
+      bottom: -30%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70%;
+      height: 80%;
+      background: radial-gradient(ellipse, rgba(196,164,74,0.07) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .cta-box h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 1.85rem;
+      font-size: 2.1rem;
       font-weight: 700;
       color: var(--white);
-      margin-bottom: 14px;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+      line-height: 1.25;
     }
 
-    .cta-section p {
-      font-size: 0.95rem;
-      color: #B0B0B0;
-      margin-bottom: 28px;
-      line-height: 1.7;
+    .cta-box p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 36px;
+      line-height: 1.72;
+      position: relative;
+      z-index: 1;
     }
 
-    /* ─────────────── TRUST ROW ─────────────── */
-    .trust-row {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      flex-wrap: wrap;
-      margin-top: 24px;
+    .cta-box .cta-btn {
+      position: relative;
+      z-index: 1;
     }
 
-    .trust-item {
+    .cta-trust {
       display: flex;
       align-items: center;
-      gap: 5px;
-      font-size: 0.8rem;
-      color: #888;
-      font-weight: 500;
+      justify-content: center;
+      gap: 20px;
+      margin-top: 24px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 1;
     }
 
-    .trust-item::before {
-      content: '✓';
-      color: var(--gold);
-      font-weight: 700;
-    }
-
-    /* ─────────────── FOOTER ─────────────── */
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       FOOTER
+    âââââââââââââââââââââââââââââââââââââââââââ */
     footer {
-      background: var(--dark);
-      border-top: 1px solid #333;
-      padding: 28px 48px;
+      background: var(--bg);
+      border-top: 1px solid var(--border);
+      padding: 32px 52px;
+      padding-bottom: calc(32px + var(--safe-bottom));
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding-bottom: calc(28px + var(--safe-bottom));
     }
 
     .footer-logo {
       font-family: 'Playfair Display', serif;
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       font-weight: 700;
       color: var(--white);
     }
 
-    .footer-logo span { color: var(--gold); }
+    .footer-logo em { color: var(--gold); font-style: normal; }
 
-    .footer-copy { font-size: 0.8rem; color: #666; }
+    .footer-copy {
+      font-size: 0.78rem;
+      color: var(--text-subtle);
+      letter-spacing: 0.2px;
+    }
 
-    /* ─────────────── LANG CONTENT ─────────────── */
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       LANG SWITCH
+    âââââââââââââââââââââââââââââââââââââââââââ */
     .lang-content { display: none; }
     .lang-content.active { display: contents; }
 
-    /* ══════════════════════════════════════════════
-       RESPONSIVE — TABLET (≤ 960px)
-    ══════════════════════════════════════════════ */
-    @media (max-width: 960px) {
-      header { padding: 0 24px; }
-
-      .hero {
-        grid-template-columns: 1fr;
-        padding: 40px 24px 40px;
-        gap: 40px;
-        text-align: center;
-      }
-
-      .hero-text p { max-width: 100%; }
-      .hero-badge { margin: 0 auto 20px; }
-      .trust-row { justify-content: center !important; }
-
-      .video-wrap {
-        align-items: center;
-      }
-
-      .video-card {
-        max-width: 300px;
-        order: -1;
-      }
-
-      .transcript-panel { max-width: 300px; }
-
-      .features-section { padding: 0 24px; margin: 48px auto; }
-      .section-title { font-size: 1.7rem; }
-      .features-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-
-      .how-section { padding: 48px 24px; }
-      .steps-grid { grid-template-columns: 1fr; gap: 28px; }
-
-      .cta-section-wrap { padding: 40px 24px; }
-      .cta-section { padding: 40px 28px; }
-
-      .stats-bar { padding: 24px 24px; }
-      .stats-inner { flex-wrap: wrap; justify-content: center; gap: 12px 24px; }
-      .stat-divider { display: none; }
-
-      footer { padding: 24px; flex-direction: column; gap: 10px; text-align: center; }
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       SCROLL REVEAL ANIMATION
+    âââââââââââââââââââââââââââââââââââââââââââ */
+    .reveal {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
     }
 
-    /* ══════════════════════════════════════════════
-       RESPONSIVE — MOBILE (≤ 640px) — FaceTime Style
-    ══════════════════════════════════════════════ */
-    @media (max-width: 640px) {
-      /* Header compact */
-      header {
-        padding: 0 16px;
-        height: 56px;
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       RESPONSIVE â TABLET (â¤ 1080px)
+    âââââââââââââââââââââââââââââââââââââââââââ */
+    @media (max-width: 1080px) {
+      header { padding: 0 32px; }
+
+      .hero-inner {
+        grid-template-columns: 1fr 300px;
+        gap: 56px;
+        padding: 56px 32px;
       }
 
-      .logo { font-size: 1.4rem; }
-      .logo-tagline { display: none; }
+      .hero-title { font-size: 2.9rem; }
 
-      .lang-btn { padding: 5px 12px; font-size: 0.78rem; }
+      .features-section { padding: 80px 32px; }
+      .features-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
 
-      /* Hero: video at top, full-width, FaceTime feel */
+      .how-section { padding: 80px 32px; }
+      .steps-grid { gap: 40px; }
+
+      .stats-section { padding: 44px 32px; }
+
+      .cta-section-wrap { padding: 80px 32px; }
+    }
+
+    /* âââââââââââââââââââââââââââââââââââââââââââ
+       RESPONSIVE â MOBILE (â¤ 768px)
+    âââââââââââââââââââââââââââââââââââââââââââ */
+    @media (max-width: 768px) {
+      :root { --header-h: 60px; }
+
+      header { padding: 0 20px; }
+      .logo { font-size: 1.55rem; }
+      .logo-sub { display: none; }
+      .lang-btn { padding: 6px 14px; font-size: 0.75rem; }
+
+      /* Hero: single column, video first */
       .hero {
-        padding: 0 0 32px;
-        gap: 0;
-        grid-template-columns: 1fr;
+        align-items: flex-start;
+        min-height: auto;
+        padding-top: var(--header-h);
       }
 
-      /* Video block: prominent, full-width hero */
-      .video-wrap {
+      .hero-glow-1, .hero-glow-2 { display: none; }
+
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 0;
         gap: 0;
-        background: var(--dark);
-        border-radius: 0 0 32px 32px;
-        padding-bottom: 20px;
+        align-items: start;
+      }
+
+      /* Video moves to top */
+      .video-col {
         order: -1;
         width: 100%;
-        align-items: center;
+        background: linear-gradient(to bottom, #000, var(--bg) 95%);
       }
+
+      .video-halo { display: none; }
 
       .video-card {
         max-width: 100%;
-        width: calc(100% - 0px);
-        /* FaceTime-like: rounded bottom, not the top */
-        border-radius: 0 0 0 0;
-        aspect-ratio: 9 / 16;
-        /* Limit height so content is visible below */
-        max-height: 72vh;
+        width: 100%;
+        aspect-ratio: unset;
+        height: 60vh;
+        border-radius: 0;
         box-shadow:
-          0 0 0 0px var(--gold),
-          0 16px 48px rgba(0,0,0,0.3);
-        /* Show at top like a phone call */
-        overflow: hidden;
+          0 0 0 0px transparent,
+          0 24px 64px rgba(0,0,0,0.7);
       }
 
-      /* Gold ring effect on the video container */
-      .video-outer {
-        position: relative;
-        padding: 3px;
-        background: linear-gradient(180deg, var(--gold), var(--gold-dark));
-        border-radius: 0 0 28px 28px;
-        width: 100%;
-        max-height: 72vh;
-        overflow: hidden;
-      }
-
-      .video-card-inner {
-        border-radius: 0 0 26px 26px;
-        overflow: hidden;
-        background: #0A0A0A;
-        aspect-ratio: 9/16;
-        max-height: calc(72vh - 6px);
-      }
-
-      .video-card-inner iframe {
-        width: 100%;
-        height: 100%;
-        border: none;
+      /* Gold line below mobile video */
+      .video-col::after {
+        content: '';
         display: block;
-      }
-
-      /* Sound hint visible on mobile */
-      .sound-hint { display: block; }
-
-      /* Transcript on mobile: inline, below video within dark area */
-      .transcript-panel {
-        max-width: 100%;
+        height: 2px;
         width: 100%;
-        padding: 12px 16px 0;
+        background: linear-gradient(90deg, transparent 0%, var(--gold-dark) 20%, var(--gold) 50%, var(--gold-dark) 80%, transparent 100%);
       }
 
-      .transcript-toggle {
-        border-radius: 12px;
-        background: rgba(255,255,255,0.08);
-        border: 1px solid rgba(255,255,255,0.15);
-        color: rgba(255,255,255,0.85);
+      /* Hero text */
+      .hero-left {
+        padding: 32px 20px 48px;
       }
 
-      .transcript-toggle:hover {
-        background: rgba(255,255,255,0.12);
-        border-color: var(--gold-light);
-      }
+      .hero-badge { margin-bottom: 22px; }
+      .hero-title { font-size: 2rem; margin-bottom: 18px; }
+      .hero-desc { font-size: 0.95rem; margin-bottom: 30px; }
 
-      .transcript-box {
-        background: rgba(255,255,255,0.05);
-        border: 1px solid rgba(255,255,255,0.12);
-      }
-
-      .transcript-header {
-        background: rgba(255,255,255,0.07);
-        border-bottom-color: rgba(255,255,255,0.1);
-        color: rgba(255,255,255,0.5);
-      }
-
-      .t-line { color: rgba(255,255,255,0.55); }
-      .t-line.speaking { color: #fff; background: rgba(196,164,74,0.25); border-left-color: var(--gold); }
-      .t-line.done { color: rgba(255,255,255,0.3); }
-
-      /* Hero text below video */
-      .hero-text {
-        padding: 28px 20px 0;
-        text-align: left;
-      }
-
-      .hero-text h1 { font-size: 1.85rem; }
-      .hero-text p { font-size: 0.92rem; margin-bottom: 24px; }
-
-      .hero-badge { margin: 0 0 16px; }
-      .trust-row { justify-content: flex-start !important; gap: 12px; }
-
-      /* Stats: 2x2 grid */
-      .stats-bar { padding: 20px 16px; }
+      /* Stats */
+      .stats-section { padding: 36px 20px; }
       .stats-inner {
         display: grid;
         grid-template-columns: 1fr 1fr;
-        gap: 20px;
-        text-align: center;
-        justify-content: center;
+        gap: 28px 16px;
       }
-      .stat-number { font-size: 1.7rem; }
-      .stat-label { font-size: 0.72rem; }
-      .stat-divider { display: none; }
+      .stat-div { display: none; }
+      .stat-num { font-size: 2.1rem; }
 
-      /* Features: 1 column */
-      .features-section { padding: 0 16px; margin: 40px auto; }
-      .section-title { font-size: 1.5rem; }
+      /* Features */
+      .features-section { padding: 64px 20px; }
+      .section-title { font-size: 1.9rem; }
       .features-grid { grid-template-columns: 1fr; gap: 12px; }
-      .feature-card { padding: 24px 20px; }
+      .feature-card { padding: 30px 22px; }
 
-      /* How it works */
-      .how-section { padding: 40px 16px; }
+      /* How */
+      .how-section { padding: 64px 20px; }
+      .steps-grid {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+      .steps-grid::before { display: none; }
 
       /* CTA */
-      .cta-section-wrap { padding: 32px 16px; }
-      .cta-section { padding: 36px 24px; border-radius: 20px; }
-      .cta-section h2 { font-size: 1.5rem; }
+      .cta-section-wrap { padding: 56px 20px; }
+      .cta-box { padding: 48px 28px; border-radius: 24px; }
+      .cta-box h2 { font-size: 1.7rem; }
+      .cta-box p { font-size: 0.92rem; }
 
       /* Footer */
-      footer { padding: 20px 16px; padding-bottom: calc(20px + var(--safe-bottom)); flex-direction: column; gap: 8px; text-align: center; }
+      footer {
+        padding: 24px 20px;
+        padding-bottom: calc(24px + var(--safe-bottom));
+        flex-direction: column;
+        gap: 10px;
+        text-align: center;
+      }
     }
 
-    /* Extra small — compact phones */
-    @media (max-width: 390px) {
-      .hero-text h1 { font-size: 1.65rem; }
-      .video-card { max-height: 68vh; }
-      .video-card-inner { max-height: calc(68vh - 6px); }
+    @media (max-width: 480px) {
+      .hero-title { font-size: 1.8rem; }
+      .video-card { height: 56vh; }
+      .subtitle-text { font-size: 0.82rem; }
+      .cta-btn { padding: 15px 28px; font-size: 0.88rem; }
+      .trust-row { gap: 14px; }
+    }
+
+    @media (max-width: 380px) {
+      .hero-title { font-size: 1.65rem; }
+      .video-card { height: 52vh; }
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <!-- âââââââââââ HEADER âââââââââââ -->
+  <header id="site-header">
     <div class="logo-wrap">
-      <div class="logo">Navia<span>.</span></div>
-      <div class="logo-tagline">Digitale Versicherungsberaterin</div>
+      <div class="logo">Navia<em>.</em></div>
+      <div class="logo-sub">Digitale Versicherungsberaterin</div>
     </div>
     <div class="lang-switcher">
       <button class="lang-btn active" onclick="setLang('de')">DE</button>
@@ -831,394 +897,355 @@
     </div>
   </header>
 
-  <!-- ═══════════════════════ DEUTSCH ═══════════════════════ -->
+  <!-- âââââââââââââââââââââââââââââââ
+       DEUTSCH
+  âââââââââââââââââââââââââââââââââââ -->
   <div id="content-de" class="lang-content active">
 
     <section class="hero">
-      <div class="hero-text">
-        <div class="hero-badge">Für die Schweiz</div>
-        <h1>Ihre persönliche<br/><em>Versicherungs&shy;beraterin</em><br/>für die Schweiz</h1>
-        <p>
-          Navia analysiert Ihr Profil und findet die besten Schweizer Versicherungen –
-          unabhängig, transparent und kostenlos. Erhalten Sie in 3 Minuten
-          massgeschneiderte Empfehlungen von über 30 Versicherern.
-        </p>
-        <a href="#" class="cta-btn">Kostenlose Beratung starten</a>
-        <div class="trust-row" style="justify-content: flex-start; margin-top: 22px;">
-          <span class="trust-item">Kostenlos</span>
-          <span class="trust-item">Unabhängig</span>
-          <span class="trust-item">DSGVO-konform</span>
-        </div>
-      </div>
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
+      <div class="hero-inner">
 
-      <div class="video-wrap">
-        <!-- Desktop video card -->
-        <div class="video-card desktop-only">
-          <iframe
-            id="video-de"
-            src="https://app.heygen.com/embeds/93b37c854b8d4395a5134d3c805de861?autoplay=1&loop=0&muted=0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
-            title="Navia – Digitale Versicherungsberaterin (Deutsch)"
-          ></iframe>
-          <div class="sound-hint">🔊 Ton aktivieren</div>
+        <!-- Left: text -->
+        <div class="hero-left">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            FÃ¼r die Schweiz &nbsp;Â·&nbsp; DE / FR / IT
+          </div>
+          <h1 class="hero-title">
+            Ihre persÃ¶nliche<br/>
+            <em>Versicherungs&shy;beraterin</em><br/>
+            fÃ¼r die Schweiz
+          </h1>
+          <p class="hero-desc">
+            Navia analysiert Ihr Profil und findet die besten Schweizer Versicherungen â
+            unabhÃ¤ngig, transparent und vollstÃ¤ndig kostenlos. In 3 Minuten zu
+            massgeschneiderten Empfehlungen von Ã¼ber 30 Versicherern.
+          </p>
+          <a href="#" class="cta-btn">
+            <span>Kostenlose Beratung starten</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <div class="trust-row">
+            <span class="trust-item"><span class="trust-check" aria-hidden="true"></span>Kostenlos</span>
+            <span class="trust-item"><span class="trust-check" aria-hidden="true"></span>UnabhÃ¤ngig</span>
+            <span class="trust-item"><span class="trust-check" aria-hidden="true"></span>DSGVO-konform</span>
+          </div>
         </div>
-        <!-- Mobile video (FaceTime style – rendered outside grid via JS) -->
-        <div class="video-outer mobile-only">
-          <div class="video-card-inner">
+
+        <!-- Right: video -->
+        <div class="video-col">
+          <div class="video-halo"></div>
+          <div class="video-card">
             <iframe
               src="https://app.heygen.com/embeds/93b37c854b8d4395a5134d3c805de861?autoplay=1&loop=0&muted=0"
               allow="autoplay; fullscreen; picture-in-picture"
               allowfullscreen
-              title="Navia – Digitale Versicherungsberaterin (Deutsch)"
+              title="Navia â Digitale Versicherungsberaterin (Deutsch)"
             ></iframe>
-          </div>
-        </div>
-
-        <!-- Transcript Panel DE -->
-        <div class="transcript-panel" id="tp-de">
-          <button class="transcript-toggle" onclick="toggleTranscript('de')">
-            <span class="tt-left"><span class="tt-icon">📝</span> Transkript anzeigen</span>
-            <span class="tt-arrow">▼</span>
-          </button>
-          <div class="transcript-box">
-            <div class="transcript-header">NAVIA – DEUTSCH</div>
-            <div class="transcript-lines" id="tl-de">
-              <div class="t-line" data-t="0">Herzlich willkommen. Ich bin Navia, Ihre digitale Versicherungsberaterin.</div>
-              <div class="t-line" data-t="5">In der Schweiz gibt es über 30 Anbieter – und ich vergleiche sie alle für Sie.</div>
-              <div class="t-line" data-t="11">Unabhängig, transparent und vollkommen kostenlos.</div>
-              <div class="t-line" data-t="16">In nur 3 Minuten erhalten Sie massgeschneiderte Empfehlungen.</div>
-              <div class="t-line" data-t="22">Starten Sie jetzt Ihre persönliche Beratung.</div>
+            <div class="subtitle-overlay">
+              <div class="subtitle-text" id="sub-de"></div>
             </div>
           </div>
         </div>
+
       </div>
     </section>
 
-    <div class="stats-bar">
+    <!-- Stats -->
+    <div class="stats-section">
       <div class="stats-inner">
-        <div class="stat-item">
-          <div class="stat-number">30+</div>
+        <div class="stat-item reveal">
+          <div class="stat-num">30+</div>
           <div class="stat-label">Schweizer Versicherer</div>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">3 Min</div>
+        <div class="stat-div"></div>
+        <div class="stat-item reveal">
+          <div class="stat-num">3 Min</div>
           <div class="stat-label">Beratungszeit</div>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Kostenlos & Unabhängig</div>
+        <div class="stat-div"></div>
+        <div class="stat-item reveal">
+          <div class="stat-num">100%</div>
+          <div class="stat-label">Kostenlos & UnabhÃ¤ngig</div>
         </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">DE·FR·IT</div>
+        <div class="stat-div"></div>
+        <div class="stat-item reveal">
+          <div class="stat-num">DEÂ·FRÂ·IT</div>
           <div class="stat-label">Alle Landessprachen</div>
         </div>
       </div>
     </div>
 
+    <!-- Features -->
     <section class="features-section">
-      <div class="section-label">Ihre Vorteile</div>
-      <div class="section-title">Warum Navia?</div>
+      <div class="section-eyebrow reveal">Ihre Vorteile</div>
+      <div class="section-title reveal">Warum Navia?</div>
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🛡️</div>
-          <h3>Unabhängige Beratung</h3>
-          <p>Wir vergleichen Angebote von über 30 Schweizer Versicherern – ohne versteckte Interessen oder Provisionen.</p>
+        <div class="feature-card reveal">
+          <div class="feat-icon">ð¡ï¸</div>
+          <h3>UnabhÃ¤ngige Beratung</h3>
+          <p>Wir vergleichen Angebote von Ã¼ber 30 Schweizer Versicherern â ohne versteckte Interessen oder Provisionen.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
+        <div class="feature-card reveal">
+          <div class="feat-icon">â¡</div>
           <h3>In 3 Minuten zum Ergebnis</h3>
-          <p>Schnell, einfach und präzise: Ihre persönlichen Empfehlungen in nur 3 Minuten – jederzeit und überall.</p>
+          <p>Schnell, einfach und prÃ¤zise: Ihre persÃ¶nlichen Empfehlungen in nur 3 Minuten â jederzeit und Ã¼berall.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔒</div>
+        <div class="feature-card reveal">
+          <div class="feat-icon">ð</div>
           <h3>Datenschutz garantiert</h3>
           <p>Ihre Daten sind bei uns sicher. 100% DSGVO-konform und nach Schweizer Datenschutzrecht.</p>
         </div>
       </div>
     </section>
 
+    <!-- How it works -->
     <div class="how-section">
       <div class="how-inner">
-        <div class="section-label">So einfach geht's</div>
-        <div class="section-title">In 3 Schritten zur Beratung</div>
+        <div class="section-eyebrow reveal">So einfach geht's</div>
+        <div class="section-title reveal">In 3 Schritten zur Beratung</div>
         <div class="steps-grid">
-          <div class="step">
-            <div class="step-number">01</div>
+          <div class="step reveal">
+            <div class="step-num">01</div>
             <h3>Profil erstellen</h3>
-            <p>Beantworten Sie wenige Fragen zu Ihrer Situation und Ihren Versicherungsbedürfnissen.</p>
+            <p>Beantworten Sie wenige Fragen zu Ihrer Situation und Ihren VersicherungsbedÃ¼rfnissen.</p>
           </div>
-          <div class="step">
-            <div class="step-number">02</div>
+          <div class="step reveal">
+            <div class="step-num">02</div>
             <h3>Angebote vergleichen</h3>
-            <p>Navia analysiert über 30 Schweizer Versicherer und stellt die besten Optionen für Sie zusammen.</p>
+            <p>Navia analysiert Ã¼ber 30 Schweizer Versicherer und stellt die besten Optionen fÃ¼r Sie zusammen.</p>
           </div>
-          <div class="step">
-            <div class="step-number">03</div>
+          <div class="step reveal">
+            <div class="step-num">03</div>
             <h3>Entscheidung treffen</h3>
-            <p>Wählen Sie das passende Angebot – kostenlos, transparent und ohne Verpflichtung.</p>
+            <p>WÃ¤hlen Sie das passende Angebot â kostenlos, transparent und ohne Verpflichtung.</p>
           </div>
         </div>
       </div>
     </div>
 
+    <!-- Final CTA -->
     <div class="cta-section-wrap">
-      <div class="cta-section">
-        <h2>Bereit für Ihre kostenlose Beratung?</h2>
-        <p>Starten Sie jetzt und erhalten Sie in 3 Minuten massgeschneiderte Versicherungsempfehlungen.</p>
-        <a href="#" class="cta-btn">Jetzt starten</a>
+      <div class="cta-box reveal">
+        <h2>Bereit fÃ¼r Ihre kostenlose Beratung?</h2>
+        <p>Starten Sie jetzt und erhalten Sie in 3 Minuten massgeschneiderte Versicherungsempfehlungen von Ã¼ber 30 Schweizer Versicherern.</p>
+        <a href="#" class="cta-btn">
+          <span>Jetzt starten</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+          </svg>
+        </a>
+        <div class="cta-trust">
+          <span class="trust-item"><span class="trust-check"></span>Kein Konto erforderlich</span>
+          <span class="trust-item"><span class="trust-check"></span>Ergebnis in 3 Minuten</span>
+          <span class="trust-item"><span class="trust-check"></span>Keine Verpflichtung</span>
+        </div>
       </div>
     </div>
 
-  </div>
-  <!-- ═══════════════════════ END DEUTSCH ═══════════════════════ -->
+  </div><!-- end content-de -->
 
-  <!-- ═══════════════════════ FRANÇAIS ═══════════════════════ -->
+  <!-- âââââââââââââââââââââââââââââââ
+       FRANÃAIS
+  âââââââââââââââââââââââââââââââââââ -->
   <div id="content-fr" class="lang-content">
 
     <section class="hero">
-      <div class="hero-text">
-        <div class="hero-badge">Pour la Suisse</div>
-        <h1>Votre conseillère<br/><em>en assurances</em><br/>digitale en Suisse</h1>
-        <p>
-          Navia analyse votre profil et trouve les meilleures assurances suisses –
-          indépendante, transparente et gratuite. Recevez des recommandations
-          personnalisées de plus de 30 assureurs en 3 minutes.
-        </p>
-        <a href="#" class="cta-btn">Commencer le conseil gratuit</a>
-        <div class="trust-row" style="justify-content: flex-start; margin-top: 22px;">
-          <span class="trust-item">Gratuit</span>
-          <span class="trust-item">Indépendant</span>
-          <span class="trust-item">Conforme RGPD</span>
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Pour la Suisse &nbsp;Â·&nbsp; DE / FR / IT
+          </div>
+          <h1 class="hero-title">
+            Votre conseillÃ¨re<br/>
+            <em>en assurances</em><br/>
+            digitale en Suisse
+          </h1>
+          <p class="hero-desc">
+            Navia analyse votre profil et trouve les meilleures assurances suisses â
+            indÃ©pendante, transparente et gratuite. Recevez des recommandations
+            personnalisÃ©es de plus de 30 assureurs en 3 minutes.
+          </p>
+          <a href="#" class="cta-btn">
+            <span>Commencer le conseil gratuit</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <div class="trust-row">
+            <span class="trust-item"><span class="trust-check"></span>Gratuit</span>
+            <span class="trust-item"><span class="trust-check"></span>IndÃ©pendant</span>
+            <span class="trust-item"><span class="trust-check"></span>Conforme RGPD</span>
+          </div>
         </div>
-      </div>
-
-      <div class="video-wrap">
-        <div class="video-card desktop-only">
-          <iframe
-            src="https://app.heygen.com/embeds/0fe2d536683846ccbc19aed71a1e8f4b?autoplay=1&loop=0&muted=0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
-            title="Navia – Conseillère en assurances (Français)"
-          ></iframe>
-          <div class="sound-hint">🔊 Activer le son</div>
-        </div>
-        <div class="video-outer mobile-only">
-          <div class="video-card-inner">
+        <div class="video-col">
+          <div class="video-halo"></div>
+          <div class="video-card">
             <iframe
               src="https://app.heygen.com/embeds/0fe2d536683846ccbc19aed71a1e8f4b?autoplay=1&loop=0&muted=0"
               allow="autoplay; fullscreen; picture-in-picture"
               allowfullscreen
-              title="Navia – Conseillère en assurances (Français)"
+              title="Navia â ConseillÃ¨re en assurances (FranÃ§ais)"
             ></iframe>
-          </div>
-        </div>
-
-        <!-- Transcript Panel FR -->
-        <div class="transcript-panel" id="tp-fr">
-          <button class="transcript-toggle" onclick="toggleTranscript('fr')">
-            <span class="tt-left"><span class="tt-icon">📝</span> Afficher la transcription</span>
-            <span class="tt-arrow">▼</span>
-          </button>
-          <div class="transcript-box">
-            <div class="transcript-header">NAVIA – FRANÇAIS</div>
-            <div class="transcript-lines" id="tl-fr">
-              <div class="t-line" data-t="0">Bienvenue. Je suis Navia, votre conseillère en assurances digitale.</div>
-              <div class="t-line" data-t="5">En Suisse, il y a plus de 30 assureurs – et je les compare tous pour vous.</div>
-              <div class="t-line" data-t="11">Indépendante, transparente et totalement gratuite.</div>
-              <div class="t-line" data-t="16">En seulement 3 minutes, vous recevez des recommandations personnalisées.</div>
-              <div class="t-line" data-t="22">Commencez maintenant votre conseil personnel.</div>
+            <div class="subtitle-overlay">
+              <div class="subtitle-text" id="sub-fr"></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="stats-bar">
+    <div class="stats-section">
       <div class="stats-inner">
-        <div class="stat-item">
-          <div class="stat-number">30+</div>
-          <div class="stat-label">Assureurs suisses</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">3 Min</div>
-          <div class="stat-label">Durée du conseil</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Gratuit & Indépendant</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">DE·FR·IT</div>
-          <div class="stat-label">Toutes les langues nationales</div>
-        </div>
+        <div class="stat-item reveal"><div class="stat-num">30+</div><div class="stat-label">Assureurs suisses</div></div>
+        <div class="stat-div"></div>
+        <div class="stat-item reveal"><div class="stat-num">3 Min</div><div class="stat-label">DurÃ©e du conseil</div></div>
+        <div class="stat-div"></div>
+        <div class="stat-item reveal"><div class="stat-num">100%</div><div class="stat-label">Gratuit & IndÃ©pendant</div></div>
+        <div class="stat-div"></div>
+        <div class="stat-item reveal"><div class="stat-num">DEÂ·FRÂ·IT</div><div class="stat-label">Langues nationales</div></div>
       </div>
     </div>
 
     <section class="features-section">
-      <div class="section-label">Vos avantages</div>
-      <div class="section-title">Pourquoi Navia?</div>
+      <div class="section-eyebrow reveal">Vos avantages</div>
+      <div class="section-title reveal">Pourquoi Navia?</div>
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🛡️</div>
-          <h3>Conseil indépendant</h3>
-          <p>Nous comparons les offres de plus de 30 assureurs suisses – sans intérêts cachés ni commissions.</p>
+        <div class="feature-card reveal">
+          <div class="feat-icon">ð¡ï¸</div>
+          <h3>Conseil indÃ©pendant</h3>
+          <p>Nous comparons les offres de plus de 30 assureurs suisses â sans intÃ©rÃªts cachÃ©s ni commissions.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>Résultat en 3 minutes</h3>
-          <p>Rapide, simple et précis: vos recommandations personnelles en seulement 3 minutes – partout et à tout moment.</p>
+        <div class="feature-card reveal">
+          <div class="feat-icon">â¡</div>
+          <h3>RÃ©sultat en 3 minutes</h3>
+          <p>Rapide, simple et prÃ©cis: vos recommandations personnelles en seulement 3 minutes â partout et Ã  tout moment.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔒</div>
-          <h3>Protection des données</h3>
-          <p>Vos données sont en sécurité. 100% conforme au RGPD et au droit suisse de la protection des données.</p>
+        <div class="feature-card reveal">
+          <div class="feat-icon">ð</div>
+          <h3>Protection des donnÃ©es</h3>
+          <p>Vos donnÃ©es sont en sÃ©curitÃ©. 100% conforme au RGPD et au droit suisse de la protection des donnÃ©es.</p>
         </div>
       </div>
     </section>
 
     <div class="how-section">
       <div class="how-inner">
-        <div class="section-label">C'est si simple</div>
-        <div class="section-title">En 3 étapes vers le conseil</div>
+        <div class="section-eyebrow reveal">C'est si simple</div>
+        <div class="section-title reveal">En 3 Ã©tapes vers le conseil</div>
         <div class="steps-grid">
-          <div class="step">
-            <div class="step-number">01</div>
-            <h3>Créer votre profil</h3>
-            <p>Répondez à quelques questions sur votre situation et vos besoins en assurance.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">02</div>
-            <h3>Comparer les offres</h3>
-            <p>Navia analyse plus de 30 assureurs suisses et sélectionne les meilleures options pour vous.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">03</div>
-            <h3>Prendre votre décision</h3>
-            <p>Choisissez l'offre adaptée – gratuite, transparente et sans engagement.</p>
-          </div>
+          <div class="step reveal"><div class="step-num">01</div><h3>CrÃ©er votre profil</h3><p>RÃ©pondez Ã  quelques questions sur votre situation et vos besoins en assurance.</p></div>
+          <div class="step reveal"><div class="step-num">02</div><h3>Comparer les offres</h3><p>Navia analyse plus de 30 assureurs suisses et sÃ©lectionne les meilleures options pour vous.</p></div>
+          <div class="step reveal"><div class="step-num">03</div><h3>Prendre votre dÃ©cision</h3><p>Choisissez l'offre adaptÃ©e â gratuite, transparente et sans engagement.</p></div>
         </div>
       </div>
     </div>
 
     <div class="cta-section-wrap">
-      <div class="cta-section">
-        <h2>Prêt pour votre conseil gratuit?</h2>
-        <p>Commencez maintenant et recevez des recommandations d'assurance personnalisées en 3 minutes.</p>
-        <a href="#" class="cta-btn">Commencer maintenant</a>
+      <div class="cta-box reveal">
+        <h2>PrÃªt pour votre conseil gratuit?</h2>
+        <p>Commencez maintenant et recevez des recommandations d'assurance personnalisÃ©es en 3 minutes.</p>
+        <a href="#" class="cta-btn"><span>Commencer maintenant</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <div class="cta-trust">
+          <span class="trust-item"><span class="trust-check"></span>Aucun compte requis</span>
+          <span class="trust-item"><span class="trust-check"></span>RÃ©sultat immÃ©diat</span>
+          <span class="trust-item"><span class="trust-check"></span>Sans engagement</span>
+        </div>
       </div>
     </div>
 
-  </div>
-  <!-- ═══════════════════════ END FRANÇAIS ═══════════════════════ -->
+  </div><!-- end content-fr -->
 
-  <!-- ═══════════════════════ ITALIANO ═══════════════════════ -->
+  <!-- âââââââââââââââââââââââââââââââ
+       ITALIANO
+  âââââââââââââââââââââââââââââââââââ -->
   <div id="content-it" class="lang-content">
 
     <section class="hero">
-      <div class="hero-text">
-        <div class="hero-badge">Per la Svizzera</div>
-        <h1>La tua consulente<br/><em>assicurativa</em><br/>digitale in Svizzera</h1>
-        <p>
-          Navia analizza il tuo profilo e trova le migliori assicurazioni svizzere –
-          indipendente, trasparente e gratuita. Ricevi raccomandazioni personalizzate
-          da oltre 30 assicuratori in 3 minuti.
-        </p>
-        <a href="#" class="cta-btn">Inizia la consulenza gratuita</a>
-        <div class="trust-row" style="justify-content: flex-start; margin-top: 22px;">
-          <span class="trust-item">Gratuito</span>
-          <span class="trust-item">Indipendente</span>
-          <span class="trust-item">Conforme GDPR</span>
+      <div class="hero-glow-1"></div>
+      <div class="hero-glow-2"></div>
+      <div class="hero-inner">
+        <div class="hero-left">
+          <div class="hero-badge">
+            <span class="badge-dot"></span>
+            Per la Svizzera &nbsp;Â·&nbsp; DE / FR / IT
+          </div>
+          <h1 class="hero-title">
+            La tua consulente<br/>
+            <em>assicurativa</em><br/>
+            digitale in Svizzera
+          </h1>
+          <p class="hero-desc">
+            Navia analizza il tuo profilo e trova le migliori assicurazioni svizzere â
+            indipendente, trasparente e gratuita. Ricevi raccomandazioni personalizzate
+            da oltre 30 assicuratori in 3 minuti.
+          </p>
+          <a href="#" class="cta-btn">
+            <span>Inizia la consulenza gratuita</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
+            </svg>
+          </a>
+          <div class="trust-row">
+            <span class="trust-item"><span class="trust-check"></span>Gratuito</span>
+            <span class="trust-item"><span class="trust-check"></span>Indipendente</span>
+            <span class="trust-item"><span class="trust-check"></span>Conforme GDPR</span>
+          </div>
         </div>
-      </div>
-
-      <div class="video-wrap">
-        <div class="video-card desktop-only">
-          <iframe
-            src="https://app.heygen.com/embeds/e9146cc0f2054269b6db8156d1ea5fcf?autoplay=1&loop=0&muted=0"
-            allow="autoplay; fullscreen; picture-in-picture"
-            allowfullscreen
-            title="Navia – Consulente assicurativa (Italiano)"
-          ></iframe>
-          <div class="sound-hint">🔊 Attiva audio</div>
-        </div>
-        <div class="video-outer mobile-only">
-          <div class="video-card-inner">
+        <div class="video-col">
+          <div class="video-halo"></div>
+          <div class="video-card">
             <iframe
               src="https://app.heygen.com/embeds/e9146cc0f2054269b6db8156d1ea5fcf?autoplay=1&loop=0&muted=0"
               allow="autoplay; fullscreen; picture-in-picture"
               allowfullscreen
-              title="Navia – Consulente assicurativa (Italiano)"
+              title="Navia â Consulente assicurativa (Italiano)"
             ></iframe>
-          </div>
-        </div>
-
-        <!-- Transcript Panel IT -->
-        <div class="transcript-panel" id="tp-it">
-          <button class="transcript-toggle" onclick="toggleTranscript('it')">
-            <span class="tt-left"><span class="tt-icon">📝</span> Mostra trascrizione</span>
-            <span class="tt-arrow">▼</span>
-          </button>
-          <div class="transcript-box">
-            <div class="transcript-header">NAVIA – ITALIANO</div>
-            <div class="transcript-lines" id="tl-it">
-              <div class="t-line" data-t="0">Benvenuto/a. Sono Navia, la tua consulente assicurativa digitale.</div>
-              <div class="t-line" data-t="5">In Svizzera ci sono oltre 30 assicuratori – e li confronto tutti per te.</div>
-              <div class="t-line" data-t="11">Indipendente, trasparente e completamente gratuita.</div>
-              <div class="t-line" data-t="16">In soli 3 minuti ricevi raccomandazioni personalizzate.</div>
-              <div class="t-line" data-t="22">Inizia ora la tua consulenza personale.</div>
+            <div class="subtitle-overlay">
+              <div class="subtitle-text" id="sub-it"></div>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <div class="stats-bar">
+    <div class="stats-section">
       <div class="stats-inner">
-        <div class="stat-item">
-          <div class="stat-number">30+</div>
-          <div class="stat-label">Assicuratori svizzeri</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">3 Min</div>
-          <div class="stat-label">Durata della consulenza</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">100%</div>
-          <div class="stat-label">Gratuito & Indipendente</div>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat-item">
-          <div class="stat-number">DE·FR·IT</div>
-          <div class="stat-label">Tutte le lingue nazionali</div>
-        </div>
+        <div class="stat-item reveal"><div class="stat-num">30+</div><div class="stat-label">Assicuratori svizzeri</div></div>
+        <div class="stat-div"></div>
+        <div class="stat-item reveal"><div class="stat-num">3 Min</div><div class="stat-label">Durata consulenza</div></div>
+        <div class="stat-div"></div>
+        <div class="stat-item reveal"><div class="stat-num">100%</div><div class="stat-label">Gratuito & Indipendente</div></div>
+        <div class="stat-div"></div>
+        <div class="stat-item reveal"><div class="stat-num">DEÂ·FRÂ·IT</div><div class="stat-label">Tutte le lingue</div></div>
       </div>
     </div>
 
     <section class="features-section">
-      <div class="section-label">I tuoi vantaggi</div>
-      <div class="section-title">Perché Navia?</div>
+      <div class="section-eyebrow reveal">I tuoi vantaggi</div>
+      <div class="section-title reveal">PerchÃ© Navia?</div>
       <div class="features-grid">
-        <div class="feature-card">
-          <div class="feature-icon">🛡️</div>
+        <div class="feature-card reveal">
+          <div class="feat-icon">ð¡ï¸</div>
           <h3>Consulenza indipendente</h3>
-          <p>Confrontiamo le offerte di oltre 30 assicuratori svizzeri – senza interessi nascosti o commissioni.</p>
+          <p>Confrontiamo le offerte di oltre 30 assicuratori svizzeri â senza interessi nascosti o commissioni.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
+        <div class="feature-card reveal">
+          <div class="feat-icon">â¡</div>
           <h3>Risultato in 3 minuti</h3>
-          <p>Rapido, semplice e preciso: le tue raccomandazioni personali in soli 3 minuti – ovunque e in qualsiasi momento.</p>
+          <p>Rapido, semplice e preciso: le tue raccomandazioni personali in soli 3 minuti â ovunque e in qualsiasi momento.</p>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">🔒</div>
+        <div class="feature-card reveal">
+          <div class="feat-icon">ð</div>
           <h3>Protezione dei dati</h3>
           <p>I tuoi dati sono al sicuro. 100% conforme al GDPR e al diritto svizzero sulla protezione dei dati.</p>
         </div>
@@ -1227,158 +1254,168 @@
 
     <div class="how-section">
       <div class="how-inner">
-        <div class="section-label">È così semplice</div>
-        <div class="section-title">In 3 passi verso la consulenza</div>
+        <div class="section-eyebrow reveal">Ã cosÃ¬ semplice</div>
+        <div class="section-title reveal">In 3 passi verso la consulenza</div>
         <div class="steps-grid">
-          <div class="step">
-            <div class="step-number">01</div>
-            <h3>Crea il tuo profilo</h3>
-            <p>Rispondi ad alcune domande sulla tua situazione e le tue esigenze assicurative.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">02</div>
-            <h3>Confronta le offerte</h3>
-            <p>Navia analizza oltre 30 assicuratori svizzeri e seleziona le migliori opzioni per te.</p>
-          </div>
-          <div class="step">
-            <div class="step-number">03</div>
-            <h3>Prendi la tua decisione</h3>
-            <p>Scegli l'offerta adatta – gratuita, trasparente e senza impegno.</p>
-          </div>
+          <div class="step reveal"><div class="step-num">01</div><h3>Crea il tuo profilo</h3><p>Rispondi ad alcune domande sulla tua situazione e le tue esigenze assicurative.</p></div>
+          <div class="step reveal"><div class="step-num">02</div><h3>Confronta le offerte</h3><p>Navia analizza oltre 30 assicuratori svizzeri e seleziona le migliori opzioni per te.</p></div>
+          <div class="step reveal"><div class="step-num">03</div><h3>Prendi la tua decisione</h3><p>Scegli l'offerta adatta â gratuita, trasparente e senza impegno.</p></div>
         </div>
       </div>
     </div>
 
     <div class="cta-section-wrap">
-      <div class="cta-section">
+      <div class="cta-box reveal">
         <h2>Pronto per la tua consulenza gratuita?</h2>
         <p>Inizia ora e ricevi raccomandazioni assicurative personalizzate in 3 minuti.</p>
-        <a href="#" class="cta-btn">Inizia ora</a>
+        <a href="#" class="cta-btn"><span>Inizia ora</span>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+        </a>
+        <div class="cta-trust">
+          <span class="trust-item"><span class="trust-check"></span>Nessun account richiesto</span>
+          <span class="trust-item"><span class="trust-check"></span>Risultato immediato</span>
+          <span class="trust-item"><span class="trust-check"></span>Senza impegno</span>
+        </div>
       </div>
     </div>
 
-  </div>
-  <!-- ═══════════════════════ END ITALIANO ═══════════════════════ -->
+  </div><!-- end content-it -->
 
   <footer>
-    <div class="footer-logo">Navia<span>.</span></div>
-    <div class="footer-copy">© 2026 Navia – Digitale Versicherungsberaterin für die Schweiz (DE / FR / IT)</div>
+    <div class="footer-logo">Navia<em>.</em></div>
+    <div class="footer-copy">Â© 2026 Navia â Digitale Versicherungsberaterin fÃ¼r die Schweiz &nbsp;|&nbsp; DE / FR / IT</div>
   </footer>
 
   <script>
-    // ─── Mobile / Desktop detection ───
-    const isMobile = () => window.innerWidth <= 640;
+    /* âââ Subtitle data âââ */
+    const SUBTITLES = {
+      de: [
+        { t: 0,  text: 'Herzlich willkommen. Ich bin Navia, Ihre digitale Versicherungsberaterin.' },
+        { t: 5,  text: 'In der Schweiz gibt es Ã¼ber 30 Anbieter â und ich vergleiche sie alle fÃ¼r Sie.' },
+        { t: 11, text: 'UnabhÃ¤ngig, transparent und vollkommen kostenlos.' },
+        { t: 16, text: 'In nur 3 Minuten erhalten Sie massgeschneiderte Empfehlungen.' },
+        { t: 22, text: 'Starten Sie jetzt Ihre persÃ¶nliche Beratung.' }
+      ],
+      fr: [
+        { t: 0,  text: 'Bienvenue. Je suis Navia, votre conseillÃ¨re en assurances digitale.' },
+        { t: 5,  text: 'En Suisse, il y a plus de 30 assureurs â et je les compare tous pour vous.' },
+        { t: 11, text: 'IndÃ©pendante, transparente et totalement gratuite.' },
+        { t: 16, text: 'En seulement 3 minutes, vous recevez des recommandations personnalisÃ©es.' },
+        { t: 22, text: 'Commencez maintenant votre conseil personnel.' }
+      ],
+      it: [
+        { t: 0,  text: 'Benvenuto/a. Sono Navia, la tua consulente assicurativa digitale.' },
+        { t: 5,  text: 'In Svizzera ci sono oltre 30 assicuratori â e li confronto tutti per te.' },
+        { t: 11, text: 'Indipendente, trasparente e completamente gratuita.' },
+        { t: 16, text: 'In soli 3 minuti ricevi raccomandazioni personalizzate.' },
+        { t: 22, text: 'Inizia ora la tua consulenza personale.' }
+      ]
+    };
 
-    // Show/hide mobile vs desktop elements
-    function applyLayout() {
-      const mobile = isMobile();
-      document.querySelectorAll('.desktop-only').forEach(el => {
-        el.style.display = mobile ? 'none' : '';
-      });
-      document.querySelectorAll('.mobile-only').forEach(el => {
-        el.style.display = mobile ? '' : 'none';
-      });
-    }
-    applyLayout();
-    window.addEventListener('resize', applyLayout);
+    const timers = {};
 
-    // ─── Language switcher ───
-    function setLang(lang) {
-      document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-      document.getElementById('content-' + lang).classList.add('active');
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        if (btn.textContent.toLowerCase() === lang) btn.classList.add('active');
-      });
-      document.documentElement.lang = lang;
-    }
-
-    // ─── Transcript toggle ───
-    function toggleTranscript(lang) {
-      const panel = document.getElementById('tp-' + lang);
-      if (!panel) return;
-      panel.classList.toggle('open');
+    function stopAllSubtitles() {
+      Object.keys(timers).forEach(k => { clearInterval(timers[k]); delete timers[k]; });
     }
 
-    // ─── Transcript live sync ───
-    // Uses a timer that starts when the page loads or video becomes visible.
-    // Each .t-line has data-t = seconds from video start.
-    // Adjust timing by updating data-t values when real script is available.
-    const transcriptTimers = {};
+    function startSubtitles(lang) {
+      if (timers[lang]) return;
+      const lines = SUBTITLES[lang];
+      if (!lines) return;
+      const el = document.getElementById('sub-' + lang);
+      if (!el) return;
 
-    function startTranscript(lang) {
-      if (transcriptTimers[lang]) return; // already running
-      const lines = document.querySelectorAll('#tl-' + lang + ' .t-line');
-      if (!lines.length) return;
+      const start = Date.now();
+      const endAt = lines[lines.length - 1].t + 8;
 
-      const startTime = Date.now();
+      // Show first subtitle immediately
+      el.textContent = lines[0].text;
+      el.style.opacity = '1';
 
-      transcriptTimers[lang] = setInterval(() => {
-        const elapsed = (Date.now() - startTime) / 1000;
-        let lastActive = null;
+      timers[lang] = setInterval(() => {
+        const elapsed = (Date.now() - start) / 1000;
 
-        lines.forEach(line => {
-          const t = parseFloat(line.getAttribute('data-t') || '0');
-          if (elapsed >= t) {
-            line.classList.add('done');
-            line.classList.remove('speaking');
-            lastActive = line;
-          } else {
-            line.classList.remove('done', 'speaking');
-          }
-        });
-
-        // The line just passed is "speaking"
-        if (lastActive) {
-          lastActive.classList.remove('done');
-          lastActive.classList.add('speaking');
-          // Auto-scroll to keep it visible
-          const box = lastActive.closest('.transcript-lines');
-          if (box) {
-            const lineTop = lastActive.offsetTop;
-            const lineH   = lastActive.offsetHeight;
-            box.scrollTop = lineTop - box.offsetHeight / 2 + lineH;
-          }
+        // Find current subtitle
+        let current = null;
+        for (let i = lines.length - 1; i >= 0; i--) {
+          if (elapsed >= lines[i].t) { current = lines[i]; break; }
         }
 
-        // Stop when all done
-        const maxT = parseFloat(lines[lines.length - 1].getAttribute('data-t') || '0') + 5;
-        if ((Date.now() - startTime) / 1000 > maxT + 3) {
-          clearInterval(transcriptTimers[lang]);
-          delete transcriptTimers[lang];
-          lines.forEach(l => l.classList.remove('speaking'));
+        if (current && el.textContent !== current.text) {
+          el.style.opacity = '0';
+          setTimeout(() => {
+            el.textContent = current.text;
+            el.style.opacity = '1';
+          }, 220);
+        }
+
+        if (elapsed > endAt) {
+          clearInterval(timers[lang]);
+          delete timers[lang];
+          el.style.opacity = '0';
         }
       }, 250);
     }
 
-    // Auto-start transcript for visible language on load
-    setTimeout(() => {
-      const activeLang = document.querySelector('.lang-content.active');
-      if (activeLang) {
-        const lang = activeLang.id.replace('content-', '');
-        // Open transcript panel automatically
-        const panel = document.getElementById('tp-' + lang);
-        if (panel) panel.classList.add('open');
-        startTranscript(lang);
-      }
-    }, 1000);
-
-    // Restart transcript when language changes
-    const _origSetLang = setLang;
-    window.setLang = function(lang) {
-      _origSetLang(lang);
-      // Stop old timers
-      Object.keys(transcriptTimers).forEach(k => {
-        clearInterval(transcriptTimers[k]);
-        delete transcriptTimers[k];
+    /* âââ Language switching âââ */
+    function setLang(lang) {
+      // Hide all content
+      document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
+      // Deactivate all buttons
+      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
+      // Activate selected
+      const content = document.getElementById('content-' + lang);
+      if (content) content.classList.add('active');
+      document.querySelectorAll('.lang-btn').forEach(btn => {
+        if (btn.textContent.trim().toLowerCase() === lang) btn.classList.add('active');
       });
-      // Reset all lines
-      document.querySelectorAll('.t-line').forEach(l => l.classList.remove('speaking', 'done'));
-      // Open panel + start timer for new lang
-      const panel = document.getElementById('tp-' + lang);
-      if (panel) panel.classList.add('open');
-      setTimeout(() => startTranscript(lang), 800);
-    };
+      document.documentElement.lang = lang;
+
+      // Reset subtitles
+      stopAllSubtitles();
+      document.querySelectorAll('[id^="sub-"]').forEach(el => {
+        el.textContent = '';
+        el.style.opacity = '0';
+      });
+
+      // Restart reveal animations
+      document.querySelectorAll('.reveal').forEach(el => {
+        el.classList.remove('visible');
+      });
+      setTimeout(() => {
+        triggerReveal();
+        startSubtitles(lang);
+      }, 200);
+    }
+
+    /* âââ Scroll reveal âââ */
+    function triggerReveal() {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry, i) => {
+          if (entry.isIntersecting) {
+            setTimeout(() => entry.target.classList.add('visible'), i * 80);
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+
+      document.querySelectorAll('.reveal').forEach(el => {
+        if (!el.classList.contains('visible')) observer.observe(el);
+      });
+    }
+
+    /* âââ Header glass on scroll âââ */
+    const siteHeader = document.getElementById('site-header');
+    window.addEventListener('scroll', () => {
+      siteHeader.classList.toggle('scrolled', window.scrollY > 30);
+    }, { passive: true });
+
+    /* âââ Init âââ */
+    window.addEventListener('DOMContentLoaded', () => {
+      triggerReveal();
+      // Start DE subtitles after a brief delay (video loads)
+      setTimeout(() => startSubtitles('de'), 900);
+    });
   </script>
 
 </body>
