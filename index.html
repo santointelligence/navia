@@ -2,7 +2,8 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#FFFFFF" />
   <title>Navia – Digitale Versicherungsberaterin</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -19,20 +20,22 @@
       --cream: #F5F0E8;
       --dark: #1C1C1C;
       --gray: #6B6B6B;
-      --light-gray: #E8e4DC;
+      --light-gray: #E8E4DC;
       --border: #DDD8CC;
+      --safe-bottom: env(safe-area-inset-bottom, 0px);
     }
 
-    html { scroll-behavior: smooth; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
     body {
       font-family: 'Inter', sans-serif;
       background: var(--white);
       color: var(--dark);
       min-height: 100vh;
+      overflow-x: hidden;
     }
 
-    /* ---- HEADER ---- */
+    /* ─────────────── HEADER ─────────────── */
     header {
       position: sticky;
       top: 0;
@@ -40,7 +43,7 @@
       background: var(--white);
       border-bottom: 1px solid var(--border);
       padding: 0 48px;
-      height: 72px;
+      height: 64px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -49,50 +52,49 @@
 
     .logo {
       font-family: 'Playfair Display', serif;
-      font-size: 1.75rem;
+      font-size: 1.65rem;
       font-weight: 700;
       color: var(--dark);
       letter-spacing: 0.5px;
     }
 
-    .logo span {
-      color: var(--gold);
-    }
+    .logo span { color: var(--gold); }
 
     .logo-tagline {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.65rem;
+      font-size: 0.6rem;
       font-weight: 500;
       letter-spacing: 2px;
       text-transform: uppercase;
       color: var(--gray);
-      margin-top: 2px;
+      margin-top: 1px;
     }
 
     .logo-wrap { display: flex; flex-direction: column; }
 
-    /* ---- LANG SWITCHER ---- */
+    /* ─────────────── LANG SWITCHER ─────────────── */
     .lang-switcher {
       display: flex;
       align-items: center;
-      gap: 4px;
+      gap: 2px;
       background: var(--cream);
       border-radius: 32px;
-      padding: 4px;
+      padding: 3px;
+      border: 1px solid var(--border);
     }
 
     .lang-btn {
-      padding: 7px 18px;
+      padding: 6px 16px;
       border-radius: 28px;
       border: none;
       background: transparent;
       color: var(--gray);
-      font-size: 0.85rem;
+      font-size: 0.82rem;
       font-weight: 600;
       font-family: 'Inter', sans-serif;
       cursor: pointer;
       letter-spacing: 0.5px;
       transition: all 0.25s ease;
+      -webkit-tap-highlight-color: transparent;
     }
 
     .lang-btn:hover { color: var(--gold-dark); }
@@ -103,14 +105,14 @@
       box-shadow: 0 2px 8px rgba(196,164,74,0.35);
     }
 
-    /* ---- HERO ---- */
+    /* ─────────────── HERO ─────────────── */
     .hero {
       max-width: 1160px;
       margin: 0 auto;
-      padding: 80px 40px 60px;
+      padding: 72px 48px 56px;
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 64px;
+      grid-template-columns: 1fr 420px;
+      gap: 56px;
       align-items: center;
     }
 
@@ -121,13 +123,13 @@
       background: var(--cream);
       border: 1px solid var(--gold-light);
       border-radius: 32px;
-      padding: 6px 16px;
-      font-size: 0.78rem;
+      padding: 5px 14px;
+      font-size: 0.75rem;
       font-weight: 600;
       color: var(--gold-dark);
       letter-spacing: 0.5px;
       text-transform: uppercase;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .hero-badge::before {
@@ -136,15 +138,21 @@
       height: 6px;
       background: var(--gold);
       border-radius: 50%;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.6; transform: scale(1.3); }
     }
 
     .hero-text h1 {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 700;
-      line-height: 1.15;
+      line-height: 1.2;
       color: var(--dark);
-      margin-bottom: 24px;
+      margin-bottom: 20px;
     }
 
     .hero-text h1 em {
@@ -153,22 +161,23 @@
     }
 
     .hero-text p {
-      font-size: 1.05rem;
+      font-size: 1rem;
       color: var(--gray);
       line-height: 1.75;
-      margin-bottom: 40px;
+      margin-bottom: 36px;
       font-weight: 400;
+      max-width: 460px;
     }
 
     .cta-btn {
       display: inline-flex;
       align-items: center;
       gap: 10px;
-      padding: 15px 36px;
+      padding: 15px 32px;
       background: var(--gold);
       color: var(--white);
       border-radius: 50px;
-      font-size: 1rem;
+      font-size: 0.95rem;
       font-weight: 600;
       font-family: 'Inter', sans-serif;
       text-decoration: none;
@@ -176,6 +185,7 @@
       cursor: pointer;
       transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
       box-shadow: 0 4px 20px rgba(196,164,74,0.35);
+      -webkit-tap-highlight-color: transparent;
     }
 
     .cta-btn:hover {
@@ -186,28 +196,28 @@
 
     .cta-btn::after { content: '→'; }
 
-    /* ---- VIDEO CARD ---- */
-    .video-card {
-      position: relative;
-      border-radius: 24px;
-      overflow: hidden;
-      background: var(--dark);
-      aspect-ratio: 9/16;
-      max-width: 340px;
-      margin: 0 auto;
-      box-shadow:
-        0 4px 0 var(--gold),
-        0 24px 64px rgba(0,0,0,0.18);
+    /* ─────────────── VIDEO WRAP ─────────────── */
+    .video-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 14px;
     }
 
-    .video-card::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      border-radius: 24px;
-      border: 1px solid var(--gold-light);
-      pointer-events: none;
-      z-index: 2;
+    /* ─────────────── VIDEO CARD (FaceTime Style) ─────────────── */
+    .video-card {
+      position: relative;
+      border-radius: 28px;
+      overflow: hidden;
+      background: #0A0A0A;
+      aspect-ratio: 9/16;
+      width: 100%;
+      max-width: 340px;
+      box-shadow:
+        0 0 0 1px var(--gold-light),
+        0 0 0 4px var(--gold),
+        0 24px 64px rgba(0,0,0,0.22),
+        0 4px 16px rgba(196,164,74,0.2);
     }
 
     .video-card iframe {
@@ -217,12 +227,155 @@
       display: block;
     }
 
-    /* ---- STATS BAR ---- */
+    /* Mobile sound hint overlay */
+    .sound-hint {
+      display: none;
+      position: absolute;
+      bottom: 16px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0,0,0,0.75);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #fff;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 7px 14px;
+      border-radius: 20px;
+      white-space: nowrap;
+      pointer-events: none;
+      z-index: 5;
+      animation: fadeOut 1s ease 3s forwards;
+    }
+
+    @keyframes fadeOut {
+      to { opacity: 0; }
+    }
+
+    /* ─────────────── TRANSCRIPT PANEL ─────────────── */
+    .transcript-panel {
+      width: 100%;
+      max-width: 340px;
+    }
+
+    .transcript-toggle {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      padding: 11px 16px;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--dark);
+      cursor: pointer;
+      font-family: 'Inter', sans-serif;
+      transition: border-color 0.2s, background 0.2s;
+      -webkit-tap-highlight-color: transparent;
+      text-align: left;
+    }
+
+    .transcript-toggle:hover {
+      border-color: var(--gold-light);
+      background: var(--cream);
+    }
+
+    .transcript-toggle .tt-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .transcript-toggle .tt-icon {
+      font-size: 1rem;
+    }
+
+    .transcript-toggle .tt-arrow {
+      font-size: 0.7rem;
+      color: var(--gray);
+      transition: transform 0.3s;
+    }
+
+    .transcript-panel.open .tt-arrow {
+      transform: rotate(180deg);
+    }
+
+    .transcript-box {
+      display: none;
+      margin-top: 8px;
+      background: var(--off-white);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      overflow: hidden;
+    }
+
+    .transcript-panel.open .transcript-box {
+      display: block;
+    }
+
+    .transcript-header {
+      padding: 12px 16px;
+      background: var(--cream);
+      border-bottom: 1px solid var(--border);
+      font-size: 0.72rem;
+      font-weight: 600;
+      color: var(--gray);
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .transcript-lines {
+      max-height: 220px;
+      overflow-y: auto;
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .transcript-lines::-webkit-scrollbar { width: 4px; }
+    .transcript-lines::-webkit-scrollbar-track { background: transparent; }
+    .transcript-lines::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+    .t-line {
+      font-size: 0.85rem;
+      color: var(--gray);
+      line-height: 1.55;
+      padding: 6px 10px;
+      border-radius: 8px;
+      transition: all 0.3s ease;
+      cursor: default;
+    }
+
+    .t-line.speaking {
+      color: var(--dark);
+      font-weight: 600;
+      background: var(--cream);
+      border-left: 3px solid var(--gold);
+      padding-left: 10px;
+    }
+
+    .t-line.done {
+      color: #AAA;
+    }
+
+    .transcript-placeholder {
+      padding: 16px;
+      font-size: 0.82rem;
+      color: var(--gray);
+      line-height: 1.6;
+      font-style: italic;
+    }
+
+    /* ─────────────── STATS BAR ─────────────── */
     .stats-bar {
       background: var(--cream);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      padding: 32px 40px;
+      padding: 28px 48px;
     }
 
     .stats-inner {
@@ -231,68 +384,69 @@
       display: flex;
       justify-content: space-around;
       align-items: center;
-      gap: 24px;
+      gap: 16px;
     }
 
     .stat-item { text-align: center; }
 
     .stat-number {
       font-family: 'Playfair Display', serif;
-      font-size: 2.2rem;
+      font-size: 2rem;
       font-weight: 700;
       color: var(--gold);
       line-height: 1;
     }
 
     .stat-label {
-      font-size: 0.82rem;
+      font-size: 0.78rem;
       color: var(--gray);
-      margin-top: 6px;
+      margin-top: 5px;
       font-weight: 500;
       letter-spacing: 0.3px;
     }
 
     .stat-divider {
       width: 1px;
-      height: 48px;
+      height: 44px;
       background: var(--border);
+      flex-shrink: 0;
     }
 
-    /* ---- FEATURES ---- */
+    /* ─────────────── FEATURES ─────────────── */
     .features-section {
       max-width: 1160px;
-      margin: 72px auto;
-      padding: 0 40px;
+      margin: 64px auto;
+      padding: 0 48px;
     }
 
     .section-label {
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 600;
       letter-spacing: 2.5px;
       text-transform: uppercase;
       color: var(--gold);
-      margin-bottom: 12px;
+      margin-bottom: 10px;
     }
 
     .section-title {
       font-family: 'Playfair Display', serif;
-      font-size: 2.1rem;
+      font-size: 1.9rem;
       font-weight: 700;
       color: var(--dark);
-      margin-bottom: 48px;
+      margin-bottom: 40px;
     }
 
     .features-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 20px;
     }
 
     .feature-card {
       background: var(--off-white);
       border: 1px solid var(--border);
       border-radius: 20px;
-      padding: 36px 28px;
+      padding: 32px 24px;
       transition: border-color 0.25s, box-shadow 0.25s, transform 0.25s;
     }
 
@@ -303,64 +457,57 @@
     }
 
     .feature-icon {
-      width: 52px;
-      height: 52px;
-      border-radius: 14px;
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
       background: var(--cream);
       border: 1px solid var(--gold-light);
       display: flex;
       align-items: center;
       justify-content: center;
-      font-size: 1.5rem;
-      margin-bottom: 20px;
+      font-size: 1.4rem;
+      margin-bottom: 18px;
     }
 
     .feature-card h3 {
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 600;
       color: var(--dark);
-      margin-bottom: 10px;
+      margin-bottom: 8px;
     }
 
     .feature-card p {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--gray);
       line-height: 1.65;
     }
 
-    /* ---- HOW IT WORKS ---- */
+    /* ─────────────── HOW IT WORKS ─────────────── */
     .how-section {
       background: var(--cream);
       border-top: 1px solid var(--border);
       border-bottom: 1px solid var(--border);
-      padding: 72px 40px;
+      padding: 64px 48px;
     }
 
-    .how-inner {
-      max-width: 1160px;
-      margin: 0 auto;
-    }
+    .how-inner { max-width: 1160px; margin: 0 auto; }
 
     .steps-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 32px;
-      margin-top: 48px;
+      margin-top: 40px;
     }
 
-    .step {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
+    .step { display: flex; flex-direction: column; align-items: flex-start; }
 
     .step-number {
       font-family: 'Playfair Display', serif;
-      font-size: 3rem;
+      font-size: 2.8rem;
       font-weight: 700;
       color: var(--gold-light);
       line-height: 1;
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .step h3 {
@@ -376,63 +523,57 @@
       line-height: 1.65;
     }
 
-    /* ---- CTA SECTION ---- */
+    /* ─────────────── CTA ─────────────── */
+    .cta-section-wrap { padding: 64px 48px; }
+
     .cta-section {
-      max-width: 720px;
-      margin: 72px auto;
-      padding: 60px 40px;
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 56px 40px;
       text-align: center;
       background: var(--dark);
       border-radius: 28px;
       position: relative;
       overflow: hidden;
-      margin-left: auto;
-      margin-right: auto;
     }
 
     .cta-section::before {
       content: '';
       position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
+      top: 0; left: 0; right: 0;
       height: 3px;
       background: linear-gradient(90deg, var(--gold-dark), var(--gold), var(--gold-light), var(--gold), var(--gold-dark));
     }
 
-    .cta-section-wrap {
-      padding: 0 40px;
-    }
-
     .cta-section h2 {
       font-family: 'Playfair Display', serif;
-      font-size: 2rem;
+      font-size: 1.85rem;
       font-weight: 700;
       color: var(--white);
-      margin-bottom: 16px;
+      margin-bottom: 14px;
     }
 
     .cta-section p {
-      font-size: 1rem;
+      font-size: 0.95rem;
       color: #B0B0B0;
-      margin-bottom: 32px;
+      margin-bottom: 28px;
       line-height: 1.7;
     }
 
-    /* ---- TRUST ROW ---- */
+    /* ─────────────── TRUST ROW ─────────────── */
     .trust-row {
       display: flex;
       justify-content: center;
-      gap: 24px;
+      gap: 20px;
       flex-wrap: wrap;
-      margin-top: 28px;
+      margin-top: 24px;
     }
 
     .trust-item {
       display: flex;
       align-items: center;
-      gap: 6px;
-      font-size: 0.82rem;
+      gap: 5px;
+      font-size: 0.8rem;
       color: #888;
       font-weight: 500;
     }
@@ -443,14 +584,15 @@
       font-weight: 700;
     }
 
-    /* ---- FOOTER ---- */
+    /* ─────────────── FOOTER ─────────────── */
     footer {
       background: var(--dark);
       border-top: 1px solid #333;
-      padding: 32px 40px;
+      padding: 28px 48px;
       display: flex;
       align-items: center;
       justify-content: space-between;
+      padding-bottom: calc(28px + var(--safe-bottom));
     }
 
     .footer-logo {
@@ -462,43 +604,216 @@
 
     .footer-logo span { color: var(--gold); }
 
-    .footer-copy {
-      font-size: 0.82rem;
-      color: #666;
-    }
+    .footer-copy { font-size: 0.8rem; color: #666; }
 
-    /* ---- LANG CONTENT ---- */
+    /* ─────────────── LANG CONTENT ─────────────── */
     .lang-content { display: none; }
     .lang-content.active { display: contents; }
 
-    /* ---- RESPONSIVE ---- */
-    @media (max-width: 900px) {
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — TABLET (≤ 960px)
+    ══════════════════════════════════════════════ */
+    @media (max-width: 960px) {
+      header { padding: 0 24px; }
+
       .hero {
         grid-template-columns: 1fr;
-        padding: 48px 24px 40px;
-        gap: 48px;
+        padding: 40px 24px 40px;
+        gap: 40px;
         text-align: center;
       }
 
-      .hero-text h1 { font-size: 2.2rem; }
+      .hero-text p { max-width: 100%; }
+      .hero-badge { margin: 0 auto 20px; }
+      .trust-row { justify-content: center !important; }
 
-      .hero-badge { margin: 0 auto 24px; }
+      .video-wrap {
+        align-items: center;
+      }
 
       .video-card {
-        max-width: 280px;
+        max-width: 300px;
         order: -1;
       }
 
-      .features-grid { grid-template-columns: 1fr; }
-      .steps-grid { grid-template-columns: 1fr; }
-      .stats-inner { flex-direction: column; gap: 20px; }
+      .transcript-panel { max-width: 300px; }
+
+      .features-section { padding: 0 24px; margin: 48px auto; }
+      .section-title { font-size: 1.7rem; }
+      .features-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
+
+      .how-section { padding: 48px 24px; }
+      .steps-grid { grid-template-columns: 1fr; gap: 28px; }
+
+      .cta-section-wrap { padding: 40px 24px; }
+      .cta-section { padding: 40px 28px; }
+
+      .stats-bar { padding: 24px 24px; }
+      .stats-inner { flex-wrap: wrap; justify-content: center; gap: 12px 24px; }
       .stat-divider { display: none; }
 
-      header { padding: 0 20px; }
-      .features-section { padding: 0 24px; }
-      .how-section { padding: 48px 24px; }
-      .cta-section { margin: 48px 24px; padding: 40px 24px; }
-      footer { flex-direction: column; gap: 12px; text-align: center; padding: 24px; }
+      footer { padding: 24px; flex-direction: column; gap: 10px; text-align: center; }
+    }
+
+    /* ══════════════════════════════════════════════
+       RESPONSIVE — MOBILE (≤ 640px) — FaceTime Style
+    ══════════════════════════════════════════════ */
+    @media (max-width: 640px) {
+      /* Header compact */
+      header {
+        padding: 0 16px;
+        height: 56px;
+      }
+
+      .logo { font-size: 1.4rem; }
+      .logo-tagline { display: none; }
+
+      .lang-btn { padding: 5px 12px; font-size: 0.78rem; }
+
+      /* Hero: video at top, full-width, FaceTime feel */
+      .hero {
+        padding: 0 0 32px;
+        gap: 0;
+        grid-template-columns: 1fr;
+      }
+
+      /* Video block: prominent, full-width hero */
+      .video-wrap {
+        gap: 0;
+        background: var(--dark);
+        border-radius: 0 0 32px 32px;
+        padding-bottom: 20px;
+        order: -1;
+        width: 100%;
+        align-items: center;
+      }
+
+      .video-card {
+        max-width: 100%;
+        width: calc(100% - 0px);
+        /* FaceTime-like: rounded bottom, not the top */
+        border-radius: 0 0 0 0;
+        aspect-ratio: 9 / 16;
+        /* Limit height so content is visible below */
+        max-height: 72vh;
+        box-shadow:
+          0 0 0 0px var(--gold),
+          0 16px 48px rgba(0,0,0,0.3);
+        /* Show at top like a phone call */
+        overflow: hidden;
+      }
+
+      /* Gold ring effect on the video container */
+      .video-outer {
+        position: relative;
+        padding: 3px;
+        background: linear-gradient(180deg, var(--gold), var(--gold-dark));
+        border-radius: 0 0 28px 28px;
+        width: 100%;
+        max-height: 72vh;
+        overflow: hidden;
+      }
+
+      .video-card-inner {
+        border-radius: 0 0 26px 26px;
+        overflow: hidden;
+        background: #0A0A0A;
+        aspect-ratio: 9/16;
+        max-height: calc(72vh - 6px);
+      }
+
+      .video-card-inner iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+        display: block;
+      }
+
+      /* Sound hint visible on mobile */
+      .sound-hint { display: block; }
+
+      /* Transcript on mobile: inline, below video within dark area */
+      .transcript-panel {
+        max-width: 100%;
+        width: 100%;
+        padding: 12px 16px 0;
+      }
+
+      .transcript-toggle {
+        border-radius: 12px;
+        background: rgba(255,255,255,0.08);
+        border: 1px solid rgba(255,255,255,0.15);
+        color: rgba(255,255,255,0.85);
+      }
+
+      .transcript-toggle:hover {
+        background: rgba(255,255,255,0.12);
+        border-color: var(--gold-light);
+      }
+
+      .transcript-box {
+        background: rgba(255,255,255,0.05);
+        border: 1px solid rgba(255,255,255,0.12);
+      }
+
+      .transcript-header {
+        background: rgba(255,255,255,0.07);
+        border-bottom-color: rgba(255,255,255,0.1);
+        color: rgba(255,255,255,0.5);
+      }
+
+      .t-line { color: rgba(255,255,255,0.55); }
+      .t-line.speaking { color: #fff; background: rgba(196,164,74,0.25); border-left-color: var(--gold); }
+      .t-line.done { color: rgba(255,255,255,0.3); }
+
+      /* Hero text below video */
+      .hero-text {
+        padding: 28px 20px 0;
+        text-align: left;
+      }
+
+      .hero-text h1 { font-size: 1.85rem; }
+      .hero-text p { font-size: 0.92rem; margin-bottom: 24px; }
+
+      .hero-badge { margin: 0 0 16px; }
+      .trust-row { justify-content: flex-start !important; gap: 12px; }
+
+      /* Stats: 2x2 grid */
+      .stats-bar { padding: 20px 16px; }
+      .stats-inner {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        text-align: center;
+        justify-content: center;
+      }
+      .stat-number { font-size: 1.7rem; }
+      .stat-label { font-size: 0.72rem; }
+      .stat-divider { display: none; }
+
+      /* Features: 1 column */
+      .features-section { padding: 0 16px; margin: 40px auto; }
+      .section-title { font-size: 1.5rem; }
+      .features-grid { grid-template-columns: 1fr; gap: 12px; }
+      .feature-card { padding: 24px 20px; }
+
+      /* How it works */
+      .how-section { padding: 40px 16px; }
+
+      /* CTA */
+      .cta-section-wrap { padding: 32px 16px; }
+      .cta-section { padding: 36px 24px; border-radius: 20px; }
+      .cta-section h2 { font-size: 1.5rem; }
+
+      /* Footer */
+      footer { padding: 20px 16px; padding-bottom: calc(20px + var(--safe-bottom)); flex-direction: column; gap: 8px; text-align: center; }
+    }
+
+    /* Extra small — compact phones */
+    @media (max-width: 390px) {
+      .hero-text h1 { font-size: 1.65rem; }
+      .video-card { max-height: 68vh; }
+      .video-card-inner { max-height: calc(68vh - 6px); }
     }
   </style>
 </head>
@@ -516,7 +831,7 @@
     </div>
   </header>
 
-  <!-- ═══════════════ DEUTSCH ═══════════════ -->
+  <!-- ═══════════════════════ DEUTSCH ═══════════════════════ -->
   <div id="content-de" class="lang-content active">
 
     <section class="hero">
@@ -529,19 +844,54 @@
           massgeschneiderte Empfehlungen von über 30 Versicherern.
         </p>
         <a href="#" class="cta-btn">Kostenlose Beratung starten</a>
-        <div class="trust-row" style="justify-content: flex-start; margin-top: 24px;">
+        <div class="trust-row" style="justify-content: flex-start; margin-top: 22px;">
           <span class="trust-item">Kostenlos</span>
           <span class="trust-item">Unabhängig</span>
           <span class="trust-item">DSGVO-konform</span>
         </div>
       </div>
-      <div class="video-card">
-        <iframe
-          src="https://app.heygen.com/embeds/93b37c854b8d4395a5134d3c805de861"
-          allow="autoplay; fullscreen"
-          allowfullscreen
-          title="Navia – Digitale Versicherungsberaterin (Deutsch)"
-        ></iframe>
+
+      <div class="video-wrap">
+        <!-- Desktop video card -->
+        <div class="video-card desktop-only">
+          <iframe
+            id="video-de"
+            src="https://app.heygen.com/embeds/93b37c854b8d4395a5134d3c805de861?autoplay=1&loop=0&muted=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            title="Navia – Digitale Versicherungsberaterin (Deutsch)"
+          ></iframe>
+          <div class="sound-hint">🔊 Ton aktivieren</div>
+        </div>
+        <!-- Mobile video (FaceTime style – rendered outside grid via JS) -->
+        <div class="video-outer mobile-only">
+          <div class="video-card-inner">
+            <iframe
+              src="https://app.heygen.com/embeds/93b37c854b8d4395a5134d3c805de861?autoplay=1&loop=0&muted=0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+              title="Navia – Digitale Versicherungsberaterin (Deutsch)"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Transcript Panel DE -->
+        <div class="transcript-panel" id="tp-de">
+          <button class="transcript-toggle" onclick="toggleTranscript('de')">
+            <span class="tt-left"><span class="tt-icon">📝</span> Transkript anzeigen</span>
+            <span class="tt-arrow">▼</span>
+          </button>
+          <div class="transcript-box">
+            <div class="transcript-header">NAVIA – DEUTSCH</div>
+            <div class="transcript-lines" id="tl-de">
+              <div class="t-line" data-t="0">Herzlich willkommen. Ich bin Navia, Ihre digitale Versicherungsberaterin.</div>
+              <div class="t-line" data-t="5">In der Schweiz gibt es über 30 Anbieter – und ich vergleiche sie alle für Sie.</div>
+              <div class="t-line" data-t="11">Unabhängig, transparent und vollkommen kostenlos.</div>
+              <div class="t-line" data-t="16">In nur 3 Minuten erhalten Sie massgeschneiderte Empfehlungen.</div>
+              <div class="t-line" data-t="22">Starten Sie jetzt Ihre persönliche Beratung.</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -615,7 +965,7 @@
       </div>
     </div>
 
-    <div class="cta-section-wrap" style="padding: 72px 40px;">
+    <div class="cta-section-wrap">
       <div class="cta-section">
         <h2>Bereit für Ihre kostenlose Beratung?</h2>
         <p>Starten Sie jetzt und erhalten Sie in 3 Minuten massgeschneiderte Versicherungsempfehlungen.</p>
@@ -624,9 +974,9 @@
     </div>
 
   </div>
-  <!-- ═══════════════ END DEUTSCH ═══════════════ -->
+  <!-- ═══════════════════════ END DEUTSCH ═══════════════════════ -->
 
-  <!-- ═══════════════ FRANÇAIS ═══════════════ -->
+  <!-- ═══════════════════════ FRANÇAIS ═══════════════════════ -->
   <div id="content-fr" class="lang-content">
 
     <section class="hero">
@@ -639,19 +989,51 @@
           personnalisées de plus de 30 assureurs en 3 minutes.
         </p>
         <a href="#" class="cta-btn">Commencer le conseil gratuit</a>
-        <div class="trust-row" style="justify-content: flex-start; margin-top: 24px;">
+        <div class="trust-row" style="justify-content: flex-start; margin-top: 22px;">
           <span class="trust-item">Gratuit</span>
           <span class="trust-item">Indépendant</span>
           <span class="trust-item">Conforme RGPD</span>
         </div>
       </div>
-      <div class="video-card">
-        <iframe
-          src="https://app.heygen.com/embeds/0fe2d536683846ccbc19aed71a1e8f4b"
-          allow="autoplay; fullscreen"
-          allowfullscreen
-          title="Navia – Conseillère en assurances (Français)"
-        ></iframe>
+
+      <div class="video-wrap">
+        <div class="video-card desktop-only">
+          <iframe
+            src="https://app.heygen.com/embeds/0fe2d536683846ccbc19aed71a1e8f4b?autoplay=1&loop=0&muted=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            title="Navia – Conseillère en assurances (Français)"
+          ></iframe>
+          <div class="sound-hint">🔊 Activer le son</div>
+        </div>
+        <div class="video-outer mobile-only">
+          <div class="video-card-inner">
+            <iframe
+              src="https://app.heygen.com/embeds/0fe2d536683846ccbc19aed71a1e8f4b?autoplay=1&loop=0&muted=0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+              title="Navia – Conseillère en assurances (Français)"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Transcript Panel FR -->
+        <div class="transcript-panel" id="tp-fr">
+          <button class="transcript-toggle" onclick="toggleTranscript('fr')">
+            <span class="tt-left"><span class="tt-icon">📝</span> Afficher la transcription</span>
+            <span class="tt-arrow">▼</span>
+          </button>
+          <div class="transcript-box">
+            <div class="transcript-header">NAVIA – FRANÇAIS</div>
+            <div class="transcript-lines" id="tl-fr">
+              <div class="t-line" data-t="0">Bienvenue. Je suis Navia, votre conseillère en assurances digitale.</div>
+              <div class="t-line" data-t="5">En Suisse, il y a plus de 30 assureurs – et je les compare tous pour vous.</div>
+              <div class="t-line" data-t="11">Indépendante, transparente et totalement gratuite.</div>
+              <div class="t-line" data-t="16">En seulement 3 minutes, vous recevez des recommandations personnalisées.</div>
+              <div class="t-line" data-t="22">Commencez maintenant votre conseil personnel.</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -725,7 +1107,7 @@
       </div>
     </div>
 
-    <div class="cta-section-wrap" style="padding: 72px 40px;">
+    <div class="cta-section-wrap">
       <div class="cta-section">
         <h2>Prêt pour votre conseil gratuit?</h2>
         <p>Commencez maintenant et recevez des recommandations d'assurance personnalisées en 3 minutes.</p>
@@ -734,9 +1116,9 @@
     </div>
 
   </div>
-  <!-- ═══════════════ END FRANÇAIS ═══════════════ -->
+  <!-- ═══════════════════════ END FRANÇAIS ═══════════════════════ -->
 
-  <!-- ═══════════════ ITALIANO ═══════════════ -->
+  <!-- ═══════════════════════ ITALIANO ═══════════════════════ -->
   <div id="content-it" class="lang-content">
 
     <section class="hero">
@@ -749,19 +1131,51 @@
           da oltre 30 assicuratori in 3 minuti.
         </p>
         <a href="#" class="cta-btn">Inizia la consulenza gratuita</a>
-        <div class="trust-row" style="justify-content: flex-start; margin-top: 24px;">
+        <div class="trust-row" style="justify-content: flex-start; margin-top: 22px;">
           <span class="trust-item">Gratuito</span>
           <span class="trust-item">Indipendente</span>
           <span class="trust-item">Conforme GDPR</span>
         </div>
       </div>
-      <div class="video-card">
-        <iframe
-          src="https://app.heygen.com/embeds/e9146cc0f2054269b6db8156d1ea5fcf"
-          allow="autoplay; fullscreen"
-          allowfullscreen
-          title="Navia – Consulente assicurativa (Italiano)"
-        ></iframe>
+
+      <div class="video-wrap">
+        <div class="video-card desktop-only">
+          <iframe
+            src="https://app.heygen.com/embeds/e9146cc0f2054269b6db8156d1ea5fcf?autoplay=1&loop=0&muted=0"
+            allow="autoplay; fullscreen; picture-in-picture"
+            allowfullscreen
+            title="Navia – Consulente assicurativa (Italiano)"
+          ></iframe>
+          <div class="sound-hint">🔊 Attiva audio</div>
+        </div>
+        <div class="video-outer mobile-only">
+          <div class="video-card-inner">
+            <iframe
+              src="https://app.heygen.com/embeds/e9146cc0f2054269b6db8156d1ea5fcf?autoplay=1&loop=0&muted=0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowfullscreen
+              title="Navia – Consulente assicurativa (Italiano)"
+            ></iframe>
+          </div>
+        </div>
+
+        <!-- Transcript Panel IT -->
+        <div class="transcript-panel" id="tp-it">
+          <button class="transcript-toggle" onclick="toggleTranscript('it')">
+            <span class="tt-left"><span class="tt-icon">📝</span> Mostra trascrizione</span>
+            <span class="tt-arrow">▼</span>
+          </button>
+          <div class="transcript-box">
+            <div class="transcript-header">NAVIA – ITALIANO</div>
+            <div class="transcript-lines" id="tl-it">
+              <div class="t-line" data-t="0">Benvenuto/a. Sono Navia, la tua consulente assicurativa digitale.</div>
+              <div class="t-line" data-t="5">In Svizzera ci sono oltre 30 assicuratori – e li confronto tutti per te.</div>
+              <div class="t-line" data-t="11">Indipendente, trasparente e completamente gratuita.</div>
+              <div class="t-line" data-t="16">In soli 3 minuti ricevi raccomandazioni personalizzate.</div>
+              <div class="t-line" data-t="22">Inizia ora la tua consulenza personale.</div>
+            </div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -835,7 +1249,7 @@
       </div>
     </div>
 
-    <div class="cta-section-wrap" style="padding: 72px 40px;">
+    <div class="cta-section-wrap">
       <div class="cta-section">
         <h2>Pronto per la tua consulenza gratuita?</h2>
         <p>Inizia ora e ricevi raccomandazioni assicurative personalizzate in 3 minuti.</p>
@@ -844,7 +1258,7 @@
     </div>
 
   </div>
-  <!-- ═══════════════ END ITALIANO ═══════════════ -->
+  <!-- ═══════════════════════ END ITALIANO ═══════════════════════ -->
 
   <footer>
     <div class="footer-logo">Navia<span>.</span></div>
@@ -852,6 +1266,23 @@
   </footer>
 
   <script>
+    // ─── Mobile / Desktop detection ───
+    const isMobile = () => window.innerWidth <= 640;
+
+    // Show/hide mobile vs desktop elements
+    function applyLayout() {
+      const mobile = isMobile();
+      document.querySelectorAll('.desktop-only').forEach(el => {
+        el.style.display = mobile ? 'none' : '';
+      });
+      document.querySelectorAll('.mobile-only').forEach(el => {
+        el.style.display = mobile ? '' : 'none';
+      });
+    }
+    applyLayout();
+    window.addEventListener('resize', applyLayout);
+
+    // ─── Language switcher ───
     function setLang(lang) {
       document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
       document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
@@ -861,6 +1292,93 @@
       });
       document.documentElement.lang = lang;
     }
+
+    // ─── Transcript toggle ───
+    function toggleTranscript(lang) {
+      const panel = document.getElementById('tp-' + lang);
+      if (!panel) return;
+      panel.classList.toggle('open');
+    }
+
+    // ─── Transcript live sync ───
+    // Uses a timer that starts when the page loads or video becomes visible.
+    // Each .t-line has data-t = seconds from video start.
+    // Adjust timing by updating data-t values when real script is available.
+    const transcriptTimers = {};
+
+    function startTranscript(lang) {
+      if (transcriptTimers[lang]) return; // already running
+      const lines = document.querySelectorAll('#tl-' + lang + ' .t-line');
+      if (!lines.length) return;
+
+      const startTime = Date.now();
+
+      transcriptTimers[lang] = setInterval(() => {
+        const elapsed = (Date.now() - startTime) / 1000;
+        let lastActive = null;
+
+        lines.forEach(line => {
+          const t = parseFloat(line.getAttribute('data-t') || '0');
+          if (elapsed >= t) {
+            line.classList.add('done');
+            line.classList.remove('speaking');
+            lastActive = line;
+          } else {
+            line.classList.remove('done', 'speaking');
+          }
+        });
+
+        // The line just passed is "speaking"
+        if (lastActive) {
+          lastActive.classList.remove('done');
+          lastActive.classList.add('speaking');
+          // Auto-scroll to keep it visible
+          const box = lastActive.closest('.transcript-lines');
+          if (box) {
+            const lineTop = lastActive.offsetTop;
+            const lineH   = lastActive.offsetHeight;
+            box.scrollTop = lineTop - box.offsetHeight / 2 + lineH;
+          }
+        }
+
+        // Stop when all done
+        const maxT = parseFloat(lines[lines.length - 1].getAttribute('data-t') || '0') + 5;
+        if ((Date.now() - startTime) / 1000 > maxT + 3) {
+          clearInterval(transcriptTimers[lang]);
+          delete transcriptTimers[lang];
+          lines.forEach(l => l.classList.remove('speaking'));
+        }
+      }, 250);
+    }
+
+    // Auto-start transcript for visible language on load
+    setTimeout(() => {
+      const activeLang = document.querySelector('.lang-content.active');
+      if (activeLang) {
+        const lang = activeLang.id.replace('content-', '');
+        // Open transcript panel automatically
+        const panel = document.getElementById('tp-' + lang);
+        if (panel) panel.classList.add('open');
+        startTranscript(lang);
+      }
+    }, 1000);
+
+    // Restart transcript when language changes
+    const _origSetLang = setLang;
+    window.setLang = function(lang) {
+      _origSetLang(lang);
+      // Stop old timers
+      Object.keys(transcriptTimers).forEach(k => {
+        clearInterval(transcriptTimers[k]);
+        delete transcriptTimers[k];
+      });
+      // Reset all lines
+      document.querySelectorAll('.t-line').forEach(l => l.classList.remove('speaking', 'done'));
+      // Open panel + start timer for new lang
+      const panel = document.getElementById('tp-' + lang);
+      if (panel) panel.classList.add('open');
+      setTimeout(() => startTranscript(lang), 800);
+    };
   </script>
 
 </body>
