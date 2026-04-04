@@ -1,1463 +1,760 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
-  <meta name="theme-color" content="#09090E" />
-  <title>Navia â Ihre digitale Versicherungsberaterin fÃ¼r die Schweiz</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
-  <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-
-    :root {
-      --gold:          #C4A44A;
-      --gold-light:    #DFC07A;
-      --gold-lighter:  #EDD9A3;
-      --gold-dark:     #9A7C2E;
-      --bg:            #09090E;
-      --bg-2:          #0D0D14;
-      --bg-3:          #12121A;
-      --bg-4:          #181820;
-      --white:         #FFFFFF;
-      --text:          #DEDAD2;
-      --text-muted:    #837F78;
-      --text-subtle:   #4E4B46;
-      --border:        rgba(255,255,255,0.07);
-      --border-gold:   rgba(196,164,74,0.22);
-      --glass:         rgba(255,255,255,0.035);
-      --glass-hover:   rgba(255,255,255,0.065);
-      --glow-gold:     rgba(196,164,74,0.13);
-      --safe-top:      env(safe-area-inset-top, 0px);
-      --safe-bottom:   env(safe-area-inset-bottom, 0px);
-      --header-h:      68px;
-      --container:     1420px;
-      --padding-x:     60px;
-    }
-
-    html {
-      scroll-behavior: smooth;
-      -webkit-text-size-adjust: 100%;
-    }
-
-    body {
-      font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-      background: var(--bg);
-      color: var(--text);
-      min-height: 100vh;
-      overflow-x: hidden;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-    }
-
-    /* âââââââââââââââââââââââââââââââââââââââââââ
-       HEADER
-    âââââââââââââââââââââââââââââââââââââââââââ */
-    header {
-      position: fixed;
-      top: 0; left: 0; right: 0;
-      z-index: 300;
-      height: var(--header-h);
-      padding: 0 var(--padding-x);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      background: rgba(9,9,14,0.82);
-      backdrop-filter: blur(28px) saturate(180%);
-      -webkit-backdrop-filter: blur(28px) saturate(180%);
-      border-bottom: 1px solid var(--border);
-      transition: background 0.4s ease, border-color 0.4s ease;
-    }
-
-    header.scrolled {
-      background: rgba(9,9,14,0.97);
-      border-bottom-color: rgba(255,255,255,0.1);
-    }
-
-    .logo-wrap {
-      display: flex;
-      flex-direction: column;
-      gap: 3px;
-      text-decoration: none;
-    }
-
-    .logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.8rem;
-      font-weight: 700;
-      color: var(--white);
-      letter-spacing: 0.5px;
-      line-height: 1;
-    }
-
-    /* "ia." part of Navia in gold */
-    .logo em {
-      color: var(--gold);
-      font-style: normal;
-    }
-
-    .logo-sub {
-      font-size: 0.565rem;
-      font-weight: 500;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      color: var(--text-subtle);
-      line-height: 1;
-    }
-
-    /* Lang switcher */
-    .lang-switcher {
-      display: flex;
-      align-items: center;
-      gap: 2px;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: 40px;
-      padding: 4px;
-    }
-
-    .lang-btn {
-      padding: 7px 22px;
-      border-radius: 36px;
-      border: none;
-      background: transparent;
-      color: var(--text-muted);
-      font-size: 0.78rem;
-      font-weight: 600;
-      font-family: 'Inter', sans-serif;
-      cursor: pointer;
-      letter-spacing: 0.9px;
-      text-transform: uppercase;
-      transition: color 0.2s ease, background 0.2s ease;
-      -webkit-tap-highlight-color: transparent;
-    }
-
-    .lang-btn:hover { color: var(--gold-light); }
-
-    .lang-btn.active {
-      background: var(--gold);
-      color: #0A0A0E;
-      font-weight: 700;
-    }
-
-    /* âââââââââââââââââââââââââââââââââââââââââââ
-       HERO
-    âââââââââââââââââââââââââââââââââââââââââââ */
-    .hero {
-      position: relative;
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      padding-top: var(--header-h);
-    }
-
-    /* Atmospheric glow blobs */
-    .hero-glow-1 {
-      position: absolute;
-      top: 0; right: -8%;
-      width: 60%; height: 75%;
-      background: radial-gradient(ellipse at 65% 30%, rgba(196,164,74,0.09) 0%, transparent 65%);
-      pointer-events: none;
-    }
-
-    .hero-glow-2 {
-      position: absolute;
-      bottom: -15%; left: -8%;
-      width: 50%; height: 60%;
-      background: radial-gradient(ellipse at 30% 70%, rgba(196,164,74,0.055) 0%, transparent 65%);
-      pointer-events: none;
-    }
-
-    /* Center container */
-    .hero-inner {
-      position: relative;
-      z-index: 2;
-      max-width: var(--container);
-      margin: 0 auto;
-      width: 100%;
-      padding: 64px var(--padding-x) 72px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
-    }
-
-    /* ââ LEFT: text column ââ */
-    .hero-left {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-    }
-
-    /* Hero badge */
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      background: rgba(196,164,74,0.08);
-      border: 1px solid rgba(196,164,74,0.26);
-      border-radius: 40px;
-      padding: 7px 20px 7px 13px;
-      font-size: 0.68rem;
-      font-weight: 700;
-      letter-spacing: 2.2px;
-      text-transform: uppercase;
-      color: var(--gold-light);
-      margin-bottom: 34px;
-    }
-
-    .badge-dot {
-      width: 7px;
-      height: 7px;
-      background: var(--gold);
-      border-radius: 50%;
-      flex-shrink: 0;
-      animation: blink 2.8s ease-in-out infinite;
-    }
-
-    @keyframes blink {
-      0%, 100% { opacity: 1; box-shadow: 0 0 0 0 rgba(196,164,74,0.6); }
-      50%       { opacity: 0.65; box-shadow: 0 0 0 6px rgba(196,164,74,0); }
-    }
-
-    /* Headline */
-    .hero-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 3.4rem;
-      font-weight: 700;
-      line-height: 1.15;
-      color: var(--white);
-      margin-bottom: 28px;
-      letter-spacing: -0.3px;
-    }
-
-    .hero-title em {
-      color: var(--gold);
-      font-style: italic;
-    }
-
-    /* Description */
-    .hero-desc {
-      font-size: 1.05rem;
-      color: var(--text-muted);
-      line-height: 1.85;
-      max-width: 500px;
-      margin-bottom: 44px;
-      font-weight: 400;
-    }
-
-    /* CTA Button */
-    .cta-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 17px 38px;
-      background: linear-gradient(135deg, var(--gold-lighter) 0%, var(--gold) 50%, var(--gold-dark) 100%);
-      color: #0A0906;
-      border-radius: 50px;
-      font-size: 0.93rem;
-      font-weight: 700;
-      font-family: 'Inter', sans-serif;
-      letter-spacing: 0.2px;
-      text-decoration: none;
-      border: none;
-      cursor: pointer;
-      transition: transform 0.25s ease, box-shadow 0.25s ease, filter 0.25s ease;
-      box-shadow: 0 4px 28px rgba(196,164,74,0.3), 0 1px 4px rgba(0,0,0,0.4);
-      -webkit-tap-highlight-color: transparent;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta-btn::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(135deg, rgba(255,255,255,0.18) 0%, transparent 60%);
-      opacity: 1;
-      pointer-events: none;
-    }
-
-    .cta-btn:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 12px 42px rgba(196,164,74,0.44), 0 2px 8px rgba(0,0,0,0.5);
-      filter: brightness(1.06);
-    }
-
-    .cta-btn:active { transform: translateY(-1px); }
-
-    .cta-btn svg {
-      width: 16px;
-      height: 16px;
-      position: relative;
-      z-index: 1;
-      transition: transform 0.25s ease;
-    }
-
-    .cta-btn span { position: relative; z-index: 1; }
-    .cta-btn:hover svg { transform: translateX(4px); }
-
-    /* Trust row */
-    .trust-row {
-      display: flex;
-      align-items: center;
-      gap: 22px;
-      margin-top: 28px;
-      flex-wrap: wrap;
-    }
-
-    .trust-item {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      font-size: 0.82rem;
-      color: var(--text-subtle);
-      font-weight: 500;
-    }
-
-    .trust-check {
-      width: 17px;
-      height: 17px;
-      border-radius: 50%;
-      background: rgba(196,164,74,0.12);
-      border: 1px solid rgba(196,164,74,0.28);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex-shrink: 0;
-    }
-
-    .trust-check::after {
-      content: 'â';
-      font-size: 0.58rem;
-      color: var(--gold);
-      font-weight: 800;
-    }
-
-    /* ââ RIGHT: video column ââ */
-    .video-col {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      position: relative;
-    }
-
-    /* Outer glow halo */
-    .video-halo {
-      position: absolute;
-      inset: -60px;
-      background: radial-gradient(ellipse at 50% 50%, rgba(196,164,74,0.15) 0%, transparent 68%);
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* âââââââââââââââââââââââââââââââââââââââââââ
-       VIDEO CARD â large, immersive
-    âââââââââââââââââââââââââââââââââââââââââââ */
-    .video-card {
-      position: relative;
-      z-index: 1;
-      /* Portrait 9:16 â fills column, capped by viewport height */
-      aspect-ratio: 9 / 16;
-      width: 100%;
-      max-width: 480px;
-      max-height: 84vh;
-      /* auto-adjust width when height is capped */
-      height: auto;
-      border-radius: 32px;
-      overflow: hidden;
-      background: #000;
-      box-shadow:
-        0 0 0 1px rgba(196,164,74,0.55),
-        0 0 0 7px rgba(196,164,74,0.07),
-        0 48px 120px rgba(0,0,0,0.75),
-        0 0 100px rgba(196,164,74,0.12);
-    }
-
-    /* When height is constrained by max-height, enforce correct width */
-    @supports (aspect-ratio: 9/16) {
-      .video-card {
-        width: min(480px, calc(84vh * 9 / 16));
-      }
-    }
-
-    .video-card iframe {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      border: none;
-      display: block;
-    }
-
-    /* Subtitle overlay */
-    .subtitle-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      z-index: 10;
-      pointer-events: none;
-      padding: 70px 20px 28px;
-      background: linear-gradient(to bottom,
-        transparent 0%,
-        rgba(0,0,0,0.45) 38%,
-        rgba(0,0,0,0.88) 100%);
-      display: flex;
-      align-items: flex-end;
-      justify-content: center;
-      min-height: 120px;
-    }
-
-    .subtitle-text {
-      font-size: 0.92rem;
-      font-weight: 500;
-      color: #fff;
-      text-align: center;
-      width: 100%;
-      line-height: 1.55;
-      letter-spacing: 0.15px;
-      text-shadow: 0 1px 8px rgba(0,0,0,0.95), 0 0 20px rgba(0,0,0,0.7);
-      transition: opacity 0.35s ease;
-      min-height: 2.6em;
-    }
-
-    /* âââââââââââââââââââââââââââââââââââââââââââ
-       STATS SECTION
-    âââââââââââââââââââââââââââââââââââââââââââ */
-    .stats-section {
-      background: var(--bg-2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 56px var(--padding-x);
-    }
-
-    .stats-inner {
-      max-width: 1040px;
-      margin: 0 auto;
-      display: flex;
-      justify-content: space-around;
-      align-items: center;
-      gap: 16px;
-    }
-
-    .stat-item { text-align: center; }
-
-    .stat-num {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.6rem;
-      font-weight: 700;
-      color: var(--gold);
-      line-height: 1;
-      letter-spacing: -0.5px;
-    }
-
-    .stat-label {
-      font-size: 0.72rem;
-      color: var(--text-subtle);
-      margin-top: 10px;
-      font-weight: 500;
-      letter-spacing: 1.1px;
-      text-transform: uppercase;
-    }
-
-    .stat-div {
-      width: 1px;
-      height: 52px;
-      background: linear-gradient(to bottom, transparent, var(--border), transparent);
-      flex-shrink: 0;
-    }
-
-    /* âââââââââââââââââââââââââââââââââââââââââââ
-       FEATURES SECTION
-    âââââââââââââââââââââââââââââââââââââââââââ */
-    .features-section {
-      max-width: var(--container);
-      margin: 0 auto;
-      padding: 108px var(--padding-x);
-    }
-
-    .section-eyebrow {
-      font-size: 0.67rem;
-      font-weight: 700;
-      letter-spacing: 3.8px;
-      text-transform: uppercase;
-      color: var(--gold);
-      margin-bottom: 16px;
-    }
-
-    .section-title {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.5rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 58px;
-      line-height: 1.2;
-      max-width: 520px;
-    }
-
-    .features-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 20px;
-    }
-
-    .feature-card {
-      background: var(--glass);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 42px 32px;
-      transition: border-color 0.3s, background 0.3s, transform 0.3s, box-shadow 0.3s;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .feature-card::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent 10%, var(--gold) 50%, transparent 90%);
-      opacity: 0;
-      transition: opacity 0.3s;
-    }
-
-    .feature-card:hover {
-      background: var(--glass-hover);
-      border-color: var(--border-gold);
-      transform: translateY(-8px);
-      box-shadow: 0 28px 72px rgba(0,0,0,0.45), 0 0 44px var(--glow-gold);
-    }
-
-    .feature-card:hover::before { opacity: 1; }
-
-    .feat-icon {
-      width: 56px;
-      height: 56px;
-      border-radius: 16px;
-      background: rgba(196,164,74,0.08);
-      border: 1px solid var(--border-gold);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 1.6rem;
-      margin-bottom: 26px;
-    }
-
-    .feature-card h3 {
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 12px;
-      letter-spacing: 0.1px;
-    }
-
-    .feature-card p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.74;
-    }
-
-    /* âââââââââââââââââââââââââââââââââââââââââââ
-       HOW IT WORKS
-    âââââââââââââââââââââââââââââââââââââââââââ */
-    .how-section {
-      background: var(--bg-2);
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-      padding: 108px var(--padding-x);
-    }
-
-    .how-inner {
-      max-width: 1040px;
-      margin: 0 auto;
-    }
-
-    .steps-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 72px;
-      margin-top: 64px;
-      position: relative;
-    }
-
-    /* Connector line between steps */
-    .steps-grid::before {
-      content: '';
-      position: absolute;
-      top: 23px;
-      left: calc(16.7% + 12px);
-      right: calc(16.7% + 12px);
-      height: 1px;
-      background: linear-gradient(90deg,
-        var(--border-gold),
-        rgba(196,164,74,0.07) 50%,
-        var(--border-gold));
-    }
-
-    .step-num {
-      width: 46px;
-      height: 46px;
-      border-radius: 50%;
-      border: 1px solid var(--border-gold);
-      background: rgba(196,164,74,0.07);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: 'Playfair Display', serif;
-      font-size: 1rem;
-      font-weight: 700;
-      color: var(--gold);
-      margin-bottom: 28px;
-    }
-
-    .step h3 {
-      font-size: 1.02rem;
-      font-weight: 600;
-      color: var(--white);
-      margin-bottom: 12px;
-    }
-
-    .step p {
-      font-size: 0.88rem;
-      color: var(--text-muted);
-      line-height: 1.74;
-    }
-
-    /* âââââââââââââââââââââââââââââââââââââââââââ
-       FINAL CTA
-    âââââââââââââââââââââââââââââââââââââââââââ */
-    .cta-section-wrap {
-      padding: 108px var(--padding-x);
-    }
-
-    .cta-box {
-      max-width: 700px;
-      margin: 0 auto;
-      padding: 80px 68px;
-      text-align: center;
-      background: var(--bg-3);
-      border-radius: 36px;
-      border: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Gold top bar */
-    .cta-box::before {
-      content: '';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 2px;
-      background: linear-gradient(90deg,
-        transparent 0%,
-        var(--gold-dark) 15%,
-        var(--gold) 40%,
-        var(--gold-lighter) 55%,
-        var(--gold) 70%,
-        var(--gold-dark) 85%,
-        transparent 100%);
-    }
-
-    /* Background radial glow */
-    .cta-box::after {
-      content: '';
-      position: absolute;
-      bottom: -30%;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 70%;
-      height: 80%;
-      background: radial-gradient(ellipse, rgba(196,164,74,0.07) 0%, transparent 70%);
-      pointer-events: none;
-    }
-
-    .cta-box h2 {
-      font-family: 'Playfair Display', serif;
-      font-size: 2.15rem;
-      font-weight: 700;
-      color: var(--white);
-      margin-bottom: 18px;
-      position: relative;
-      z-index: 1;
-      line-height: 1.25;
-    }
-
-    .cta-box p {
-      font-size: 1.02rem;
-      color: var(--text-muted);
-      margin-bottom: 40px;
-      line-height: 1.74;
-      position: relative;
-      z-index: 1;
-    }
-
-    .cta-box .cta-btn { position: relative; z-index: 1; }
-
-    .cta-trust {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 22px;
-      margin-top: 26px;
-      flex-wrap: wrap;
-      position: relative;
-      z-index: 1;
-    }
-
-    /* âââââââââââââââââââââââââââââââââââââââââââ
-       FOOTER
-    âââââââââââââââââââââââââââââââââââââââââââ */
-    footer {
-      background: var(--bg);
-      border-top: 1px solid var(--border);
-      padding: 34px var(--padding-x);
-      padding-bottom: calc(34px + var(--safe-bottom));
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .footer-logo {
-      font-family: 'Playfair Display', serif;
-      font-size: 1.45rem;
-      font-weight: 700;
-      color: var(--white);
-    }
-
-    .footer-logo em { color: var(--gold); font-style: normal; }
-
-    .footer-copy {
-      font-size: 0.78rem;
-      color: var(--text-subtle);
-      letter-spacing: 0.2px;
-    }
-
-    /* âââââââââââââââââââââââââââââââââââââââââââ
-       LANG SWITCH
-    âââââââââââââââââââââââââââââââââââââââââââ */
-    .lang-content { display: none; }
-    .lang-content.active { display: contents; }
-
-    /* âââââââââââââââââââââââââââââââââââââââââââ
-       SCROLL REVEAL ANIMATION
-    âââââââââââââââââââââââââââââââââââââââââââ */
-    .reveal {
-      opacity: 0;
-      transform: translateY(26px);
-      transition: opacity 0.72s ease, transform 0.72s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    /* âââââââââââââââââââââââââââââââââââââââââââ
-       RESPONSIVE â TABLET (â¤ 1100px)
-    âââââââââââââââââââââââââââââââââââââââââââ */
-    @media (max-width: 1100px) {
-      :root {
-        --padding-x: 36px;
-      }
-
-      .hero-inner {
-        grid-template-columns: 1fr 380px;
-        gap: 52px;
-      }
-
-      .hero-title { font-size: 2.85rem; }
-      .video-card {
-        max-width: 380px;
-        width: min(380px, calc(84vh * 9 / 16));
-      }
-      .features-grid { grid-template-columns: 1fr 1fr; gap: 16px; }
-      .steps-grid { gap: 48px; }
-    }
-
-    /* âââââââââââââââââââââââââââââââââââââââââââ
-       RESPONSIVE â MOBILE (â¤ 768px)
-    âââââââââââââââââââââââââââââââââââââââââââ */
-    @media (max-width: 768px) {
-      :root {
-        --header-h: 60px;
-        --padding-x: 20px;
-      }
-
-      header { padding: 0 20px; }
-      .logo { font-size: 1.55rem; }
-      .logo-sub { display: none; }
-      .lang-btn { padding: 6px 15px; font-size: 0.74rem; }
-
-      /* Hero: single column, video on top */
-      .hero {
-        align-items: flex-start;
-        min-height: auto;
-        padding-top: var(--header-h);
-      }
-
-      .hero-glow-1, .hero-glow-2 { display: none; }
-
-      .hero-inner {
-        grid-template-columns: 1fr;
-        padding: 0;
-        gap: 0;
-        align-items: start;
-      }
-
-      /* Video: full width, on top */
-      .video-col {
-        order: -1;
-        width: 100%;
-        background: linear-gradient(to bottom, #000 90%, var(--bg));
-      }
-
-      .video-halo { display: none; }
-
-      .video-card {
-        max-width: 100%;
-        width: 100% !important;
-        aspect-ratio: unset;
-        height: 64vh;
-        border-radius: 0;
-        box-shadow: 0 24px 64px rgba(0,0,0,0.7);
-      }
-
-      /* Gold divider line below mobile video */
-      .video-col::after {
-        content: '';
-        display: block;
-        height: 2px;
-        width: 100%;
-        background: linear-gradient(90deg,
-          transparent 0%,
-          var(--gold-dark) 20%,
-          var(--gold) 50%,
-          var(--gold-dark) 80%,
-          transparent 100%);
-      }
-
-      /* Hero text block */
-      .hero-left {
-        padding: 36px 20px 52px;
-      }
-
-      .hero-badge { margin-bottom: 24px; }
-      .hero-title { font-size: 2.05rem; margin-bottom: 20px; }
-      .hero-desc { font-size: 0.96rem; margin-bottom: 32px; }
-
-      /* Stats */
-      .stats-section { padding: 40px 20px; }
-      .stats-inner {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 30px 16px;
-      }
-      .stat-div { display: none; }
-      .stat-num { font-size: 2.1rem; }
-
-      /* Features */
-      .features-section { padding: 72px 20px; }
-      .section-title { font-size: 1.95rem; }
-      .features-grid { grid-template-columns: 1fr; gap: 14px; }
-      .feature-card { padding: 32px 24px; }
-
-      /* How */
-      .how-section { padding: 72px 20px; }
-      .steps-grid {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
-      .steps-grid::before { display: none; }
-
-      /* CTA */
-      .cta-section-wrap { padding: 64px 20px; }
-      .cta-box { padding: 52px 28px; border-radius: 26px; }
-      .cta-box h2 { font-size: 1.75rem; }
-      .cta-box p { font-size: 0.94rem; }
-
-      /* Footer */
-      footer {
-        padding: 24px 20px;
-        padding-bottom: calc(24px + var(--safe-bottom));
-        flex-direction: column;
-        gap: 10px;
-        text-align: center;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .hero-title { font-size: 1.82rem; }
-      .video-card { height: 58vh; }
-      .subtitle-text { font-size: 0.82rem; }
-      .cta-btn { padding: 15px 28px; font-size: 0.88rem; }
-      .trust-row { gap: 14px; }
-    }
-
-    @media (max-width: 380px) {
-      .hero-title { font-size: 1.65rem; }
-      .video-card { height: 54vh; }
-    }
-  </style>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1"/>
+<title>Navia â Ihre digitale Versicherungsberaterin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+/* RESET */
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased}
+body{background:var(--bg);color:var(--text);font-family:'Inter',sans-serif;font-size:16px;line-height:1.6;overflow-x:hidden}
+/* TOKENS */
+:root{
+  --gold:#C4A44A;--gold-light:#D4B660;--gold-dim:rgba(196,164,74,0.15);
+  --bg:#09090E;--bg-2:#0D0D14;--bg-3:#12121A;--bg-4:#16161F;
+  --white:#FFFFFF;--text:#DEDAD2;--text-muted:#837F78;--text-dim:#5A5650;
+  --border:rgba(255,255,255,0.07);--border-gold:rgba(196,164,74,0.22);
+  --container:1420px;--padding-x:60px;--header-h:68px;
+  --radius:12px;--radius-lg:20px;--shadow-gold:0 0 40px rgba(196,164,74,0.12);
+  --green:#2ECC71;--red:#E74C3C;--orange:#F39C12;--blue:#3498DB;
+  --green-dim:rgba(46,204,113,0.12);--red-dim:rgba(231,76,60,0.12);
+  --orange-dim:rgba(243,156,18,0.12);--blue-dim:rgba(52,152,219,0.12);
+}
+/* TYPOGRAPHY */
+h1,h2,h3,h4{font-family:'Playfair Display',serif;line-height:1.2;color:var(--white)}
+h1{font-size:clamp(2rem,4vw,3.5rem);font-weight:500}
+h2{font-size:clamp(1.6rem,3vw,2.6rem);font-weight:500}
+h3{font-size:1.3rem;font-weight:500}
+h4{font-size:1.1rem;font-weight:500}
+em{font-style:italic}
+a{color:var(--gold);text-decoration:none}
+a:hover{color:var(--gold-light)}
+::-webkit-scrollbar{width:6px}
+::-webkit-scrollbar-track{background:var(--bg)}
+::-webkit-scrollbar-thumb{background:var(--border-gold);border-radius:3px}
+/* HEADER */
+#header{
+  position:fixed;top:0;left:0;right:0;z-index:100;height:var(--header-h);
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 var(--padding-x);background:rgba(9,9,14,0.92);
+  backdrop-filter:blur(20px);border-bottom:1px solid var(--border);
+}
+.logo{font-family:'Playfair Display',serif;font-size:1.5rem;font-weight:500;color:var(--white);cursor:pointer;user-select:none}
+.logo em{color:var(--gold);font-style:normal}
+.header-nav{display:flex;align-items:center;gap:8px}
+.nav-lang-group{display:flex;align-items:center;gap:2px;margin-right:8px}
+.nav-lang-btn{background:none;border:none;color:var(--text-muted);font-size:.8rem;font-family:'Inter',sans-serif;padding:4px 8px;cursor:pointer;border-radius:6px;letter-spacing:.05em;transition:color .2s,background .2s}
+.nav-lang-btn:hover,.nav-lang-btn.active{color:var(--gold);background:var(--gold-dim)}
+.btn{display:inline-flex;align-items:center;gap:6px;padding:10px 20px;border-radius:8px;font-size:.875rem;font-weight:500;cursor:pointer;transition:all .2s;border:none;font-family:'Inter',sans-serif}
+.btn-ghost{background:none;color:var(--text);border:1px solid var(--border)}
+.btn-ghost:hover{border-color:var(--border-gold);color:var(--gold)}
+.btn-gold{background:var(--gold);color:#000;font-weight:600}
+.btn-gold:hover{background:var(--gold-light);transform:translateY(-1px);box-shadow:var(--shadow-gold)}
+.btn-outline-gold{background:none;color:var(--gold);border:1px solid var(--border-gold)}
+.btn-outline-gold:hover{background:var(--gold-dim)}
+.btn-sm{padding:7px 14px;font-size:.8rem}
+.btn-lg{padding:14px 28px;font-size:1rem}
+.btn-danger{background:var(--red-dim);color:var(--red);border:1px solid rgba(231,76,60,0.25)}
+#header-user{display:flex;align-items:center;gap:10px}
+.avatar{width:34px;height:34px;border-radius:50%;background:var(--gold-dim);border:1.5px solid var(--border-gold);display:flex;align-items:center;justify-content:center;font-size:.8rem;font-weight:600;color:var(--gold);cursor:pointer}
+.header-name{font-size:.85rem;color:var(--text);max-width:140px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+/* MAIN */
+#main{padding-top:var(--header-h)}
+.page{display:none;min-height:calc(100vh - var(--header-h))}
+.page.active{display:block}
+/* LANDING */
+.lang-section{display:none}
+.lang-section.active{display:block}
+.hero{
+  min-height:calc(100vh - var(--header-h));
+  display:grid;grid-template-columns:1fr 1fr;gap:72px;align-items:center;
+  padding:80px var(--padding-x);max-width:var(--container);margin:0 auto;
+}
+.hero-left{display:flex;flex-direction:column;gap:28px}
+.hero-tag{display:inline-flex;align-items:center;gap:8px;padding:6px 14px;background:var(--gold-dim);border:1px solid var(--border-gold);border-radius:999px;font-size:.75rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gold);width:fit-content}
+.hero-tag::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
+.hero-title{font-size:clamp(2.4rem,4.5vw,4rem);font-weight:500;line-height:1.1;color:var(--white)}
+.hero-title em{color:var(--gold);font-style:italic}
+.hero-subtitle{color:var(--text-muted);font-size:1rem;line-height:1.7;max-width:480px;min-height:3.4em}
+.hero-subtitle span{display:none}
+.hero-subtitle span.active{display:inline}
+.trust-row{display:flex;flex-wrap:wrap;gap:16px;margin-top:4px}
+.trust-item{display:flex;align-items:center;gap:6px;font-size:.8rem;color:var(--text-muted)}
+.trust-check{display:inline-flex;width:16px;height:16px;border-radius:50%;background:var(--green-dim);border:1px solid rgba(46,204,113,0.3);align-items:center;justify-content:center;font-size:9px;color:var(--green)}
+.trust-check::after{content:'checkmark'}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.hero-right{display:flex;justify-content:center;align-items:center}
+.video-card{
+  position:relative;width:100%;max-width:420px;
+  aspect-ratio:9/16;max-height:82vh;
+  border-radius:var(--radius-lg);overflow:hidden;
+  border:1px solid var(--border-gold);box-shadow:var(--shadow-gold);
+}
+.video-card iframe{position:absolute;inset:0;width:100%;height:100%;border:none}
+.video-badge{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:rgba(9,9,14,.88);backdrop-filter:blur(12px);border:1px solid var(--border-gold);border-radius:8px;padding:8px 16px;font-size:.75rem;color:var(--text-muted);white-space:nowrap;display:flex;align-items:center;gap:6px}
+.video-badge::before{content:'';width:6px;height:6px;border-radius:50%;background:var(--gold);animation:pulse 2s infinite}
+.section{padding:80px var(--padding-x);max-width:var(--container);margin:0 auto}
+.section-label{font-size:.7rem;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:12px;font-weight:600}
+.section-title{font-size:clamp(1.8rem,3vw,2.8rem);margin-bottom:16px}
+.section-sub{color:var(--text-muted);max-width:560px;line-height:1.7}
+.divider{height:1px;background:var(--border);margin:0 var(--padding-x)}
+/* FEATURES */
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:48px}
+.feature-card{padding:32px;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-lg);transition:border-color .3s,transform .3s}
+.feature-card:hover{border-color:var(--border-gold);transform:translateY(-4px)}
+.feature-icon{width:48px;height:48px;border-radius:12px;background:var(--gold-dim);border:1px solid var(--border-gold);display:flex;align-items:center;justify-content:center;font-size:1.3rem;margin-bottom:20px}
+.feature-card h3{margin-bottom:8px;font-size:1.15rem}
+.feature-card p{color:var(--text-muted);font-size:.9rem;line-height:1.6}
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+.step{text-align:center;padding:28px 20px;background:var(--bg-2);border:1px solid var(--border);border-radius:var(--radius-lg)}
+.step-num{width:40px;height:40px;border-radius:50%;background:var(--gold-dim);border:1px solid var(--border-gold);display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:.85rem;font-weight:700;color:var(--gold)}
+.step h3{font-size:1rem;margin-bottom:6px}
+.step p{color:var(--text-muted);font-size:.85rem}
+/* FOOTER */
+.site-footer{padding:48px var(--padding-x);border-top:1px solid var(--border);max-width:var(--container);margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px}
+.site-footer p{color:var(--text-dim);font-size:.8rem}
+.footer-links{display:flex;gap:20px}
+.footer-links a{font-size:.8rem;color:var(--text-dim)}
+.footer-links a:hover{color:var(--gold)}
+/* AUTH MODAL */
+.modal-overlay{display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,.75);backdrop-filter:blur(8px);align-items:center;justify-content:center;padding:24px}
+.modal-overlay.open{display:flex}
+.modal{width:100%;max-width:440px;background:var(--bg-3);border:1px solid var(--border-gold);border-radius:var(--radius-lg);padding:40px;position:relative;animation:modalIn .25s ease}
+@keyframes modalIn{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
+.modal-close{position:absolute;top:16px;right:16px;background:none;border:none;color:var(--text-muted);font-size:1.2rem;cursor:pointer;width:32px;height:32px;display:flex;align-items:center;justify-content:center;border-radius:6px}
+.modal-close:hover{background:var(--border);color:var(--white)}
+.modal-logo{margin-bottom:24px}
+.modal-title{font-size:1.6rem;margin-bottom:6px}
+.modal-sub{color:var(--text-muted);font-size:.9rem;margin-bottom:28px}
+.form-group{margin-bottom:18px}
+.form-label{font-size:.8rem;font-weight:500;color:var(--text);margin-bottom:6px;display:block}
+.form-input{width:100%;padding:11px 14px;background:var(--bg-2);border:1px solid var(--border);border-radius:8px;color:var(--white);font-size:.9rem;font-family:'Inter',sans-serif;transition:border-color .2s;outline:none}
+.form-input:focus{border-color:var(--gold);box-shadow:0 0 0 3px rgba(196,164,74,.15)}
+.form-input::placeholder{color:var(--text-dim)}
+.form-error{font-size:.78rem;color:var(--red);margin-top:4px;display:none}
+.form-error.show{display:block}
+.modal-switch{text-align:center;margin-top:20px;font-size:.85rem;color:var(--text-muted)}
+.modal-switch button{background:none;border:none;color:var(--gold);cursor:pointer;font-size:.85rem;font-family:'Inter',sans-serif}
+.demo-hint{background:var(--gold-dim);border:1px solid var(--border-gold);border-radius:8px;padding:10px 14px;font-size:.78rem;color:var(--text-muted);margin-bottom:20px}
+.demo-hint strong{color:var(--gold)}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+/* APP LAYOUT */
+.app-layout{display:grid;grid-template-columns:240px 1fr;min-height:calc(100vh - var(--header-h))}
+.sidebar{background:var(--bg-2);border-right:1px solid var(--border);padding:24px 0;position:sticky;top:var(--header-h);height:calc(100vh - var(--header-h));overflow-y:auto}
+.sidebar-section{padding:0 12px;margin-bottom:8px}
+.sidebar-label{font-size:.65rem;letter-spacing:.15em;text-transform:uppercase;color:var(--text-dim);padding:0 12px;margin-bottom:4px;font-weight:600}
+.sidebar-nav-item{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:8px;color:var(--text-muted);font-size:.875rem;cursor:pointer;transition:all .2s;border:none;background:none;width:100%;font-family:'Inter',sans-serif;text-align:left}
+.sidebar-nav-item:hover{background:var(--border);color:var(--text)}
+.sidebar-nav-item.active{background:var(--gold-dim);color:var(--gold);border:1px solid var(--border-gold)}
+.nav-icon{font-size:1.05rem;width:20px;text-align:center}
+.sidebar-badge{margin-left:auto;background:var(--red);color:#fff;font-size:.65rem;padding:2px 6px;border-radius:999px;font-weight:600}
+.app-content{padding:32px 40px;overflow-y:auto}
+/* DASHBOARD */
+.page-header{margin-bottom:28px}
+.page-header h2{font-size:1.8rem;margin-bottom:4px}
+.page-header p{color:var(--text-muted);font-size:.9rem}
+.kpi-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:28px}
+.kpi-card{background:var(--bg-3);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:border-color .3s}
+.kpi-card:hover{border-color:var(--border-gold)}
+.kpi-label{font-size:.75rem;color:var(--text-muted);font-weight:500;letter-spacing:.04em;margin-bottom:8px}
+.kpi-value{font-size:1.6rem;font-family:'Playfair Display',serif;color:var(--white);font-weight:500}
+.kpi-sub{font-size:.75rem;color:var(--text-dim);margin-top:4px}
+.kpi-change{font-size:.75rem;margin-top:4px}
+.kpi-change.good{color:var(--green)}
+.kpi-change.warn{color:var(--orange)}
+.score-section{display:grid;grid-template-columns:1fr 2fr;gap:20px;margin-bottom:28px}
+.score-card{background:var(--bg-3);border:1px solid var(--border);border-radius:var(--radius);padding:24px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.score-ring{position:relative;width:100px;height:100px;margin-bottom:12px}
+.score-ring svg{transform:rotate(-90deg)}
+.score-ring circle{fill:none;stroke-width:8}
+.score-bg-circle{stroke:var(--border)}
+.score-fill-circle{stroke:var(--gold);stroke-linecap:round;stroke-dasharray:283;transition:stroke-dashoffset 1s ease}
+.score-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:1.5rem;font-family:'Playfair Display',serif;color:var(--white)}
+.score-label{font-size:.85rem;color:var(--text-muted);margin-bottom:4px}
+.score-desc{font-size:.75rem;color:var(--text-dim)}
+.gap-card{background:var(--bg-3);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.gap-card h4{font-size:1rem;margin-bottom:14px;font-family:'Inter',sans-serif;font-weight:600;color:var(--text)}
+.gap-list{display:flex;flex-direction:column;gap:8px}
+.gap-item{display:flex;align-items:center;gap:10px;padding:10px;background:var(--bg-2);border-radius:8px;font-size:.85rem}
+.gap-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
+.gap-dot.red{background:var(--red)}
+.gap-dot.orange{background:var(--orange)}
+.gap-dot.green{background:var(--green)}
+.gap-name{flex:1;color:var(--text)}
+.gap-badge{font-size:.7rem;padding:2px 8px;border-radius:999px;font-weight:600}
+.gap-badge.missing{background:var(--red-dim);color:var(--red)}
+.gap-badge.partial{background:var(--orange-dim);color:var(--orange)}
+.gap-badge.ok{background:var(--green-dim);color:var(--green)}
+.quick-actions{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:28px}
+.action-card{background:var(--bg-3);border:1px solid var(--border);border-radius:var(--radius);padding:20px;cursor:pointer;transition:all .2s;text-align:center}
+.action-card:hover{border-color:var(--border-gold);transform:translateY(-2px)}
+.action-icon{font-size:1.5rem;margin-bottom:8px}
+.action-label{font-size:.85rem;color:var(--text);font-weight:500}
+.action-sub{font-size:.75rem;color:var(--text-dim);margin-top:2px}
+.recent-activity{background:var(--bg-3);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.recent-activity h4{font-size:1rem;font-family:'Inter',sans-serif;font-weight:600;color:var(--text);margin-bottom:16px}
+.activity-list{display:flex;flex-direction:column;gap:10px}
+.activity-item{display:flex;align-items:center;gap:12px;padding:10px;background:var(--bg-2);border-radius:8px;font-size:.85rem}
+.activity-dot{width:8px;height:8px;border-radius:50%;flex-shrink:0;background:var(--gold)}
+.activity-text{flex:1;color:var(--text)}
+.activity-time{font-size:.75rem;color:var(--text-dim)}
+/* POLICIES */
+.policy-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.policy-toolbar .form-input{max-width:280px}
+.policy-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:16px}
+.policy-card{background:var(--bg-3);border:1px solid var(--border);border-radius:var(--radius);padding:20px;transition:border-color .3s}
+.policy-card:hover{border-color:var(--border-gold)}
+.policy-card-header{display:flex;align-items:flex-start;justify-content:space-between;margin-bottom:12px}
+.policy-type-badge{font-size:.7rem;padding:3px 10px;border-radius:999px;font-weight:600;letter-spacing:.04em}
+.badge-kranken{background:rgba(52,152,219,0.15);color:var(--blue)}
+.badge-auto{background:rgba(46,204,113,0.12);color:var(--green)}
+.badge-hausrat{background:rgba(243,156,18,0.12);color:var(--orange)}
+.badge-haftpflicht{background:var(--gold-dim);color:var(--gold)}
+.badge-leben{background:rgba(155,89,182,0.15);color:#9B59B6}
+.badge-reise{background:rgba(26,188,156,0.15);color:#1ABC9C}
+.policy-menu{background:none;border:none;color:var(--text-dim);cursor:pointer;font-size:1rem;padding:4px 8px;border-radius:6px}
+.policy-menu:hover{background:var(--border);color:var(--red)}
+.policy-name{font-size:1.05rem;font-family:'Playfair Display',serif;margin-bottom:4px}
+.policy-insurer{font-size:.8rem;color:var(--text-muted);margin-bottom:14px}
+.policy-meta{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.policy-meta-item{background:var(--bg-2);border-radius:6px;padding:8px 10px}
+.policy-meta-key{font-size:.68rem;color:var(--text-dim);text-transform:uppercase;letter-spacing:.05em;margin-bottom:2px}
+.policy-meta-val{font-size:.9rem;color:var(--text);font-weight:500}
+.policy-score-bar{margin-top:12px;height:4px;background:var(--border);border-radius:2px;overflow:hidden}
+.policy-score-fill{height:100%;background:var(--gold);border-radius:2px;transition:width 1s ease}
+.empty-state{text-align:center;padding:60px 20px}
+.empty-icon{font-size:3rem;margin-bottom:16px;opacity:.4}
+.empty-title{font-size:1.2rem;margin-bottom:8px}
+.empty-sub{color:var(--text-muted);font-size:.9rem;margin-bottom:24px}
+/* ADD POLICY MODAL */
+.add-policy-modal{max-width:540px}
+.policy-type-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:20px}
+.policy-type-btn{padding:12px 8px;background:var(--bg-2);border:1px solid var(--border);border-radius:8px;color:var(--text-muted);font-size:.78rem;cursor:pointer;text-align:center;transition:all .2s;font-family:'Inter',sans-serif}
+.policy-type-btn:hover,.policy-type-btn.selected{border-color:var(--border-gold);color:var(--gold);background:var(--gold-dim)}
+.policy-type-icon{font-size:1.3rem;display:block;margin-bottom:4px}
+/* ANALYSIS */
+.analysis-hero{background:var(--bg-2);border:1px solid var(--border-gold);border-radius:var(--radius-lg);padding:32px;margin-bottom:24px;display:flex;align-items:center;gap:32px}
+.analysis-score-wrap{flex-shrink:0}
+.analysis-score-ring{position:relative;width:120px;height:120px}
+.analysis-score-ring svg{transform:rotate(-90deg)}
+.analysis-score-num{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:1.8rem;font-family:'Playfair Display',serif;color:var(--white)}
+.analysis-text h2{font-size:1.5rem;margin-bottom:6px}
+.analysis-text p{color:var(--text-muted);font-size:.9rem;max-width:600px}
+.score-breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:12px}
+.score-metric{background:var(--bg-3);border:1px solid var(--border);border-radius:8px;padding:12px;text-align:center}
+.score-metric-val{font-size:1rem;font-weight:600;margin-bottom:2px}
+.score-metric-val.good{color:var(--green)}
+.score-metric-val.warn{color:var(--orange)}
+.score-metric-val.bad{color:var(--red)}
+.score-metric-label{font-size:.72rem;color:var(--text-dim)}
+.analysis-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-bottom:24px}
+.analysis-card{background:var(--bg-3);border:1px solid var(--border);border-radius:var(--radius);padding:24px}
+.analysis-card h4{font-size:.95rem;font-family:'Inter',sans-serif;font-weight:600;color:var(--text);margin-bottom:14px}
+.policy-analysis-list{display:flex;flex-direction:column;gap:10px}
+.policy-analysis-item{padding:12px;background:var(--bg-2);border-radius:8px;display:flex;align-items:center;gap:12px}
+.pai-icon{font-size:1.1rem;width:36px;height:36px;border-radius:8px;background:var(--bg-3);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.pai-info{flex:1}
+.pai-name{font-size:.9rem;font-weight:500;color:var(--text);margin-bottom:2px}
+.pai-detail{font-size:.75rem;color:var(--text-muted)}
+.pai-score{text-align:right}
+.pai-score-num{font-size:.9rem;font-weight:600}
+.pai-score-bar{height:3px;width:60px;background:var(--border);border-radius:2px;margin-top:4px}
+.pai-score-fill{height:100%;border-radius:2px}
+.gap-analysis-full{display:flex;flex-direction:column;gap:10px}
+.gap-full-item{padding:14px;background:var(--bg-2);border-radius:8px;border-left:3px solid transparent}
+.gap-full-item.missing{border-left-color:var(--red)}
+.gap-full-item.partial{border-left-color:var(--orange)}
+.gap-full-item.ok{border-left-color:var(--green)}
+.gap-full-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:4px}
+.gap-full-title{font-size:.9rem;font-weight:500;color:var(--text)}
+.gap-full-desc{font-size:.78rem;color:var(--text-muted)}
+/* RECOMMENDATIONS */
+.rec-summary{background:linear-gradient(135deg,rgba(196,164,74,0.12),rgba(196,164,74,0.04));border:1px solid var(--border-gold);border-radius:var(--radius-lg);padding:28px;margin-bottom:24px}
+.rec-summary-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.rec-summary-item{text-align:center}
+.rec-summary-val{font-size:1.8rem;font-family:'Playfair Display',serif;color:var(--gold);display:block;margin-bottom:4px}
+.rec-summary-label{font-size:.8rem;color:var(--text-muted)}
+.rec-list{display:flex;flex-direction:column;gap:16px}
+.rec-card{background:var(--bg-3);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:border-color .3s}
+.rec-card:hover{border-color:var(--border-gold)}
+.rec-card-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:12px;gap:12px}
+.rec-priority{font-size:.68rem;font-weight:600;padding:3px 10px;border-radius:999px;letter-spacing:.06em}
+.priority-high{background:var(--red-dim);color:var(--red)}
+.priority-medium{background:var(--orange-dim);color:var(--orange)}
+.priority-low{background:var(--green-dim);color:var(--green)}
+.rec-card h3{font-size:1.1rem;margin-bottom:6px}
+.rec-card p{font-size:.88rem;color:var(--text-muted);margin-bottom:14px;line-height:1.6}
+.rec-meta{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:14px}
+.rec-meta-item{display:flex;align-items:center;gap:6px;font-size:.82rem;color:var(--text-muted)}
+.rec-meta-item strong{color:var(--text)}
+.rec-footer{display:flex;align-items:center;justify-content:space-between;padding-top:14px;border-top:1px solid var(--border)}
+.rec-saving{font-size:.85rem;color:var(--green);font-weight:600}
+.rec-providers{display:flex;gap:8px}
+.provider-chip{font-size:.72rem;padding:3px 10px;background:var(--bg-2);border:1px solid var(--border);border-radius:999px;color:var(--text-muted)}
+/* TOAST */
+.toast-wrap{position:fixed;bottom:24px;right:24px;z-index:999;display:flex;flex-direction:column;gap:8px}
+.toast{padding:12px 18px;border-radius:10px;font-size:.85rem;backdrop-filter:blur(12px);border:1px solid;animation:toastIn .3s ease,toastOut .3s ease 2.7s forwards;max-width:320px}
+.toast.success{background:rgba(46,204,113,0.12);border-color:rgba(46,204,113,0.3);color:var(--green)}
+.toast.error{background:var(--red-dim);border-color:rgba(231,76,60,0.3);color:var(--red)}
+.toast.info{background:var(--gold-dim);border-color:var(--border-gold);color:var(--gold)}
+@keyframes toastIn{from{opacity:0;transform:translateX(40px)}to{opacity:1;transform:translateX(0)}}
+@keyframes toastOut{from{opacity:1}to{opacity:0;transform:translateX(40px)}}
+/* RESPONSIVE */
+@media(max-width:1100px){:root{--padding-x:32px}.hero{gap:40px}.kpi-grid{grid-template-columns:repeat(2,1fr)}.analysis-grid{grid-template-columns:1fr}.feature-grid{grid-template-columns:repeat(2,1fr)}.steps{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:900px){.app-layout{grid-template-columns:1fr}.sidebar{display:none}}
+@media(max-width:768px){:root{--padding-x:20px;--header-h:58px}.hero{grid-template-columns:1fr;gap:40px;padding:48px var(--padding-x)}.hero-right{order:-1}.video-card{max-width:300px;max-height:60vh}.kpi-grid{grid-template-columns:1fr 1fr}.quick-actions{grid-template-columns:1fr}.policy-grid{grid-template-columns:1fr}.score-section{grid-template-columns:1fr}.analysis-hero{flex-direction:column;text-align:center}.rec-summary-grid{grid-template-columns:1fr}.feature-grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.form-row{grid-template-columns:1fr}.site-footer{flex-direction:column;text-align:center}#header{padding:0 20px}.header-name{display:none}}
+@media(max-width:480px){.kpi-grid{grid-template-columns:1fr}.policy-type-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
 </head>
 <body>
-
-  <!-- ââââââââââââââââ HEADER ââââââââââââââââ -->
-  <header id="site-header">
-    <div class="logo-wrap">
-      <div class="logo">Nav<em>ia.</em></div>
-      <div class="logo-sub">Digitale Versicherungsberaterin</div>
+<header id="header">
+  <div class="logo" onclick="App.goHome()">Nav<em>ia.</em></div>
+  <nav class="header-nav" id="header-nav">
+    <div class="nav-lang-group" id="lang-switcher">
+      <button class="nav-lang-btn active" onclick="App.setLang('de')">DE</button>
+      <button class="nav-lang-btn" onclick="App.setLang('fr')">FR</button>
+      <button class="nav-lang-btn" onclick="App.setLang('it')">IT</button>
     </div>
-    <div class="lang-switcher">
-      <button class="lang-btn active" onclick="setLang('de')">DE</button>
-      <button class="lang-btn" onclick="setLang('fr')">FR</button>
-      <button class="lang-btn" onclick="setLang('it')">IT</button>
+    <div id="header-auth" style="display:flex;gap:8px">
+      <button class="btn btn-ghost btn-sm" onclick="Auth.showLogin()">Anmelden</button>
+      <button class="btn btn-gold btn-sm" onclick="Auth.showRegister()">Kostenlos starten</button>
     </div>
-  </header>
-
-  <!-- ââââââââââââââââââââââââââââââââââââââââ
-       DEUTSCH
-  ââââââââââââââââââââââââââââââââââââââââââââ -->
-  <div id="content-de" class="lang-content active">
-
-    <section class="hero">
-      <div class="hero-glow-1"></div>
-      <div class="hero-glow-2"></div>
-      <div class="hero-inner">
-
-        <!-- Linke Spalte: Text -->
-        <div class="hero-left">
-          <div class="hero-badge">
-            <span class="badge-dot"></span>
-            FÃ¼r die Schweiz &nbsp;Â·&nbsp; DE / FR / IT
-          </div>
-          <h1 class="hero-title">
-            Ihre persÃ¶nliche<br/>
-            <em>Versicherungs&shy;beraterin</em><br/>
-            fÃ¼r die Schweiz
-          </h1>
-          <p class="hero-desc">
-            Navia analysiert Ihr Profil und findet die besten Schweizer Versicherungen â
-            unabhÃ¤ngig, transparent und vollstÃ¤ndig kostenlos. In nur 3 Minuten erhalten
-            Sie massgeschneiderte Empfehlungen von Ã¼ber 30 Versicherern.
-          </p>
-          <a href="#" class="cta-btn">
-            <span>Kostenlose Beratung starten</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </a>
-          <div class="trust-row">
-            <span class="trust-item"><span class="trust-check" aria-hidden="true"></span>Kostenlos</span>
-            <span class="trust-item"><span class="trust-check" aria-hidden="true"></span>UnabhÃ¤ngig</span>
-            <span class="trust-item"><span class="trust-check" aria-hidden="true"></span>Datenschutzkonform</span>
-          </div>
-        </div>
-
-        <!-- Rechte Spalte: Video -->
-        <div class="video-col">
-          <div class="video-halo"></div>
-          <div class="video-card">
-            <iframe
-              src="https://app.heygen.com/embeds/93b37c854b8d4395a5134d3c805de861?autoplay=1&loop=0&muted=0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen
-              title="Navia â Digitale Versicherungsberaterin (Deutsch)"
-            ></iframe>
-            <div class="subtitle-overlay">
-              <div class="subtitle-text" id="sub-de"></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Kennzahlen -->
-    <div class="stats-section">
-      <div class="stats-inner">
-        <div class="stat-item reveal">
-          <div class="stat-num">30+</div>
-          <div class="stat-label">Schweizer Versicherer</div>
-        </div>
-        <div class="stat-div"></div>
-        <div class="stat-item reveal">
-          <div class="stat-num">3 Min</div>
-          <div class="stat-label">Beratungszeit</div>
-        </div>
-        <div class="stat-div"></div>
-        <div class="stat-item reveal">
-          <div class="stat-num">100%</div>
-          <div class="stat-label">Kostenlos &amp; UnabhÃ¤ngig</div>
-        </div>
-        <div class="stat-div"></div>
-        <div class="stat-item reveal">
-          <div class="stat-num">DEÂ·FRÂ·IT</div>
-          <div class="stat-label">Alle Landessprachen</div>
-        </div>
-      </div>
+    <div id="header-user" style="display:none;align-items:center;gap:10px">
+      <span class="header-name" id="header-username"></span>
+      <div class="avatar" id="user-avatar" onclick="App.navigate('dashboard')">?</div>
+      <button class="btn btn-ghost btn-sm" onclick="Auth.logout()">Abmelden</button>
     </div>
+  </nav>
+</header>
 
-    <!-- Vorteile -->
-    <section class="features-section">
-      <div class="section-eyebrow reveal">Ihre Vorteile</div>
-      <div class="section-title reveal">Warum Navia?</div>
-      <div class="features-grid">
-        <div class="feature-card reveal">
-          <div class="feat-icon">ð¡ï¸</div>
-          <h3>UnabhÃ¤ngige Beratung</h3>
-          <p>Wir vergleichen Angebote von Ã¼ber 30 Schweizer Versicherern â ohne versteckte Interessen oder Provisionen.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feat-icon">â¡</div>
-          <h3>In 3 Minuten zum Ergebnis</h3>
-          <p>Schnell, einfach und prÃ¤zise: Ihre persÃ¶nlichen Empfehlungen in nur 3 Minuten â jederzeit und Ã¼berall.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feat-icon">ð</div>
-          <h3>Datenschutz garantiert</h3>
-          <p>Ihre Daten sind bei uns sicher. VollstÃ¤ndig datenschutzkonform nach Schweizer und europÃ¤ischem Recht.</p>
-        </div>
-      </div>
-    </section>
+<main id="main">
+<!-- LANDING -->
+<div id="page-landing" class="page active">
 
-    <!-- So funktioniert's -->
-    <div class="how-section">
-      <div class="how-inner">
-        <div class="section-eyebrow reveal">So einfach geht's</div>
-        <div class="section-title reveal">In 3 Schritten zur Beratung</div>
-        <div class="steps-grid">
-          <div class="step reveal">
-            <div class="step-num">01</div>
-            <h3>Profil erstellen</h3>
-            <p>Beantworten Sie wenige Fragen zu Ihrer Situation und Ihren VersicherungsbedÃ¼rfnissen.</p>
-          </div>
-          <div class="step reveal">
-            <div class="step-num">02</div>
-            <h3>Angebote vergleichen</h3>
-            <p>Navia analysiert Ã¼ber 30 Schweizer Versicherer und stellt die besten Optionen fÃ¼r Sie zusammen.</p>
-          </div>
-          <div class="step reveal">
-            <div class="step-num">03</div>
-            <h3>Entscheidung treffen</h3>
-            <p>WÃ¤hlen Sie das passende Angebot â kostenlos, transparent und ohne jede Verpflichtung.</p>
-          </div>
-        </div>
-      </div>
+<!-- DE -->
+<div class="lang-section active" id="lang-de">
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">KI-Versicherungsberatung</div>
+    <h1 class="hero-title">Ihre digitale<br/><em>Beraterin</em><br/>fÃ¼r die Schweiz</h1>
+    <p class="hero-subtitle" id="de-subtitle">
+      <span class="active">Willkommen. Ich bin Navia, Ihre digitale Versicherungsberaterin.</span>
+      <span>Ich analysiere Ihren gesamten Versicherungsschutz â in Minuten.</span>
+      <span>Ich erkenne LÃ¼cken, spare Ihnen Geld und empfehle bessere LÃ¶sungen.</span>
+      <span>Massgeschneiderte Beratung â unabhÃ¤ngig, digital, transparent.</span>
+    </p>
+    <div class="trust-row">
+      <span class="trust-item"><span class="trust-check" aria-hidden="true"></span>Datenschutzkonform</span>
+      <span class="trust-item"><span class="trust-check" aria-hidden="true"></span>UnabhÃ¤ngig</span>
+      <span class="trust-item"><span class="trust-check" aria-hidden="true"></span>Kostenlos</span>
+      <span class="trust-item"><span class="trust-check" aria-hidden="true"></span>Swiss Made</span>
     </div>
-
-    <!-- Abschluss-CTA -->
-    <div class="cta-section-wrap">
-      <div class="cta-box reveal">
-        <h2>Bereit fÃ¼r Ihre kostenlose Beratung?</h2>
-        <p>Starten Sie jetzt und erhalten Sie in nur 3 Minuten massgeschneiderte Versicherungsempfehlungen von Ã¸ber 30 Schweizer Versicherern.</p>
-        <a href="#" class="cta-btn">
-          <span>Jetzt starten</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </a>
-        <div class="cta-trust">
-          <span class="trust-item"><span class="trust-check"></span>Kein Konto erforderlich</span>
-          <span class="trust-item"><span class="trust-check"></span>Ergebnis in 3 Minuten</span>
-          <span class="trust-item"><span class="trust-check"></span>Keine Verpflichtung</span>
-        </div>
-      </div>
+    <div class="hero-cta">
+      <button class="btn btn-gold btn-lg" onclick="Auth.showRegister()">Jetzt kostenlos starten &#8594;</button>
+      <button class="btn btn-ghost btn-lg" onclick="Auth.showLogin()">Anmelden</button>
     </div>
-
-  </div><!-- end content-de -->
-
-  <!-- ââââââââââââââââââââââââââââââââââââââââ
-       FRANÃAIS
-  ââââââââââââââââââââââââââââââââââââââââââââ -->
-  <div id="content-fr" class="lang-content">
-
-    <section class="hero">
-      <div class="hero-glow-1"></div>
-      <div class="hero-glow-2"></div>
-      <div class="hero-inner">
-        <div class="hero-left">
-          <div class="hero-badge">
-            <span class="badge-dot"></span>
-            Pour la Suisse &nbsp;Â·&nbsp; DE / FR / IT
-          </div>
-          <h1 class="hero-title">
-            Votre conseillÃ¨re<br/>
-            <em>digitale</em><br/>
-            en assurances en Suisse
-          </h1>
-          <p class="hero-desc">
-            Navia analyse votre profil et trouve les meilleures assurances suisses â
-            indÃ©pendante, transparente et entiÃ¨rement gratuite. Recevez des recommandations
-            personnalisÃ©es auprÃ¨s de plus de 30 assureurs en seulement 3 minutes.
-          </p>
-          <a href="#" class="cta-btn">
-            <span>Commencer le conseil gratuit</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </a>
-          <div class="trust-row">
-            <span class="trust-item"><span class="trust-check"></span>Gratuit</span>
-            <span class="trust-item"><span class="trust-check"></span>IndÃ©pendant</span>
-            <span class="trust-item"><span class="trust-check"></span>Conforme RGPD</span>
-          </div>
-        </div>
-        <div class="video-col">
-          <div class="video-halo"></div>
-          <div class="video-card">
-            <iframe
-              src="https://app.heygen.com/embeds/0fe2d536683846ccbc19aed71a1e8f4b?autoplay=1&loop=0&muted=0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen
-              title="Navia â ConseillÃ¨re en assurances (FranÃ§ais)"
-            ></iframe>
-            <div class="subtitle-overlay">
-              <div class="subtitle-text" id="sub-fr"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <div class="stats-section">
-      <div class="stats-inner">
-        <div class="stat-item reveal"><div class="stat-num">30+</div><div class="stat-label">Assureurs suisses</div></div>
-        <div class="stat-div"></div>
-        <div class="stat-item reveal"><div class="stat-num">3 Min</div><div class="stat-label">DurÃ©e du conseil</div></div>
-        <div class="stat-div"></div>
-        <div class="stat-item reveal"><div class="stat-num">100%</div><div class="stat-label">Gratuit &amp; IndÃ©pendant</div></div>
-        <div class="stat-div"></div>
-        <div class="stat-item reveal"><div class="stat-num">DEÂ·FRÂ·IT</div><div class="stat-label">Langues nationales</div></div>
-      </div>
+  </div>
+  <div class="hero-right">
+    <div class="video-card">
+      <iframe src="https://app.heygen.com/embeds/93b37c854b8d4395a5134d3c805de861" title="Navia DE" allowfullscreen allow="autoplay;encrypted-media"></iframe>
+      <div class="video-badge">KI-Beraterin Navia</div>
     </div>
+  </div>
+</section>
+<div class="divider"></div>
+<section class="section">
+  <div class="section-label">Warum Navia?</div>
+  <h2 class="section-title">Ihr Versicherungsschutz &#8211;<br/><em>intelligent analysiert</em></h2>
+  <p class="section-sub">Navia prÃ¼ft alle Ihre Policen, erkennt LÃ¸cken und findet bessere Konditionen â vollautomatisch.</p>
+  <div class="feature-grid">
+    <div class="feature-card"><div class="feature-icon">&#128269;</div><h3>VollstÃ¤ndige Analyse</h3><p>Alle Ihre Versicherungen in einer Ãbersicht â vollstÃ¤ndig analysiert und bewertet.</p></div>
+    <div class="feature-card"><div class="feature-icon">&#9889;</div><h3>LÃ¼ckenerkennung</h3><p>Automatische Erkennung von DeckungslÃ¸cken â bevor etwas passiert.</p></div>
+    <div class="feature-card"><div class="feature-icon">&#128176;</div><h3>Sparpotenzial</h3><p>Durchschnittlich CHF 480 Ersparnis pro Jahr durch optimierten Schutz.</p></div>
+  </div>
+</section>
+<div class="divider"></div>
+<section class="section">
+  <div class="section-label">So funktioniert es</div>
+  <h2 class="section-title">In vier Schritten zu Ihrem <em>optimalen Schutz</em></h2>
+  <div class="steps">
+    <div class="step"><div class="step-num">1</div><h3>Registrieren</h3><p>Kostenlos anmelden</p></div>
+    <div class="step"><div class="step-num">2</div><h3>Policen erfassen</h3><p>Versicherungen eingeben</p></div>
+    <div class="step"><div class="step-num">3</div><h3>Analysieren</h3><p>KI prÃ¼ft Schutz</p></div>
+    <div class="step"><div class="step-num">4</div><h3>Optimieren</h3><p>Bessere Angebote</p></div>
+  </div>
+</section>
+<footer class="site-footer">
+  <p>&#169; 2025 Navia &#8211; Intelligente Versicherungsberatung</p>
+  <div class="footer-links"><a href="#">Datenschutz</a><a href="#">Impressum</a><a href="#">AGB</a></div>
+</footer>
+</div>
 
-    <section class="features-section">
-      <div class="section-eyebrow reveal">Vos avantages</div>
-      <div class="section-title reveal">Pourquoi Navia ?</div>
-      <div class="features-grid">
-        <div class="feature-card reveal">
-          <div class="feat-icon">ð¡ï¸</div>
-          <h3>Conseil indÃ©pendant</h3>
-          <p>Nous comparons les offres de plus de 30 assureurs suisses â sans intÃ©rÃªts cachÃ©s ni commissions.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feat-icon">â¡</div>
-          <h3>RÃ©sultat en 3 minutes</h3>
-          <p>Rapide, simple et prÃ©cis : vos recommandations personnelles en seulement 3 minutes â partout et Ã  tout moment.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feat-icon">ð</div>
-          <h3>Protection des donnÃ©es</h3>
-          <p>Vos donnÃ©es sont en sÃ©curitÃ©. EntiÃ¨rement conforme au RGPD et au droit suisse de la protection des donnÃ©es.</p>
-        </div>
-      </div>
-    </section>
+<!-- FR -->
+<div class="lang-section" id="lang-fr">
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-tag">Conseil assurances IA</div>
+    <h1 class="hero-title">Votre conseill&#232;re<br/><em>digitale</em><br/>en assurances pour la Suisse</h1>
+    <p class="hero-subtitle" id="fr-subtitle">
+      <span class="active">Bienvenue. Je suis Navia, votre conseill&#232;re digitale en assurances.</span>
+      <span>J&#8217;analyse l&#8217;ensemble de vos assurances &#8211; en quelques minutes.</span>
+      <span>Je d&#233;tecte les lacunes, &#233;ÛÛZ\ÙHÝH\Ù[]XÛÛ[X[HHYZ[]\\ÈÛÛ][ÛËÜÜ[Ü[ÛÛÙZ[Ý\Y\Ý\H	ÎLNÈ[	ÌÌÎÜ[[YÚ][[Ü\[ÜÜ[Ü]Û\ÜÏH\Ý\ÝÈÜ[Û\ÜÏH\ÝZ][HÜ[Û\ÜÏH\ÝXÚXÚÈ\XKZY[HYHÜÜ[ÛÛÜYHÔÜÜ[Ü[Û\ÜÏH\ÝZ][HÜ[Û\ÜÏH\ÝXÚXÚÈ\XKZY[HYHÜÜ[[	ÌÌÎÜ[[OÜÜ[Ü[Û\ÜÏH\ÝZ][HÜ[Û\ÜÏH\ÝXÚXÚÈ\XKZY[HYHÜÜ[Ü]Z]OÜÜ[Ü[Û\ÜÏH\ÝZ][HÜ[Û\ÜÏH\ÝXÚXÚÈ\XKZY[HYHÜÜ[ÝÚ\ÜÈXYOÜÜ[Ù]]Û\ÜÏH\ËXÝH]ÛÛ\ÜÏHYÛÛ[ÈÛÛXÚÏH]]ÚÝÔYÚ\Ý\
+HÛÛ[Y[Ù\Ü]Z][Y[	Î
+NMÏØ]Û]ÛÛ\ÜÏHYÚÜÝ[ÈÛÛXÚÏH]]ÚÝÓÙÚ[
+HÙHÛÛXÝ\Ø]ÛÙ]Ù]]Û\ÜÏH\Ë\YÚ]Û\ÜÏHY[ËXØ\Y[YHÜÏHÎËØ\^YÙ[ÛÛKÙ[XYËÌL
+LÍÎ
 
-    <div class="how-section">
-      <div class="how-inner">
-        <div class="section-eyebrow reveal">C'est si simple</div>
-        <div class="section-title reveal">En 3 Ã©tapes vers le conseil</div>
-        <div class="steps-grid">
-          <div class="step reveal">
-            <div class="step-num">01</div>
-            <h3>CrÃ©er votre profil</h3>
-            <p>RÃ©pondez Ã  quelques questions sur votre situation et vos besoins en assurance.</p>
-          </div>
-          <div class="step reveal">
-            <div class="step-num">02</div>
-            <h3>Comparer les offres</h3>
-            <p>Navia analyse plus de 30 assureurs suisses et sÃ©lectionne les meilleures options pour vous.</p>
-          </div>
-          <div class="step reveal">
-            <div class="step-num">03</div>
-            <h3>Prendre votre dÃ©cision</h3>
-            <p>Choisissez l'offre qui vous convient â gratuite, transparente et sans engagement.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+ØØÌNXYY
+ÌXLYN]OH]XH[ÝÙ[ØÜY[[ÝÏH]]Ü^NÙ[Ü\Y[YYXHÚY[YO]Û\ÜÏHY[ËXYÙHÛÛÙZ[	ÌÌÜHPH]XOÙ]Ù]Ù]ÜÙXÝ[Û]Û\ÜÏH]Y\Ù]ÙXÝ[ÛÛ\ÜÏHÙXÝ[Û]Û\ÜÏHÙXÝ[Û[X[Ý\][ÚH]XOÏÙ]Û\ÜÏHÙXÝ[Û]]HÝHÛÝ]\\H	ÎLNÏÏ[O[[\ÉÌÌÎÙH[[YÙ[[Y[Ù[OÚÛ\ÜÏHÙXÝ[Û\ÝX]XH^[Z[HÝ]\ÈÜÈÛXÙ\Ë	ÌÌÎÝXÝH\ÈXÝ[\È]Ý]HHYZ[]\\ÈÛÛ][ÛÈ	ÎLNÈ]]ÛX]\]Y[Y[Ü]Û\ÜÏHX]\KYÜY]Û\ÜÏHX]\KXØ\]Û\ÜÏHX]\KZXÛÛÌLNÏÙ]Ï[[\ÙHÛÛ\	ÌÌÝOÚÏÝ]\ÈÜÈ\ÜÝ\[Ù\È[[ÛÝ\	ÎMÎÉÌÌÎNÚ[	ÎLNÈ[IÌÌÜ[Y[[[\ÉÌÌÎÙ\ËÜÙ]]Û\ÜÏHX]\KXØ\]Û\ÜÏHX]\KZXÛÛÎNNÏÙ]Ï	ÌÌÎÝXÝ[Û\ÈXÝ[\ÏÚÏY[YXØ][Û]]ÛX]\]YH\ÈXÝ[\ÈHÛÝ]\\KÜÙ]]Û\ÜÏHX]\KXØ\]Û\ÜÏHX]\KZXÛÛÌLMÍÏÙ]ÏÝ[Y[	ÎMÎÉÌÌÎØÛÛÛZY\ÏÚÏ[[ÞY[HÒ
+	ÎMÎÉÌÌÎØÛÛÛZY\È\[ÜÙ]Ù]ÜÙXÝ[ÛÛÝ\Û\ÜÏHÚ]KYÛÝ\ÌMNÈH]XH	ÎLNÈÛÛÙZ[[\ÜÝ\[Ù\È[[YÙ[Ü]Û\ÜÏHÛÝ\[[ÜÈHYHÈÝXÝ[Û\ÈÛÌÌÎÙ\ÏØOHYHÈY[[ÛÈ	ÌÌÎÙØ[\ÏØOHYHÈÑÕOØOÙ]ÙÛÝ\Ù]KKHUKO]Û\ÜÏH[Ë\ÙXÝ[ÛYH[ËZ]ÙXÝ[ÛÛ\ÜÏH\È]Û\ÜÏH\Ë[Y]Û\ÜÏH\Ë]YÈÛÛÝ[[H\ÜÚXÝ\]]HROÙ]HÛ\ÜÏH\Ë]]HHXHÛÛÝ[[OÏ[OYÚ][OÙ[OÏ\HÝ^\OÚOÛ\ÜÏH\Ë\ÝX]HYH]\ÝX]HÜ[Û\ÜÏHXÝ]H[[]ËÛÛÈ]XKHXHÛÛÝ[[HYÚ][H\ÜÚXÝ\]]KÜÜ[Ü[[[^È]HHYH\ÜÚXÝ\^[ÛH	ÎLNÈ[ØÚHZ[]KÜÜ[Ü[[]Y[ÈHXÝ[K\Ü\Z[È[[È[\ÈHXØÛÛX[ÈÛÛ^[ÛHZYÛ[ÜKÜÜ[Ü[ÛÛÝ[[HÝHZ\Ý\H	ÎLNÈ[\[[KYÚ][K\Ü\[KÜÜ[Ü]Û\ÜÏH\Ý\ÝÈÜ[Û\ÜÏH\ÝZ][HÜ[Û\ÜÏH\ÝXÚXÚÈ\XKZY[HYHÜÜ[Ý^[ÛH]OÜÜ[Ü[Û\ÜÏH\ÝZ][HÜ[Û\ÜÏH\ÝXÚXÚÈ\XKZY[HYHÜÜ[[\[[OÜÜ[Ü[Û\ÜÏH\ÝZ][HÜ[Û\ÜÏH\ÝXÚXÚÈ\XKZY[HYHÜÜ[Ü]Z]OÜÜ[Ü[Û\ÜÏH\ÝZ][HÜ[Û\ÜÏH\ÝXÚXÚÈ\XKZY[HYHÜÜ[ÝÚ\ÜÈXYOÜÜ[Ù]]Û\ÜÏH\ËXÝH]ÛÛ\ÜÏHYÛÛ[ÈÛÛXÚÏH]]ÚÝÔYÚ\Ý\
+H[^XHÜ]Z][Y[H	Î
+NMÏØ]Û]ÛÛ\ÜÏHYÚÜÝ[ÈÛÛXÚÏH]]ÚÝÓÙÚ[
+HXØÙYOØ]ÛÙ]Ù]]Û\ÜÏH\Ë\YÚ]Û\ÜÏHY[ËXØ\Y[YHÜÏHÎËØ\^YÙ[ÛÛKÙ[XYËÙNLM
+ØÌ
+MXMMYXMYÙ]OH]XHU[ÝÙ[ØÜY[[ÝÏH]]Ü^NÙ[Ü\Y[YYXHÚY[YO]Û\ÜÏHY[ËXYÙHÛÛÝ[[HRH]XOÙ]Ù]Ù]ÜÙXÝ[Û]Û\ÜÏH]Y\Ù]ÙXÝ[ÛÛ\ÜÏHÙXÝ[Û]Û\ÜÏHÙXÝ[Û[X[\Ú	ÌÌÎÈ]XOÏÙ]Û\ÜÏHÙXÝ[Û]]HHXHÛÜ\\H	ÎLNÏÏ[O[[^]H[[ÙÈ[[YÙ[OÙ[OÚÛ\ÜÏHÙXÝ[Û\ÝX]XH\Ø[Z[H]HHYHÛ^K[]HHXÝ[HHÝHÛÛ^[ÛHZYÛ[ÜH	ÎLNÈ]]ÛX]XØ[Y[KÜ]Û\ÜÏHX]\KYÜY]Û\ÜÏHX]\KXØ\]Û\ÜÏHX]\KZXÛÛÌLNÏÙ]Ï[[\ÚHÛÛ\]OÚÏ]HHYH\ÜÚXÝ\^[ÛH[[ÎMÎÝ[XØH[Ü[ZXØH	ÎLNÈÛÛ\][Y[H[[^]KÜÙ]]Û\ÜÏHX]\KXØ\]Û\ÜÏHX]\KZXÛÛÎNNÏÙ]Ï[][Y[ÈXÝ[OÚÏY[YXØ^[ÛH]]ÛX]XØH[HXÝ[HHÛÜ\\KÜÙ]]Û\ÜÏHX]\KXØ\]Û\ÜÏHX]\KZXÛÛÌLMÍÏÙ]ÏÝ[X[HH\Ü\Z[ÏÚÏ[YYXHÒ
+H\Ü\Z[È[	ÎMÎØ[ËÜÙ]Ù]ÜÙXÝ[ÛÛÝ\Û\ÜÏHÚ]KYÛÝ\ÌMNÈH]XH	ÎLNÈÛÛÝ[[H\ÜÚXÝ\]]H[[YÙ[OÜ]Û\ÜÏHÛÝ\[[ÜÈHYHÈ]XÞOØOHYHÈÝHYØ[OØOHYHÈÑÐÏØOÙ]ÙÛÝ\Ù]Ù]KKHÜYÙK[[[ÈKOKKHTKO]YHYÙKX\Û\ÜÏHYÙHÝ[OH\Ü^NÛH]Û\ÜÏH\[^[Ý]\ÚYHÛ\ÜÏHÚYX\YH\\ÚYX\]Û\ÜÏHÚYX\\ÙXÝ[Û]Û\ÜÏHÚYX\[X[]YØ][ÛÙ]]ÛÛ\ÜÏHÚYX\[]Z][HXÝ]H]K\Ý]OH\ÚØ\ÛÛXÚÏH\]YØ]J	Ù\ÚØ\	ÊHÜ[Û\ÜÏH]ZXÛÛÌLÏÜÜ[\ÚØ\Ø]Û]ÛÛ\ÜÏHÚYX\[]Z][H]K\Ý]OHÛXÚY\ÈÛÛXÚÏH\]YØ]J	ÜÛXÚY\ÉÊHÜ[Û\ÜÏH]ZXÛÛÌLNLÎÏÜÜ[YZ[HÛXÙ[Ø]Û]ÛÛ\ÜÏHÚYX\[]Z][H]K\Ý]OH[[\Ú\ÈÛÛXÚÏH\]YØ]J	Ø[[\Ú\ÉÊHÜ[Û\ÜÏH]ZXÛÛÌLNÏÜÜ[[[\ÙBØ]Û]ÛÛ\ÜÏHÚYX\[]Z][H]K\Ý]OHXÛÛ[Y[][ÛÈÛÛXÚÏH\]YØ]J	ÜXÛÛ[Y[][ÛÉÊHÜ[Û\ÜÏH]ZXÛÛÌLMNÏÜÜ[[\Z[Ù[Ü[Û\ÜÏHÚYX\XYÙHÏÜÜ[Ø]ÛÙ]]Û\ÜÏHÚYX\\ÙXÝ[ÛÝ[OHX\Ú[]ÜÜY[Ë]ÜMØÜ\]Ü\ÛÛY\KXÜ\H]ÛÛ\ÜÏHÚYX\[]Z][HÛÛXÚÏH]]ÙÛÝ]
 
-    <div class="cta-section-wrap">
-      <div class="cta-box reveal">
-        <h2>PrÃªt pour votre conseil gratuit ?</h2>
-        <p>Commencez maintenant et recevez des recommandations d'assurance personnalisÃ©es en seulement 3 minutes.</p>
-        <a href="#" class="cta-btn">
-          <span>Commencer maintenant</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </a>
-        <div class="cta-trust">
-          <span class="trust-item"><span class="trust-check"></span>Aucun compte requis</span>
-          <span class="trust-item"><span class="trust-check"></span>RÃ©sultat immÃ©diat</span>
-          <span class="trust-item"><span class="trust-check"></span>Sans engagement</span>
-        </div>
-      </div>
-    </div>
+HÜ[Û\ÜÏH]ZXÛÛÌL
+ÏÜÜ[XY[[Ø]ÛÙ]Ø\ÚYO]Û\ÜÏH\XÛÛ[YH\XÛÛ[KKHTÒÐTKO]YHY]ËY\ÚØ\Û\ÜÏH\]Y]È]Û\ÜÏHYÙKZXY\YH\ÚYÜY][ÈÝ][YÏÚY\\ÝZZÝY[\\ÚXÚ\[Üðï\XÚËÜÙ]]Û\ÜÏHÜKYÜY]Û\ÜÏHÜKXØ\]Û\ÜÏHÜK[X[ÌL
+ÌÍÎÈZÝ]HÛXÙ[Ù]]Û\ÜÏHÜK][YHYHÜK\ÛXÚY\ÈÙ]]Û\ÜÏHÜK\ÝX\ÚXÚ\[Ù[\\ÜÝÙ]Ù]]Û\ÜÏHÜKXØ\]Û\ÜÏHÜK[X[ÌLNÈ[Û]Ü°éZYOÙ]]Û\ÜÏHÜK][YHYHÜK\[Z][HÒ
+LOÙ]]Û\ÜÏHÜK\ÝXÝ[È[Û]Ù]Ù]]Û\ÜÏHÜKXØ\]Û\ÜÏHÜK[X[ÎNÈXÚÝ[ÜÛ0ïÚÙ[Ù]]Û\ÜÏHÜK][YHYHÜKYØ\ÈÝ[OHÛÛÜ\K[Ü[ÙJHÏÙ]]Û\ÜÏHÜK\ÝX[[ÜØY\Ù]]Û\ÜÏHÜKXÚ[ÙHØ\[[\ÙH[\Ú[Ù]Ù]]Û\ÜÏHÜKXØ\]Û\ÜÏHÜK[X[ÌLMÍÈÜ\Ý[X[Ù]]Û\ÜÏHÜK][YHYHÜK\Ø][ÜÈÝ[OHÛÛÜ\KYÜY[HÒ
 
-  </div><!-- end content-fr -->
+OÙ]]Û\ÜÏHÜK\ÝXÈ[Û]píÛXÚÙ]]Û\ÜÏHÜKXÚ[ÙHÛÛÙÐÒ
+MÒZÙ]Ù]Ù]]Û\ÜÏHØÛÜK\ÙXÝ[Û]Û\ÜÏHØÛÜKXØ\]Û\ÜÏHØÛÜK\[ÈÝÈÚYHLZYÚHLY]ÐÞHLLÚ\ÛHÛ\ÜÏHØÛÜKXËXÚ\ÛHÞHLÞOHLH
+HÏÚ\ÛHÛ\ÜÏHØÛÜKY[XÚ\ÛHYHØÛÜKXÚ\ÛHÞHLÞOHLH
+HÝÚÙKY\ÚÙÙ]HLÏÜÝÏ]Û\ÜÏHØÛÜK[[HÙ]Ù]]Û\ÜÏHØÛÜK[X[XÚÝ[ÜÙÜYÙ]]Û\ÜÏHØÛÜKY\ØÈÛL[Ý[Ù]Ù]]Û\ÜÏHØ\XØ\
+\Ø[H0îÚÙ[	[\ÈÝ]\ÏÚ
+]Û\ÜÏHØ\[\Ý]Û\ÜÏHØ\Z][H]Û\ÜÏHØ\YÝYÙ]Ü[Û\ÜÏHØ\[[YHXÚÜØÚ]ÜÜ[Ü[Û\ÜÏHØ\XYÙHZ\ÜÚ[ÈZ[ÜÜ[Ù]]Û\ÜÏHØ\Z][H]Û\ÜÏHØ\YÝYÙ]Ü[Û\ÜÏHØ\[[YHZ\Ù]\ÚXÚ\[ÏÜÜ[Ü[Û\ÜÏHØ\XYÙHZ\ÜÚ[ÈZ[ÜÜ[Ù]]Û\ÜÏHØ\Z][H]Û\ÜÏHØ\YÝÜ[ÙHÙ]Ü[Û\ÜÏHØ\[[YH]\Ü]
+ÒÊOÜÜ[Ü[Û\ÜÏHØ\XYÙH\X[[\ZXÚ[ÜÜ[Ù]]Û\ÜÏHØ\Z][H]Û\ÜÏHØ\YÝÜY[Ù]Ü[Û\ÜÏHØ\[[YHÜ[Ù[Ø\ÜÙOÜÜ[Ü[Û\ÜÏHØ\XYÙHÚÈÙYXÚÝÜÜ[Ù]]Û\ÜÏHØ\Z][H]Û\ÜÏHØ\YÝÜY[Ù]Ü[Û\ÜÏHØ\[[YHYXÚÜÜ[Ü[Û\ÜÏHØ\XYÙHÚÈÙYXÚÝÜÜ[Ù]Ù]Ù]Ù]]Û\ÜÏH]ZXÚËXXÝ[ÛÈ]Û\ÜÏHXÝ[ÛXØ\ÛÛXÚÏH\]YØ]J	ÜÛXÚY\ÉÊNÜÙ][Y[Ý]
 
-  <!-- ââââââââââââââââââââââââââââââââââââââââ
-       ITALIANO
-  ââââââââââââââââââââââââââââââââââââââââââââ -->
-  <div id="content-it" class="lang-content">
 
-    <section class="hero">
-      <div class="hero-glow-1"></div>
-      <div class="hero-glow-2"></div>
-      <div class="hero-inner">
-        <div class="hero-left">
-          <div class="hero-badge">
-            <span class="badge-dot"></span>
-            Per la Svizzera &nbsp;Â·&nbsp; DE / FR / IT
-          </div>
-          <h1 class="hero-title">
-            La tua consulente<br/>
-            <em>assicurativa</em><br/>
-            digitale in Svizzera
-          </h1>
-          <p class="hero-desc">
-            Navia analizza il tuo profilo e trova le migliori assicurazioni svizzere â
-            indipendente, trasparente e completamente gratuita. Ricevi raccomandazioni
-            personalizzate da oltre 30 assicuratori in soli 3 minuti.
-          </p>
-          <a href="#" class="cta-btn">
-            <span>Inizia la consulenza gratuita</span>
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-            </svg>
-          </a>
-          <div class="trust-row">
-            <span class="trust-item"><span class="trust-check"></span>Gratuito</span>
-            <span class="trust-item"><span class="trust-check"></span>Indipendente</span>
-            <span class="trust-item"><span class="trust-check"></span>Conforme GDPR</span>
-          </div>
-        </div>
-        <div class="video-col">
-          <div class="video-halo"></div>
-          <div class="video-card">
-            <iframe
-              src="https://app.heygen.com/embeds/e9146cc0f2054269b6db8156d1ea5fcf?autoplay=1&loop=0&muted=0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowfullscreen
-              title="Navia â Consulente assicurativa (Italiano)"
-            ></iframe>
-            <div class="subtitle-overlay">
-              <div class="subtitle-text" id="sub-it"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
+OOÛXÚY\ËÜ[Y[Ù[
 
-    <div class="stats-section">
-      <div class="stats-inner">
-        <div class="stat-item reveal"><div class="stat-num">30+</div><div class="stat-label">Assicuratori svizzeri</div></div>
-        <div class="stat-div"></div>
-        <div class="stat-item reveal"><div class="stat-num">3 Min</div><div class="stat-label">Durata consulenza</div></div>
-        <div class="stat-div"></div>
-        <div class="stat-item reveal"><div class="stat-num">100%</div><div class="stat-label">Gratuito &amp; Indipendente</div></div>
-        <div class="stat-div"></div>
-        <div class="stat-item reveal"><div class="stat-num">DEÂ·FRÂ·IT</div><div class="stat-label">Tutte le lingue</div></div>
-      </div>
-    </div>
+K
+H]Û\ÜÏHXÝ[ÛZXÛÛÍÎÏÙ]]Û\ÜÏHXÝ[Û[X[ÛXÙH[Y°ïÙ[Ù]]Û\ÜÏHXÝ[Û\ÝX]YH\ÚXÚ\[È\\ÜÙ[Ù]Ù]]Û\ÜÏHXÝ[ÛXØ\ÛÛXÚÏH\]YØ]J	Ø[[\Ú\ÉÊH]Û\ÜÏHXÝ[ÛZXÛÛÌLNÏÙ]]Û\ÜÏHXÝ[Û[X[[[\ÙHÝ\[Ù]]Û\ÜÏHXÝ[Û\ÝXÛÝ0éYÙH°ï[ÏÙ]Ù]]Û\ÜÏHXÝ[ÛXØ\ÛÛXÚÏH\]YØ]J	ÜXÛÛ[Y[][ÛÉÊH]Û\ÜÏHXÝ[ÛZXÛÛÌLMNÏÙ]]Û\ÜÏHXÝ[Û[X[[\Z[Ù[Ù]]Û\ÜÏHXÝ[Û\ÝXÈ]YH[ÙXÝOÙ]Ù]Ù]]Û\ÜÏHXÙ[XXÝ]]H
+]HZÝ]]0é[Ú
+]Û\ÜÏHXÝ]]K[\Ý]Û\ÜÏHXÝ]]KZ][H]Û\ÜÏHXÝ]]KYÝÙ]Ü[Û\ÜÏHXÝ]]K]^[[\ÙHXÙ\ØÚÜÜÙ[	ÎLNÈÈ0ïÚÙ[ÙY[[ÜÜ[Ü[Û\ÜÏHXÝ]]K][YH]]OÜÜ[Ù]]Û\ÜÏHXÝ]]KZ][H]Û\ÜÏHXÝ]]KYÝÙ]Ü[Û\ÜÏHXÝ]]K]^[[ËQ][Ù[Y[
 
-    <section class="features-section">
-      <div class="section-eyebrow reveal">I tuoi vantaggi</div>
-      <div class="section-title reveal">PerchÃ© Navia?</div>
-      <div class="features-grid">
-        <div class="feature-card reveal">
-          <div class="feat-icon">ð¡ï¸</div>
-          <h3>Consulenza indipendente</h3>
-          <p>Confrontiamo le offerte di oltre 30 assicuratori svizzeri â senza interessi nascosti o commissioni.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feat-icon">â¡</div>
-          <h3>Risultato in 3 minuti</h3>
-          <p>Rapido, semplice e preciso: le tue raccomandazioni personali in soli 3 minuti â ovunque e in qualsiasi momento.</p>
-        </div>
-        <div class="feature-card reveal">
-          <div class="feat-icon">ð</div>
-          <h3>Protezione dei dati</h3>
-          <p>I tuoi dati sono al sicuro. Pienamente conforme al GDPR e al diritto svizzero sulla protezione dei dati.</p>
-        </div>
-      </div>
-    </section>
+ÛXÙ[OÜÜ[Ü[Û\ÜÏHXÝ]]K][YH]]OÜÜ[Ù]]Û\ÜÏHXÝ]]KZ][H]Û\ÜÏHXÝ]]KYÝÙ]Ü[Û\ÜÏHXÝ]]K]^ÛÛÈ\ÛÜZXÚ\Ý[ÜÜ[Ü[Û\ÜÏHXÝ]]K][YH]]OÜÜ[Ù]Ù]Ù]Ù]KKHÓPÒQTÈKO]YHY]Ë\ÛXÚY\ÈÛ\ÜÏH\]Y]ÈÝ[OH\Ü^NÛH]Û\ÜÏHYÙKZXY\Ý[OH\Ü^N^Ú\ÝYKXÛÛ[ÜXÙKX]ÙY[Ø[YÛZ][\Î^\Ý\]YZ[HÛXÙ[Ú\Ø[[ÚYH[HZH\ÚXÚ\[Ù[[Z[[HÜÜÙ]]ÛÛ\ÜÏHYÛÛÛÛXÚÏHÛXÚY\ËÜ[Y[Ù[
 
-    <div class="how-section">
-      <div class="how-inner">
-        <div class="section-eyebrow reveal">Ã cosÃ¬ semplice</div>
-        <div class="section-title reveal">In 3 passi verso la consulenza</div>
-        <div class="steps-grid">
-          <div class="step reveal">
-            <div class="step-num">01</div>
-            <h3>Crea il tuo profilo</h3>
-            <p>Rispondi ad alcune domande sulla tua situazione e le tue esigenze assicurative.</p>
-          </div>
-          <div class="step reveal">
-            <div class="step-num">02</div>
-            <h3>Confronta le offerte</h3>
-            <p>Navia analizza oltre 30 assicuratori svizzeri e seleziona le migliori opzioni per te.</p>
-          </div>
-          <div class="step reveal">
-            <div class="step-num">03</div>
-            <h3>Prendi la tua decisione</h3>
-            <p>Scegli l'offerta piÃ¹ adatta a te â gratuita, trasparente e senza alcun impegno.</p>
-          </div>
-        </div>
-      </div>
-    </div>
+HÍÎÈÛXÙH[Y°ïÙ[Ø]ÛÙ]]Û\ÜÏHÛXÞK]ÛÛ\[]Û\ÜÏHÜKZ[]\OHÙX\ÚXÙZÛ\HÛXÙ[\ÚÝXÚ[ÎÌÈÛ[]HÛXÚY\Ë[\\Ë[YJHYHÛXÞK\ÙX\ÚÏÙ]]Û\ÜÏHÛXÞKYÜYYHÛXÞKYÜYÙ]Ù]KKHSSTÒTÈKO]YHY]ËX[[\Ú\ÈÛ\ÜÏH\]Y]ÈÝ[OH\Ü^NÛH]Û\ÜÏHYÙKZXY\\ÚXÚ\[ÜØ[[\ÙOÚÒKYÙ\Ý0ïH]Ù\[ÈZ\È\ÚXÚ\[ÜÜØÚ]\ËÜÙ]]Û\ÜÏH[[\Ú\ËZ\È]Û\ÜÏH[[\Ú\Ë\ØÛÜK]Ü\]Û\ÜÏH[[\Ú\Ë\ØÛÜK\[ÈÝÈÚYHLZYÚHLY]ÐÞHLLÚ\ÛH[HÛHÝÚÙOH\KXÜ\HÝÚÙK]ÚYHLÞHÞOHHLÏÚ\ÛH[HÛHÝÚÙOH\KYÛÛ
+HÝÚÙK]ÚYHLÝÚÙK[[XØ\HÝ[ÞHÞOHHLÝÚÙKY\Ú\^OHÌMÝÚÙKY\ÚÙÙ]HLYH[[\Ú\ËXÚ\ÛHÏÜÝÏ]Û\ÜÏH[[\Ú\Ë\ØÛÜK[[HÙ]Ù]Ù]]Û\ÜÏH[[\Ú\Ë]^XÚÝ[ÜÙÜY[OÌLÙ[OÚZ\ÚXÚ\[ÜÜØÚ]\ÝÜ[YÙ[Ü[[X\\È\ÝZ[[][H0ïÚÙ[Z][[\Ú[[[\ÜÝ[Ù[ðíHZØÛÜH]YLHÝZYÙ[Ü]Û\ÜÏHØÛÜKXXZÙÝÛ]Û\ÜÏHØÛÜK[Y]XÈ]Û\ÜÏHØÛÜK[Y]XË][ÛÛÙÌLÎÈÝ]Ù]]Û\ÜÏHØÛÜK[Y]XË[X[Ü[Ù[Ø\ÜÙOÙ]Ù]]Û\ÜÏHØÛÜK[Y]XÈ]Û\ÜÏHØÛÜK[Y]XË][ÛÛÙÌLÎÈÝ]Ù]]Û\ÜÏHØÛÜK[Y]XË[X[YXÚÙ]Ù]]Û\ÜÏHØÛÜK[Y]XÈ]Û\ÜÏHØÛÜK[Y]XË][Ø\ÎNÈ0ïÚÙOÙ]]Û\ÜÏHØÛÜK[Y]XË[X[]\Ü]Ù]Ù]]Û\ÜÏHØÛÜK[Y]XÈ]Û\ÜÏHØÛÜK[Y]XË][YÌL
+ÎÈZÙ]]Û\ÜÏHØÛÜK[Y]XË[X[XÚÜØÚ]Ù]Ù]Ù]Ù]Ù]]Û\ÜÏH[[\Ú\ËYÜY]Û\ÜÏH[[\Ú\ËXØ\
+ÌLÎÈÛXÙ[P]Ù\[ÏÚ
+]Û\ÜÏHÛXÞKX[[\Ú\Ë[\ÝYHÛXÞKX[[\Ú\Ë[\ÝÙ]Ù]]Û\ÜÏH[[\Ú\ËXØ\
+ÎNÈXÚÝ[ÜÛ0îÚÙ[[H]Z[Ú
+]Û\ÜÏHØ\X[[\Ú\ËY[]Û\ÜÏHØ\Y[Z][HZ\ÜÚ[È]Û\ÜÏHØ\Y[ZXY\Ü[Û\ÜÏHØ\Y[]]HXÚÜØÚ]ÜÜ[Ü[Û\ÜÏHØ\XYÙHZ\ÜÚ[ÈZ[ÜÜ[Ù]]Û\ÜÏHØ\Y[Y\ØÈÙZ[XÚÜØÚ]Ü[[ZHXÚÜÝZ]YÚÙZ][[ÝZ[ÚHÛÜÝ[[\Z[ÎXÒÓ]Ù]Ù]]Û\ÜÏHØ\Y[Z][HZ\ÜÚ[È]Û\ÜÏHØ\Y[ZXY\Ü[Û\ÜÏHØ\Y[]]HZ\Ù]\ÚXÚ\[ÏÜÜ[Ü[Û\ÜÏHØ\XYÙHZ\ÜÚ[ÈZ[ÜÜ[Ù]]Û\ÜÏHØ\Y[Y\ØÈZ\ÙXXXÚÙ\0éÚÝ\\Ý[]\Û[ÚÜ[ÚZ]Ú[XÚÙYXÚÝ[\Z[ÎXÒLÓ]Ù]Ù]]Û\ÜÏHØ\Y[Z][H\X[]Û\ÜÏHØ\Y[ZXY\Ü[Û\ÜÏHØ\Y[]]H]\Ü]8 $È[\\ÚXÚ\[ÏÜÜ[Ü[Û\ÜÏHØ\XYÙH\X[[\ZXÚ[ÜÜ[Ù]]Û\ÜÏHØ\Y[Y\ØÈZÝY[HXÚÝ[ÈÒ	Ì8 $È[\Ú[Z[ÒL	Ì°éZY[\0í[ÈØKÒÓ]Ù]Ù]]Û\ÜÏHØ\Y[Z][HÚÈ]Û\ÜÏHØ\Y[ZXY\Ü[Û\ÜÏHØ\Y[]]HÜ[Ù[Ø\ÜÙH
+ÒÔ
+OÜÜ[Ü[Û\ÜÏHØ\XYÙHÚÈ]\ÜZXÚ[ÜÜ[Ù]]Û\ÜÏHØ\Y[Y\ØÈÜ[\ÚXÚ\[ÈÜ[[Ü[ZY\[ÜÜÝ[X[Ò
 
-    <div class="cta-section-wrap">
-      <div class="cta-box reveal">
-        <h2>Pronto per la tua consulenza gratuita?</h2>
-        <p>Inizia ora e ricevi raccomandazioni assicurative personalizzate in soli 3 minuti.</p>
-        <a href="#" class="cta-btn">
-          <span>Inizia ora</span>
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-            <line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/>
-          </svg>
-        </a>
-        <div class="cta-trust">
-          <span class="trust-item"><span class="trust-check"></span>Nessun account richiesto</span>
-          <span class="trust-item"><span class="trust-check"></span>Risultato immediato</span>
-          <span class="trust-item"><span class="trust-check"></span>Senza impegno</span>
-        </div>
-      </div>
-    </div>
+KÓ]ZH[Y]\ÙXÚÙ[Ù]Ù]Ù]Ù]Ù]Ù]KKHPÓÓSQSUSÓÈKO]YHY]Ë\XÛÛ[Y[][ÛÈÛ\ÜÏH\]Y]ÈÝ[OH\Ü^NÛH]Û\ÜÏHYÙKZXY\[\Z[Ù[Ú\ÛÛ[\ÚY\HÜØÚ0éÙH\Ü[ZY\[ÈZ\È\ÚXÚ\[ÜÜØÚ]\ËÜÙ]]Û\ÜÏHXË\Ý[[X\H]Û\ÜÏHXË\Ý[[X\KYÜY]Û\ÜÏHXË\Ý[[X\KZ][HÜ[Û\ÜÏHXË\Ý[[X\K][ÏÜÜ[Ü[Û\ÜÏHXË\Ý[[X\K[X[[\Z[Ù[°ïÚYOÜÜ[Ù]]Û\ÜÏHXË\Ý[[X\KZ][HÜ[Û\ÜÏHXË\Ý[[X\K][Ý[OHÛÛÜ\KYÜY[HÒ
 
-  </div><!-- end content-it -->
+OÜÜ[Ü[Û\ÜÏHXË\Ý[[X\K[X[Z[Ü\[ÈÈ[Û]ÜÜ[Ù]]Û\ÜÏHXË\Ý[[X\KZ][HÜ[Û\ÜÏHXË\Ý[[X\K][ÌÏÜÜ[Ü[Û\ÜÏHXË\Ý[[X\K[X[ØÛÜKT[ÝHpíÛXÚÜÜ[Ù]Ù]Ù]]Û\ÜÏHXË[\Ý]Û\ÜÏHXËXØ\]Û\ÜÏHXËXØ\ZXY\]Ü[Û\ÜÏHXË\[Ü]H[Ü]KZYÚSÑSÜÜ[ÏXÚÜØÚ]XØÚY\ÜÙ[ÚÏÙ]]ÛÛ\ÜÏHYÛÛ\ÛHÛÛXÚÏHRKØ\Ý
+	Ð[ÙXÝ[ÙYÜ\IË	ÜÝXØÙ\ÜÉÊH[ÙXÝ[YÙ[Ø]ÛÙ]ÚYHX[ÙZ[[XÚÜØÚ]ZHÝZ]YÚÙZ][[ZY]K\Z]ËHÙ\\ÙZÜØXÚ[ðí[[Ø[ÚÛÜÝ[ØÚ[Ò
+IÌ8 $Ì	Ì\ZXÚ[Ü]Û\ÜÏHXË[Y]H]Û\ÜÏHXË[Y]KZ][HÌLNÈÝÛÏXÒÓ]ÜÝÛÏÙ]]Û\ÜÏHXË[Y]KZ][HÌL
+ÌÍÎÈÝÛÏ]]
+È\ÙZ
+ÈZY]OÜÝÛÏÙ]]Û\ÜÏHXË[Y]KZ][HÌLLÈÝÛÏØÛÜH
+ÌL[ÝOÜÝÛÏÙ]Ù]]Û\ÜÏHXËYÛÝ\Ü[Û\ÜÏHXË\Ø][ÈØÚ]Ù\\ÈÒ	ÌÜÜ[]Û\ÜÏHXË\ÝY\ÈÜ[Û\ÜÏHÝY\XÚ\ÔÏÜÜ[Ü[Û\ÜÏHÝY\XÚ\^OÜÜ[Ü[Û\ÜÏHÝY\XÚ\ÐTÜÜ[Ù]Ù]Ù]]Û\ÜÏHXËXØ\]Û\ÜÏHXËXØ\ZXY\]Ü[Û\ÜÏHXË\[Ü]H[Ü]KZYÚSTÒSÜÜ[ÏZ\Ù]\ÚXÚ\[È[Y°ïÙ[ÚÏÙ]]ÛÛ\ÜÏHYÛÛ\ÛHÛÛXÚÏHRKØ\Ý
+	Ð[ÙXÝ[ÙYÜ\IË	ÜÝXØÙ\ÜÉÊH[ÙXÝ[YÙ[Ø]ÛÙ]ÚHZ\Ù]\ÚXÚ\[ÈÚ[ÚYHZH[[Y\[Ù[Ü[ÚZ][H]\Û[Ù\Ù\0éÚÝ\\ÝXÚÙ\ØÚ0ïÜ]Û\ÜÏHXË[Y]H]Û\ÜÏHXË[Y]KZ][HÌLNÈÝÛÏXÒLÓ]ÜÝÛÏÙ]]Û\ÜÏHXË[Y]KZ][HÎNNLÈÝÛÏÙ[
+È[[][ÛÜÝÛÏÙ]]Û\ÜÏHXË[Y]KZ][HÌLLÈÝÛÏØÛÜH
+Î[ÝOÜÝÛÏÙ]Ù]]Û\ÜÏHXËYÛÝ\Ü[Û\ÜÏHXË\Ø][ÈØÚ]Ù\\ÈÒÌ	ÌÜÜ[]Û\ÜÏHXË\ÝY\ÈÜ[Û\ÜÏHÝY\XÚ\[XOÜÜ[Ü[Û\ÜÏHÝY\XÚ\[]XOÜÜ[Ü[Û\ÜÏHÝY\XÚ\[X[ÜÜ[Ù]Ù]Ù]]Û\ÜÏHXËXØ\]Û\ÜÏHXËXØ\ZXY\]Ü[Û\ÜÏHXË\[Ü]H[Ü]K[YY][HÔTSÜÜ[ÏÜ[Ù[Ø\ÜÙHÜ[ZY\[ÚÏÙ]]ÛÛ\ÜÏH[Ý][KYÛÛ\ÛHÛÛXÚÏHRKØ\Ý
+	Õ\ÛZXÚÚ\Ù[Y[ÎÌÉË	Ú[ÉÊH\ÛZXÚÝ\[Ø]ÛÙ]Z]Z\ZÝY[[[Ú\ÙHÛÒÍLZ[ÚYHpíÛXÚ\ÙZ\ÙHHY[Z[ÙXÚÙ[Ø[\ÈHÒ
 
-  <footer>
-    <div class="footer-logo">Nav<em>ia.</em></div>
-    <div class="footer-copy">Â© 2026 Navia â Digitale Versicherungsberaterin fÃ¼r die Schweiz &nbsp;|&nbsp; DE / FR / IT</div>
-  </footer>
+HÈ[Û]Ü\[Ü]Û\ÜÏHXË[Y]H]Û\ÜÏHXË[Y]KZ][HÌLMÍÈÝÛÏ\Ü\\ÈÒ
 
-  <script>
-    /* âââ Subtitle data âââ */
-    const SUBTITLES = {
-      de: [
-        { t: 0,  text: 'Herzlich willkommen. Ich bin Navia, Ihre digitale Versicherungsberaterin.' },
-        { t: 5,  text: 'In der Schweiz gibt es Ã¸ber 30 Anbieter â und ich vergleiche sie alle fÃ¸r Sie.' },
-        { t: 11, text: 'UnabhÃ¤ngig, transparent und vollkommen kostenlos.' },
-        { t: 16, text: 'In nur 3 Minuten erhalten Sie massgeschneiderte Empfehlungen.' },
-        { t: 22, text: 'Starten Sie jetzt Ihre persÃ¶nliche Beratung.' }
-      ],
-      fr: [
-        { t: 0,  text: 'Bienvenue. Je suis Navia, votre conseillÃ¨re digitale en assurances.' },
-        { t: 5,  text: 'En Suisse, il y a plus de 30 assureurs â et je les compare tous pour vous.' },
-        { t: 11, text: 'IndÃ©pendante, transparente et totalement gratuite.' },
-        { t: 16, text: 'En seulement 3 minutes, vous recevez des recommandations personnalisÃ©es.' },
-        { t: 22, text: 'Commencez maintenant votre conseil personnel.' }
-      ],
-      it: [
-        { t: 0,  text: 'Benvenuto/a. Sono Navia, la tua consulente assicurativa digitale.' },
-        { t: 5,  text: 'In Svizzera ci sono oltre 30 assicuratori â e li confronto tutti per te.' },
-        { t: 11, text: 'Indipendente, trasparente e completamente gratuita.' },
-        { t: 16, text: 'In soli 3 minuti ricevi raccomandazioni personalizzate.' },
-        { t: 22, text: 'Inizia ora la tua consulenza personale.' }
-      ]
-    };
+KÓ]ÜÝÛÏÙ]]Û\ÜÏHXË[Y]KZ][HÌLNMÎÈÝÛÏÙXÚÙ[\ÈÌÝÜÝÛÏÙ]]Û\ÜÏHXË[Y]KZ][HÌLLÈÝÛÏØÛÜH
+ÍH[ÝOÜÝÛÏÙ]Ù]]Û\ÜÏHXËYÛÝ\Ü[Û\ÜÏHXË\Ø][È°éXÚH\Ü\\ÎÒ
+MÜÜ[]Û\ÜÏHXË\ÝY\ÈÜ[Û\ÜÏHÝY\XÚ\\ÜÝ\OÜÜ[Ü[Û\ÜÏHÝY\XÚ\Þ[\[OÜÜ[Ü[Û\ÜÏHÝY\XÚ\ÔÜÜ[Ù]Ù]Ù]Ù]Ù]Ù]Ù]Ù]ÛXZ[KKHUUSÑSKO]Û\ÜÏH[Ù[[Ý\^HYH]][[Ù[]Û\ÜÏH[Ù[]ÛÛ\ÜÏH[Ù[XÛÜÙHÛÛXÚÏH]]ÛÜÙS[Ù[
 
-    const timers = {};
+HÌL
+NÏØ]Û]Û\ÜÏH[Ù[[ÙÛÈ]Û\ÜÏHÙÛÈ][OXKÙ[OÙ]Ù]]YH]][ÙÚ[Û\ÜÏH[Ù[]]HÚ[ÛÛ[Y[\°ïÚÏÚÛ\ÜÏH[Ù[\ÝXY[[ÚYHÚXÚ[Z[HÛÛÈ[Ü]Û\ÜÏH[[ËZ[[[ÎÝÛÏ[[Ð]XKÚÜÝÛÏÈÝÛÏ[[ÌLÍÜÝÛÏÙ]]Û\ÜÏHÜKYÜÝ\X[Û\ÜÏHÜK[X[KSXZ[PY\ÜÙOÛX[[]Û\ÜÏHÜKZ[]\OH[XZ[YHÙÚ[Y[XZ[XÙZÛ\HZP[XZ[Ú[YOH[[Ð]XKÚÏ]Û\ÜÏHÜKY\ÜYHÙÚ[Y\Ü[ðïYÙH[Y[Y][Ù]Ù]]Û\ÜÏHÜKYÜÝ\X[Û\ÜÏHÜK[X[\ÜÝÛÜÛX[[]Û\ÜÏHÜKZ[]\OH\ÜÝÛÜYHÙÚ[\ÈXÙZÛ\HÎÉÎÉÎÉÎÉÎÉÎÉÎÉÎÈ[YOH[[ÌLÍÏÙ]]ÛÛ\ÜÏHYÛÛÝ[OHÚYL	HÛÛXÚÏH]]ÙÚ[
+H[Y[[	Î
+NMÏØ]Û]Û\ÜÏH[Ù[\ÝÚ]ÚØÚÙZ[ÛÛÏÈ]ÛÛÛXÚÏH]]ÙÙÛT[[
 
-    function stopAllSubtitles() {
-      Object.keys(timers).forEach(k => { clearInterval(timers[k]); delete timers[k]; });
-    }
+H]YÚ\ÝY\[Ø]ÛÙ]Ù]]YH]]\YÚ\Ý\Ý[OH\Ü^NÛHÛ\ÜÏH[Ù[]]HÛÛÈ\Ý[[ÚÛ\ÜÏH[Ù[\ÝXÛÜÝ[ÜÈÝ\[	ÎLNÈÙZ[HÜY]Ø\H°íYËÜ]Û\ÜÏHÜK\ÝÈ]Û\ÜÏHÜKYÜÝ\X[Û\ÜÏHÜK[X[Ü[YOÛX[[]Û\ÜÏHÜKZ[]\OH^YHYËY\ÝXÙZÛ\HX^ÏÙ]]Û\ÜÏHÜKYÜÝ\X[Û\ÜÏHÜK[X[XÚ[YOÛX[[]Û\ÜÏHÜKZ[]\OH^YHYË[\ÝXÙZÛ\H]\Ý\ÏÙ]Ù]]Û\ÜÏHÜKYÜÝ\X[Û\ÜÏHÜK[X[KSXZ[PY\ÜÙOÛX[[]Û\ÜÏHÜKZ[]\OH[XZ[YHYËY[XZ[XÙZÛ\HZP[XZ[ÚÏ]Û\ÜÏHÜKY\ÜYHYËY\Ü]H°î[ÚYH[H[\]\ËÙ]Ù]]Û\ÜÏHÜKYÜÝ\X[Û\ÜÏHÜK[X[\ÜÝÛÜÛX[[]Û\ÜÏHÜKZ[]\OH\ÜÝÛÜYHYË\ÈXÙZÛ\HZ[\Ý[ÈZXÚ[ÏÙ]]ÛÛ\ÜÏHYÛÛÝ[OHÚYL	HÛÛXÚÏH]]YÚ\Ý\
+HÛÛÈ\Ý[[	Î
+NMÏØ]Û]Û\ÜÏH[Ù[\ÝÚ]Ú\Z]ÈYÚ\ÝY\È]ÛÛÛXÚÏH]]ÙÙÛT[[
 
-    function startSubtitles(lang) {
-      if (timers[lang]) return;
-      const lines = SUBTITLES[lang];
-      if (!lines) return;
-      const el = document.getElementById('sub-' + lang);
-      if (!el) return;
+H[Y[[Ø]ÛÙ]Ù]Ù]Ù]KKHQÓPÖHSÑSKO]Û\ÜÏH[Ù[[Ý\^HYHY\ÛXÞK[[Ù[]Û\ÜÏH[Ù[Y\ÛXÞK[[Ù[Ý[OHX^]ÚYM]ÛÛ\ÜÏH[Ù[XÛÜÙHÛÛXÚÏHÛXÚY\ËÛÜÙPY[Ù[
 
-      const start = Date.now();
-      const endAt = lines[lines.length - 1].t + 8;
+HÌL
+NÏØ]ÛÛ\ÜÏH[Ù[]]HÝ[OHÛ\Ú^NK[NÛX\Ú[XÝÛNÛXÙH[Y°îÙ[ÚÝ[OHÛÛÜ\K]^[]]Y
+NÙÛ\Ú^N
+\[NÛX\Ú[XÝÛN\\ÜÙ[ÚYHZ[H]YH\ÚXÚ\[ÜÜÛXÙKÜ]Û\ÜÏHÜKYÜÝ\X[Û\ÜÏHÜK[X[\ÚXÚ\[ÜØ\ÛX[]Û\ÜÏHÛXÞK]\KYÜYYHÛXÞK]\K\XÚÙ\]ÛÛ\ÜÏHÛXÞK]\KX]K]\OHÜ[Ù[Ø\ÜÙHÜ[Û\ÜÏHÛXÞK]\KZXÛÛÌLÎMÌÎÏÜÜ[Ü[Ù[Ø\ÜÙOØ]Û]ÛÛ\ÜÏHÛXÞK]\KX]K]\OH]]Ý\ÚXÚ\[ÈÜ[Û\ÜÏHÛXÞK]\KZXÛÛÌL
+ÎÏÜÜ[]]ÏØ]Û]ÛÛ\ÜÏHÛXÞK]\KX]K]\OH]\Ü]Ü[Û\ÜÏHÛXÞK]\KZXÛÛÌLÎMÏÜÜ[]\Ü]Ø]Û]ÛÛ\ÜÏHÛXÞK]\KX]K]\OHYXÚÜ[Û\ÜÏHÛXÞK]\KZXÛÛÌLLÌNÏÜÜ[YXÚØ]Û]ÛÛ\ÜÏHÛXÞK]\KX]K]\OHX[Ý\ÚXÚ\[ÈÜ[Û\ÜÏHÛXÞK]\KZXÛÛÌLMLÎÏÜÜ[X[Ý\ËØ]Û]ÛÛ\ÜÏHÛXÞK]\KX]K]\OHZ\Ù]\ÚXÚ\[ÈÜ[Û\ÜÏHÛXÞK]\KZXÛÛÎNNLÏÜÜ[Z\ÙOØ]ÛÙ]Ù]]Û\ÜÏHÜK\ÝÈ]Û\ÜÏHÜKYÜÝ\X[Û\ÜÏHÜK[X[\ÚXÚ\\ÛX[[]Û\ÜÏHÜKZ[]\OH^YH]ËZ[Ý\\XÙZÛ\H[Ø[HÏÙ]]Û\ÜÏHÜKYÜÝ\X[Û\ÜÏHÜK[X[ÛXÙ[[[Y\
+Ü[Û[
+OÛX[[]Û\ÜÏHÜKZ[]\OH^YH]Ë\Û[HXÙZÛ\HËLLÍ
+MÏÙ]Ù]]Û\ÜÏHÜK\ÝÈ]Û\ÜÏHÜKYÜÝ\X[Û\ÜÏHÜK[X[[Û]Ü°éZYH
+ÒOÛX[[]Û\ÜÏHÜKZ[]\OH[X\YH]Ë\[Z][HXÙZÛ\HLÏÙ]]Û\ÜÏHÜKYÜÝ\X[Û\ÜÏHÜK[X[XÚÝ[ÜÜÝ[[YOÛX[[]Û\ÜÏHÜKZ[]\OH^YH]ËXÛÝ\YÙHXÙZÛ\HÒL	ÌÏÙ]Ù]]Û\ÜÏHÜKYÜÝ\X[Û\ÜÏHÜK[X[Ý^[
+Ü[Û[
+OÛX[[]Û\ÜÏHÜKZ[]\OH^YH]Ë[Ý\ÈXÙZÛ\H[Ú\ÙHÒLÏÙ]]Û\ÜÏHÜKY\ÜYHY\ÛXÞKY\Ü]H\ÚXÚ\[ÜØ\[Y]\[°éZYH]\Ù°ï[Ù]]Ý[OH\Ü^N^ÙØ\LÛX\Ú[]Ü]ÛÛ\ÜÏHYÚÜÝÝ[OH^HÛÛXÚÏHÛXÚY\ËÛÜÙPY[Ù[
 
-      el.textContent = lines[0].text;
-      el.style.opacity = '1';
+HXXÚ[Ø]Û]ÛÛ\ÜÏHYÛÛÝ[OH^HÛÛXÚÏHÛXÚY\ËYÛXÞJ
+HÜZXÚ\Ø]ÛÙ]Ù]Ù]]Û\ÜÏHØ\Ý]Ü\YHØ\Ý]Ü\Ù]ØÜ\ÛÛÝSS×ÔÓPÒQTÏVÂÚYÜIË\NÒÜ[Ù[Ø\ÜÙIË[Ý\\Ò[Ø[IËÛ[NÒSNÍIË[Z][NÎÛÝ\YÙNÓÒÔ
+È\Ø]ËÝ\Î[Ú\ÙHÒÍLØÛÜNÌKÚYÜË\NÐ]]Ý\ÚXÚ\[ÉË[Ý\\Ö°ïXÚ\ËËÛ[NÖTMMLLIË[Z][NKÛÝ\YÙNÕÛØ\ÚÛÉËÝ\ÎÕÈÛÛIËØÛÜN
+_KÚYÜÉË\NÒ]\Ü]	Ë[Ý\\ÐVIËÛ[NÐVKLNIË[Z][NÛÝ\YÙNÒ	ÌÝ\ÎÌËV[[Y\°îXÚ	ËØÛÜNLKÚYÜ
+	Ë\NÒYXÚ	Ë[Ý\\Ó[Ø[X\ËÛ[NÓSÐMÍÎLË[Z][NLÛÝ\YÙNÒ
+IÌ	ÌÝ\ÎÔ]]YXÚ	ËØÛÜNBNÂÛÛÝÝ]O^Ý\Ù\[[ÎÙIËÛXÚY\Î×K[Y\Îß_NÂ[Ý[Û	
+Y
+^Ü]\ØÝ[Y[Ù][[Y[RY
+Y
+_B[Ý[Û		
+Ê^Ü]\ØÝ[Y[]Y\TÙ[XÝÜ[
+Ê_BÛÛÝRO^ÂØ\Ý
+\ÙË\OIÚ[ÉÊ^ÂÛÛÝÏI
+	ÝØ\Ý]Ü\	ÊK[YØÝ[Y[ÜX]Q[[Y[
+	Ù]ÊNÂ[Û\ÜÓ[YOIÝØ\Ý	ÊÝ\NÙ[^ÛÛ[[\ÙÎÂË\[Ú[
+[
+NÜÙ][Y[Ý]
 
-      timers[lang] = setInterval(() => {
-        const elapsed = (Date.now() - start) / 1000;
 
-        let current = null;
-        for (let i = lines.length - 1; i >= 0; i--) {
-          if (elapsed >= lines[i].t) { current = lines[i]; break; }
-        }
+OO[[[ÝJ
+KÌ
+NÂBNÂÛÛÝ]]^ÂÚÝÓÙÚ[
+^É
+	Ø]][ÙÚ[ÊKÝ[K\Ü^OIØØÚÉÎÉ
+	Ø]]\YÚ\Ý\ÊKÝ[K\Ü^OIÛÛIÎÉ
+	Ø]][[Ù[	ÊKÛ\ÜÓ\ÝY
+	ÛÜ[Ê_KÚÝÔYÚ\Ý\
+^É
+	Ø]][ÙÚ[ÊKÝ[K\Ü^OIÛÛIÎÉ
+	Ø]]\YÚ\Ý\ÊKÝ[K\Ü^OIØØÚÉÎÉ
+	Ø]][[Ù[	ÊKÛ\ÜÓ\ÝY
+	ÛÜ[Ê_KÙÙÛT[[
 
-        if (current && el.textContent !== current.text) {
-          el.style.opacity = '0';
-          setTimeout(() => {
-            el.textContent = current.text;
-            el.style.opacity = '1';
-          }, 220);
-        }
+^ÂÛÛÝI
+	Ø]][ÙÚ[ÊKI
+	Ø]]\YÚ\Ý\ÊNÂÝ[K\Ü^O[Ý[K\Ü^OOOIÛÛIÏÉØØÚÉÎÛÛIÎÂÝ[K\Ü^O\Ý[K\Ü^OOOIÛÛIÏÉØØÚÉÎÛÛIÎÂKÛÜÙS[Ù[
 
-        if (elapsed > endAt) {
-          clearInterval(timers[lang]);
-          delete timers[lang];
-          el.style.opacity = '0';
-        }
-      }, 250);
-    }
+^É
+	Ø]][[Ù[	ÊKÛ\ÜÓ\Ý[[ÝJ	ÛÜ[Ê_KÙÚ[
+^ÂÛÛÝ[XZ[I
+	ÛÙÚ[Y[XZ[	ÊK[YK[J
+KÏI
+	ÛÙÚ[\ÉÊK[YK[J
+NÂ	
+	ÛÙÚ[Y\ÜÊKÛ\ÜÓ\Ý[[ÝJ	ÜÚÝÉÊNÂYY[XZ[\Ê^É
+	ÛÙÚ[Y\ÜÊKÛ\ÜÓ\ÝY
+	ÜÚÝÉÊNÜ]\ßBÛÛÝ[YOY[XZ[OOIÙ[[Ð]XKÚ	ÏÉÑ[[È\Ù\Î[XZ[Ü]
+	Ð	ÊVÌNÂ]]ÙÓÙÚ[Û[YK[XZ[JNÂKYÚ\Ý\
+^ÂÛÛÝ\ÝI
+	ÜYËY\Ý	ÊK[YK[J
+K\ÝI
+	ÜYË[\Ý	ÊK[YK[J
+K[XZ[I
+	ÜYËY[XZ[	ÊK[YK[J
+KÏI
+	ÜYË\ÉÊK[YK[J
+NÂ	
+	ÜYËY\ÜÊKÛ\ÜÓ\Ý[[ÝJ	ÜÚÝÉÊNÂYY\Ý[\ÝY[XZ[\Ê^É
+	ÜYËY\ÜÊKÛ\ÜÓ\ÝY
+	ÜÚÝÉÊNÜ]\ßB]]ÙÓÙÚ[Û[YN\Ý
+ÉÈ	ÊÛ\Ý[XZ[JNÂKÙÓÙÚ[\Ù\^ÂÝ]K\Ù\]\Ù\Â^ÛØØ[ÝÜYÙKÙ]][J	Û]XWÝ\Ù\ËÓÓÝ[ÚYJ\Ù\JNßXØ]Ú
+J^ßBÛÛÝØ]Y[ØØ[ÝÜYÙKÙ]][J	Û]XWÜÉÊÝ\Ù\[XZ[
+NÂÝ]KÛXÚY\Ï\Ø]YÒÓÓ\ÙJØ]Y
+NÓÓ\ÙJÓÓÝ[ÚYJSS×ÔÓPÒQTÊJNÂ]]Ý\]URJ
+NÐ]]ÛÜÙS[Ù[
 
-    /* âââ Language switching âââ */
-    function setLang(lang) {
-      document.querySelectorAll('.lang-content').forEach(el => el.classList.remove('active'));
-      document.querySelectorAll('.lang-btn').forEach(btn => btn.classList.remove('active'));
-      const content = document.getElementById('content-' + lang);
-      if (content) content.classList.add('active');
-      document.querySelectorAll('.lang-btn').forEach(btn => {
-        if (btn.textContent.trim().toLowerCase() === lang) btn.classList.add('active');
-      });
-      document.documentElement.lang = lang;
+NÂRKØ\Ý
+	ÕÚ[ÛÛ[Y[	ÊÝ\Ù\[YKÜ]
+	È	ÊVÌJÉÈIË	ÜÝXØÙ\ÜÉÊNÂ\ÚÝÐ\
 
-      stopAllSubtitles();
-      document.querySelectorAll('[id^="sub-"]').forEach(el => {
-        el.textContent = '';
-        el.style.opacity = '0';
-      });
+NÂKÙÛÝ]
 
-      document.querySelectorAll('.reveal').forEach(el => el.classList.remove('visible'));
-      setTimeout(() => {
-        triggerReveal();
-        startSubtitles(lang);
-      }, 200);
-    }
+^ÂÛXÚY\ËØ]J
+NÔÝ]K\Ù\[[ÔÝ]KÛXÚY\ÏV×NÂ]]Ý\]URJ
+NÐ\ÚÝÓ[[Ê
+NÕRKØ\Ý
+	Ñ\ÛÜZXÚXÙ[Y[]Ë	Ú[ÉÊNÂKP]]ÓÙÚ[
+^Â^ÂÛÛÝORÓÓ\ÙJØØ[ÝÜYÙKÙ]][J	Û]XWÝ\Ù\Ê_	Û[	ÊNÂYJ^ÔÝ]K\Ù\]NØÛÛÝÏ[ØØ[ÝÜYÙKÙ]][J	Û]XWÜÉÊÝK[XZ[
+NÔÝ]KÛXÚY\Ï\ÏÒÓÓ\ÙJÊNÓÓ\ÙJÓÓÝ[ÚYJSS×ÔÓPÒQTÊJNÐ]]Ý\]URJ
+NÜ]\YNßBXØ]Ú
+J^ßB]\[ÙNÂKÝ\]URJ
+^ÂÛÛÝOTÝ]K\Ù\ÂYJ^Â	
+	ÚXY\X]]	ÊKÝ[K\Ü^OIÛÛIÎÂÛÛÝOI
+	ÚXY\]\Ù\ÊNÚKÝ[K\Ü^OIÙ^	ÎÂ	
+	ÚXY\]\Ù\[YIÊK^ÛÛ[]K[YNÂ	
+	Ý\Ù\X]]\ÊK^ÛÛ[]K[YKÚ\]
+
+KÕ\\Ø\ÙJ
+NÂH[ÙHÂ	
+	ÚXY\X]]	ÊKÝ[K\Ü^OIÙ^	ÎÉ
+	ÚXY\]\Ù\ÊKÝ[K\Ü^OIÛÛIÎÂBBNÂÛÛÝ\^ÂÜÚNÙN]KÙ][Ê[Ê^ÂÝ]K[Ï[[ÎÂ		
+	Ë[Ë\ÙXÝ[ÛÊKÜXXÚ
+[O[Û\ÜÓ\Ý[[ÝJ	ØXÝ]IÊJNÂÛÛÝÙXÏI
+	Û[ËIÊÛ[ÊNÚYÙXÊ\ÙXËÛ\ÜÓ\ÝY
+	ØXÝ]IÊNÂ		
+	Ë][[ËXÊKÜXXÚ
+OÛ\ÜÓ\ÝÙÙÛJ	ØXÝ]IË^ÛÛ[ÓÝÙ\Ø\ÙJ
+OOO[[ÊJNÂ\ÜÝ\ÝX[ÊNÂKÜÝ\ÝX[Ê^ÂÛX\[\[
+Ý]K[Y\ÖÛ[×JNÂÛÛÝ[I
+	Û[ßK\ÝX]X
+NÚYY[
+\]\ÂÛÛÝÜ[ÏY[]Y\TÙ[XÝÜ[
+	ÜÜ[ÊNÂ]OP\ÜÚVÛ[×_ÂÜ[ËÜXXÚ
 
-    /* âââ Scroll reveal âââ */
-    function triggerReveal() {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, i) => {
-          if (entry.isIntersecting) {
-            setTimeout(() => entry.target.classList.add('visible'), i * 80);
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
+ËY
+OOËÛ\ÜÓ\ÝÙÙÛJ	ØXÝ]IËYOOZJJNÂÝ]K[Y\ÖÛ[×O\Ù][\[
 
-      document.querySelectorAll('.reveal').forEach(el => {
-        if (!el.classList.contains('visible')) observer.observe(el);
-      });
-    }
 
-    /* âââ Header glass on scroll âââ */
-    const siteHeader = document.getElementById('site-header');
-    window.addEventListener('scroll', () => {
-      siteHeader.classList.toggle('scrolled', window.scrollY > 30);
-    }, { passive: true });
+OOÂÜ[ÖÚWKÛ\ÜÓ\Ý[[ÝJ	ØXÝ]IÊNÚOJJÌJI\Ü[Ë[ÝÂÜ[ÖÚWKÛ\ÜÓ\ÝY
+	ØXÝ]IÊNÐ\ÜÚVÛ[×OZNÂKÍL
+NÂK]YØ]JÝ]J^Â		
+	Ë\]Y]ÉÊKÜXXÚ
+[O[Ý[K\Ü^OIÛÛIÊNÂÛÛÝI
+	ÝY]ËIÊÜÝ]JNÚY]Ý[K\Ü^OIØØÚÉÎÂ		
+	ËÚYX\[]Z][IÊKÜXXÚ
+[O[Û\ÜÓ\ÝÙÙÛJ	ØXÝ]IË[]\Ù]Ý]OOO\Ý]JJNÂYÝ]OOOIÙ\ÚØ\	ÊQ\ÚØ\[\
+NÂYÝ]OOOIÜÛXÚY\ÉÊTÛXÚY\Ë[\
+NÂYÝ]OOOIØ[[\Ú\ÉÊP[[\Ú\Ë[\
+NÂKÚÝÐ\
 
-    /* âââ Init âââ */
-    window.addEventListener('DOMContentLoaded', () => {
-      triggerReveal();
-      setTimeout(() => startSubtitles('de'), 900);
-    });
-  </script>
+^Â	
+	ÜYÙK[[[ÉÊKÝ[K\Ü^OIÛÛIÎÉ
+	ÜYÙK[[[ÉÊKÛ\ÜÓ\Ý[[ÝJ	ØXÝ]IÊNÂ	
+	ÜYÙKX\	ÊKÝ[K\Ü^OIØØÚÉÎÉ
+	ÜYÙKX\	ÊKÛ\ÜÓ\ÝY
+	ØXÝ]IÊNÂ	
+	Û[Ë\ÝÚ]Ú\ÊKÝ[K\Ü^OIÛÛIÎÂ\]YØ]J	Ù\ÚØ\	ÊNÂKÚÝÓ[[Ê
+^Â	
+	ÜYÙKX\	ÊKÝ[K\Ü^OIÛÛIÎÉ
+	ÜYÙKX\	ÊKÛ\ÜÓ\Ý[[ÝJ	ØXÝ]IÊNÂ	
+	ÜYÙK[[[ÉÊKÝ[K\Ü^OIØØÚÉÎÉ
+	ÜYÙK[[[ÉÊKÛ\ÜÓ\ÝY
+	ØXÝ]IÊNÂ	
+	Û[Ë\ÝÚ]Ú\ÊKÝ[K\Ü^OIÙ^	ÎÂ\Ù][ÊÝ]K[ÊNÂKÛÒÛYJ
+^ÚYÝ]K\Ù\P\]YØ]J	Ù\ÚØ\	ÊNÙ[ÙH\ÚÝÓ[[Ê
+NßBNÂÛÛÝ\ÚØ\^Â[\
+^ÂÛÛÝTÝ]KÛXÚY\ËJÝ]K\Ù\Ë[Y_	ÉÊKÜ]
+	È	ÊVÌNÂÛÛÝ[]È]J
+KÙ]Ý\Ê
+KÏZLÉÑÝ][[ÜÙ[ÎNÉÑÝ][YÉÎÑÝ][X[	ÎÂ	
+	Ù\ÚYÜY][ÉÊK^ÛÛ[YÊÊÉË	ÊÛÉÊNÂ	
+	ÚÜK\ÛXÚY\ÉÊK^ÛÛ[\[ÝÂÛÛÝO\YXÙJ
+K
+OOJÞ[Z][K
+NÂ	
+	ÚÜK\[Z][IÊK^ÛÛ[IÐÒ	ÊÓX]Ý[
+JKÓØØ[TÝ[Ê	ÙKPÒ	ÊNÂÙ][Y[Ý]
 
-</body>
-</html>
+
+OOØÛÛÝÏI
+	ÜØÛÜKXÚ\ÛIÊNÚYÊXËÝ[KÝÚÙQ\ÚÙÙ]TÝ[ÊËJÊ
+JNßKML
+NÂBNÂÛÛÝÛXÚY\Ï^ÂÙ[XÝY\N[ÚXÛÛÎÒÜ[Ù[Ø\ÜÙNÉÌLÎMÌÎÉË]]Ý\ÚXÚ\[ÎÉÌL
+ÎÉË]\Ü]ÉÌLÎMÉËYXÚÉÌLLÌNÉËX[Ý\ÚXÚ\[ÎÉÌLMLÎÉËZ\Ù]\ÚXÚ\[ÎÉÎNNLÉßKØYÙ\ÎÒÜ[Ù[Ø\ÜÙNÚÜ[Ù[Ë]]Ý\ÚXÚ\[ÎØ]]ÉË]\Ü]Ú]\Ü]	ËYXÚÚYXÚ	ËX[Ý\ÚXÚ\[ÎÛX[ËZ\Ù]\ÚXÚ\[ÎÜZ\ÙIßK[\IÉÊ^ÂÛÛÝÏI
+	ÜÛXÞKYÜY	ÊNÚYYÊ\]\ÂÛÛÝ][\ÏTÝ]KÛXÚY\Ë[\OY\KÓÝÙ\Ø\ÙJ
+K[ÛY\ÊÓÝÙ\Ø\ÙJ
+J_[Ý\\ÓÝÙ\Ø\ÙJ
+K[ÛY\ÊÓÝÙ\Ø\ÙJ
+JJNÂYZ][\Ë[Ý
+^ÙË[\SIÏ]Û\ÜÏH[\K\Ý]HÝ[OHÜYXÛÛ[[KËLH]Û\ÜÏH[\KZXÛÛÌLNLÎÏÙ]ÈÛ\ÜÏH[\K]]HÙZ[HÛXÙ[ÙY[[ÚÏÛ\ÜÏH[\K\ÝX°ïÙ[ÚYHZH\ÝH\ÚXÚ\[ÜÜÛXÙH[KÜ]ÛÛ\ÜÏHYÛÛÛÛXÚÏHÛXÚY\ËÜ[Y[Ù[
+
+HÍÎÈ[Y°ïÙ[Ø]ÛÙ]ÎÜ]\ßBË[\SZ][\ËX\
+OÛXÚY\ËØØ\
+
+JKÚ[	ÉÊNÂË]Y\TÙ[XÝÜ[
+	ËÛXÞK\ØÛÜKY[	ÊKÜXXÚ
+[OØÛÛÝÏY[]\Ù]ÎÜÙ][Y[Ý]
+
+
+OO[Ý[KÚY]ËL
+NßJNÂKØØ\
+
+^ÂÛÛÝYÙOTÛXÚY\ËØYÙ\ÖÜ\W_	ÚYXÚ	ÎÂÛÛÝXÛÛTÛXÚY\ËÚXÛÛÖÜ\W_	ÉÌLÎÉÎÂÛÛÝÏ\ØÛÜ_
+ÌÂ]\]Û\ÜÏHÛXÞKXØ\]Û\ÜÏHÛXÞKXØ\ZXY\Ü[Û\ÜÏHÛXÞK]\KXYÙHYÙKIØYÙ_HÜ\_OÜÜ[]ÛÛ\ÜÏHÛXÞK[Y[HÛÛXÚÏHÛXÚY\Ë[]TÛXÞJ	ÉÜYIÊH]OH0íØÚ[ÌL
+
+NÏØ]ÛÙ]]Û\ÜÏHÛXÞK[[YHÚXÛÛH	Ü[Ý\\OÙ]]Û\ÜÏHÛXÞKZ[Ý\\ÜÛ[_	ÒÙZ[HÛXÙ[[[Y\ßOÙ]]Û\ÜÏHÛXÞK[Y]H]Û\ÜÏHÛXÞK[Y]KZ][H]Û\ÜÏHÛXÞK[Y]KZÙ^H[Û]Ü°éZYOÙ]]Û\ÜÏHÛXÞK[Y]K][Ò	Ü[Z][_OÙ]Ù]]Û\ÜÏHÛXÞK[Y]KZ][H]Û\ÜÏHÛXÞK[Y]KZÙ^HXÚÝ[ÏÙ]]Û\ÜÏHÛXÞK[Y]K][ÜÛÝ\YÙ_	ø $ÉßOÙ]Ù]]Û\ÜÏHÛXÞK[Y]KZ][HÝ[OHÜYXÛÛ[[KËLH]Û\ÜÏHÛXÞK[Y]KZÙ^HÝ^[Ù]]Û\ÜÏHÛXÞK[Y]K][ÜÝ\ß	ø $ÉßOÙ]Ù]Ù]]Ý[OH\Ü^N^Ú\ÝYKXÛÛ[ÜXÙKX]ÙY[Ø[YÛZ][\ÎÙ[\ÛX\Ú[]ÜLÜ[Ý[OHÛ\Ú^NÍ\[NØÛÛÜ\K]^Y[JH]X[]0éÜÜ[Ü[Ý[OHÛ\Ú^N[NØÛÛÜ\KYÛÛ
+HÜßIOÜÜ[Ù]]Û\ÜÏHÛXÞK\ØÛÜKX\]Û\ÜÏHÛXÞK\ØÛÜKY[]K]ÏHÜßIHÝ[OHÚYÙ]Ù]Ù]ÂK[\^ÔÛXÚY\Ë[\_KÜ[Y[Ù[
+
+^Â\ËÙ[XÝY\O[[Â		
+	ÈÜÛXÞK]\K\XÚÙ\ÛXÞK]\KXÊKÜXXÚ
+OÛ\ÜÓ\Ý[[ÝJ	ÜÙ[XÝY	ÊJNÂÉÛ]ËZ[Ý\\Ë	Û]Ë\Û[IË	Û]Ë\[Z][IË	Û]ËXÛÝ\YÙIË	Û]Ë[Ý\É×KÜXXÚ
+YOØÛÛÝ[I
+Y
+NÚY[
+Y[[YOIÉÎßJNÂ	
+	ØY\ÛXÞKY\ÜÊKÛ\ÜÓ\Ý[[ÝJ	ÜÚÝÉÊNÂ	
+	ØY\ÛXÞK[[Ù[	ÊKÛ\ÜÓ\ÝY
+	ÛÜ[ÊNÂKÛÜÙPY[Ù[
+
+^É
+	ØY\ÛXÞK[[Ù[	ÊKÛ\ÜÓ\Ý[[ÝJ	ÛÜ[Ê_KYÛXÞJ
+^ÂÛÛÝ\O]\ËÙ[XÝY\K[Ý\\I
+	Û]ËZ[Ý\\ÊK[YK[J
+K[Z][O\\ÙQØ]
+	
+	Û]Ë\[Z][IÊK[YJ_Â	
+	ØY\ÛXÞKY\ÜÊKÛ\ÜÓ\Ý[[ÝJ	ÜÚÝÉÊNÂY]\_Z[Ý\\\[Z][J^É
+	ØY\ÛXÞKY\ÜÊKÛ\ÜÓ\ÝY
+	ÜÚÝÉÊNÜ]\ßBÛÛÝ^ÚYÜ	ÊÑ]KÝÊ
+K\K[Ý\\Û[N
+	Û]Ë\Û[IÊK[YK[J
+K[Z][KÛÝ\YÙN
+	Û]ËXÛÝ\YÙIÊK[YK[J
+_	ø $ÉËÝ\Î
+	Û]Ë[Ý\ÉÊK[YK[J
+KØÛÜNX]ÛÜX][ÛJ
+JJJÍ_NÂÝ]KÛXÚY\Ë\Ú
+
+NÔÛXÚY\ËØ]J
+NÔÛXÚY\ËÛÜÙPY[Ù[
+
+NÔÛXÚY\Ë[\
+NÂRKØ\Ý
+\JÉÈ
+	ÊÚ[Ý\\ÉÊH[YÙY°ïÝË	ÜÝXØÙ\ÜÉÊNÑ\ÚØ\[\
+NÂK[]TÛXÞJY
+^ÂYXÛÛ\J	ÔÛXÙHÚ\ÛXÚ0íØÚ[ÉÊJ\]\ÂÝ]KÛXÚY\ÏTÝ]KÛXÚY\Ë[\OYOOZY
+NÂÛXÚY\ËØ]J
+NÔÛXÚY\Ë[\
+NÕRKØ\Ý
+	ÔÛXÙHÙ[0íØÚË	Ú[ÉÊNÑ\ÚØ\[\
+NÂKØ]J
+^ÚYÝ]K\Ù\^Ý^ÛØØ[ÝÜYÙKÙ]][J	Û]XWÜÉÊÔÝ]K\Ù\[XZ[ÓÓÝ[ÚYJÝ]KÛXÚY\ÊJNßXØ]Ú
+J^ß__BNÂÛÛÝ[[\Ú\Ï^Â[\
+^ÂÙ][Y[Ý]
+
+
+OOØÛÛÝÏI
+	Ø[[\Ú\ËXÚ\ÛIÊNÚYÊXËÝ[KÝÚÙQ\ÚÙÙ]TÝ[ÊÌMJÌM
+
+JNßKML
+NÂÛÛÝ\ÝI
+	ÜÛXÞKX[[\Ú\Ë[\Ý	ÊNÚY[\Ý
+\]\Â\Ý[\STÝ]KÛXÚY\ËX\
+OÂÛÛÝÛÛ\ØÛÜONÉÝ\KYÜY[IÎØÛÜOMÉÝ\K[Ü[ÙJIÎÝ\K\Y
+IÎÂÛÛÝXÛÛTÛXÚY\ËÚXÛÛÖÜ\W_	ÉÌLÎÉÎÂ]\]Û\ÜÏHÛXÞKX[[\Ú\ËZ][H]Û\ÜÏHZKZXÛÛÚXÛÛOÙ]]Û\ÜÏHZKZ[È]Û\ÜÏHZK[[YHÜ\_OÙ]]Û\ÜÏHZKY]Z[Ü[Ý\\H	ZYÝÈÒ	Ü[Z][_KÓ]Ù]Ù]]Û\ÜÏHZK\ØÛÜH]Û\ÜÏHZK\ØÛÜK[[HÝ[OHÛÛÜØÛÛHÜØÛÜ_IOÙ]]Û\ÜÏHZK\ØÛÜKX\]Û\ÜÏHZK\ØÛÜKY[Ý[OHÚYÜØÛÜ_INØXÚÙÜÝ[ØÛÛHÙ]Ù]Ù]Ù]ÂJKÚ[	ÉÊ_	ÏÝ[OHÛÛÜ\K]^[]]Y
+NÙÛ\Ú^N
+\[HÙZ[HÛXÙ[\\ÜÝÜÎÂBNÂËÈÛXÞH\HXÚÙ\ØÝ[Y[]Y\TÙ[XÝÜ[
+	ÈÜÛXÞK]\K\XÚÙ\ÛXÞK]\KXÊKÜXXÚ
+OÂY][\Ý[\	ØÛXÚÉË
+
+OOÂØÝ[Y[]Y\TÙ[XÝÜ[
+	ÈÜÛXÞK]\K\XÚÙ\ÛXÞK]\KXÊKÜXXÚ
+OÛ\ÜÓ\Ý[[ÝJ	ÜÙ[XÝY	ÊJNÂÛ\ÜÓ\ÝY
+	ÜÙ[XÝY	ÊNÔÛXÚY\ËÙ[XÝY\OX]\Ù]\NÂJNÂJNÂËÈÛÜÙH[Ù[ÈÛÝ\^HÛXÚÂ
+	Ø]][[Ù[	ÊKY][\Ý[\	ØÛXÚÉËOOÚYK\Ù]OOI
+	Ø]][[Ù[	ÊJP]]ÛÜÙS[Ù[
+
+NßJNÂ
+	ØY\ÛXÞK[[Ù[	ÊKY][\Ý[\	ØÛXÚÉËOOÚYK\Ù]OOI
+	ØY\ÛXÞK[[Ù[	ÊJTÛXÚY\ËÛÜÙPY[Ù[
+
+NßJNÂØÝ[Y[Y][\Ý[\	ÚÙ^YÝÛËOOÚYKÙ^OOOIÑ\ØØ\IÊ^Ð]]ÛÜÙS[Ù[
+
+NÔÛXÚY\ËÛÜÙPY[Ù[
+
+Nß_JNÂËÈSU[Ý[Û
+^Â\Ù][Ê	ÙIÊNÂY]]P]]ÓÙÚ[
+JP\ÚÝÐ\
+
+NÂJJ
+NÂÜØÜ\ØÙOÚ[
