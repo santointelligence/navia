@@ -214,7 +214,11 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;height:2px;background
 .hero-eyebrow::after{background:linear-gradient(90deg,var(--gold),transparent)}
 
 /* ── VIDEO SECTION – IMMERSIVE CINEMATIC ── */
-.navia-video-section{position:relative;width:100%;margin:0;padding:0;text-align:center;background:linear-gradient(180deg,#060b18 0%,#0d1526 50%,#0a0f1a 100%);overflow:hidden}
+.navia-video-section{
+  width:100%;max-width:100%;margin:0 auto;padding:0;
+  position:relative;overflow:hidden;
+  border-radius:0;
+}
 .navia-video-section::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(196,163,90,.14) 0%,transparent 50%);z-index:1;pointer-events:none}
 .navia-video-section::after{content:'';position:absolute;bottom:0;left:0;right:0;height:140px;background:linear-gradient(to top,var(--bg),transparent);z-index:2;pointer-events:none}
 .video-inner{position:relative;z-index:3;max-width:1100px;margin:0 auto;padding:72px 24px 96px}
@@ -489,7 +493,7 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;height:2px;background
   <!-- VIDEO SECTION — FULL WIDTH, IMMERSIVE -->
   <div id="video-section" class="navia-video-section" style="margin:0;padding:0">
     <div class="video-glow"></div>
-    <div style="position:relative;z-index:3;max-width:900px;margin:0 auto;padding:56px 32px 48px">
+    <div style="position:relative;z-index:3;max-width:100%;margin:0 auto;padding:56px 32px 48px">
       <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:28px">
         <div style="width:40px;height:40px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;color:var(--ink);font-weight:600">N</div>
         <span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:#fff;letter-spacing:-.5px">Nav<em style="color:var(--gold);font-style:normal">ia</em></span>
@@ -1309,7 +1313,9 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;height:2px;background
 
 
 
+
 <script>
+
 // ── TRANSLATIONS ──────────────────────────────────────────────────────────
 const T={
   de:{
@@ -1330,7 +1336,7 @@ const T={
     pri:['Tiefster Preis','Maximale Leistung','Persönlicher Service','Digital & einfach','Schweizer Anbieter'],
     vor:['Krankenkasse','Haftpflicht','Hausrat','Auto','Lebens/Vorsorge','Noch nichts'],
     back:'← Zurück',next:'Weiter →',analyze:'Analyse starten →',restart:'Neue Analyse',
-    budLabel:v=>v>=2000?`CHF 2'000+`:`CHF ${v}`,
+    budLabel:v=>v>=2000?`CHF 2’000+`:`CHF ${v}`,
     loadName:'Navia',loadStatus:'Navia analysiert Ihr Profil...',
     vcName:'Navia',vcRole:'Ihre digitale Versicherungsberaterin',vcOnline:'Jetzt online',
     qwTitle:'Quick Wins',
@@ -1385,7 +1391,7 @@ AUSGABE FORMAT (NUR JSON, NICHTS ANDERES):
     pri:['Prix le plus bas','Prestations maximales','Service personnel','Digital & simple','Assureur suisse'],
     vor:['Assurance maladie','RC','Ménage','Auto','Vie/Prévoyance','Rien encore'],
     back:'← Retour',next:'Suivant →',analyze:"Lancer l'analyse →",restart:'Nouvelle analyse',
-    budLabel:v=>v>=2000?`CHF 2'000+`:`CHF ${v}`,
+    budLabel:v=>v>=2000?`CHF 2’000+`:`CHF ${v}`,
     loadName:'Navia',loadStatus:'Analyse de votre profil...',
     vcName:'Navia',vcRole:'Votre conseillère en assurances digitale',vcOnline:'En ligne maintenant',
     qwTitle:'Gains rapides',abschluss:'Souscrire',mehr:'En savoir plus',
@@ -1430,7 +1436,7 @@ FORMAT (JSON UNIQUEMENT):
     pri:['Prezzo più basso','Massima copertura','Servizio personale','Digitale & semplice','Assicuratore svizzero'],
     vor:['Cassa malati','RC','Casa','Auto','Vita/Previdenza','Niente ancora'],
     back:'← Indietro',next:'Avanti →',analyze:'Avvia analisi →',restart:'Nuova analisi',
-    budLabel:v=>v>=2000?`CHF 2'000+`:`CHF ${v}`,
+    budLabel:v=>v>=2000?`CHF 2’000+`:`CHF ${v}`,
     loadName:'Navia',loadStatus:'Analisi del profilo...',
     vcName:'Navia',vcRole:'La tua consulente assicurativa digitale',vcOnline:'Ora online',
     qwTitle:'Quick Wins',abschluss:'Stipula',mehr:'Scopri di più',
@@ -1725,10 +1731,10 @@ const POLICY_DETAILS = {
       { label: 'Schadenfall Notruf', value: '041 914 01 00 / 00 800 16 16 16 16' },
     ],
     coverage: [
-      { name: 'Hausrat Grunddeckung', detail: 'VS CHF 70'000 — Feuer, Elementar, Wasser, Einbruchdiebstahl, Beraubung, Einfacher Diebstahl' },
-      { name: 'Einfacher Diebstahl auswärts', detail: 'VS CHF 2'000 — inkl. Reisegepäck' },
-      { name: 'Hausrat-Kasko', detail: 'VS CHF 5'000 — Beschädigungen, Stromwirkungsschäden, Verlieren/Verlegen' },
-      { name: 'Privathaftpflicht', detail: 'Garantiesumme CHF 5'000'000 — Einzelperson, Mieterin, Selbstbehalt CHF 200' },
+      { name: 'Hausrat Grunddeckung', detail: 'VS CHF 70’000 — Feuer, Elementar, Wasser, Einbruchdiebstahl, Beraubung, Einfacher Diebstahl' },
+      { name: 'Einfacher Diebstahl auswärts', detail: 'VS CHF 2’000 — inkl. Reisegepäck' },
+      { name: 'Hausrat-Kasko', detail: 'VS CHF 5’000 — Beschädigungen, Stromwirkungsschäden, Verlieren/Verlegen' },
+      { name: 'Privathaftpflicht', detail: 'Garantiesumme CHF 5’000’000 — Einzelperson, Mieterin, Selbstbehalt CHF 200' },
     ]
   },
   'mobiliar-honda': {
@@ -1743,8 +1749,8 @@ const POLICY_DETAILS = {
       { label: 'Schadenfall', value: '041 914 01 00 / CarAssistance: 00 800 16 16 16 16' },
     ],
     coverage: [
-      { name: 'Haftpflicht', detail: 'Garantiesumme CHF 100'000'000 — Bonusschutz, Grobfahrlässigkeitsschutz inkl., kein Selbstbehalt' },
-      { name: 'Vollkasko (inkl. Teilkasko)', detail: 'Selbstbehalt Kollisionen CHF 1'000 — Bonusschutz, Grobfahrlässigkeitsschutz inkl.' },
+      { name: 'Haftpflicht', detail: 'Garantiesumme CHF 100’000’000 — Bonusschutz, Grobfahrlässigkeitsschutz inkl., kein Selbstbehalt' },
+      { name: 'Vollkasko (inkl. Teilkasko)', detail: 'Selbstbehalt Kollisionen CHF 1’000 — Bonusschutz, Grobfahrlässigkeitsschutz inkl.' },
       { name: 'Erweiterte Glasbruchdeckung', detail: 'Bruchschäden an Scheinwerfern und Fahrzeugteilen aus Glas mitversichert' },
     ]
   },
@@ -1756,16 +1762,16 @@ const POLICY_DETAILS = {
       { label: 'Produkt', value: 'Privat-Rechtsschutz Einzelversicherung Standard' },
       { label: 'Vertragsperiode', value: '01.10.2017 – 30.09.2021 (stillschweigende Erneuerung)' },
       { label: 'Jahresprämie', value: 'CHF 173.25 (inkl. Stempelsteuer CHF 8.25)' },
-      { label: 'Versicherungssumme', value: 'CHF 500'000 pro Rechtsfall (Standard)' },
+      { label: 'Versicherungssumme', value: 'CHF 500’000 pro Rechtsfall (Standard)' },
       { label: 'Kontakt', value: 'Tel. 061 285 27 27 — info@orion.ch' },
     ],
     coverage: [
-      { name: 'Schadenersatzrecht', detail: 'Geltungsbereich Europa — VS CHF 500'000' },
-      { name: 'Opferhilfegesetz', detail: 'Geltungsbereich Europa — VS CHF 500'000' },
-      { name: 'Strafanzeige / Strafverteidigung', detail: 'Geltungsbereich Europa — VS CHF 500'000' },
-      { name: 'Sachenrecht (bewegliche Sachen)', detail: 'Geltungsbereich Europa — VS CHF 500'000' },
-      { name: 'Versicherungsrecht', detail: 'CH + Liechtenstein — VS CHF 500'000' },
-      { name: 'Arbeitsrecht', detail: 'CH + Liechtenstein — VS CHF 500'000' },
+      { name: 'Schadenersatzrecht', detail: 'Geltungsbereich Europa — VS CHF 500’000' },
+      { name: 'Opferhilfegesetz', detail: 'Geltungsbereich Europa — VS CHF 500’000' },
+      { name: 'Strafanzeige / Strafverteidigung', detail: 'Geltungsbereich Europa — VS CHF 500’000' },
+      { name: 'Sachenrecht (bewegliche Sachen)', detail: 'Geltungsbereich Europa — VS CHF 500’000' },
+      { name: 'Versicherungsrecht', detail: 'CH + Liechtenstein — VS CHF 500’000' },
+      { name: 'Arbeitsrecht', detail: 'CH + Liechtenstein — VS CHF 500’000' },
       { name: 'Patientenrecht', detail: 'Gemäss AVB' },
       { name: 'Rechtsschutz für Mieter und Pächter', detail: 'CH + Liechtenstein' },
       { name: 'Erbrecht', detail: 'CH + Liechtenstein' },
@@ -1785,15 +1791,15 @@ const POLICY_DETAILS = {
     ],
     coverage: [
       { name: 'Schadenersatzrecht', detail: 'Weltweit' },
-      { name: 'Opferhilfegesetz', detail: 'Geltungsbereich Europa — VS CHF 500'000' },
+      { name: 'Opferhilfegesetz', detail: 'Geltungsbereich Europa — VS CHF 500’000' },
       { name: 'Strafanzeige', detail: 'Weltweit' },
       { name: 'Strafverteidigung', detail: 'Weltweit' },
-      { name: 'Ausweisentzug', detail: 'CH + Liechtenstein — VS CHF 500'000' },
+      { name: 'Ausweisentzug', detail: 'CH + Liechtenstein — VS CHF 500’000' },
       { name: 'Sachenrecht', detail: 'Weltweit' },
       { name: 'Versicherungsrecht', detail: 'Weltweit' },
       { name: 'Patientenrecht', detail: 'Weltweit' },
       { name: 'Fahrzeug-Vertragsrecht', detail: 'Weltweit' },
-      { name: 'Miete einer Garage', detail: 'CH + Liechtenstein — VS CHF 500'000' },
+      { name: 'Miete einer Garage', detail: 'CH + Liechtenstein — VS CHF 500’000' },
     ]
   }
 };
@@ -1963,13 +1969,7 @@ async function sendChat(){
   if(_aiMode==='faq'){
     // Regelbasierter Modus
     setTimeout(()=>{
-      const reply='<em style="font-size:10px;color:var(--green);display:block;margin-bottom:4px">📋 Regelbasiert</em>'+faqAnswer(msg);
-      chatHistory.push({role:'assistant',content:reply});
-      setChatLoading(false);
-      appendChatMsg('navia',reply);
-    },300+Math.random()*400);
-    return;
-  }
+
 
   try{
     // Send clean text history to API (no HTML tags), limit to last 20 messages
@@ -1997,7 +1997,9 @@ async function sendChat(){
     setChatLoading(false);
     appendChatMsg('navia','<em style="font-size:10px;color:var(--gold);display:block;margin-bottom:4px">🤖 Claude Sonnet 4</em>'+reply);
   }catch(e){
-    setChatLoading(false);
+        const faq = faqAnswer(msg);
+    if(faq){ appendChatMsg('bot', faq); setChatLoading(false); return; }
+setChatLoading(false);
     const errMsg=e.message&&e.message.includes('API')?
       'API-Fehler: '+e.message+'. Versuchen Sie den regelbasierten Modus.':
       'Verbindungsfehler — bitte prüfen Sie Ihre Internetverbindung oder wechseln Sie zum regelbasierten Modus.';
@@ -2228,16 +2230,7 @@ async function sendFabChat(){
   setFabLoading(true);
 
   // Try FAQ first for instant answers
-  const faqReply=fabFaqAnswer(msg);
-  
-  // If API was previously unavailable, use FAQ directly
-  if(_fabApiAvailable===false){
-    setFabLoading(false);
-    const reply=faqReply||'Diese Frage kann ich leider nicht direkt beantworten. Versuchen Sie Schlagwörter wie: Krankenkasse, Haftpflicht, Hausrat, Rechtsschutz, Vorsorge, Auto, Franchise, oder klicken Sie auf «Beratung starten» für eine personalisierte Analyse.';
-    generalChatHistory.push({role:'assistant',content:reply});
-    appendFabMsg('navia',reply);
-    return;
-  }
+
 
   try{
     const cleanHistory = generalChatHistory.map(m => ({
@@ -2265,7 +2258,9 @@ async function sendFabChat(){
     setFabLoading(false);
     appendFabMsg('navia',reply);
   }catch(e){
-    setFabLoading(false);
+        const faq = fabFaqAnswer(msg);
+    if(faq){ appendFabMsg('bot', faq); setFabLoading(false); return; }
+setFabLoading(false);
     _fabApiAvailable=false;
     // Remove failed user message from API history
     if(generalChatHistory.length>0 && generalChatHistory[generalChatHistory.length-1].role==='user'){
@@ -2308,9 +2303,8 @@ function setFabLoading(on){
 }
 
 
-</script>
 
+</script>
 
 </body>
 </html>
- 
