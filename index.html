@@ -655,67 +655,71 @@ body{animation:pageIn .5s ease-out}
 </div>
 
 
-<!-- PERSONAL DASHBOARD -->
+<!-- PERSONAL DASHBOARD — CLEAN HOME -->
 <div id="navia-dashboard" class="navia-dashboard" style="display:none">
 <style>
-.nhome-overlay{position:fixed;inset:0;background:rgba(8,8,18,.93);backdrop-filter:blur(12px);display:flex;align-items:center;justify-content:center;z-index:900;padding:20px}
-.nhome-panel{background:#0f0f1b;border:1px solid rgba(200,160,60,.22);border-radius:24px;width:100%;max-width:680px;padding:40px;box-shadow:0 32px 90px rgba(0,0,0,.75)}
-.nhome-header{display:flex;align-items:center;gap:16px;margin-bottom:4px}
-.nhome-logo{width:52px;height:52px;background:var(--gold,#c8a03c);border-radius:14px;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:24px;color:#000;flex-shrink:0}
-.nhome-header-text{flex:1}
-.nhome-header-text h2{font-size:21px;font-weight:700;margin:0;color:#fff;line-height:1.3}
-.nhome-close{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:#666;width:38px;height:38px;border-radius:50%;cursor:pointer;font-size:18px;transition:.2s;flex-shrink:0;display:flex;align-items:center;justify-content:center}
-.nhome-close:hover{background:rgba(255,255,255,.12);color:#fff;border-color:rgba(255,255,255,.2)}
-.nhome-sub{color:#666;font-size:14px;margin:18px 0 24px;padding:0}
-.nhome-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
-.nhome-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:18px;padding:26px 20px;cursor:pointer;transition:all .22s ease;display:flex;flex-direction:column;gap:10px}
-.nhome-card:hover{background:rgba(200,160,60,.07);border-color:rgba(200,160,60,.32);transform:translateY(-3px);box-shadow:0 10px 30px rgba(200,160,60,.07)}
-.nhome-card-primary{border-color:rgba(200,160,60,.18);background:rgba(200,160,60,.035)}
-.nhome-card-primary:hover{background:rgba(200,160,60,.1);border-color:rgba(200,160,60,.5)}
-.nhome-card-icon{font-size:28px;line-height:1}
-.nhome-card-title{font-weight:600;font-size:15px;color:#f0f0f0}
-.nhome-card-desc{font-size:12px;color:#555;line-height:1.45}
-.nhome-divider{height:1px;background:rgba(255,255,255,.06);margin:24px 0}
-.nhome-footer{display:flex;align-items:center;justify-content:space-between;font-size:12px;color:#444}
-@media(max-width:520px){.nhome-grid{grid-template-columns:1fr}.nhome-panel{padding:28px 20px}}
+.nhome-wrap{max-width:760px;margin:0 auto;padding:72px 24px 56px;text-align:center;position:relative;z-index:1}
+.nhome-wrap::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(196,163,90,.08) 0%,rgba(30,52,86,.04) 40%,transparent 70%);border-radius:50%;pointer-events:none}
+.nhome-greeting{font-family:'Playfair Display',serif;font-size:clamp(28px,4.5vw,44px);font-weight:500;line-height:1.2;letter-spacing:-1px;color:var(--ink);margin-bottom:8px}
+.nhome-greeting span{color:var(--gold)}
+.nhome-date{font-size:14px;color:var(--muted);margin-bottom:48px;font-weight:300}
+.nhome-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;text-align:left;margin-bottom:48px}
+.nhome-card{background:rgba(255,255,255,0.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(226,229,236,0.5);border-radius:20px;padding:28px 24px;cursor:pointer;transition:all .3s var(--ease-out-expo);display:flex;flex-direction:column;gap:12px;box-shadow:0 4px 24px rgba(15,27,45,.04)}
+.nhome-card:hover{transform:translateY(-4px);box-shadow:0 12px 40px rgba(15,27,45,.08);border-color:rgba(196,163,90,.3)}
+.nhome-card-primary{border-color:rgba(196,163,90,.25);background:linear-gradient(135deg,rgba(249,243,230,.6),rgba(255,255,255,.9))}
+.nhome-card-primary:hover{box-shadow:0 12px 40px rgba(196,163,90,.15);border-color:var(--gold)}
+.nhome-card-icon{font-size:30px;line-height:1}
+.nhome-card-title{font-family:'Playfair Display',serif;font-weight:500;font-size:18px;color:var(--ink);letter-spacing:-.3px}
+.nhome-card-desc{font-size:13px;color:var(--muted);line-height:1.5;font-weight:300}
+.nhome-card-arrow{font-size:13px;color:var(--gold);font-weight:500;margin-top:auto;opacity:0;transform:translateX(-4px);transition:all .25s}
+.nhome-card:hover .nhome-card-arrow{opacity:1;transform:translateX(0)}
+.nhome-stats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;opacity:.7}
+.nhome-stats .stat-item{text-align:center}
+.nhome-stats .stat-num{font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--ink)}
+.nhome-stats .stat-lbl{font-size:11px;color:var(--muted);letter-spacing:.5px;margin-top:2px}
+@media(max-width:520px){.nhome-grid{grid-template-columns:1fr}.nhome-wrap{padding:48px 20px 40px}}
 </style>
-<div class="nhome-overlay">
-<div class="nhome-panel">
-<div class="nhome-header">
-<div class="nhome-logo">N</div>
-<div class="nhome-header-text">
-<h2>Willkommen zur&uuml;ck,&nbsp;<span id="dash-user-name" style="color:var(--gold,#c8a03c)">Nutzer</span></h2>
-<p id="dash-date-line" style="color:#555;font-size:13px;margin:5px 0 0 0"></p>
-</div>
-<button class="nhome-close" onclick="goHome()" title="Zur Startseite">&times;</button>
-</div>
-<p class="nhome-sub">Was m&ouml;chten Sie heute tun?</p>
+<div class="nhome-wrap">
+<h1 class="nhome-greeting">Willkommen zurück, <span id="dash-user-name">Nutzer</span></h1>
+<p class="nhome-date" id="dash-date-line"></p>
 <div class="nhome-grid">
 <div class="nhome-card nhome-card-primary" onclick="hideAllSections();document.getElementById('navia-dashboard').style.display='none';document.getElementById('progress-wrap').style.display='';document.getElementById('pg1').style.display='';">
 <div class="nhome-card-icon">&#128269;</div>
 <div class="nhome-card-title">Neue Analyse</div>
-<div class="nhome-card-desc">KI-gest&uuml;tzte Versicherungsberatung starten</div>
+<div class="nhome-card-desc">KI-gestützte Versicherungsberatung starten</div>
+<div class="nhome-card-arrow">→</div>
 </div>
 <div class="nhome-card" onclick="showSection('policen')">
 <div class="nhome-card-icon">&#128196;</div>
 <div class="nhome-card-title">Meine Policen</div>
 <div class="nhome-card-desc">Versicherungen verwalten &amp; hochladen</div>
+<div class="nhome-card-arrow">→</div>
 </div>
 <div class="nhome-card" onclick="showSection('chat')">
 <div class="nhome-card-icon">&#128172;</div>
 <div class="nhome-card-title">Mit Navia chatten</div>
 <div class="nhome-card-desc">KI-Beraterin direkt befragen</div>
+<div class="nhome-card-arrow">→</div>
 </div>
 <div class="nhome-card" onclick="showSection('schaden')">
 <div class="nhome-card-icon">&#128680;</div>
 <div class="nhome-card-title">Schaden melden</div>
 <div class="nhome-card-desc">Schadensfall schnell einreichen</div>
+<div class="nhome-card-arrow">→</div>
 </div>
 </div>
-<div class="nhome-divider"></div>
-<div class="nhome-footer">
-<span>Navia &mdash; Ihre digitale Versicherungsberaterin</span>
-<span style="color:rgba(200,160,60,.5)">&#9679; Online</span>
+<div class="nhome-stats">
+<div class="stat-item">
+<div class="stat-num">30+</div>
+<div class="stat-lbl">Versicherer</div>
+</div>
+<div class="stat-item">
+<div class="stat-num">100%</div>
+<div class="stat-lbl">Unabhängig</div>
+</div>
+<div class="stat-item">
+<div class="stat-num">● Online</div>
+<div class="stat-lbl">Beraterin verfügbar</div>
 </div>
 </div>
 </div>
