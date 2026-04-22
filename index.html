@@ -2503,14 +2503,10 @@ if(db){
 }
 function goHome(){
 hideAllSections();
-if(_isLoggedIn){
-  showDashboard();
-}else{
-  document.getElementById("hero").style.display="";
-  document.getElementById("progress-wrap").style.display="none";
-  document.getElementById("card-wrap").style.display="none";
-  var db=document.getElementById("navia-dashboard");if(db)db.style.display="none";
-}
+document.getElementById("hero").style.display="";
+document.getElementById("progress-wrap").style.display="none";
+document.getElementById("card-wrap").style.display="none";
+var db=document.getElementById("navia-dashboard");if(db)db.style.display="none";
 window.scrollTo({top:0,behavior:"smooth"});
 }
 
