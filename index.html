@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Navia â Ihre digitale Versicherungsberaterin</title>
+<title>Navia – Ihre digitale Versicherungsberaterin</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
 <style>
@@ -32,14 +32,14 @@
 html{scroll-behavior:smooth;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;text-rendering:optimizeLegibility}
 body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;overflow-x:hidden;letter-spacing:-0.01em}
 
-/* ââ SUBTLE BACKGROUND GRID ââ */
+/* ── SUBTLE BACKGROUND GRID ── */
 body::before{content:'';position:fixed;inset:0;background:
   linear-gradient(rgba(196,163,90,.03) 1px, transparent 1px),
   linear-gradient(90deg, rgba(196,163,90,.03) 1px, transparent 1px);
   background-size:80px 80px;
   pointer-events:none;z-index:0}
 
-/* ââ NAV â GLASSMORPHISM ââ */
+/* ── NAV — GLASSMORPHISM ── */
 nav{position:sticky;top:0;z-index:200;background:rgba(246,247,250,0.85);backdrop-filter:blur(20px) saturate(1.4);-webkit-backdrop-filter:blur(20px) saturate(1.4);border-bottom:1px solid rgba(221,225,234,0.6);height:72px;display:flex;align-items:center;justify-content:space-between;padding:0 32px;gap:12px;flex-wrap:nowrap;transition:all .4s var(--ease-out-expo)}
 .logo{cursor:pointer;font-family:'Playfair Display',serif;font-size:20px;font-weight:600;letter-spacing:-0.5px;color:var(--ink);flex-shrink:0}
 .logo em{color:var(--gold);font-style:normal}
@@ -51,7 +51,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(246,247,250,0.85);backdrop
 @keyframes blink{0%,100%{opacity:1}50%{opacity:.4}}
 .nav-links{display:flex;align-items:center;gap:4px;flex:1;justify-content:center}
 
-/* ââ HERO ââ */
+/* ── HERO ── */
 .hero{max-width:760px;margin:0 auto;padding:72px 24px 56px;text-align:center;position:relative;z-index:1}
 .hero::before{content:'';position:absolute;top:-60px;left:50%;transform:translateX(-50%);width:500px;height:500px;background:radial-gradient(circle,rgba(196,163,90,.08) 0%,rgba(30,52,86,.04) 40%,transparent 70%);border-radius:50%;pointer-events:none;animation:heroPulse 6s ease-in-out infinite}
 .hero::after{content:'';position:absolute;top:40px;right:-100px;width:200px;height:200px;background:radial-gradient(circle,rgba(30,52,86,.06) 0%,transparent 60%);border-radius:50%;pointer-events:none;animation:heroPulse 8s ease-in-out infinite reverse}
@@ -70,7 +70,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(246,247,250,0.85);backdrop
 .start-btn svg{transition:transform .2s}
 .start-btn:hover svg{transform:translateX(3px)}
 
-/* ââ PROGRESS ââ */
+/* ── PROGRESS ── */
 #progress-wrap{display:none;max-width:680px;margin:0 auto;padding:28px 24px 0}
 .prog-track{display:flex;align-items:center;justify-content:center;gap:0;position:relative}
 .prog-step{display:flex;flex-direction:column;align-items:center;gap:7px;flex:1;position:relative;z-index:1}
@@ -83,7 +83,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(246,247,250,0.85);backdrop
 .prog-lbl{font-size:10px;color:var(--muted);text-align:center;white-space:nowrap;letter-spacing:.3px}
 .prog-step.done .prog-lbl,.prog-step.active .prog-lbl{color:var(--ink);font-weight:500}
 
-/* ââ CARD ââ */
+/* ── CARD ── */
 #card-wrap{max-width:680px;margin:28px auto 80px;padding:0 24px}
 .card{background:rgba(255,255,255,0.88);backdrop-filter:blur(20px);-webkit-backdrop-filter:blur(20px);border:1px solid rgba(226,229,236,0.5);border-radius:24px;padding:40px;box-shadow:0 8px 48px rgba(15,27,45,.05),0 1px 3px rgba(15,27,45,.04);transition:box-shadow .4s var(--ease-out-expo)}
 .step-pg{display:none}
@@ -91,7 +91,7 @@ nav{position:sticky;top:0;z-index:200;background:rgba(246,247,250,0.85);backdrop
 .pg-title{font-family:'Playfair Display',serif;font-size:24px;font-weight:500;letter-spacing:-.3px;margin-bottom:6px}
 .pg-sub{font-size:14px;color:var(--muted);margin-bottom:32px;line-height:1.5}
 
-/* ââ FIELDS ââ */
+/* ── FIELDS ── */
 .fld{margin-bottom:22px}
 .fld label{display:block;font-size:12px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-bottom:8px}
 .fld input,.fld select,.fld textarea{width:100%;padding:12px 16px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-family:'DM Sans',sans-serif;background:var(--white);color:var(--ink);outline:none;transition:border .15s;-webkit-appearance:none}
@@ -99,21 +99,21 @@ nav{position:sticky;top:0;z-index:200;background:rgba(246,247,250,0.85);backdrop
 .fld textarea{resize:vertical;min-height:100px}
 .row2{display:flex;gap:16px}.row2>.fld{flex:1 1 0;min-width:0}
 
-/* ââ CHIP ââ */
+/* ── CHIP ── */
 .chips{display:flex;flex-wrap:wrap;gap:8px}
 .chip{padding:9px 18px;border:1px solid var(--line);border-radius:99px;font-size:13px;background:var(--white);color:var(--ink2);cursor:pointer;transition:all .15s;user-select:none;font-weight:400}
 .chip:hover{border-color:var(--ink2);transform:translateY(-1px);box-shadow:0 2px 8px rgba(15,27,45,.06)}
 .chip:active{transform:scale(0.97)}
 .chip.on{background:var(--ink);color:#fff;border-color:var(--ink);box-shadow:0 2px 12px rgba(15,27,45,.15)}
 
-/* ââ SLIDER ââ */
+/* ── SLIDER ── */
 .sldr-wrap{margin-bottom:24px}
 .sldr-top{display:flex;justify-content:space-between;margin-bottom:10px;align-items:baseline}
 .sldr-label{font-size:12px;font-weight:500;letter-spacing:.5px;text-transform:uppercase;color:var(--muted)}
 .sldr-val{font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:var(--ink)}
 input[type=range]{width:100%;accent-color:var(--ink);cursor:pointer;height:3px}
 
-/* ââ BTNS ââ */
+/* ── BTNS ── */
 .btn-row{display:flex;gap:10px;margin-top:32px}
 .btn-back{padding:12px 22px;border:1px solid var(--line);border-radius:10px;background:none;font-size:14px;font-family:'DM Sans',sans-serif;cursor:pointer;color:var(--muted);transition:all .15s}
 .btn-back:hover{border-color:var(--ink);color:var(--ink)}
@@ -122,7 +122,7 @@ input[type=range]{width:100%;accent-color:var(--ink);cursor:pointer;height:3px}
 .btn-nxt:active{transform:translateY(0);transition:all .1s}
 .btn-nxt:disabled{opacity:.3;cursor:not-allowed}
 
-/* ââ LOADING ââ */
+/* ── LOADING ── */
 .load-screen{padding:52px 0 40px;text-align:center}
 .advisor-avatar{width:72px;height:72px;border-radius:50%;background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);margin:0 auto 20px;display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:28px;color:var(--gold);animation:pulse-avatar 2s infinite}
 @keyframes pulse-avatar{0%,100%{box-shadow:0 0 0 0 rgba(184,149,90,.3)}50%{box-shadow:0 0 0 12px rgba(184,149,90,0)}}
@@ -134,7 +134,7 @@ input[type=range]{width:100%;accent-color:var(--ink);cursor:pointer;height:3px}
 .t-dot:nth-child(3){animation-delay:.4s}
 @keyframes tdot{0%,60%,100%{opacity:.2;transform:translateY(0)}30%{opacity:1;transform:translateY(-4px)}}
 
-/* ââ VIDEOCALL INTRO ââ */
+/* ── VIDEOCALL INTRO ── */
 .vc-intro{background:var(--ink);border-radius:16px;padding:28px;margin-bottom:28px;position:relative;overflow:hidden}
 .vc-intro::before{content:'';position:absolute;top:-40px;right:-40px;width:160px;height:160px;border-radius:50%;background:rgba(184,149,90,.07)}
 .vc-header{display:flex;align-items:center;gap:14px;margin-bottom:16px}
@@ -146,13 +146,13 @@ input[type=range]{width:100%;accent-color:var(--ink);cursor:pointer;height:3px}
 .vc-text{font-size:14px;color:rgba(255,255,255,.8);line-height:1.65;font-style:italic;padding-left:66px;position:relative}
 .vc-text::before{content:'"';font-family:'Playfair Display',serif;font-size:32px;color:var(--gold);position:absolute;left:60px;top:-8px;line-height:1}
 
-/* ââ STRATEGY ââ */
+/* ── STRATEGY ── */
 .strategy-bar{display:flex;align-items:center;gap:12px;padding:14px 18px;background:var(--gold-l);border:1px solid #e8d4b0;border-radius:12px;margin-bottom:24px}
 .strategy-icon{font-size:18px;flex-shrink:0}
 .strategy-text{font-size:13px;color:var(--ink2);line-height:1.5}
 .strategy-text strong{font-weight:500;color:var(--ink)}
 
-/* ââ OFFER CARD ââ */
+/* ── OFFER CARD ── */
 .offer-card{border:1px solid var(--line);border-radius:20px;padding:24px;margin-bottom:16px;background:rgba(255,255,255,0.8);backdrop-filter:blur(10px);transition:all .3s;position:relative;overflow:hidden}
 .offer-card:hover{border-color:var(--gold);box-shadow:0 12px 40px rgba(15,27,45,.07),0 0 0 1px rgba(196,163,90,.1);transform:translateY(-3px)}
 .offer-card.top{border-color:var(--gold);border-width:1.5px}
@@ -181,44 +181,44 @@ input[type=range]{width:100%;accent-color:var(--ink);cursor:pointer;height:3px}
 .offer-saving{display:flex;align-items:center;gap:6px;white-space:nowrap;padding:8px 14px;background:var(--green-l);border-radius:8px;font-size:12px;color:var(--green);font-weight:500}
 .offer-cta{font-size:11px;color:var(--muted);padding:8px 14px;background:var(--bg);border-radius:8px;line-height:1.4;flex:1;min-width:160px}
 
-/* ââ QUICK WINS ââ */
+/* ── QUICK WINS ── */
 .qw-section{background:var(--ink);border-radius:16px;padding:24px;margin-bottom:24px}
 .qw-title{font-family:'Playfair Display',serif;font-size:16px;color:#fff;margin-bottom:14px;display:flex;align-items:center;gap:8px}
 .qw-title span{font-size:16px}
 .qw-item{display:flex;align-items:flex-start;gap:10px;color:rgba(255,255,255,.75);font-size:13px;line-height:1.5;margin-bottom:8px}
 .qw-num{font-family:'Playfair Display',serif;font-size:16px;color:var(--gold);flex-shrink:0;line-height:1}
 
-/* ââ RESTART ââ */
+/* ── RESTART ── */
 .restart-row{text-align:center;padding-top:24px;border-top:1px solid var(--line);margin-top:8px}
 .btn-restart{padding:11px 26px;border:1px solid var(--line);border-radius:10px;background:none;font-size:13px;font-family:'DM Sans',sans-serif;cursor:pointer;color:var(--muted);transition:all .15s}
 .btn-restart:hover{border-color:var(--ink);color:var(--ink)}
 
-/* ââ ANIMATIONS ââ */
+/* ── ANIMATIONS ── */
 @keyframes fadeUp{from{opacity:0;transform:translateY(20px)}to{opacity:1;transform:translateY(0)}}
 .fade-up{animation:fadeUp .5s cubic-bezier(.22,1,.36,1) both}
 .fade-up:nth-child(2){animation-delay:.1s}
 .fade-up:nth-child(3){animation-delay:.2s}
 .fade-up:nth-child(4){animation-delay:.3s}
 
-/* ââ MODERN SCROLLBAR ââ */
+/* ── MODERN SCROLLBAR ── */
 ::-webkit-scrollbar{width:6px}
 ::-webkit-scrollbar-track{background:transparent}
 ::-webkit-scrollbar-thumb{background:rgba(15,27,45,.15);border-radius:99px}
 ::-webkit-scrollbar-thumb:hover{background:rgba(15,27,45,.25)}
 
-/* ââ ACCENT TOP BAR ââ */
+/* ── ACCENT TOP BAR ── */
 body::after{content:'';position:fixed;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--ink),var(--gold),var(--ink));z-index:999;opacity:.6}
 
-/* ââ GLOW HOVER EFFECT FOR STATS ââ */
+/* ── GLOW HOVER EFFECT FOR STATS ── */
 .stat{text-align:center;padding:16px 12px;border-radius:14px;transition:all .3s}
 .stat:hover{background:rgba(196,163,90,.06)}
 
-/* ââ HERO EYEBROW GLOW ââ */
+/* ── HERO EYEBROW GLOW ── */
 .hero-eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;letter-spacing:2.5px;text-transform:uppercase;color:var(--gold);margin-bottom:24px;font-weight:500;position:relative}
 .hero-eyebrow::before,.hero-eyebrow::after{content:'';width:40px;height:1px;background:linear-gradient(90deg,transparent,var(--gold));opacity:.5}
 .hero-eyebrow::after{background:linear-gradient(90deg,var(--gold),transparent)}
 
-/* ââ VIDEO SECTION â IMMERSIVE CINEMATIC ââ */
+/* ── VIDEO SECTION – IMMERSIVE CINEMATIC ── */
 .navia-video-section{
   width:100%;max-width:100%;margin:0 auto;padding:0;
   position:relative;overflow:hidden;
@@ -245,7 +245,7 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;height:2px;background
 .video-feature-icon{font-size:16px}
 .video-feature-text{font-size:12px;color:rgba(255,255,255,.6);font-weight:400}
 
-/* ââ PARTNER CARDS ââ */
+/* ── PARTNER CARDS ── */
 .partner-card{display:flex;flex-direction:column;align-items:center;padding:20px 14px;border:1px solid var(--line);border-radius:16px;text-decoration:none;background:rgba(255,255,255,0.7);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);transition:all .3s;gap:6px;flex:1 1 150px;min-width:130px}
 .partner-card:hover{border-color:var(--gold);box-shadow:0 8px 30px rgba(196,163,90,.15),0 0 0 1px rgba(196,163,90,.1);transform:translateY(-4px)}
 
@@ -261,7 +261,7 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;height:2px;background
   .nav-links{gap:2px}
 }
 
-/* ââ LOGIN MODAL ââ */
+/* ── LOGIN MODAL ── */
 #login-modal-backdrop{position:fixed;inset:0;z-index:9998;background:rgba(6,11,24,0.8);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);display:flex;align-items:center;justify-content:center}
 #login-modal-backdrop.hidden{display:none}
 .login-card{background:linear-gradient(135deg,#0f1b2d 0%,#162240 100%);border:1px solid rgba(196,163,90,0.2);border-radius:24px;padding:48px 40px;width:100%;max-width:420px;box-shadow:0 24px 80px rgba(0,0,0,.5),0 0 60px rgba(196,163,90,.08);position:relative}
@@ -278,7 +278,7 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;height:2px;background
 .login-btn:active{transform:translateY(0);transition:all .1s}
 .login-error{color:#ff6b6b;font-size:.82rem;margin-top:10px;text-align:center;min-height:20px}
 
-/* ââ NAV AUTH AREA ââ */
+/* ── NAV AUTH AREA ── */
 #nav-login-btn{background:none;border:1.5px solid rgba(15,27,45,.2);color:var(--ink);border-radius:10px;padding:8px 18px;font-size:.82rem;font-weight:600;cursor:pointer;letter-spacing:.04em;transition:all .3s;margin-left:4px;font-family:'DM Sans',sans-serif;position:relative;overflow:hidden}
 #nav-login-btn::before{content:'';position:absolute;inset:0;background:linear-gradient(135deg,var(--ink),var(--ink2));opacity:0;transition:opacity .3s}
 #nav-login-btn:hover{border-color:var(--ink);color:#fff}
@@ -289,12 +289,12 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;height:2px;background
 #logout-btn{background:transparent;border:1px solid rgba(29,53,87,.25);color:var(--muted);padding:6px 14px;border-radius:20px;font-size:0.78rem;cursor:pointer;transition:all 0.2s;font-family:'DM Sans',sans-serif}
 #logout-btn:hover{border-color:var(--ink);color:var(--ink)}
 
-/* ââ PORTAL NAV LINKS ââ */
+/* ── PORTAL NAV LINKS ── */
 .portal-nav-btn{display:none;background:none;border:none;color:var(--muted);cursor:pointer;font-size:.82rem;padding:6px 12px;letter-spacing:.03em;transition:all .2s;font-family:'DM Sans',sans-serif;border-radius:8px;white-space:nowrap}
 .portal-nav-btn:hover{color:var(--ink);background:rgba(29,53,87,.06)}
 .portal-nav-btn.active{color:var(--ink);font-weight:600;background:rgba(29,53,87,.08)}
 
-/* ââ MEINE POLICEN DASHBOARD ââ */
+/* ── MEINE POLICEN DASHBOARD ── */
 #meine-policen{display:none;padding:80px 24px 80px;max-width:920px;margin:0 auto}
 #meine-policen.visible{display:block}
 .policen-header{margin-bottom:36px}
@@ -324,7 +324,7 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;height:2px;background
 .policy-details-btn{align-self:flex-start;margin-top:8px;background:none;border:1px solid rgba(255,255,255,.12);color:rgba(255,255,255,.45);border-radius:6px;padding:6px 14px;font-size:.75rem;cursor:pointer;transition:all .2s;font-family:'DM Sans',sans-serif}
 .policy-details-btn:hover{border-color:var(--gold);color:var(--gold)}
 
-/* ââ NAVIA CHAT ââ */
+/* ── NAVIA CHAT ── */
 #navia-chat-section{display:none;padding:80px 24px 80px;max-width:860px;margin:0 auto}
 #navia-chat-section.visible{display:block}
 .chat-header{margin-bottom:32px}
@@ -369,7 +369,7 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;height:2px;background
 .chat-suggestion{padding:7px 14px;border:1px solid var(--line);border-radius:99px;font-size:12px;color:var(--ink2);background:var(--white);cursor:pointer;transition:all .15s;font-family:'DM Sans',sans-serif}
 .chat-suggestion:hover{border-color:var(--ink);color:var(--ink)}
 
-/* ââ SCHADEN MELDEN ââ */
+/* ── SCHADEN MELDEN ── */
 #schaden-section{display:none;padding:80px 24px 80px;max-width:860px;margin:0 auto}
 #schaden-section.visible{display:block}
 .schaden-header{margin-bottom:36px}
@@ -408,7 +408,7 @@ body::after{content:'';position:fixed;top:0;left:0;right:0;height:2px;background
 .notice-box{display:flex;gap:10px;padding:14px 16px;background:var(--blue-l);border:1px solid #c2d4ee;border-radius:12px;margin-bottom:24px;font-size:13px;color:var(--blue);line-height:1.5}
 .notice-icon{flex-shrink:0;font-size:16px}
 
-/* ââ FLOATING CHATBOT FAB ââ */
+/* ── FLOATING CHATBOT FAB ── */
 #fab-chat{position:fixed;bottom:28px;right:28px;z-index:9000}
 #fab-chat-btn{width:64px;height:64px;border-radius:50%;background:linear-gradient(135deg,var(--ink) 0%,#1e3456 100%);border:none;cursor:pointer;box-shadow:0 8px 32px rgba(15,27,45,.4),0 0 0 3px rgba(196,163,90,.2),0 0 40px rgba(196,163,90,.08);display:flex;align-items:center;justify-content:center;transition:all .3s;position:relative}
 #fab-chat-btn:hover{transform:scale(1.08);box-shadow:0 14px 44px rgba(15,27,45,.45),0 0 0 3px rgba(196,163,90,.25),0 0 60px rgba(196,163,90,.1)}
@@ -557,12 +557,12 @@ body{animation:pageIn .5s ease-out}
     <label class="login-label" for="login-email">E-Mail</label>
     <input class="login-input" type="email" id="login-email" placeholder="petra@navia.ch" autocomplete="email" onkeydown="if(event.key==='Enter')doLogin()" />
     <label class="login-label" for="login-pass">Passwort</label>
-    <input class="login-input" type="password" id="login-pass" placeholder="â¢â¢â¢â¢â¢â¢â¢â¢" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()" />
+    <input class="login-input" type="password" id="login-pass" placeholder="••••••••" autocomplete="current-password" onkeydown="if(event.key==='Enter')doLogin()" />
     <button type="button" class="login-btn" onclick="doLogin()">Anmelden</button>
     <div class="login-error" id="login-error"></div>
     
     <div style="margin-top:14px;text-align:center;font-size:12px;color:var(--muted)">
-      Noch kein Konto? <button onclick="closeLoginModal();startAdvisor();" style="background:none;border:none;color:var(--gold);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;text-decoration:underline;text-underline-offset:2px">Jetzt Profil erstellen â</button>
+      Noch kein Konto? <button onclick="closeLoginModal();startAdvisor();" style="background:none;border:none;color:var(--gold);cursor:pointer;font-family:'DM Sans',sans-serif;font-size:12px;font-weight:600;text-decoration:underline;text-underline-offset:2px">Jetzt Profil erstellen →</button>
     </div>
   </div>
 </div>
@@ -573,8 +573,8 @@ body{animation:pageIn .5s ease-out}
   <div class="nav-links">
     <button class="portal-nav-btn" id="dash-nav-link" onclick="showDashboard()" style="display:none">Dashboard</button>
     <button class="portal-nav-btn" id="policen-nav-link" onclick="showSection('policen')">Meine Policen</button>
-    <button class="portal-nav-btn" id="chat-nav-link" onclick="showSection('chat')">ð¬ Navia Chat</button>
-    <button class="portal-nav-btn" id="schaden-nav-link" onclick="showSection('schaden')">ð¡ Schaden melden</button>
+    <button class="portal-nav-btn" id="chat-nav-link" onclick="showSection('chat')">💬 Navia Chat</button>
+    <button class="portal-nav-btn" id="schaden-nav-link" onclick="showSection('schaden')">🛡 Schaden melden</button>
   </div>
   <div class="nav-right">
     <div class="trust-pill"><div class="trust-dot"></div><span id="trust-txt">Berater online</span></div>
@@ -587,39 +587,39 @@ body{animation:pageIn .5s ease-out}
   </div>
 </nav>
 
-<!-- HERO â VIDEO FIRST, SIMPLE & MODERN -->
+<!-- HERO — VIDEO FIRST, SIMPLE & MODERN -->
 <div id="hero" style="position:relative;z-index:1">
 
-  <!-- VIDEO SECTION â FULL WIDTH, IMMERSIVE -->
+  <!-- VIDEO SECTION — FULL WIDTH, IMMERSIVE -->
   <div id="video-section" class="navia-video-section" style="margin:0;padding:0">
     <div class="video-glow"></div><div class="hero-particles"></div>
     <div style="position:relative;z-index:3;max-width:620px;margin:0 auto;padding:28px 24px 24px">
       <div style="display:flex;align-items:center;justify-content:center;gap:10px;margin-bottom:28px">
         <div style="width:40px;height:40px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center;font-family:'Playfair Display',serif;font-size:18px;color:var(--ink);font-weight:600">N</div>
         <span style="font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:#fff;letter-spacing:-.5px">Nav<em style="color:var(--gold);font-style:normal">ia</em></span>
-        <span style="font-size:12px;color:rgba(255,255,255,.4);margin-left:6px">â Ihre digitale Versicherungsberaterin</span>
+        <span style="font-size:12px;color:rgba(255,255,255,.4);margin-left:6px">— Ihre digitale Versicherungsberaterin</span>
       </div>
       <div class="video-lang active" id="vid-de">
         <div class="video-frame-wrap">
-          <iframe src="https://app.heygen.com/embeds/4ed4dee25b794cd48260900b48e899eb?autoplay=1&muted=0" title="Navia â Digitale Versicherungsberaterin (Deutsch)" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
+          <iframe src="https://app.heygen.com/embeds/4ed4dee25b794cd48260900b48e899eb?autoplay=1&muted=0" title="Navia – Digitale Versicherungsberaterin (Deutsch)" allow="autoplay; fullscreen; encrypted-media" allowfullscreen></iframe>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- CTA SECTION â SIMPLE BUTTONS BELOW VIDEO -->
+  <!-- CTA SECTION — SIMPLE BUTTONS BELOW VIDEO -->
   <div style="max-width:700px;margin:0 auto;padding:48px 24px 56px;text-align:center">
     <h1 style="font-family:'Playfair Display',serif;font-size:clamp(28px,4.5vw,44px);font-weight:500;line-height:1.2;letter-spacing:-1px;color:var(--ink);margin-bottom:16px">
       Versicherungen, die <span style="color:var(--gold)">wirklich</span> zu Ihnen passen.
     </h1>
     <p style="font-size:16px;color:var(--muted);line-height:1.65;max-width:480px;margin:0 auto 36px;font-weight:300">
-      KI-gestÃ¼tzte Analyse. Echte Angebote. UnabhÃ¤ngig und kostenlos.
+      KI-gestützte Analyse. Echte Angebote. Unabhängig und kostenlos.
     </p>
 
     <!-- 3 MAIN ACTIONS -->
     <div style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-bottom:28px">
       <button class="start-btn" style="background:linear-gradient(135deg,var(--gold),#d4b06a);color:var(--ink);box-shadow:0 4px 20px rgba(196,163,90,.3)" onclick="openFullChat()">
-        <span style="font-size:18px">ð¬</span>
+        <span style="font-size:18px">💬</span>
         <span>Jetzt mit Navia chatten</span>
       </button>
       <button class="start-btn" onclick="startAdvisor()">
@@ -639,7 +639,7 @@ body{animation:pageIn .5s ease-out}
       </div>
       <div style="text-align:center">
         <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--ink)">100%</div>
-        <div style="font-size:11px;color:var(--muted);letter-spacing:.5px" id="stat2">UnabhÃ¤ngig</div>
+        <div style="font-size:11px;color:var(--muted);letter-spacing:.5px" id="stat2">Unabhängig</div>
       </div>
       <div style="text-align:center">
         <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:600;color:var(--ink)">3 Min.</div>
@@ -655,7 +655,7 @@ body{animation:pageIn .5s ease-out}
 </div>
 
 
-<!-- PERSONAL DASHBOARD â CLEAN HOME -->
+<!-- PERSONAL DASHBOARD — CLEAN HOME -->
 <div id="navia-dashboard" class="navia-dashboard" style="display:none">
 <style>
 .nhome-wrap{max-width:760px;margin:0 auto;padding:72px 24px 56px;text-align:center;position:relative;z-index:1}
@@ -680,32 +680,32 @@ body{animation:pageIn .5s ease-out}
 @media(max-width:520px){.nhome-grid{grid-template-columns:1fr}.nhome-wrap{padding:48px 20px 40px}}
 </style>
 <div class="nhome-wrap">
-<h1 class="nhome-greeting">Willkommen zurÃ¼ck, <span id="dash-user-name">Petra</span></h1>
+<h1 class="nhome-greeting">Willkommen zur&uuml;ck, <span id="dash-user-name">Petra</span></h1>
 <p class="nhome-date" id="dash-date-line"></p>
 <div class="nhome-grid">
 <div class="nhome-card nhome-card-primary" onclick="hideAllSections();document.getElementById('navia-dashboard').style.display='none';document.getElementById('progress-wrap').style.display='';document.getElementById('pg1').style.display='';">
 <div class="nhome-card-icon">&#128269;</div>
 <div class="nhome-card-title">Neue Analyse</div>
-<div class="nhome-card-desc">KI-gestÃ¼tzte Versicherungsberatung starten</div>
-<div class="nhome-card-arrow">â</div>
+<div class="nhome-card-desc">KI-gest&uuml;tzte Versicherungsberatung starten</div>
+<div class="nhome-card-arrow">&rarr;</div>
 </div>
 <div class="nhome-card" onclick="showSection('policen')">
 <div class="nhome-card-icon">&#128196;</div>
 <div class="nhome-card-title">Meine Policen</div>
 <div class="nhome-card-desc">Versicherungen verwalten &amp; hochladen</div>
-<div class="nhome-card-arrow">â</div>
+<div class="nhome-card-arrow">&rarr;</div>
 </div>
 <div class="nhome-card" onclick="showSection('chat')">
 <div class="nhome-card-icon">&#128172;</div>
 <div class="nhome-card-title">Mit Navia chatten</div>
 <div class="nhome-card-desc">KI-Beraterin direkt befragen</div>
-<div class="nhome-card-arrow">â</div>
+<div class="nhome-card-arrow">&rarr;</div>
 </div>
 <div class="nhome-card" onclick="showSection('schaden')">
 <div class="nhome-card-icon">&#128680;</div>
 <div class="nhome-card-title">Schaden melden</div>
 <div class="nhome-card-desc">Schadensfall schnell einreichen</div>
-<div class="nhome-card-arrow">â</div>
+<div class="nhome-card-arrow">&rarr;</div>
 </div>
 </div>
 <div class="nhome-stats">
@@ -715,11 +715,11 @@ body{animation:pageIn .5s ease-out}
 </div>
 <div class="stat-item">
 <div class="stat-num">100%</div>
-<div class="stat-lbl">UnabhÃ¤ngig</div>
+<div class="stat-lbl">Unabh&auml;ngig</div>
 </div>
 <div class="stat-item">
-<div class="stat-num">â Online</div>
-<div class="stat-lbl">Beraterin verfÃ¼gbar</div>
+<div class="stat-num">&#9679; Online</div>
+<div class="stat-lbl">Beraterin verf&uuml;gbar</div>
 </div>
 </div>
 </div>
@@ -732,16 +732,16 @@ body{animation:pageIn .5s ease-out}
     <!-- PAGE 1: Profil -->
     <div class="step-pg on" id="pg1">
       <div class="pg-title" id="pg1-title">Ihr Profil</div>
-      <div class="pg-sub" id="pg1-sub">Registrieren Sie sich mit E-Mail und Passwort auf dem Navia-Portal. Ihre Daten werden sicher gespeichert, damit wir eine umfassende Versicherungsanalyse fÃ¼r Sie erstellen kÃ¶nnen. Hinterlegen Sie Ihre Policen und nutzen Sie Navia als Ihr persÃ¶nliches Versicherungsdashboard.</div>
+      <div class="pg-sub" id="pg1-sub">Registrieren Sie sich mit E-Mail und Passwort auf dem Navia-Portal. Ihre Daten werden sicher gespeichert, damit wir eine umfassende Versicherungsanalyse für Sie erstellen können. Hinterlegen Sie Ihre Policen und nutzen Sie Navia als Ihr persönliches Versicherungsdashboard.</div>
       <div class="row2">
         <div class="fld"><label id="l-fn">Vorname</label><input id="fn" type="text" placeholder="Max"></div>
-        <div class="fld"><label id="l-ln">Nachname</label><input id="ln" type="text" placeholder="MÃ¼ller"></div>
+        <div class="fld"><label id="l-ln">Nachname</label><input id="ln" type="text" placeholder="Müller"></div>
       </div>
       <div class="row2">
         <div class="fld"><label id="l-geb">Geburtsjahr</label><input id="geb" type="number" min="1930" max="2007" placeholder="1985"></div>
         <div class="fld"><label id="l-kt">Kanton</label>
           <select id="kt">
-            <option value="">â wÃ¤hlen â</option>
+            <option value="">— wählen —</option>
             <option>AG</option><option>AI</option><option>AR</option><option>BE</option><option>BL</option><option>BS</option><option>FR</option><option>GE</option><option>GL</option><option>GR</option><option>JU</option><option>LU</option><option>NE</option><option>NW</option><option>OW</option><option>SG</option><option>SH</option><option>SO</option><option>SZ</option><option>TG</option><option>TI</option><option>UR</option><option>VD</option><option>VS</option><option>ZG</option><option selected>ZH</option>
           </select>
         </div>
@@ -752,23 +752,23 @@ body{animation:pageIn .5s ease-out}
           <div class="chip" data-v="paar">Paar</div>
           <div class="chip" data-v="familie">Familie mit Kindern</div>
           <div class="chip" data-v="senior">55+</div>
-          <div class="chip" data-v="selbststaendig">SelbstÃ¤ndig</div>
+          <div class="chip" data-v="selbststaendig">Selbständig</div>
         </div>
       </div>
       <div class="fld"><label id="l-kid">Kinder</label>
         <div class="chips" id="c-kid">
           <div class="chip" data-v="keine">Keine</div>
-          <div class="chip" data-v="1-2">1â2 Kinder</div>
+          <div class="chip" data-v="1-2">1–2 Kinder</div>
           <div class="chip" data-v="3+">3+ Kinder</div>
         </div>
       </div>
-      <div class="btn-row"><button class="btn-nxt" onclick="go(2)" id="b1">Weiter â</button></div>
+      <div class="btn-row"><button class="btn-nxt" onclick="go(2)" id="b1">Weiter →</button></div>
     </div>
 
-    <!-- PAGE 2: BedÃ¼rfnisse -->
+    <!-- PAGE 2: Bedürfnisse -->
     <div class="step-pg" id="pg2">
       <div class="pg-title" id="pg2-title">Was soll versichert sein?</div>
-      <div class="pg-sub" id="pg2-sub">Mehrfachauswahl mÃ¶glich â wÃ¤hlen Sie alles, was relevant ist.</div>
+      <div class="pg-sub" id="pg2-sub">Mehrfachauswahl möglich — wählen Sie alles, was relevant ist.</div>
       <div class="fld"><label id="l-ber">Versicherungsbereiche</label>
         <div class="chips" id="c-ber">
           <div class="chip" data-v="kranken">Krankenkasse / Zusatz</div>
@@ -787,21 +787,21 @@ body{animation:pageIn .5s ease-out}
         <div class="chips" id="c-prio">
           <div class="chip" data-v="preis">Tiefster Preis</div>
           <div class="chip" data-v="leistung">Maximale Leistung</div>
-          <div class="chip" data-v="service">PersÃ¶nlicher Service</div>
+          <div class="chip" data-v="service">Persönlicher Service</div>
           <div class="chip" data-v="digital">Digital &amp; einfach</div>
           <div class="chip" data-v="schweizer">Schweizer Anbieter</div>
         </div>
       </div>
       <div class="btn-row">
-        <button class="btn-back" onclick="go(1)" id="back1">â ZurÃ¼ck</button>
-        <button class="btn-nxt" onclick="go(3)" id="b2">Weiter â</button>
+        <button class="btn-back" onclick="go(1)" id="back1">← Zurück</button>
+        <button class="btn-nxt" onclick="go(3)" id="b2">Weiter →</button>
       </div>
     </div>
 
     <!-- PAGE 3: Budget -->
     <div class="step-pg" id="pg3">
       <div class="pg-title" id="pg3-title">Budget &amp; Bestehendes</div>
-      <div class="pg-sub" id="pg3-sub">So finden wir das optimale Preis-Leistungs-VerhÃ¤ltnis fÃ¼r Sie.</div>
+      <div class="pg-sub" id="pg3-sub">So finden wir das optimale Preis-Leistungs-Verhältnis für Sie.</div>
       <div class="sldr-wrap">
         <div class="sldr-top">
           <span class="sldr-label" id="l-bud">Monatliches Budget</span>
@@ -824,8 +824,8 @@ body{animation:pageIn .5s ease-out}
         <input type="text" id="extra" placeholder="z.B. Motorrad, Hund, Ferienwohnung, Homeoffice...">
       </div>
       <div class="btn-row">
-        <button class="btn-back" onclick="go(2)" id="back2">â ZurÃ¼ck</button>
-        <button class="btn-nxt" onclick="analyze()" id="b3">Analyse starten â</button>
+        <button class="btn-back" onclick="go(2)" id="back2">← Zurück</button>
+        <button class="btn-nxt" onclick="analyze()" id="b3">Analyse starten →</button>
       </div>
     </div>
 
@@ -837,10 +837,10 @@ body{animation:pageIn .5s ease-out}
 <div class="load-status" id="load-status">Analysiert Ihr Profil...</div>
 <div class="load-progress-wrap"><div class="load-progress-bar" id="load-progress-bar"></div></div>
 <div class="load-steps" id="load-steps">
-<div class="load-step" id="ls-1"><span class="ls-icon">â³</span> Profildaten werden gelesen...</div>
-<div class="load-step" id="ls-2"><span class="ls-icon">â³</span> Versicherungsmarkt wird analysiert...</div>
-<div class="load-step" id="ls-3"><span class="ls-icon">â³</span> Passende Policen werden verglichen...</div>
-<div class="load-step" id="ls-4"><span class="ls-icon">â³</span> Optimale Empfehlungen werden berechnet...</div>
+<div class="load-step" id="ls-1"><span class="ls-icon">⏳</span> Profildaten werden gelesen...</div>
+<div class="load-step" id="ls-2"><span class="ls-icon">⏳</span> Versicherungsmarkt wird analysiert...</div>
+<div class="load-step" id="ls-3"><span class="ls-icon">⏳</span> Passende Policen werden verglichen...</div>
+<div class="load-step" id="ls-4"><span class="ls-icon">⏳</span> Optimale Empfehlungen werden berechnet...</div>
 </div>
 <div class="typing-bar"><div class="t-dot"></div><div class="t-dot"></div><div class="t-dot"></div></div>
 </div>
@@ -864,52 +864,52 @@ body{animation:pageIn .5s ease-out}
   <div style="text-align:center;margin-bottom:28px">
     <div style="font-size:11px;letter-spacing:2px;text-transform:uppercase;color:var(--gold);margin-bottom:8px;font-weight:500">Unsere Partner</div>
     <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:500;color:var(--ink)">Direkt bei den besten Anbietern abschliessen</div>
-    <div style="font-size:13px;color:var(--muted);margin-top:8px">Navia ist unabhÃ¤ngig â wir vergleichen fÃ¼r Sie, Sie entscheiden frei.</div>
+    <div style="font-size:13px;color:var(--muted);margin-top:8px">Navia ist unabhängig — wir vergleichen für Sie, Sie entscheiden frei.</div>
   </div>
   <div style="display:flex;flex-wrap:wrap;gap:12px">
     <a href="https://www.axa.ch/de/privatkunden.html" target="_blank" class="partner-card">
-      <div style="font-size:22px">ð¡ï¸</div><div style="font-size:13px;font-weight:500;color:var(--ink)">AXA</div>
+      <div style="font-size:22px">🛡️</div><div style="font-size:13px;font-weight:500;color:var(--ink)">AXA</div>
       <div style="font-size:11px;color:var(--muted);text-align:center">Haftpflicht, Hausrat, Leben</div>
     </a>
     <a href="https://www.mobiliar.ch/versicherungen-und-vorsorge" target="_blank" class="partner-card">
-      <div style="font-size:22px">ð </div><div style="font-size:13px;font-weight:500;color:var(--ink)">Mobiliar</div>
+      <div style="font-size:22px">🏠</div><div style="font-size:13px;font-weight:500;color:var(--ink)">Mobiliar</div>
       <div style="font-size:11px;color:var(--muted);text-align:center">Hausrat &amp; Haftpflicht</div>
     </a>
     <a href="https://www.helsana.ch/de/privatkunden" target="_blank" class="partner-card">
-      <div style="font-size:22px">â¤ï¸</div><div style="font-size:13px;font-weight:500;color:var(--ink)">Helsana</div>
+      <div style="font-size:22px">❤️</div><div style="font-size:13px;font-weight:500;color:var(--ink)">Helsana</div>
       <div style="font-size:11px;color:var(--muted);text-align:center">Krankenkasse &amp; Zusatz</div>
     </a>
     <a href="https://www.helvetia.com/ch/web/de/privatkunden.html" target="_blank" class="partner-card">
-      <div style="font-size:22px">ð¨ð­</div><div style="font-size:13px;font-weight:500;color:var(--ink)">Helvetia</div>
+      <div style="font-size:22px">🇨🇭</div><div style="font-size:13px;font-weight:500;color:var(--ink)">Helvetia</div>
       <div style="font-size:11px;color:var(--muted);text-align:center">Unfall, Rechtsschutz, Vorsorge</div>
     </a>
     <a href="https://www.zurich.ch/de/privat" target="_blank" class="partner-card">
-      <div style="font-size:22px">ð</div><div style="font-size:13px;font-weight:500;color:var(--ink)">Zurich</div>
+      <div style="font-size:22px">🌍</div><div style="font-size:13px;font-weight:500;color:var(--ink)">Zurich</div>
       <div style="font-size:11px;color:var(--muted);text-align:center">Auto, Leben, Cyber</div>
     </a>
     <a href="https://www.swica.ch/de" target="_blank" class="partner-card">
-      <div style="font-size:22px">ð</div><div style="font-size:13px;font-weight:500;color:var(--ink)">SWICA</div>
+      <div style="font-size:22px">💚</div><div style="font-size:13px;font-weight:500;color:var(--ink)">SWICA</div>
       <div style="font-size:11px;color:var(--muted);text-align:center">Krankenkasse &amp; Gesundheit</div>
     </a>
     <a href="https://www.css.ch/de/privatkunden.html" target="_blank" class="partner-card">
-      <div style="font-size:22px">ð</div><div style="font-size:13px;font-weight:500;color:var(--ink)">CSS</div>
+      <div style="font-size:22px">💙</div><div style="font-size:13px;font-weight:500;color:var(--ink)">CSS</div>
       <div style="font-size:11px;color:var(--muted);text-align:center">Grundversicherung &amp; Zusatz</div>
     </a>
     <a href="https://www.generali.ch/de/privatkunden" target="_blank" class="partner-card">
-      <div style="font-size:22px">ð¦</div><div style="font-size:13px;font-weight:500;color:var(--ink)">Generali</div>
+      <div style="font-size:22px">🦁</div><div style="font-size:13px;font-weight:500;color:var(--ink)">Generali</div>
       <div style="font-size:11px;color:var(--muted);text-align:center">Vorsorge, Sach, Rechtsschutz</div>
     </a>
     <a href="https://www.concordia.ch/de/privatkunden.html" target="_blank" class="partner-card">
-      <div style="font-size:22px">ðµ</div><div style="font-size:13px;font-weight:500;color:var(--ink)">Concordia</div>
+      <div style="font-size:22px">🔵</div><div style="font-size:13px;font-weight:500;color:var(--ink)">Concordia</div>
       <div style="font-size:11px;color:var(--muted);text-align:center">Krankenkasse &amp; Zusatz</div>
     </a>
     <a href="https://www.visana.ch/de/privatkunden" target="_blank" class="partner-card">
-      <div style="font-size:22px">ð¢</div><div style="font-size:13px;font-weight:500;color:var(--ink)">Visana</div>
+      <div style="font-size:22px">🟢</div><div style="font-size:13px;font-weight:500;color:var(--ink)">Visana</div>
       <div style="font-size:11px;color:var(--muted);text-align:center">Krankenkasse &amp; Unfall</div>
     </a>
   </div>
   <div style="text-align:center;margin-top:16px;font-size:11px;color:var(--muted)">
-    Navia vergleicht unabhÃ¤ngig â Sie entscheiden frei. Alle Links fÃ¼hren direkt zu den offiziellen Versicherer-Websites.
+    Navia vergleicht unabhängig — Sie entscheiden frei. Alle Links führen direkt zu den offiziellen Versicherer-Websites.
   </div>
 </div>
 
@@ -925,9 +925,9 @@ body{animation:pageIn .5s ease-out}
     <div style="display:flex;flex-wrap:wrap;gap:20px;align-items:stretch;justify-content:center">
       <!-- Step 1: Documents -->
       <div style="flex:1 1 180px;min-width:160px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center">
-        <div style="font-size:28px;margin-bottom:8px">ð</div>
+        <div style="font-size:28px;margin-bottom:8px">📄</div>
         <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px">Datenquellen</div>
-        <div style="font-size:11px;color:var(--muted);line-height:1.5">Policen (PDF), AVB, AntrÃ¤ge werden als Wissensbasis hinterlegt</div>
+        <div style="font-size:11px;color:var(--muted);line-height:1.5">Policen (PDF), AVB, Anträge werden als Wissensbasis hinterlegt</div>
         <div style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-top:10px">
           <span style="font-size:10px;background:var(--blue-l);color:var(--blue);padding:3px 8px;border-radius:4px">Police.pdf</span>
           <span style="font-size:10px;background:var(--green-l);color:var(--green);padding:3px 8px;border-radius:4px">AVB.pdf</span>
@@ -935,24 +935,24 @@ body{animation:pageIn .5s ease-out}
         </div>
       </div>
       <!-- Arrow -->
-      <div style="display:flex;align-items:center;font-size:24px;color:var(--gold);flex-shrink:0">â</div>
+      <div style="display:flex;align-items:center;font-size:24px;color:var(--gold);flex-shrink:0">→</div>
       <!-- Step 2: RAG -->
       <div style="flex:1 1 180px;min-width:160px;background:linear-gradient(135deg,var(--ink) 0%,var(--ink2) 100%);border-radius:14px;padding:20px;text-align:center">
-        <div style="font-size:28px;margin-bottom:8px">ð§ </div>
+        <div style="font-size:28px;margin-bottom:8px">🧠</div>
         <div style="font-size:13px;font-weight:600;color:#fff;margin-bottom:6px">RAG-Engine</div>
-        <div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.5">System-Prompt mit vollstÃ¤ndigen Policendaten + LLM (Claude Sonnet)</div>
+        <div style="font-size:11px;color:rgba(255,255,255,.6);line-height:1.5">System-Prompt mit vollständigen Policendaten + LLM (Claude Sonnet)</div>
         <div style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-top:10px">
           <span style="font-size:10px;background:rgba(184,149,90,.2);color:var(--gold);padding:3px 8px;border-radius:4px">Claude API</span>
           <span style="font-size:10px;background:rgba(255,255,255,.1);color:rgba(255,255,255,.7);padding:3px 8px;border-radius:4px">Kontext</span>
         </div>
       </div>
       <!-- Arrow -->
-      <div style="display:flex;align-items:center;font-size:24px;color:var(--gold);flex-shrink:0">â</div>
+      <div style="display:flex;align-items:center;font-size:24px;color:var(--gold);flex-shrink:0">→</div>
       <!-- Step 3: Output -->
       <div style="flex:1 1 180px;min-width:160px;background:var(--bg);border:1px solid var(--line);border-radius:14px;padding:20px;text-align:center">
-        <div style="font-size:28px;margin-bottom:8px">ð¬</div>
+        <div style="font-size:28px;margin-bottom:8px">💬</div>
         <div style="font-size:13px;font-weight:600;color:var(--ink);margin-bottom:6px">Intelligente Antwort</div>
-        <div style="font-size:11px;color:var(--muted);line-height:1.5">PrÃ¤zise Antwort mit Police-Referenz, Deckungsinfos und Empfehlungen</div>
+        <div style="font-size:11px;color:var(--muted);line-height:1.5">Präzise Antwort mit Police-Referenz, Deckungsinfos und Empfehlungen</div>
         <div style="display:flex;flex-wrap:wrap;gap:4px;justify-content:center;margin-top:10px">
           <span style="font-size:10px;background:var(--green-l);color:var(--green);padding:3px 8px;border-radius:4px">Personalisiert</span>
           <span style="font-size:10px;background:var(--gold-l);color:var(--gold);padding:3px 8px;border-radius:4px">Quellenbezug</span>
@@ -961,26 +961,26 @@ body{animation:pageIn .5s ease-out}
     </div>
     <!-- Comparison: LLM vs Regelbasiert -->
     <div style="margin-top:28px;border-top:1px solid var(--line);padding-top:24px">
-      <div style="font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;text-align:center">Zwei AnsÃ¤tze im Vergleich</div>
+      <div style="font-size:12px;font-weight:600;letter-spacing:.5px;text-transform:uppercase;color:var(--muted);margin-bottom:14px;text-align:center">Zwei Ansätze im Vergleich</div>
       <div style="display:flex;flex-wrap:wrap;gap:16px">
         <div style="flex:1 1 280px;border:1.5px solid var(--gold);border-radius:14px;padding:18px;position:relative">
           <div style="position:absolute;top:-10px;left:16px;background:var(--gold);color:var(--ink);font-size:10px;font-weight:700;padding:2px 10px;border-radius:4px;letter-spacing:.5px">AKTIV</div>
-          <div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;margin-top:4px">ð¤ LLM-basiert (Claude API)</div>
-          <div style="font-size:12px;color:var(--muted);line-height:1.6">Versteht natÃ¼rliche Sprache, kann komplexe Policenfragen beantworten, zitiert spezifische Klauseln. Nutzt den vollstÃ¤ndigen Policentext als Kontext.</div>
+          <div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;margin-top:4px">🤖 LLM-basiert (Claude API)</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.6">Versteht natürliche Sprache, kann komplexe Policenfragen beantworten, zitiert spezifische Klauseln. Nutzt den vollständigen Policentext als Kontext.</div>
           <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">
-            <span style="font-size:10px;background:var(--green-l);color:var(--green);padding:3px 8px;border-radius:4px">â Flexibel</span>
-            <span style="font-size:10px;background:var(--green-l);color:var(--green);padding:3px 8px;border-radius:4px">â Kontextbezogen</span>
-            <span style="font-size:10px;background:var(--red-l);color:var(--red);padding:3px 8px;border-radius:4px">â API-Kosten</span>
+            <span style="font-size:10px;background:var(--green-l);color:var(--green);padding:3px 8px;border-radius:4px">✓ Flexibel</span>
+            <span style="font-size:10px;background:var(--green-l);color:var(--green);padding:3px 8px;border-radius:4px">✓ Kontextbezogen</span>
+            <span style="font-size:10px;background:var(--red-l);color:var(--red);padding:3px 8px;border-radius:4px">✗ API-Kosten</span>
           </div>
         </div>
         <div style="flex:1 1 280px;border:1px solid var(--line);border-radius:14px;padding:18px;position:relative">
           <div style="position:absolute;top:-10px;left:16px;background:var(--bg);color:var(--muted);font-size:10px;font-weight:700;padding:2px 10px;border-radius:4px;letter-spacing:.5px;border:1px solid var(--line)">FALLBACK</div>
-          <div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;margin-top:4px">ð Regelbasiert (FAQ)</div>
-          <div style="font-size:12px;color:var(--muted);line-height:1.6">Vordefinierte Antworten auf hÃ¤ufige Fragen. Funktioniert offline, keine API nÃ¶tig. Ideal fÃ¼r Standardfragen wie Kontaktdaten oder Schadenhotline.</div>
+          <div style="font-size:14px;font-weight:600;color:var(--ink);margin-bottom:6px;margin-top:4px">📋 Regelbasiert (FAQ)</div>
+          <div style="font-size:12px;color:var(--muted);line-height:1.6">Vordefinierte Antworten auf häufige Fragen. Funktioniert offline, keine API nötig. Ideal für Standardfragen wie Kontaktdaten oder Schadenhotline.</div>
           <div style="display:flex;gap:6px;margin-top:10px;flex-wrap:wrap">
-            <span style="font-size:10px;background:var(--green-l);color:var(--green);padding:3px 8px;border-radius:4px">â Kostenlos</span>
-            <span style="font-size:10px;background:var(--green-l);color:var(--green);padding:3px 8px;border-radius:4px">â Schnell</span>
-            <span style="font-size:10px;background:var(--red-l);color:var(--red);padding:3px 8px;border-radius:4px">â Begrenzt</span>
+            <span style="font-size:10px;background:var(--green-l);color:var(--green);padding:3px 8px;border-radius:4px">✓ Kostenlos</span>
+            <span style="font-size:10px;background:var(--green-l);color:var(--green);padding:3px 8px;border-radius:4px">✓ Schnell</span>
+            <span style="font-size:10px;background:var(--red-l);color:var(--red);padding:3px 8px;border-radius:4px">✗ Begrenzt</span>
           </div>
         </div>
       </div>
@@ -1005,7 +1005,7 @@ body{animation:pageIn .5s ease-out}
     </div>
     <div class="stat-card">
       <div class="stat-value">CHF 1'650</div>
-      <div class="stat-label">Total PrÃ¤mien / Jahr</div>
+      <div class="stat-label">Total Prämien / Jahr</div>
     </div>
     <div class="stat-card">
       <div class="stat-value">2</div>
@@ -1013,30 +1013,30 @@ body{animation:pageIn .5s ease-out}
     </div>
   </div>
 
-  <!-- DECKUNGSLÃCKEN -->
+  <!-- DECKUNGSLÜCKEN -->
   <div style="background:linear-gradient(135deg,#1a2744 0%,#243354 100%);border:1px solid rgba(239,68,68,.25);border-radius:16px;padding:24px 28px;margin-bottom:28px">
     <div style="display:flex;align-items:center;gap:10px;margin-bottom:16px">
-      <div style="width:36px;height:36px;border-radius:50%;background:rgba(239,68,68,.15);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">â ï¸</div>
+      <div style="width:36px;height:36px;border-radius:50%;background:rgba(239,68,68,.15);display:flex;align-items:center;justify-content:center;font-size:16px;flex-shrink:0">⚠️</div>
       <div>
-        <div style="font-family:'Playfair Display',serif;font-size:16px;color:#fff;font-weight:500">Navia hat DeckungslÃ¼cken erkannt</div>
+        <div style="font-family:'Playfair Display',serif;font-size:16px;color:#fff;font-weight:500">Navia hat Deckungslücken erkannt</div>
         <div style="font-size:12px;color:rgba(255,255,255,.4)">Basierend auf Ihrem Profil fehlen wichtige Absicherungen</div>
       </div>
     </div>
     <div style="display:flex;flex-wrap:wrap;gap:10px">
       <div style="flex:1 1 200px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:12px;padding:14px 16px">
-        <div style="font-size:12px;color:#f87171;font-weight:600;margin-bottom:4px">â Krankenkasse / Zusatz</div>
+        <div style="font-size:12px;color:#f87171;font-weight:600;margin-bottom:4px">❌ Krankenkasse / Zusatz</div>
         <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.5">Keine Krankenkasse hinterlegt. Obligatorisch in der Schweiz.</div>
       </div>
       <div style="flex:1 1 200px;background:rgba(239,68,68,.08);border:1px solid rgba(239,68,68,.2);border-radius:12px;padding:14px 16px">
-        <div style="font-size:12px;color:#f87171;font-weight:600;margin-bottom:4px">â Vorsorge / SÃ¤ule 3a</div>
+        <div style="font-size:12px;color:#f87171;font-weight:600;margin-bottom:4px">❌ Vorsorge / Säule 3a</div>
         <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.5">Keine Lebensversicherung oder 3a hinterlegt.</div>
       </div>
       <div style="flex:1 1 200px;background:rgba(251,191,36,.08);border:1px solid rgba(251,191,36,.2);border-radius:12px;padding:14px 16px">
-        <div style="font-size:12px;color:#fbbf24;font-weight:600;margin-bottom:4px">â ï¸ Fahrzeug abgelaufen</div>
+        <div style="font-size:12px;color:#fbbf24;font-weight:600;margin-bottom:4px">⚠️ Fahrzeug abgelaufen</div>
         <div style="font-size:11px;color:rgba(255,255,255,.5);line-height:1.5">Honda Accord Police seit 31.12.2024 abgelaufen.</div>
       </div>
     </div>
-    <button type="button" onclick="showSection('chat')" style="margin-top:16px;padding:10px 22px;background:var(--gold);color:var(--ink);border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif">ð¬ Navia nach Optimierung fragen</button>
+    <button type="button" onclick="showSection('chat')" style="margin-top:16px;padding:10px 22px;background:var(--gold);color:var(--ink);border:none;border-radius:8px;font-size:13px;font-weight:600;cursor:pointer;font-family:'DM Sans',sans-serif">💬 Navia nach Optimierung fragen</button>
   </div>
   <div class="policen-grid">
 
@@ -1049,7 +1049,7 @@ body{animation:pageIn .5s ease-out}
         </div>
         <span class="badge badge-ok">Aktiv &#10003;</span>
       </div>
-      <div class="policy-premium">PrÃ¤mie: <strong>CHF 450.77 / Jahr</strong></div>
+      <div class="policy-premium">Prämie: <strong>CHF 450.77 / Jahr</strong></div>
       <div style="font-size:0.72rem;color:rgba(255,255,255,.35);margin-top:2px">Police Nr. G-1521-7055 &bull; Laufzeit bis 31.12.2029</div>
       <button class="policy-details-btn" onclick="showPolicyDetail('mobiliar-haushalt')">Details</button>
     </div>
@@ -1061,9 +1061,9 @@ body{animation:pageIn .5s ease-out}
           <div class="policy-type">Fahrzeugversicherung</div>
           <div class="policy-insurer">die Mobiliar</div>
         </div>
-        <span class="badge badge-warn">Abgelaufen â </span>
+        <span class="badge badge-warn">Abgelaufen ⚠</span>
       </div>
-      <div class="policy-premium">PrÃ¤mie: <strong>CHF 939.26 / Jahr</strong></div>
+      <div class="policy-premium">Prämie: <strong>CHF 939.26 / Jahr</strong></div>
       <div style="font-size:0.72rem;color:rgba(251,191,36,.7);margin-top:2px">Police Nr. G-1524-2153 &bull; HONDA Accord 2.2 i-CTDi &bull; Ablauf 31.12.2024</div>
       <button class="policy-details-btn" onclick="showPolicyDetail('mobiliar-honda')">Details</button>
     </div>
@@ -1077,7 +1077,7 @@ body{animation:pageIn .5s ease-out}
         </div>
         <span class="badge badge-ok">Aktiv &#10003;</span>
       </div>
-      <div class="policy-premium">PrÃ¤mie: <strong>CHF 173.25 / Jahr</strong></div>
+      <div class="policy-premium">Prämie: <strong>CHF 173.25 / Jahr</strong></div>
       <div style="font-size:0.72rem;color:rgba(255,255,255,.35);margin-top:2px">Police Nr. 1333364 &bull; Einzelversicherung Standard</div>
       <button class="policy-details-btn" onclick="showPolicyDetail('orion-privat')">Details</button>
     </div>
@@ -1091,7 +1091,7 @@ body{animation:pageIn .5s ease-out}
         </div>
         <span class="badge badge-ok">Aktiv &#10003;</span>
       </div>
-      <div class="policy-premium">PrÃ¤mie: <strong>CHF 86.65 / Jahr</strong></div>
+      <div class="policy-premium">Prämie: <strong>CHF 86.65 / Jahr</strong></div>
       <div style="font-size:0.72rem;color:rgba(255,255,255,.35);margin-top:2px">Police Nr. 1333365 &bull; Einzelversicherung</div>
       <button class="policy-details-btn" onclick="showPolicyDetail('orion-verkehr')">Details</button>
     </div>
@@ -1103,9 +1103,9 @@ body{animation:pageIn .5s ease-out}
           <div class="policy-type">Krankenkasse</div>
           <div class="policy-insurer empty">Nicht hinterlegt</div>
         </div>
-        <span class="badge badge-miss">Fehlt â</span>
+        <span class="badge badge-miss">Fehlt ✗</span>
       </div>
-      <div class="policy-premium">PrÃ¤mie: <strong>â / Monat</strong></div>
+      <div class="policy-premium">Prämie: <strong>— / Monat</strong></div>
       <button class="policy-details-btn" onclick="showSection('chat')">Optimieren</button>
     </div>
 
@@ -1113,13 +1113,13 @@ body{animation:pageIn .5s ease-out}
     <div class="policy-card">
       <div class="policy-card-top">
         <div>
-          <div class="policy-type">Vorsorge / SÃ¤ule 3a</div>
+          <div class="policy-type">Vorsorge / Säule 3a</div>
           <div class="policy-insurer empty">Nicht hinterlegt</div>
         </div>
-        <span class="badge badge-miss">Fehlt â</span>
+        <span class="badge badge-miss">Fehlt ✗</span>
       </div>
-      <div class="policy-premium">PrÃ¤mie: <strong>â / Jahr</strong></div>
-      <div style="font-size:0.72rem;color:rgba(239,68,68,.5);margin-top:2px">Steuervorteil bis CHF 7'056 / Jahr mÃ¶glich</div>
+      <div class="policy-premium">Prämie: <strong>— / Jahr</strong></div>
+      <div style="font-size:0.72rem;color:rgba(239,68,68,.5);margin-top:2px">Steuervorteil bis CHF 7'056 / Jahr möglich</div>
       <button class="policy-details-btn" onclick="showSection('chat')">Beratung</button>
     </div>
 
@@ -1128,45 +1128,45 @@ body{animation:pageIn .5s ease-out}
   <!-- HINTERLEGTE DOKUMENTE -->
   <div style="margin-top:36px">
     <div style="font-family:'Playfair Display',serif;font-size:1.3rem;font-weight:500;color:var(--ink);margin-bottom:6px">Hinterlegte Dokumente</div>
-    <div style="font-size:.85rem;color:var(--muted);margin-bottom:18px">Diese Dokumente bilden die Wissensbasis fÃ¼r Navia (RAG-Ansatz)</div>
+    <div style="font-size:.85rem;color:var(--muted);margin-bottom:18px">Diese Dokumente bilden die Wissensbasis für Navia (RAG-Ansatz)</div>
     <div style="display:flex;flex-wrap:wrap;gap:12px">
       <div style="flex:1 1 calc(33% - 8px);min-width:200px;background:var(--card-dark);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;display:flex;gap:12px;align-items:center">
-        <div style="width:40px;height:40px;border-radius:8px;background:rgba(239,68,68,.12);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">ð</div>
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(239,68,68,.12);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">📕</div>
         <div>
           <div style="font-size:.82rem;font-weight:600;color:#fff">Mobiliar Hausrat</div>
           <div style="font-size:.7rem;color:rgba(255,255,255,.35)">Police G-1521-7055 &bull; PDF &bull; 4 Seiten</div>
         </div>
       </div>
       <div style="flex:1 1 calc(33% - 8px);min-width:200px;background:var(--card-dark);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;display:flex;gap:12px;align-items:center">
-        <div style="width:40px;height:40px;border-radius:8px;background:rgba(239,68,68,.12);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">ð</div>
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(239,68,68,.12);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🚗</div>
         <div>
           <div style="font-size:.82rem;font-weight:600;color:#fff">Mobiliar Honda</div>
           <div style="font-size:.7rem;color:rgba(255,255,255,.35)">Police G-1524-2153 &bull; PDF &bull; 4 Seiten</div>
         </div>
       </div>
       <div style="flex:1 1 calc(33% - 8px);min-width:200px;background:var(--card-dark);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;display:flex;gap:12px;align-items:center">
-        <div style="width:40px;height:40px;border-radius:8px;background:rgba(74,78,105,.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">âï¸</div>
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(74,78,105,.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">⚖️</div>
         <div>
           <div style="font-size:.82rem;font-weight:600;color:#fff">Orion Privat-RS</div>
           <div style="font-size:.7rem;color:rgba(255,255,255,.35)">Police 1333364 &bull; PDF &bull; 5 Seiten</div>
         </div>
       </div>
       <div style="flex:1 1 calc(33% - 8px);min-width:200px;background:var(--card-dark);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;display:flex;gap:12px;align-items:center">
-        <div style="width:40px;height:40px;border-radius:8px;background:rgba(74,78,105,.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">ð¡ï¸</div>
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(74,78,105,.2);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">🛡️</div>
         <div>
           <div style="font-size:.82rem;font-weight:600;color:#fff">Orion Verkehrs-RS</div>
           <div style="font-size:.7rem;color:rgba(255,255,255,.35)">Police 1333365 &bull; PDF &bull; 4 Seiten</div>
         </div>
       </div>
       <div style="flex:1 1 calc(33% - 8px);min-width:200px;background:var(--card-dark);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px;display:flex;gap:12px;align-items:center">
-        <div style="width:40px;height:40px;border-radius:8px;background:rgba(128,90,213,.15);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">ð</div>
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(128,90,213,.15);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">📖</div>
         <div>
           <div style="font-size:.82rem;font-weight:600;color:#fff">AVB Orion Privat</div>
           <div style="font-size:.7rem;color:rgba(255,255,255,.35)">Ausgabe 01/2022 &bull; PDF &bull; 20 Seiten</div>
         </div>
       </div>
       <div style="flex:1 1 calc(33% - 8px);min-width:200px;background:var(--card-dark);border:1px dashed rgba(255,255,255,.15);border-radius:12px;padding:16px;display:flex;gap:12px;align-items:center;cursor:pointer;opacity:.6">
-        <div style="width:40px;height:40px;border-radius:8px;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">â</div>
+        <div style="width:40px;height:40px;border-radius:8px;background:rgba(255,255,255,.05);display:flex;align-items:center;justify-content:center;font-size:18px;flex-shrink:0">➕</div>
         <div>
           <div style="font-size:.82rem;font-weight:500;color:rgba(255,255,255,.5)">Dokument hochladen</div>
           <div style="font-size:.7rem;color:rgba(255,255,255,.25)">PDF, Antrag, Police...</div>
@@ -1188,7 +1188,7 @@ body{animation:pageIn .5s ease-out}
 <div style="font-size:32px;margin-bottom:12px;opacity:.5">+</div>
 <div style="font-size:15px;font-weight:600;color:var(--ink);margin-bottom:6px">Weitere Police hochladen</div>
 <div style="font-size:13px;color:var(--muted);margin-bottom:16px">PDF, JPG oder PNG hochladen</div>
-<label for="policy-upload-input" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--ink);color:#fff;border-radius:10px;font-size:13px;font-weight:500;cursor:pointer">Datei auswÃ¤hlen</label>
+<label for="policy-upload-input" style="display:inline-flex;align-items:center;gap:8px;padding:10px 20px;background:var(--ink);color:#fff;border-radius:10px;font-size:13px;font-weight:500;cursor:pointer">Datei auswählen</label>
 <input type="file" id="policy-upload-input" accept=".pdf,.jpg,.jpeg,.png" multiple style="display:none" onchange="handlePolicyUpload(this)">
 <div id="policy-upload-list" style="margin-top:16px;text-align:left"></div>
 </div>
@@ -1208,19 +1208,19 @@ body{animation:pageIn .5s ease-out}
       <div class="chat-navia-status"><div class="chat-navia-dot"></div> Jetzt online &mdash; antwortet in Sekunden</div>
     </div>
     <div class="chat-navia-modes">
-      <button class="chat-mode-btn act" id="mode-chat-btn" onclick="setMode('chat')">ð¬ Chat</button>
-      <button class="chat-mode-btn" id="mode-voice-btn" onclick="setMode('voice')">ð¤ Sprache</button>
+      <button class="chat-mode-btn act" id="mode-chat-btn" onclick="setMode('chat')">💬 Chat</button>
+      <button class="chat-mode-btn" id="mode-voice-btn" onclick="setMode('voice')">🎤 Sprache</button>
     </div>
   </div>
 
   <!-- AI MODE TOGGLE -->
   <div style="display:flex;align-items:center;justify-content:space-between;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:10px 16px;margin-bottom:12px;flex-wrap:wrap;gap:8px">
     <div style="font-size:12px;color:var(--muted);display:flex;align-items:center;gap:6px">
-      <span style="font-size:14px">â¡</span> KI-Modus:
+      <span style="font-size:14px">⚡</span> KI-Modus:
     </div>
     <div style="display:flex;gap:6px">
-      <button type="button" id="ai-mode-llm" onclick="setAiMode('llm')" style="padding:6px 14px;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;border:1px solid var(--ink);background:var(--ink);color:#fff;font-family:'DM Sans',sans-serif;transition:all .2s">ð¤ LLM (Claude)</button>
-      <button type="button" id="ai-mode-faq" onclick="setAiMode('faq')" style="padding:6px 14px;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;border:1px solid var(--line);background:var(--white);color:var(--muted);font-family:'DM Sans',sans-serif;transition:all .2s">ð Regelbasiert</button>
+      <button type="button" id="ai-mode-llm" onclick="setAiMode('llm')" style="padding:6px 14px;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;border:1px solid var(--ink);background:var(--ink);color:#fff;font-family:'DM Sans',sans-serif;transition:all .2s">🤖 LLM (Claude)</button>
+      <button type="button" id="ai-mode-faq" onclick="setAiMode('faq')" style="padding:6px 14px;border-radius:6px;font-size:11px;font-weight:600;cursor:pointer;border:1px solid var(--line);background:var(--white);color:var(--muted);font-family:'DM Sans',sans-serif;transition:all .2s">📋 Regelbasiert</button>
     </div>
     <div id="ai-mode-label" style="font-size:11px;color:var(--gold);font-weight:500">Claude Sonnet 4 aktiv</div>
   </div>
@@ -1229,7 +1229,7 @@ body{animation:pageIn .5s ease-out}
     <div class="chat-messages" id="chat-messages">
       <div class="chat-msg navia">
         <div class="chat-msg-avatar">N</div>
-        <div class="chat-msg-bubble">Guten Tag! Ich bin Navia, Ihre digitale Versicherungsberaterin. Wie kann ich Ihnen helfen? Sie kÃ¶nnen mir Fragen zu Ihren bestehenden Policen stellen oder ein neues Angebot anfordern.</div>
+        <div class="chat-msg-bubble">Guten Tag! Ich bin Navia, Ihre digitale Versicherungsberaterin. Wie kann ich Ihnen helfen? Sie können mir Fragen zu Ihren bestehenden Policen stellen oder ein neues Angebot anfordern.</div>
       </div>
     </div>
     <div class="chat-typing" id="chat-typing">
@@ -1243,9 +1243,9 @@ body{animation:pageIn .5s ease-out}
     <div class="chat-suggestions" id="chat-suggestions">
       <div class="chat-suggestion" onclick="sendSuggestion(this)">Was deckt meine Vollkasko beim Honda ab?</div>
       <div class="chat-suggestion" onclick="sendSuggestion(this)">Wie melde ich einen Hausratschaden bei der Mobiliar?</div>
-      <div class="chat-suggestion" onclick="sendSuggestion(this)">Welche Franchise soll ich bei der Krankenkasse wÃ¤hlen?</div>
+      <div class="chat-suggestion" onclick="sendSuggestion(this)">Welche Franchise soll ich bei der Krankenkasse wählen?</div>
       <div class="chat-suggestion" onclick="sendSuggestion(this)">Was ist der Unterschied KVG vs. VVG?</div>
-      <div class="chat-suggestion" onclick="sendSuggestion(this)">Wie funktioniert die SÃ¤ule 3a?</div>
+      <div class="chat-suggestion" onclick="sendSuggestion(this)">Wie funktioniert die Säule 3a?</div>
       <div class="chat-suggestion" onclick="sendSuggestion(this)">Welche Selbstbehalte habe ich?</div>
       <div class="chat-suggestion" onclick="sendSuggestion(this)">Wann kann ich die Krankenkasse wechseln?</div>
       <div class="chat-suggestion" onclick="sendSuggestion(this)">Brauche ich eine Rechtsschutzversicherung?</div>
@@ -1266,7 +1266,7 @@ body{animation:pageIn .5s ease-out}
       </div>
       <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:500;color:var(--ink);margin-bottom:8px">Navia Video-Beratung</div>
       <div style="font-size:13px;color:var(--muted);margin-bottom:20px;line-height:1.6;max-width:320px;margin-left:auto;margin-right:auto">Sprechen Sie direkt mit Navia per Video. Der interaktive Avatar beantwortet Ihre Fragen in Echtzeit.</div>
-      <button type="button" onclick="showSection('');document.getElementById('video-section').scrollIntoView({behavior:'smooth'});setTimeout(()=>setMode('chat'),400)" style="padding:11px 26px;background:var(--ink);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif">Zum Navia Video â</button>
+      <button type="button" onclick="showSection('');document.getElementById('video-section').scrollIntoView({behavior:'smooth'});setTimeout(()=>setMode('chat'),400)" style="padding:11px 26px;background:var(--ink);color:#fff;border:none;border-radius:10px;font-size:13px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif">Zum Navia Video →</button>
     </div>
   </div>
 </section>
@@ -1275,54 +1275,54 @@ body{animation:pageIn .5s ease-out}
 <section id="schaden-section" style="display:none!important">
   <div class="schaden-header">
     <h2>Schaden melden</h2>
-    <p>Melden Sie einen Schadenfall direkt Ã¼ber das Portal &mdash; einfach, sicher und papierlos.</p>
+    <p>Melden Sie einen Schadenfall direkt über das Portal &mdash; einfach, sicher und papierlos.</p>
   </div>
 
   <div class="schaden-card" id="schaden-form-card">
     <div class="notice-box">
-      <span class="notice-icon">â¹ï¸</span>
+      <span class="notice-icon">ℹ️</span>
       <span>Bei einem Notfall wenden Sie sich bitte direkt an Ihren Versicherer. Navia leitet Ihre Meldung innerhalb von 24 Stunden weiter.</span>
     </div>
 
     <!-- Form -->
     <div id="schaden-form-content">
       <div class="schaden-steps">
-        <button class="schaden-step-tab act" data-page="1" onclick="goSchaden(1)">â  Schadenart</button>
-        <button class="schaden-step-tab" data-page="2" onclick="goSchaden(2)">â¡ Details</button>
-        <button class="schaden-step-tab" data-page="3" onclick="goSchaden(3)">â¢ Kontakt</button>
+        <button class="schaden-step-tab act" data-page="1" onclick="goSchaden(1)">① Schadenart</button>
+        <button class="schaden-step-tab" data-page="2" onclick="goSchaden(2)">② Details</button>
+        <button class="schaden-step-tab" data-page="3" onclick="goSchaden(3)">③ Kontakt</button>
       </div>
 
       <!-- SCHADEN PAGE 1 -->
       <div class="schaden-page on" id="sp1">
-        <div style="margin-bottom:18px;font-size:14px;color:var(--muted)">WÃ¤hlen Sie die betroffene Versicherung:</div>
+        <div style="margin-bottom:18px;font-size:14px;color:var(--muted)">Wählen Sie die betroffene Versicherung:</div>
         <div class="schaden-grid" id="schaden-type-grid">
           <div class="schaden-type-card" onclick="selectSchadenType(this,'Privathaftpflicht (Mobiliar G-1521-7055)')">
-            <div class="schaden-type-icon">ð¤</div>
+            <div class="schaden-type-icon">🤝</div>
             <div class="schaden-type-label">Privathaftpflicht</div>
-            <div class="schaden-type-sub">Mobiliar Â· Schaden an Dritten</div>
+            <div class="schaden-type-sub">Mobiliar · Schaden an Dritten</div>
           </div>
           <div class="schaden-type-card" onclick="selectSchadenType(this,'Hausrat (Mobiliar G-1521-7055)')">
-            <div class="schaden-type-icon">ð </div>
+            <div class="schaden-type-icon">🏠</div>
             <div class="schaden-type-label">Hausrat</div>
-            <div class="schaden-type-sub">Mobiliar Â· Einbruch, Feuer, Wasser</div>
+            <div class="schaden-type-sub">Mobiliar · Einbruch, Feuer, Wasser</div>
           </div>
           <div class="schaden-type-card" onclick="selectSchadenType(this,'Fahrzeug Honda Accord (Mobiliar G-1524-2153)')">
-            <div class="schaden-type-icon">ð</div>
+            <div class="schaden-type-icon">🚗</div>
             <div class="schaden-type-label">Fahrzeug Honda</div>
-            <div class="schaden-type-sub">Mobiliar Â· Unfall, Glas, Kasko</div>
+            <div class="schaden-type-sub">Mobiliar · Unfall, Glas, Kasko</div>
           </div>
           <div class="schaden-type-card" onclick="selectSchadenType(this,'Privat-Rechtsschutz (Orion 1333364)')">
-            <div class="schaden-type-icon">âï¸</div>
+            <div class="schaden-type-icon">⚖️</div>
             <div class="schaden-type-label">Privat-Rechtsschutz</div>
-            <div class="schaden-type-sub">Orion Â· Streitfall, Arbeitsrecht</div>
+            <div class="schaden-type-sub">Orion · Streitfall, Arbeitsrecht</div>
           </div>
           <div class="schaden-type-card" onclick="selectSchadenType(this,'Verkehrs-Rechtsschutz (Orion 1333365)')">
-            <div class="schaden-type-icon">ð¡ï¸</div>
+            <div class="schaden-type-icon">🛡️</div>
             <div class="schaden-type-label">Verkehrs-RS</div>
-            <div class="schaden-type-sub">Orion Â· Unfall, Ausweisentzug</div>
+            <div class="schaden-type-sub">Orion · Unfall, Ausweisentzug</div>
           </div>
           <div class="schaden-type-card" onclick="selectSchadenType(this,'Sonstiges')">
-            <div class="schaden-type-icon">ð</div>
+            <div class="schaden-type-icon">📋</div>
             <div class="schaden-type-label">Sonstiges</div>
             <div class="schaden-type-sub">Anderer Schadenfall</div>
           </div>
@@ -1340,31 +1340,31 @@ body{animation:pageIn .5s ease-out}
             <input type="date" id="schaden-datum">
           </div>
           <div class="fld">
-            <label>UngefÃ¤hre SchadenhÃ¶he</label>
+            <label>Ungefähre Schadenhöhe</label>
             <select id="schaden-hoehe">
-              <option value="">â wÃ¤hlen â</option>
+              <option value="">— wählen —</option>
               <option>Bis CHF 500</option>
-              <option>CHF 500 â 2'000</option>
-              <option>CHF 2'000 â 10'000</option>
-              <option>Ãber CHF 10'000</option>
+              <option>CHF 500 – 2'000</option>
+              <option>CHF 2'000 – 10'000</option>
+              <option>Über CHF 10'000</option>
               <option>Noch unbekannt</option>
             </select>
           </div>
         </div>
         <div class="fld">
           <label>Schadensbeschreibung</label>
-          <textarea id="schaden-beschreibung" placeholder="Beschreiben Sie den Schadenfall so genau wie mÃ¶glich â Ort, Hergang, beteiligte Personen..."></textarea>
+          <textarea id="schaden-beschreibung" placeholder="Beschreiben Sie den Schadenfall so genau wie möglich — Ort, Hergang, beteiligte Personen..."></textarea>
         </div>
         <div class="fld">
           <label>Dringlichkeit</label>
           <div class="urgency-chips">
-            <div class="urgency-chip" onclick="selectUrgency(this,'normal')">ð¢ Normal (bis 3 Tage)</div>
-            <div class="urgency-chip" onclick="selectUrgency(this,'dringend')">ð¡ Dringend (heute)</div>
-            <div class="urgency-chip" onclick="selectUrgency(this,'notfall')">ð´ Notfall (sofort)</div>
+            <div class="urgency-chip" onclick="selectUrgency(this,'normal')">🟢 Normal (bis 3 Tage)</div>
+            <div class="urgency-chip" onclick="selectUrgency(this,'dringend')">🟡 Dringend (heute)</div>
+            <div class="urgency-chip" onclick="selectUrgency(this,'notfall')">🔴 Notfall (sofort)</div>
           </div>
         </div>
         <div class="schaden-btn-row" style="justify-content:space-between">
-          <button class="btn-back" onclick="goSchaden(1)">â ZurÃ¼ck</button>
+          <button class="btn-back" onclick="goSchaden(1)">← Zurück</button>
           <button class="schaden-submit-btn" onclick="goSchaden(3)">Weiter <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg></button>
         </div>
       </div>
@@ -1378,7 +1378,7 @@ body{animation:pageIn .5s ease-out}
           </div>
           <div class="fld">
             <label>Nachname</label>
-            <input type="text" id="schaden-nachname" placeholder="MÃ¼ller">
+            <input type="text" id="schaden-nachname" placeholder="Müller">
           </div>
         </div>
         <div class="info-row">
@@ -1400,9 +1400,9 @@ body{animation:pageIn .5s ease-out}
           </select>
         </div>
         <div class="schaden-btn-row" style="justify-content:space-between">
-          <button class="btn-back" onclick="goSchaden(2)">â ZurÃ¼ck</button>
+          <button class="btn-back" onclick="goSchaden(2)">← Zurück</button>
           <button class="schaden-submit-btn" onclick="submitSchaden()">
-            â Schaden einreichen
+            ✓ Schaden einreichen
           </button>
         </div>
       </div>
@@ -1410,9 +1410,9 @@ body{animation:pageIn .5s ease-out}
 
     <!-- SUCCESS -->
     <div class="schaden-success" id="schaden-success">
-      <div class="schaden-success-icon">â</div>
+      <div class="schaden-success-icon">✅</div>
       <div class="schaden-success-title">Schadenfall erfolgreich eingereicht</div>
-      <div class="schaden-success-sub">Wir haben Ihren Schadenfall registriert und leiten ihn an den zustÃ¤ndigen Versicherer weiter.<br>Sie erhalten eine BestÃ¤tigung per E-Mail innert 24 Stunden.</div>
+      <div class="schaden-success-sub">Wir haben Ihren Schadenfall registriert und leiten ihn an den zuständigen Versicherer weiter.<br>Sie erhalten eine Bestätigung per E-Mail innert 24 Stunden.</div>
       <div class="schaden-ref" id="schaden-ref-nr">Referenz: NAV-2025-0000</div>
       <br>
       <div style="margin:20px 0;padding:16px;background:var(--gold-l);border:1px solid #e8d4b0;border-radius:12px;text-align:left;display:flex;gap:12px;align-items:flex-start">
@@ -1420,7 +1420,7 @@ body{animation:pageIn .5s ease-out}
         <div>
           <div style="font-size:13px;font-weight:500;color:var(--ink);margin-bottom:4px">Navia empfiehlt</div>
           <div style="font-size:13px;color:var(--ink2);line-height:1.5">Haben Sie Fragen zu Ihrer Deckung oder zum weiteren Vorgehen? Ich begleite Sie durch den Schadenprozess.</div>
-          <button type="button" onclick="openNaviaAfterSchaden()" style="margin-top:10px;padding:8px 18px;background:var(--ink);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif">ð¬ Navia fragen</button>
+          <button type="button" onclick="openNaviaAfterSchaden()" style="margin-top:10px;padding:8px 18px;background:var(--ink);color:#fff;border:none;border-radius:8px;font-size:12px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif">💬 Navia fragen</button>
         </div>
       </div>
       <button class="schaden-new-btn" onclick="resetSchaden()">Neuen Schaden melden</button>
@@ -1466,7 +1466,7 @@ body{animation:pageIn .5s ease-out}
       <button id="fab-send-btn" onclick="sendFabChat()">Senden</button>
     </div>
   </div>
-  <button id="fab-chat-btn" onclick="toggleFabChat()" title="Helpcenter Ã¶ffnen">
+  <button id="fab-chat-btn" onclick="toggleFabChat()" title="Helpcenter öffnen">
     <span class="fab-icon">N</span>
   </button>
 </div>
@@ -1474,19 +1474,19 @@ body{animation:pageIn .5s ease-out}
 <!-- FOOTER -->
 <footer style="border-top:1px solid var(--line);padding:32px 40px;display:flex;flex-direction:column;gap:20px">
   <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px">
-    <div class="logo">Nav<em>ia</em> <span style="font-size:12px;color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:300">â Ihre digitale Versicherungsberaterin</span></div>
+    <div class="logo">Nav<em>ia</em> <span style="font-size:12px;color:var(--muted);font-family:'DM Sans',sans-serif;font-weight:300">— Ihre digitale Versicherungsberaterin</span></div>
     <div style="display:flex;gap:16px;align-items:center;flex-wrap:wrap">
-      <span style="font-size:12px;color:var(--muted)">Â© 2026 Navia</span>
-      <span style="font-size:11px;color:var(--muted)">â¢</span>
+      <span style="font-size:12px;color:var(--muted)">© 2026 Navia</span>
+      <span style="font-size:11px;color:var(--muted)">•</span>
       <span style="font-size:12px;color:var(--muted)">Datenschutz</span>
-      <span style="font-size:11px;color:var(--muted)">â¢</span>
+      <span style="font-size:11px;color:var(--muted)">•</span>
       <span style="font-size:12px;color:var(--muted)">Impressum</span>
     </div>
   </div>
   <div style="background:var(--bg);border:1px solid var(--line);border-radius:12px;padding:18px 22px;display:flex;flex-wrap:wrap;gap:20px;align-items:center">
     <div style="flex:1 1 300px">
-      <div style="font-size:12px;font-weight:600;color:var(--ink);margin-bottom:4px">ð HSO Projektarbeit â KI-Professional (Business)</div>
-      <div style="font-size:11px;color:var(--muted);line-height:1.6">Virtueller Chatbot fÃ¼r Versicherungsbroker &bull; Petra Roth, Etrit Hasanagic, Philipp Schneider, Janarthan Srigaran</div>
+      <div style="font-size:12px;font-weight:600;color:var(--ink);margin-bottom:4px">📚 HSO Projektarbeit — KI-Professional (Business)</div>
+      <div style="font-size:11px;color:var(--muted);line-height:1.6">Virtueller Chatbot für Versicherungsbroker &bull; Petra Roth, Etrit Hasanagic, Philipp Schneider, Janarthan Srigaran</div>
     </div>
     <div style="display:flex;gap:12px;flex-wrap:wrap">
       <div style="font-size:11px;background:var(--gold-l);color:var(--gold);padding:5px 12px;border-radius:6px;font-weight:500">RAG-Ansatz</div>
@@ -1502,50 +1502,50 @@ body{animation:pageIn .5s ease-out}
 
 <script>
 
-// ââ TRANSLATIONS ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── TRANSLATIONS ──────────────────────────────────────────────────────────
 const T={
   de:{
-    trust:'Beraterin online',eyebrow:'UnabhÃ¤ngige Beratung',
+    trust:'Beraterin online',eyebrow:'Unabhängige Beratung',
     h1:'Versicherungen, die <span>wirklich</span><br>zu Ihnen passen.',
-    hsub:'Kein Callcenter. Kein Verkaufsdruck. KI-gestÃ¼tzte Analyse Ihres Profils â mit echten Angeboten fÃ¼hrender Schweizer Versicherer.',
-    st1:'Versicherer',st2:'UnabhÃ¤ngig',st3:'Analyse',startLbl:'Beratung starten',
-    steps:['Profil','BedÃ¼rfnisse','Budget','Analyse'],
-    pg1t:'Ihr Profil',pg1s:'Je genauer Ihre Angaben, desto prÃ¤ziser die Empfehlungen.',
-    pg2t:'Was soll versichert sein?',pg2s:'Mehrfachauswahl mÃ¶glich â wÃ¤hlen Sie alles, was relevant ist.',
-    pg3t:'Budget & Bestehendes',pg3s:'So finden wir das optimale Preis-Leistungs-VerhÃ¤ltnis fÃ¼r Sie.',
+    hsub:'Kein Callcenter. Kein Verkaufsdruck. KI-gestützte Analyse Ihres Profils — mit echten Angeboten führender Schweizer Versicherer.',
+    st1:'Versicherer',st2:'Unabhängig',st3:'Analyse',startLbl:'Beratung starten',
+    steps:['Profil','Bedürfnisse','Budget','Analyse'],
+    pg1t:'Ihr Profil',pg1s:'Je genauer Ihre Angaben, desto präziser die Empfehlungen.',
+    pg2t:'Was soll versichert sein?',pg2s:'Mehrfachauswahl möglich — wählen Sie alles, was relevant ist.',
+    pg3t:'Budget & Bestehendes',pg3s:'So finden wir das optimale Preis-Leistungs-Verhältnis für Sie.',
     lFn:'Vorname',lLn:'Nachname',lGeb:'Geburtsjahr',lKt:'Kanton',
     lSit:'Lebenssituation',lKid:'Kinder',lBer:'Versicherungsbereiche',lPrio:'Wichtigstes Kriterium',
     lBud:'Monatliches Budget',lVor:'Bereits versichert',lExtra:'Besonderes',
-    sit:['Ledig','Paar','Familie mit Kindern','55+','SelbstÃ¤ndig'],
-    kid:['Keine','1â2 Kinder','3+ Kinder'],
+    sit:['Ledig','Paar','Familie mit Kindern','55+','Selbständig'],
+    kid:['Keine','1–2 Kinder','3+ Kinder'],
     ber:['Krankenkasse / Zusatz','Privathaftpflicht','Hausrat','Lebensversicherung / Vorsorge','Fahrzeug','Reise & Annullierung','Rechtsschutz','Unfall','Cyber','Haustier'],
-    pri:['Tiefster Preis','Maximale Leistung','PersÃ¶nlicher Service','Digital & einfach','Schweizer Anbieter'],
+    pri:['Tiefster Preis','Maximale Leistung','Persönlicher Service','Digital & einfach','Schweizer Anbieter'],
     vor:['Krankenkasse','Haftpflicht','Hausrat','Auto','Lebens/Vorsorge','Noch nichts'],
-    back:'â ZurÃ¼ck',next:'Weiter â',analyze:'Analyse starten â',restart:'Neue Analyse',
-    budLabel:v=>v>=2000?`CHF 2â000+`:`CHF ${v}`,
+    back:'← Zurück',next:'Weiter →',analyze:'Analyse starten →',restart:'Neue Analyse',
+    budLabel:v=>v>=2000?`CHF 2’000+`:`CHF ${v}`,
     loadName:'Navia',loadStatus:'Navia analysiert Ihr Profil...',
     vcName:'Navia',vcRole:'Ihre digitale Versicherungsberaterin',vcOnline:'Jetzt online',
     qwTitle:'Quick Wins',
     abschluss:'Abschliessen',mehr:'Mehr Info',
-    sys:`Du bist Navia, eine digitale Premium-Versicherungsberaterin fÃ¼r die Schweiz auf Top-Niveau.
+    sys:`Du bist Navia, eine digitale Premium-Versicherungsberaterin für die Schweiz auf Top-Niveau.
 Ziel: Erstelle hochqualitative, realistische und direkt umsetzbare Versicherungsempfehlungen.
-WICHTIG: Antworte AUSSCHLIESSLICH im JSON-Format. Keine ErklÃ¤rungen, kein Text ausserhalb JSON.
+WICHTIG: Antworte AUSSCHLIESSLICH im JSON-Format. Keine Erklärungen, kein Text ausserhalb JSON.
 Denke wie ein echter Broker.
 
 WICHTIGE SCHWEIZER REGEL:
-- Krankenkasse: PrÃ¤mien sind IMMER monatlich â preis_periode = "monatlich"
-- Alle anderen Versicherungen (Haftpflicht, Hausrat, Reise, Rechtsschutz, Auto, Unfall, Cyber etc.): PrÃ¤mien sind IMMER jÃ¤hrlich â preis_periode = "jaehrlich"
+- Krankenkasse: Prämien sind IMMER monatlich → preis_periode = "monatlich"
+- Alle anderen Versicherungen (Haftpflicht, Hausrat, Reise, Rechtsschutz, Auto, Unfall, Cyber etc.): Prämien sind IMMER jährlich → preis_periode = "jaehrlich"
 
 AUSGABE FORMAT (NUR JSON, NICHTS ANDERES):
 {
-  "profil_einschaetzung": "max 2 SÃ¤tze",
+  "profil_einschaetzung": "max 2 Sätze",
   "strategie": "Strategie in einem Satz",
-  "vc_greeting": "Video-Call BegrÃ¼ssung, 60-80 WÃ¶rter, charismatisch, professionell",
+  "vc_greeting": "Video-Call Begrüssung, 60-80 Wörter, charismatisch, professionell",
   "empfehlungen": [
     {
-      "titel": "Name der VersicherungslÃ¶sung",
+      "titel": "Name der Versicherungslösung",
       "prioritaet": "Top Empfehlung",
-      "beschreibung": "Warum genau optimal (konkret, 2 SÃ¤tze)",
+      "beschreibung": "Warum genau optimal (konkret, 2 Sätze)",
       "abdeckung": ["Was abgedeckt ist","Wichtige Leistung"],
       "anbieter": [
         {"name":"AXA","vorteile":"Warum gut passend","preis":"CHF xx","preis_periode":"jaehrlich","link":"https://www.axa.ch"},
@@ -1560,39 +1560,39 @@ AUSGABE FORMAT (NUR JSON, NICHTS ANDERES):
 }`
   },
   fr:{
-    trust:'ConseillÃ¨re en ligne',eyebrow:'Conseil indÃ©pendant',
+    trust:'Conseillère en ligne',eyebrow:'Conseil indépendant',
     h1:'Des assurances qui <span>vous</span><br>correspondent vraiment.',
     hsub:"Pas de centre d'appels. Pas de pression. Analyse IA de votre profil avec de vraies offres des principaux assureurs suisses.",
-    st1:'Assureurs',st2:'IndÃ©pendant',st3:'Analyse',startLbl:'Commencer le conseil',
+    st1:'Assureurs',st2:'Indépendant',st3:'Analyse',startLbl:'Commencer le conseil',
     steps:['Profil','Besoins','Budget','Analyse'],
-    pg1t:'Votre profil',pg1s:'Plus vos informations sont prÃ©cises, plus nos recommandations le sont.',
-    pg2t:'Que souhaitez-vous assurer?',pg2s:'SÃ©lection multiple â choisissez tout ce qui est pertinent.',
-    pg3t:'Budget & couvertures',pg3s:'Pour trouver le meilleur rapport qualitÃ©-prix pour vous.',
-    lFn:'PrÃ©nom',lLn:'Nom',lGeb:'AnnÃ©e de naissance',lKt:'Canton',
-    lSit:'Situation de vie',lKid:'Enfants',lBer:"Domaines d'assurance",lPrio:'CritÃ¨re principal',
-    lBud:'Budget mensuel',lVor:'DÃ©jÃ  assurÃ©',lExtra:'ParticularitÃ©s',
-    sit:['CÃ©libataire','En couple','Famille avec enfants','55+','IndÃ©pendant'],
-    kid:['Aucun','1â2 enfants','3+ enfants'],
-    ber:['Assurance maladie / complÃ©mentaire','RC privÃ©e','MÃ©nage','Assurance vie / prÃ©voyance','VÃ©hicule','Voyage & annulation','Protection juridique','Accidents','Cyber','Animal domestique'],
+    pg1t:'Votre profil',pg1s:'Plus vos informations sont précises, plus nos recommandations le sont.',
+    pg2t:'Que souhaitez-vous assurer?',pg2s:'Sélection multiple — choisissez tout ce qui est pertinent.',
+    pg3t:'Budget & couvertures',pg3s:'Pour trouver le meilleur rapport qualité-prix pour vous.',
+    lFn:'Prénom',lLn:'Nom',lGeb:'Année de naissance',lKt:'Canton',
+    lSit:'Situation de vie',lKid:'Enfants',lBer:"Domaines d'assurance",lPrio:'Critère principal',
+    lBud:'Budget mensuel',lVor:'Déjà assuré',lExtra:'Particularités',
+    sit:['Célibataire','En couple','Famille avec enfants','55+','Indépendant'],
+    kid:['Aucun','1–2 enfants','3+ enfants'],
+    ber:['Assurance maladie / complémentaire','RC privée','Ménage','Assurance vie / prévoyance','Véhicule','Voyage & annulation','Protection juridique','Accidents','Cyber','Animal domestique'],
     pri:['Prix le plus bas','Prestations maximales','Service personnel','Digital & simple','Assureur suisse'],
-    vor:['Assurance maladie','RC','MÃ©nage','Auto','Vie/PrÃ©voyance','Rien encore'],
-    back:'â Retour',next:'Suivant â',analyze:"Lancer l'analyse â",restart:'Nouvelle analyse',
-    budLabel:v=>v>=2000?`CHF 2â000+`:`CHF ${v}`,
+    vor:['Assurance maladie','RC','Ménage','Auto','Vie/Prévoyance','Rien encore'],
+    back:'← Retour',next:'Suivant →',analyze:"Lancer l'analyse →",restart:'Nouvelle analyse',
+    budLabel:v=>v>=2000?`CHF 2’000+`:`CHF ${v}`,
     loadName:'Navia',loadStatus:'Analyse de votre profil...',
-    vcName:'Navia',vcRole:'Votre conseillÃ¨re en assurances digitale',vcOnline:'En ligne maintenant',
+    vcName:'Navia',vcRole:'Votre conseillère en assurances digitale',vcOnline:'En ligne maintenant',
     qwTitle:'Gains rapides',abschluss:'Souscrire',mehr:'En savoir plus',
-    sys:`Tu es Navia, conseillÃ¨re en assurances premium et indÃ©pendante pour la Suisse.
-RÃ©ponds UNIQUEMENT en JSON. Pas de texte en dehors du JSON.
-RÃGLE SUISSE: Assurance maladie = mensuel (preis_periode="mensuel"), toutes autres assurances = annuel (preis_periode="annuel").
+    sys:`Tu es Navia, conseillère en assurances premium et indépendante pour la Suisse.
+Réponds UNIQUEMENT en JSON. Pas de texte en dehors du JSON.
+RÈGLE SUISSE: Assurance maladie = mensuel (preis_periode="mensuel"), toutes autres assurances = annuel (preis_periode="annuel").
 FORMAT (JSON UNIQUEMENT):
 {
   "profil_einschaetzung": "max 2 phrases",
-  "strategie": "stratÃ©gie en une phrase",
+  "strategie": "stratégie en une phrase",
   "vc_greeting": "60-80 mots, charismatique",
   "empfehlungen": [
     {
       "titel": "Nom",
-      "prioritaet": "RecommandÃ©",
+      "prioritaet": "Recommandé",
       "beschreibung": "2 phrases",
       "abdeckung": ["couverture"],
       "anbieter": [{"name":"AXA","vorteile":"...","preis":"CHF xx","preis_periode":"annuel","link":"https://www.axa.ch"}],
@@ -1610,22 +1610,22 @@ FORMAT (JSON UNIQUEMENT):
     hsub:"Nessun call center. Nessuna pressione. Analisi AI del tuo profilo con offerte reali dai principali assicuratori svizzeri.",
     st1:'Assicuratori',st2:'Indipendente',st3:'Analisi',startLbl:'Inizia la consulenza',
     steps:['Profilo','Esigenze','Budget','Analisi'],
-    pg1t:'Il tuo profilo',pg1s:'PiÃ¹ precise sono le tue informazioni, piÃ¹ accurate saranno le raccomandazioni.',
-    pg2t:'Cosa vuoi assicurare?',pg2s:'Selezione multipla â scegli tutto ciÃ² che Ã¨ rilevante.',
-    pg3t:'Budget & coperture esistenti',pg3s:'CosÃ¬ troviamo il miglior rapporto qualitÃ -prezzo per te.',
+    pg1t:'Il tuo profilo',pg1s:'Più precise sono le tue informazioni, più accurate saranno le raccomandazioni.',
+    pg2t:'Cosa vuoi assicurare?',pg2s:'Selezione multipla — scegli tutto ciò che è rilevante.',
+    pg3t:'Budget & coperture esistenti',pg3s:'Così troviamo il miglior rapporto qualità-prezzo per te.',
     lFn:'Nome',lLn:'Cognome',lGeb:'Anno di nascita',lKt:'Cantone',
     lSit:'Situazione di vita',lKid:'Figli',lBer:'Ambiti assicurativi',lPrio:'Criterio principale',
-    lBud:'Budget mensile',lVor:'GiÃ  assicurato',lExtra:'ParticolaritÃ ',
+    lBud:'Budget mensile',lVor:'Già assicurato',lExtra:'Particolarità',
     sit:['Celibe/Nubile','Coppia','Famiglia con figli','55+','Lavoratore autonomo'],
-    kid:['Nessuno','1â2 figli','3+ figli'],
+    kid:['Nessuno','1–2 figli','3+ figli'],
     ber:['Cassa malati / supplementare','RC privata','Economia domestica','Assicurazione vita / previdenza','Veicolo','Viaggio & annullamento','Protezione giuridica','Infortuni','Cyber','Animale domestico'],
-    pri:['Prezzo piÃ¹ basso','Massima copertura','Servizio personale','Digitale & semplice','Assicuratore svizzero'],
+    pri:['Prezzo più basso','Massima copertura','Servizio personale','Digitale & semplice','Assicuratore svizzero'],
     vor:['Cassa malati','RC','Casa','Auto','Vita/Previdenza','Niente ancora'],
-    back:'â Indietro',next:'Avanti â',analyze:'Avvia analisi â',restart:'Nuova analisi',
-    budLabel:v=>v>=2000?`CHF 2â000+`:`CHF ${v}`,
+    back:'← Indietro',next:'Avanti →',analyze:'Avvia analisi →',restart:'Nuova analisi',
+    budLabel:v=>v>=2000?`CHF 2’000+`:`CHF ${v}`,
     loadName:'Navia',loadStatus:'Analisi del profilo...',
     vcName:'Navia',vcRole:'La tua consulente assicurativa digitale',vcOnline:'Ora online',
-    qwTitle:'Quick Wins',abschluss:'Stipula',mehr:'Scopri di piÃ¹',
+    qwTitle:'Quick Wins',abschluss:'Stipula',mehr:'Scopri di più',
     sys:`Sei Navia, consulente assicurativa premium e indipendente per la Svizzera.
 Rispondi SOLO in JSON. REGOLA SVIZZERA: Cassa malati = mensile (preis_periode="mensile"), tutte le altre = annuale (preis_periode="annuale").
 FORMATO (SOLO JSON):
@@ -1642,7 +1642,7 @@ FORMATO (SOLO JSON):
       "anbieter": [{"name":"AXA","vorteile":"...","preis":"CHF xx","preis_periode":"annuale","link":"https://www.axa.ch"}],
       "einsparpotenzial": "CHF xx all'anno",
       "tipp": "Consiglio",
-      "cta": "PerchÃ© adesso"
+      "cta": "Perché adesso"
     }
   ],
   "quick_wins": ["Consiglio 1","Consiglio 2","Consiglio 3"]
@@ -1748,12 +1748,12 @@ function buildProg(active){
     const n=i+1;
     const d=document.createElement('div');
     d.className='prog-step'+(n<active?' done':'')+(n===active?' active':'');
-    d.innerHTML=`<div class="prog-circ">${n<active?'â':n}</div><div class="prog-lbl">${lbl}</div>`;
+    d.innerHTML=`<div class="prog-circ">${n<active?'✓':n}</div><div class="prog-lbl">${lbl}</div>`;
     el.appendChild(d);
   });
 }
 
-// ââ ANALYZE ââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── ANALYZE ──────────────────────────────────────────────────────────────
 function animateLoadSteps(){
 var bar=document.getElementById('load-progress-bar');
 var steps=['ls-1','ls-2','ls-3','ls-4'];
@@ -1807,7 +1807,7 @@ document.querySelectorAll('.load-step').forEach(function(s){s.classList.remove('
 setTimeout(function(){showResults(getDemoResults(fn,kt),fn);},600);
 }
 }
-const prioClass={'Top Empfehlung':'tag-top','RecommandÃ©':'tag-top','Raccomandato':'tag-top','Sinnvoll':'tag-good','Utile':'tag-good','Optional':'tag-opt','Optionnel':'tag-opt','Opzionale':'tag-opt'};
+const prioClass={'Top Empfehlung':'tag-top','Recommandé':'tag-top','Raccomandato':'tag-top','Sinnvoll':'tag-good','Utile':'tag-good','Optional':'tag-opt','Optionnel':'tag-opt','Opzionale':'tag-opt'};
 
 function showResults(json,fn){
   const t=T[lang];
@@ -1828,13 +1828,13 @@ function showResults(json,fn){
 
   document.getElementById('strategy-block').innerHTML=`
     <div class="strategy-bar fade-up">
-      <div class="strategy-icon">ð¯</div>
+      <div class="strategy-icon">🎯</div>
       <div class="strategy-text"><strong>${json.profil_einschaetzung}</strong><br>${json.strategie}</div>
     </div>`;
 
   let offersHtml='';
   (json.empfehlungen||[]).forEach((e,i)=>{
-    const isTop=e.prioritaet==='Top Empfehlung'||e.prioritaet==='RecommandÃ©'||e.prioritaet==='Raccomandato';
+    const isTop=e.prioritaet==='Top Empfehlung'||e.prioritaet==='Recommandé'||e.prioritaet==='Raccomandato';
     const tc=prioClass[e.prioritaet]||'tag-opt';
     const covItems=(e.abdeckung||[]).map(c=>`<div class="cov-item">${c}</div>`).join('');
     const anbCards=(e.anbieter||[]).map(a=>{
@@ -1845,7 +1845,7 @@ function showResults(json,fn){
       <div class="anb-card">
         <div class="anb-top"><div class="anb-name">${a.name}</div><div class="anb-price">${a.preis||a.preis_monatlich}<span style="font-size:11px;color:var(--muted);font-family:'DM Sans',sans-serif"> ${periodLabel}</span></div></div>
         <div class="anb-sub">${a.vorteile}</div>
-        <a href="${a.link}" target="_blank" class="anb-btn">${t.abschluss} â</a>
+        <a href="${a.link}" target="_blank" class="anb-btn">${t.abschluss} →</a>
       </div>`;
     }).join('');
     offersHtml+=`
@@ -1860,8 +1860,8 @@ function showResults(json,fn){
         <div class="coverage-list">${covItems}</div>
         <div class="anbieter-grid">${anbCards}</div>
         <div class="offer-bottom">
-          <div class="offer-tip"><span class="tip-icon">ð¡</span><span>${e.tipp}</span></div>
-          ${e.einsparpotenzial?`<div class="offer-saving">ð ${e.einsparpotenzial}</div>`:''}
+          <div class="offer-tip"><span class="tip-icon">💡</span><span>${e.tipp}</span></div>
+          ${e.einsparpotenzial?`<div class="offer-saving">📉 ${e.einsparpotenzial}</div>`:''}
           <div class="offer-cta">${e.cta}</div>
         </div>
       </div>`;
@@ -1871,7 +1871,7 @@ function showResults(json,fn){
   const qwItems=(json.quick_wins||[]).map((q,i)=>`<div class="qw-item"><div class="qw-num">${i+1}</div><div>${q}</div></div>`).join('');
   document.getElementById('qw-block').innerHTML=`
     <div class="qw-section fade-up">
-      <div class="qw-title"><span>â¡</span>${t.qwTitle}</div>
+      <div class="qw-title"><span>⚡</span>${t.qwTitle}</div>
       ${qwItems}
     </div>`;
 
@@ -1881,10 +1881,10 @@ function showResults(json,fn){
 function showError(msg){
   go(5);
   document.getElementById('offers-block').innerHTML=`<div style="text-align:center;padding:40px 20px">
-    <div style="font-size:48px;margin-bottom:16px">â ï¸</div>
+    <div style="font-size:48px;margin-bottom:16px">⚠️</div>
     <p style="color:var(--ink);font-size:16px;font-weight:500;margin-bottom:8px">Analyse fehlgeschlagen</p>
-    <p style="color:var(--muted);font-size:13px;line-height:1.6;max-width:400px;margin:0 auto 20px">${msg||'Die Verbindung zur Claude API konnte nicht hergestellt werden. Dies passiert wenn die Seite nicht Ã¼ber claude.ai/artifacts ausgefÃ¼hrt wird.'}</p>
-    <button onclick="restart()" style="padding:12px 24px;background:var(--ink);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif">â ZurÃ¼ck zum Start</button>
+    <p style="color:var(--muted);font-size:13px;line-height:1.6;max-width:400px;margin:0 auto 20px">${msg||'Die Verbindung zur Claude API konnte nicht hergestellt werden. Dies passiert wenn die Seite nicht über claude.ai/artifacts ausgeführt wird.'}</p>
+    <button onclick="restart()" style="padding:12px 24px;background:var(--ink);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:500;cursor:pointer;font-family:'DM Sans',sans-serif">← Zurück zum Start</button>
   </div>`;
 }
 
@@ -1909,23 +1909,23 @@ function restart(){
 }
 
 
-// ââ POLICY DETAILS âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── POLICY DETAILS ───────────────────────────────────────────────────────
 const POLICY_DETAILS = {
   'mobiliar-haushalt': {
     title: 'Hausrat & Privathaftpflicht',
     insurer: 'Schweizerische Mobiliar Versicherungsgesellschaft',
     policeNr: 'G-1521-7055',
     sections: [
-      { label: 'Vertragsperiode', value: '01.07.2019 â 31.12.2029' },
-      { label: 'JahresprÃ¤mie', value: 'CHF 450.77 (fÃ¤llig 01.01.)' },
+      { label: 'Vertragsperiode', value: '01.07.2019 – 31.12.2029' },
+      { label: 'Jahresprämie', value: 'CHF 450.77 (fällig 01.01.)' },
       { label: 'Generalagentur', value: 'Seetal-Rontal, Hochdorf' },
       { label: 'Schadenfall Notruf', value: '041 914 01 00 / 00 800 16 16 16 16' },
     ],
     coverage: [
-      { name: 'Hausrat Grunddeckung', detail: 'VS CHF 70â000 â Feuer, Elementar, Wasser, Einbruchdiebstahl, Beraubung, Einfacher Diebstahl' },
-      { name: 'Einfacher Diebstahl auswÃ¤rts', detail: 'VS CHF 2â000 â inkl. ReisegepÃ¤ck' },
-      { name: 'Hausrat-Kasko', detail: 'VS CHF 5â000 â BeschÃ¤digungen, StromwirkungsschÃ¤den, Verlieren/Verlegen' },
-      { name: 'Privathaftpflicht', detail: 'Garantiesumme CHF 5â000â000 â Einzelperson, Mieterin, Selbstbehalt CHF 200' },
+      { name: 'Hausrat Grunddeckung', detail: 'VS CHF 70’000 — Feuer, Elementar, Wasser, Einbruchdiebstahl, Beraubung, Einfacher Diebstahl' },
+      { name: 'Einfacher Diebstahl auswärts', detail: 'VS CHF 2’000 — inkl. Reisegepäck' },
+      { name: 'Hausrat-Kasko', detail: 'VS CHF 5’000 — Beschädigungen, Stromwirkungsschäden, Verlieren/Verlegen' },
+      { name: 'Privathaftpflicht', detail: 'Garantiesumme CHF 5’000’000 — Einzelperson, Mieterin, Selbstbehalt CHF 200' },
     ]
   },
   'mobiliar-honda': {
@@ -1934,15 +1934,15 @@ const POLICY_DETAILS = {
     policeNr: 'G-1524-2153',
     sections: [
       { label: 'Fahrzeug', value: 'HONDA Accord 2.2 i-CTDi Exec., LU 96019' },
-      { label: 'Vertragsperiode', value: '07.06.2019 â 31.12.2024' },
-      { label: 'JahresprÃ¤mie', value: 'CHF 939.26 (halbjÃ¤hrlich: 01.01. / 01.07.)' },
-      { label: 'Bonus-Stufe', value: '0/35% (PrÃ¤mienstufe)' },
+      { label: 'Vertragsperiode', value: '07.06.2019 – 31.12.2024' },
+      { label: 'Jahresprämie', value: 'CHF 939.26 (halbjährlich: 01.01. / 01.07.)' },
+      { label: 'Bonus-Stufe', value: '0/35% (Prämienstufe)' },
       { label: 'Schadenfall', value: '041 914 01 00 / CarAssistance: 00 800 16 16 16 16' },
     ],
     coverage: [
-      { name: 'Haftpflicht', detail: 'Garantiesumme CHF 100â000â000 â Bonusschutz, GrobfahrlÃ¤ssigkeitsschutz inkl., kein Selbstbehalt' },
-      { name: 'Vollkasko (inkl. Teilkasko)', detail: 'Selbstbehalt Kollisionen CHF 1â000 â Bonusschutz, GrobfahrlÃ¤ssigkeitsschutz inkl.' },
-      { name: 'Erweiterte Glasbruchdeckung', detail: 'BruchschÃ¤den an Scheinwerfern und Fahrzeugteilen aus Glas mitversichert' },
+      { name: 'Haftpflicht', detail: 'Garantiesumme CHF 100’000’000 — Bonusschutz, Grobfahrlässigkeitsschutz inkl., kein Selbstbehalt' },
+      { name: 'Vollkasko (inkl. Teilkasko)', detail: 'Selbstbehalt Kollisionen CHF 1’000 — Bonusschutz, Grobfahrlässigkeitsschutz inkl.' },
+      { name: 'Erweiterte Glasbruchdeckung', detail: 'Bruchschäden an Scheinwerfern und Fahrzeugteilen aus Glas mitversichert' },
     ]
   },
   'orion-privat': {
@@ -1951,20 +1951,20 @@ const POLICY_DETAILS = {
     policeNr: '1333364',
     sections: [
       { label: 'Produkt', value: 'Privat-Rechtsschutz Einzelversicherung Standard' },
-      { label: 'Vertragsperiode', value: '01.10.2017 â 30.09.2021 (stillschweigende Erneuerung)' },
-      { label: 'JahresprÃ¤mie', value: 'CHF 173.25 (inkl. Stempelsteuer CHF 8.25)' },
-      { label: 'Versicherungssumme', value: 'CHF 500â000 pro Rechtsfall (Standard)' },
-      { label: 'Kontakt', value: 'Tel. 061 285 27 27 â info@orion.ch' },
+      { label: 'Vertragsperiode', value: '01.10.2017 – 30.09.2021 (stillschweigende Erneuerung)' },
+      { label: 'Jahresprämie', value: 'CHF 173.25 (inkl. Stempelsteuer CHF 8.25)' },
+      { label: 'Versicherungssumme', value: 'CHF 500’000 pro Rechtsfall (Standard)' },
+      { label: 'Kontakt', value: 'Tel. 061 285 27 27 — info@orion.ch' },
     ],
     coverage: [
-      { name: 'Schadenersatzrecht', detail: 'Geltungsbereich Europa â VS CHF 500â000' },
-      { name: 'Opferhilfegesetz', detail: 'Geltungsbereich Europa â VS CHF 500â000' },
-      { name: 'Strafanzeige / Strafverteidigung', detail: 'Geltungsbereich Europa â VS CHF 500â000' },
-      { name: 'Sachenrecht (bewegliche Sachen)', detail: 'Geltungsbereich Europa â VS CHF 500â000' },
-      { name: 'Versicherungsrecht', detail: 'CH + Liechtenstein â VS CHF 500â000' },
-      { name: 'Arbeitsrecht', detail: 'CH + Liechtenstein â VS CHF 500â000' },
-      { name: 'Patientenrecht', detail: 'GemÃ¤ss AVB' },
-      { name: 'Rechtsschutz fÃ¼r Mieter und PÃ¤chter', detail: 'CH + Liechtenstein' },
+      { name: 'Schadenersatzrecht', detail: 'Geltungsbereich Europa — VS CHF 500’000' },
+      { name: 'Opferhilfegesetz', detail: 'Geltungsbereich Europa — VS CHF 500’000' },
+      { name: 'Strafanzeige / Strafverteidigung', detail: 'Geltungsbereich Europa — VS CHF 500’000' },
+      { name: 'Sachenrecht (bewegliche Sachen)', detail: 'Geltungsbereich Europa — VS CHF 500’000' },
+      { name: 'Versicherungsrecht', detail: 'CH + Liechtenstein — VS CHF 500’000' },
+      { name: 'Arbeitsrecht', detail: 'CH + Liechtenstein — VS CHF 500’000' },
+      { name: 'Patientenrecht', detail: 'Gemäss AVB' },
+      { name: 'Rechtsschutz für Mieter und Pächter', detail: 'CH + Liechtenstein' },
       { name: 'Erbrecht', detail: 'CH + Liechtenstein' },
       { name: 'Beratungs-Rechtsschutz', detail: 'VS CHF 500 / Jahr' },
     ]
@@ -1975,22 +1975,22 @@ const POLICY_DETAILS = {
     policeNr: '1333365',
     sections: [
       { label: 'Produkt', value: 'Verkehrs-Rechtsschutz Einzelversicherung' },
-      { label: 'Vertragsperiode', value: '01.10.2017 â 30.09.2021 (stillschweigende Erneuerung)' },
-      { label: 'JahresprÃ¤mie', value: 'CHF 86.65 (inkl. Stempelsteuer CHF 4.15)' },
-      { label: 'Versicherungssumme', value: 'GemÃ¤ss AVB' },
-      { label: 'Kontakt', value: 'Tel. 061 285 27 27 â info@orion.ch' },
+      { label: 'Vertragsperiode', value: '01.10.2017 – 30.09.2021 (stillschweigende Erneuerung)' },
+      { label: 'Jahresprämie', value: 'CHF 86.65 (inkl. Stempelsteuer CHF 4.15)' },
+      { label: 'Versicherungssumme', value: 'Gemäss AVB' },
+      { label: 'Kontakt', value: 'Tel. 061 285 27 27 — info@orion.ch' },
     ],
     coverage: [
       { name: 'Schadenersatzrecht', detail: 'Weltweit' },
-      { name: 'Opferhilfegesetz', detail: 'Geltungsbereich Europa â VS CHF 500â000' },
+      { name: 'Opferhilfegesetz', detail: 'Geltungsbereich Europa — VS CHF 500’000' },
       { name: 'Strafanzeige', detail: 'Weltweit' },
       { name: 'Strafverteidigung', detail: 'Weltweit' },
-      { name: 'Ausweisentzug', detail: 'CH + Liechtenstein â VS CHF 500â000' },
+      { name: 'Ausweisentzug', detail: 'CH + Liechtenstein — VS CHF 500’000' },
       { name: 'Sachenrecht', detail: 'Weltweit' },
       { name: 'Versicherungsrecht', detail: 'Weltweit' },
       { name: 'Patientenrecht', detail: 'Weltweit' },
       { name: 'Fahrzeug-Vertragsrecht', detail: 'Weltweit' },
-      { name: 'Miete einer Garage', detail: 'CH + Liechtenstein â VS CHF 500â000' },
+      { name: 'Miete einer Garage', detail: 'CH + Liechtenstein — VS CHF 500’000' },
     ]
   }
 };
@@ -2034,18 +2034,18 @@ document.addEventListener('click', function(e) {
   if (modal && e.target === modal) closePolicyDetail();
 });
 
-// ââ POST-SCHADEN CHAT ââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── POST-SCHADEN CHAT ────────────────────────────────────────────────────
 function openNaviaAfterSchaden(){
   const type=_schadenType||'Ihren Schaden';
   showSection('chat');
   setTimeout(()=>{
-    const msg=`Ich habe gerade einen Schaden gemeldet: ${type}. Was sind die nÃ¤chsten Schritte und was sollte ich beachten?`;
+    const msg=`Ich habe gerade einen Schaden gemeldet: ${type}. Was sind die nächsten Schritte und was sollte ich beachten?`;
     document.getElementById('chat-input').value=msg;
     sendChat();
   }, 300);
 }
 
-// ââ AUTH âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── AUTH ─────────────────────────────────────────────────────────────────
 let _isLoggedIn=false;
 function openLoginModal(){
   document.getElementById('login-modal-backdrop').classList.remove('hidden');
@@ -2064,7 +2064,7 @@ function doLogin(){
   // Validation
   if(!email){errEl.textContent='Bitte geben Sie Ihre E-Mail-Adresse ein.';return;}
   if(!pass){errEl.textContent='Bitte geben Sie Ihr Passwort ein.';return;}
-  if(!email.includes('@')||!email.includes('.')){errEl.textContent='Bitte geben Sie eine gÃ¼ltige E-Mail-Adresse ein.';return;}
+  if(!email.includes('@')||!email.includes('.')){errEl.textContent='Bitte geben Sie eine gültige E-Mail-Adresse ein.';return;}
   // Demo accounts
   var demoAccounts={
     'petra@navia.ch':'Petra1234',
@@ -2095,7 +2095,7 @@ function doLogin(){
       if(msgs && msgs.children.length<=1){
         var d=document.createElement('div');
         d.className='chat-msg navia';
-        d.innerHTML='<div class="chat-msg-avatar">N</div><div class="chat-msg-bubble">Willkommen zurÃ¼ck, '+(displayNames[email]||'')+'! ð Ich habe Ihre aktiven Policen geladen. Womit kann ich Ihnen heute helfen?</div>';
+        d.innerHTML='<div class="chat-msg-avatar">N</div><div class="chat-msg-bubble">Willkommen zurück, '+(displayNames[email]||'')+'! 👋 Ich habe Ihre aktiven Policen geladen. Womit kann ich Ihnen heute helfen?</div>';
         msgs.appendChild(d);
         msgs.scrollTop=msgs.scrollHeight;
       }
@@ -2103,7 +2103,7 @@ function doLogin(){
   }else if(demoAccounts[email]){
     errEl.textContent='Falsches Passwort. Bitte versuchen Sie es erneut.';
   }else{
-    errEl.textContent='Kein Account mit dieser E-Mail gefunden. Bitte prÃ¼fen Sie Ihre Eingabe.';
+    errEl.textContent='Kein Account mit dieser E-Mail gefunden. Bitte prüfen Sie Ihre Eingabe.';
   }
 }
 function doLogout(){
@@ -2116,7 +2116,7 @@ function doLogout(){
   goHome();
 }
 
-// ââ SECTION NAVIGATION âââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── SECTION NAVIGATION ───────────────────────────────────────────────────
 function hideAllSections(){ var db=document.getElementById('navia-dashboard');if(db)db.style.display='none'; document.getElementById('meine-policen').classList.remove('visible');
   document.getElementById('navia-chat-section').classList.remove('visible');
   document.getElementById('schaden-section').classList.remove('visible');
@@ -2139,7 +2139,7 @@ function showSection(name){
   }
 }
 
-// ââ CHAT âââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── CHAT ─────────────────────────────────────────────────────────────────
 let chatHistory=[];
 const NAVIA_SYSTEM_PROMPT = "Du bist Navia, eine professionelle, unabh\u00e4ngige digitale Versicherungsberaterin f\u00fcr die Schweiz.\n\nDEINE AUFGABE:\n- Du beantwortest AUSSCHLIESSLICH Fragen zu Versicherungen in der Schweiz\n- Bei NICHT-Versicherungsfragen sage freundlich: \"Ich bin auf Versicherungsberatung spezialisiert.\"\n- Antworte IMMER auf Deutsch, professionell aber freundlich (Sie-Form)\n- Halte Antworten klar und pr\u00e4zise (max. 200 W\u00f6rter)\n- Nenne konkrete Zahlen und CHF-Betr\u00e4ge wenn m\u00f6glich\n- Du bist unabh\u00e4ngig und empfiehlst keine bestimmte Versicherung bevorzugt\n\nDEIN WISSEN UMFASST:\n- Schweizer Krankenkasse (KVG Grundversicherung, Zusatzversicherungen, Franchise 300-2500, Wechselfristen)\n- Haftpflichtversicherung (Privat, Motorfahrzeug)\n- Hausratversicherung (Deckungen, Diebstahl, Elementarsch\u00e4den)\n- Fahrzeugversicherung (Teil-/Vollkasko, Haftpflicht, Bonus-Malus)\n- Rechtsschutzversicherung (Privat, Verkehr, Arbeitsrecht)\n- Lebensversicherung / Vorsorge (S\u00e4ule 3a max CHF 7056/Jahr, 3b, Risikoversicherung)\n- Reiseversicherung, Unfallversicherung, Cyber-Versicherung\n- Anbieter: AXA, Mobiliar, Helvetia, Zurich, Generali, CSS, Helsana, Swica, Concordia, Visana, Orion\n\nKUNDIN PETRA ROTH (wenn eingeloggt):\n- Geb. 12.03.1987, Brunnenweg 1, 6275 Ballwil (LU), Mieterin\n- Mobiliar Hausrat+PHV (G-1521-7055): CHF 450.77/Jahr, Hausrat CHF 70000, PHV CHF 5 Mio, SB CHF 200, bis 31.12.2029\n- Mobiliar Honda Accord (G-1524-2153): CHF 939.26/Jahr, Haftpflicht CHF 100 Mio + Vollkasko, SB Kollision CHF 1000, ABGELAUFEN 31.12.2024\n- Orion Privat-RS (1333364): CHF 173.25/Jahr, Standard CHF 500000/Fall, 14 Rechtsgebiete\n- Orion Verkehrs-RS (1333365): CHF 86.65/Jahr, 10 Deckungsbereiche\n- L\u00dcCKEN: Keine Krankenkasse, keine Vorsorge/3a, Honda abgelaufen\n- Generalagentur Seetal-Rontal: 041 914 01 01, Schadenfall: 041 914 01 00\n- Orion: 061 285 27 27, info@orion.ch";
 const GENERAL_CHAT_SYS = NAVIA_SYSTEM_PROMPT;
@@ -2186,14 +2186,14 @@ async function sendChat(){
     const reply=d.content.map(b=>b.text||'').join('').trim();
     chatHistory.push({role:'assistant',content:reply});
     setChatLoading(false);
-    appendChatMsg('navia','<em style="font-size:10px;color:var(--gold);display:block;margin-bottom:4px">ð¤ Claude Sonnet 4</em>'+reply);
+    appendChatMsg('navia','<em style="font-size:10px;color:var(--gold);display:block;margin-bottom:4px">🤖 Claude Sonnet 4</em>'+reply);
   }catch(e){
         const faq = faqAnswer(msg);
     if(faq){ appendChatMsg('bot', faq); setChatLoading(false); return; }
 setChatLoading(false);
     const errMsg=e.message&&e.message.includes('API')?
       'API-Fehler: '+e.message+'. Versuchen Sie den regelbasierten Modus.':
-      'Verbindungsfehler â bitte prÃ¼fen Sie Ihre Internetverbindung oder wechseln Sie zum regelbasierten Modus.';
+      'Verbindungsfehler — bitte prüfen Sie Ihre Internetverbindung oder wechseln Sie zum regelbasierten Modus.';
     appendChatMsg('navia',errMsg);
     // Remove failed user message from history so conversation can continue
     if(chatHistory.length>0 && chatHistory[chatHistory.length-1].role==='user'){
@@ -2240,7 +2240,7 @@ function setMode(mode){
   document.getElementById('voice-mode-panel').style.display=mode==='voice'?'block':'none';
 }
 
-// ââ AI MODE TOGGLE ââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── AI MODE TOGGLE ──────────────────────────────────────────────────────
 let _aiMode='llm';
 function setAiMode(mode){
   _aiMode=mode;
@@ -2256,32 +2256,32 @@ function setAiMode(mode){
 
 // FAQ Knowledge Base (Regelbasiert)
 const FAQ_DB=[
-  {keywords:['schadenhotline','notruf','notfall','schaden melden','schadenfall'],answer:'Bei einem Schadenfall erreichen Sie die Mobiliar Schadenhotline unter 00 800 16 16 16 16 (24/7). FÃ¼r RechtsschutzfÃ¤lle (Orion): 061 285 27 27. Alternativ kÃ¶nnen Sie den Schaden direkt Ã¼ber unser Portal melden.'},
-  {keywords:['selbstbehalt','franchise'],answer:'Ihre Selbstbehalte: Hausrat CHF 200, ElementarschÃ¤den CHF 500, Privathaftpflicht CHF 200, Fahrzeug-Kollision CHF 1\'000, Mobiltelefon/Tablet CHF 100.'},
-  {keywords:['hausrat','versicherungssumme hausrat','feuer','wasser','einbruch'],answer:'Ihre Hausratversicherung (Mobiliar G-1521-7055) deckt: Grunddeckung CHF 70\'000, Feuer & Elementar, Wasser, Einbruchdiebstahl, einfacher Diebstahl zu Hause. ZusÃ¤tzlich: Diebstahl auswÃ¤rts CHF 2\'000, Hausrat-Kasko CHF 5\'000 (BeschÃ¤digungen, StromwirkungsschÃ¤den, Verlieren/Verlegen).'},
-  {keywords:['haftpflicht','privathaftpflicht','garantiesumme'],answer:'Ihre Privathaftpflichtversicherung (Mobiliar G-1521-7055): Garantiesumme CHF 5\'000\'000, Selbstbehalt CHF 200. Deckung fÃ¼r Personen-, Sach- und VermÃ¶gensschÃ¤den aus privatem Verhalten. Personenkreis: Einzelperson, Mieterin.'},
-  {keywords:['honda','auto','fahrzeug','vollkasko','kasko','haftpflicht auto'],answer:'Ihre Fahrzeugversicherung (Mobiliar G-1524-2153) fÃ¼r den Honda Accord 2.2 i-CTDi (LU 96019): Haftpflicht CHF 100 Mio., Vollkasko inkl. Teilkasko. ACHTUNG: Diese Police ist am 31.12.2024 abgelaufen! Bitte erneuern Sie den Vertrag.'},
-  {keywords:['rechtsschutz','orion','privat-rechtsschutz','arbeitsrecht'],answer:'Ihr Orion Privat-Rechtsschutz (1333364): Einzelversicherung Standard, JahresprÃ¤mie CHF 173.25. Deckt u.a.: Schadenersatzrecht, Strafverteidigung, Versicherungsrecht, Arbeitsrecht, Patientenrecht, Mietrecht, Erbrecht. Versicherungssumme: CHF 500\'000/Rechtsfall.'},
-  {keywords:['verkehrs','verkehrsrechtsschutz','ausweisentzug','unfall verkehr'],answer:'Ihr Orion Verkehrs-Rechtsschutz (1333365): JahresprÃ¤mie CHF 86.65. Deckt: Schadenersatz nach Verkehrsunfall (weltweit), Strafverteidigung, Ausweisentzug, Fahrzeug-Vertragsrecht, Garagenmiete. Keine Karenzfrist.'},
-  {keywords:['krankenkasse','krankenversicherung','zusatzversicherung'],answer:'Sie haben derzeit KEINE Krankenkasse bei Navia hinterlegt. Die Grundversicherung ist in der Schweiz obligatorisch. Ich empfehle einen Vergleich Ã¼ber Comparis oder Priminfo. Soll ich Ihnen passende Optionen zeigen?'},
-  {keywords:['vorsorge','3a','sÃ¤ule','lebensversicherung','pension'],answer:'Sie haben derzeit KEINE Vorsorge/SÃ¤ule 3a hinterlegt. Mit einer SÃ¤ule 3a kÃ¶nnen Sie bis zu CHF 7\'056 pro Jahr steuerbegÃ¼nstigt sparen. Anbieter wie VIAC, Frankly oder Finpension bieten gÃ¼nstige digitale LÃ¶sungen.'},
-  {keywords:['kÃ¼ndigen','kÃ¼ndigung','kÃ¼ndigungsfrist'],answer:'KÃ¼ndigungsfristen: Mobiliar Hausrat/Haftpflicht: 3 Monate vor Hauptverfall (31.12.). Orion Rechtsschutz: 1 Monat vor Ende des Versicherungsjahres (30.09.). Honda-Police: bereits abgelaufen seit 31.12.2024.'},
-  {keywords:['prÃ¤mie','kosten','total','jahresprÃ¤mie'],answer:'Ihre GesamtprÃ¤mien pro Jahr: Mobiliar Hausrat/Haftpflicht CHF 450.77, Honda Fahrzeug CHF 939.26 (abgelaufen), Orion Privat-RS CHF 173.25, Orion Verkehrs-RS CHF 86.65. Total aktiv: ca. CHF 710.67/Jahr.'},
-  {keywords:['bonusschutz','grobfahrlÃ¤ssigkeit'],answer:'Bonusschutz (Honda-Police): Der erste Schaden pro Beobachtungsperiode hat keinen Einfluss auf die PrÃ¤mienstufe. GrobfahrlÃ¤ssigkeitsschutz: Mobiliar verzichtet auf RÃ¼ckgriff/KÃ¼rzung, AUSSER bei Alkohol, FahrunfÃ¤higkeit oder Raserdelikt.'},
+  {keywords:['schadenhotline','notruf','notfall','schaden melden','schadenfall'],answer:'Bei einem Schadenfall erreichen Sie die Mobiliar Schadenhotline unter 00 800 16 16 16 16 (24/7). Für Rechtsschutzfälle (Orion): 061 285 27 27. Alternativ können Sie den Schaden direkt über unser Portal melden.'},
+  {keywords:['selbstbehalt','franchise'],answer:'Ihre Selbstbehalte: Hausrat CHF 200, Elementarschäden CHF 500, Privathaftpflicht CHF 200, Fahrzeug-Kollision CHF 1\'000, Mobiltelefon/Tablet CHF 100.'},
+  {keywords:['hausrat','versicherungssumme hausrat','feuer','wasser','einbruch'],answer:'Ihre Hausratversicherung (Mobiliar G-1521-7055) deckt: Grunddeckung CHF 70\'000, Feuer & Elementar, Wasser, Einbruchdiebstahl, einfacher Diebstahl zu Hause. Zusätzlich: Diebstahl auswärts CHF 2\'000, Hausrat-Kasko CHF 5\'000 (Beschädigungen, Stromwirkungsschäden, Verlieren/Verlegen).'},
+  {keywords:['haftpflicht','privathaftpflicht','garantiesumme'],answer:'Ihre Privathaftpflichtversicherung (Mobiliar G-1521-7055): Garantiesumme CHF 5\'000\'000, Selbstbehalt CHF 200. Deckung für Personen-, Sach- und Vermögensschäden aus privatem Verhalten. Personenkreis: Einzelperson, Mieterin.'},
+  {keywords:['honda','auto','fahrzeug','vollkasko','kasko','haftpflicht auto'],answer:'Ihre Fahrzeugversicherung (Mobiliar G-1524-2153) für den Honda Accord 2.2 i-CTDi (LU 96019): Haftpflicht CHF 100 Mio., Vollkasko inkl. Teilkasko. ACHTUNG: Diese Police ist am 31.12.2024 abgelaufen! Bitte erneuern Sie den Vertrag.'},
+  {keywords:['rechtsschutz','orion','privat-rechtsschutz','arbeitsrecht'],answer:'Ihr Orion Privat-Rechtsschutz (1333364): Einzelversicherung Standard, Jahresprämie CHF 173.25. Deckt u.a.: Schadenersatzrecht, Strafverteidigung, Versicherungsrecht, Arbeitsrecht, Patientenrecht, Mietrecht, Erbrecht. Versicherungssumme: CHF 500\'000/Rechtsfall.'},
+  {keywords:['verkehrs','verkehrsrechtsschutz','ausweisentzug','unfall verkehr'],answer:'Ihr Orion Verkehrs-Rechtsschutz (1333365): Jahresprämie CHF 86.65. Deckt: Schadenersatz nach Verkehrsunfall (weltweit), Strafverteidigung, Ausweisentzug, Fahrzeug-Vertragsrecht, Garagenmiete. Keine Karenzfrist.'},
+  {keywords:['krankenkasse','krankenversicherung','zusatzversicherung'],answer:'Sie haben derzeit KEINE Krankenkasse bei Navia hinterlegt. Die Grundversicherung ist in der Schweiz obligatorisch. Ich empfehle einen Vergleich über Comparis oder Priminfo. Soll ich Ihnen passende Optionen zeigen?'},
+  {keywords:['vorsorge','3a','säule','lebensversicherung','pension'],answer:'Sie haben derzeit KEINE Vorsorge/Säule 3a hinterlegt. Mit einer Säule 3a können Sie bis zu CHF 7\'056 pro Jahr steuerbegünstigt sparen. Anbieter wie VIAC, Frankly oder Finpension bieten günstige digitale Lösungen.'},
+  {keywords:['kündigen','kündigung','kündigungsfrist'],answer:'Kündigungsfristen: Mobiliar Hausrat/Haftpflicht: 3 Monate vor Hauptverfall (31.12.). Orion Rechtsschutz: 1 Monat vor Ende des Versicherungsjahres (30.09.). Honda-Police: bereits abgelaufen seit 31.12.2024.'},
+  {keywords:['prämie','kosten','total','jahresprämie'],answer:'Ihre Gesamtprämien pro Jahr: Mobiliar Hausrat/Haftpflicht CHF 450.77, Honda Fahrzeug CHF 939.26 (abgelaufen), Orion Privat-RS CHF 173.25, Orion Verkehrs-RS CHF 86.65. Total aktiv: ca. CHF 710.67/Jahr.'},
+  {keywords:['bonusschutz','grobfahrlässigkeit'],answer:'Bonusschutz (Honda-Police): Der erste Schaden pro Beobachtungsperiode hat keinen Einfluss auf die Prämienstufe. Grobfahrlässigkeitsschutz: Mobiliar verzichtet auf Rückgriff/Kürzung, AUSSER bei Alkohol, Fahrunfähigkeit oder Raserdelikt.'},
   {keywords:['kontakt','berater','generalagentur','ansprechpartner'],answer:'Ihre Mobiliar Generalagentur Seetal-Rontal: Christoph Blum, lic. iur., Hauptstrasse 1, 6281 Hochdorf. Tel. 041 914 01 01. Im Schadenfall: 041 914 01 00. Orion: Tel. 061 285 27 27, info@orion.ch.'},
-  {keywords:['hallo','guten tag','hi','hey'],answer:'Guten Tag, Petra! Ich bin Navia, Ihre digitale Versicherungsberaterin. Sie kÃ¶nnen mir Fragen zu Ihren Policen stellen â z.B. zu Deckungen, Selbstbehalten, KÃ¼ndigungsfristen oder Schadenmeldungen. Wie kann ich Ihnen helfen?'},
-  // ââ ALLGEMEINE SCHWEIZER VERSICHERUNGSFRAGEN ââ
-  {keywords:['kvg','grundversicherung','obligatorisch','krankenkassengesetz'],answer:'Die KVG-Grundversicherung ist in der Schweiz obligatorisch. Alle Kassen bieten identische Leistungen â nur die PrÃ¤mie unterscheidet sich. Modelle: Standard (freie Arztwahl), HMO (Gruppenpraxis), Hausarztmodell, Telmed. Tipp: Bei priminfo.admin.ch kÃ¶nnen Sie alle PrÃ¤mien offiziell vergleichen.'},
-  {keywords:['franchise wÃ¤hlen','franchise modell','franchise berechnen','welche franchise'],answer:'Franchisen: CHF 300, 500, 1000, 1500, 2000 oder 2500/Jahr. Faustregel: Wer selten zum Arzt geht â hohe Franchise (spart PrÃ¤mie). Wer regelmÃ¤ssig Arztkosten hat â tiefe Franchise (CHF 300). Die Ersparnis bei CHF 2500 vs. CHF 300 betrÃ¤gt ca. CHF 1000-1500/Jahr je nach Kanton.'},
-  {keywords:['prÃ¤mienverbilligung','ipv','prÃ¤mienreduktion','subvention'],answer:'Individuelle PrÃ¤mienverbilligung (IPV): Personen mit bescheidenem Einkommen erhalten kantonale ZuschÃ¼sse. Die Berechtigung und HÃ¶he variiert pro Kanton stark. Antrag beim kantonalen Sozialversicherungsamt. Tipp: Auch Familien mit mittlerem Einkommen kÃ¶nnen berechtigt sein!'},
-  {keywords:['wechseln','krankenkasse wechseln','wechselfrist','kÃ¼ndigung krankenkasse'],answer:'KVG-Grundversicherung: KÃ¼ndigung bis 30. November fÃ¼r Wechsel per 1. Januar (bei Standardfranchise). Bei hÃ¶herer Franchise: KÃ¼ndigung bis 30. Juni mÃ¶glich fÃ¼r Wechsel per 1. Juli. Neue Kasse muss Sie aufnehmen (Aufnahmepflicht). Zusatzversicherungen: Gesonderte KÃ¼ndigungsfristen beachten, keine Aufnahmepflicht!'},
-  {keywords:['kvg vvg','unterschied kvg','unterschied versicherung'],answer:'KVG (Krankenversicherungsgesetz): Obligatorische Grundversicherung â Aufnahmepflicht, einheitliche Leistungen, regulierte PrÃ¤mien. VVG (Versicherungsvertragsgesetz): Freiwillige Zusatzversicherungen und alle anderen Versicherungen â RisikoprÃ¼fung, individuelle Leistungen, Ablehnungsrecht des Versicherers.'},
-  {keywords:['sÃ¤ule 3a','3a','dritte sÃ¤ule','vorsorge steuern','steuern sparen'],answer:'SÃ¤ule 3a (gebundene Vorsorge): Max. CHF 7\'056/Jahr (Angestellte, 2025). Komplett vom steuerbaren Einkommen abziehbar! Auszahlung frÃ¼hestens 5 Jahre vor AHV-Alter. Anbieter: Banken (Sparkonto) oder Versicherungen (Lebensversicherung). Digitale Anbieter wie VIAC, Frankly, Finpension bieten tiefe GebÃ¼hren.'},
-  {keywords:['haftpflicht obligatorisch','brauche haftpflicht','haftpflicht nÃ¶tig','haftpflicht schweiz'],answer:'Die Privathaftpflicht ist in der Schweiz NICHT obligatorisch, aber dringend empfohlen. Sie deckt SchÃ¤den, die Sie Dritten zufÃ¼gen (Personen-, Sach-, VermÃ¶gensschÃ¤den). Kosten: ab ca. CHF 70-150/Jahr. Empfohlene Deckung: mind. CHF 5 Mio. Fast jeder Schweizer hat eine â ein Muss!'},
-  {keywords:['hausrat obligatorisch','brauche hausrat','hausrat nÃ¶tig','hausrat schweiz'],answer:'Die Hausratversicherung ist in den meisten Kantonen NICHT obligatorisch (Ausnahme: teils kantonal fÃ¼r Feuer/Elementar). Sie schÃ¼tzt Ihr Hab und Gut gegen Feuer, Wasser, Einbruch, Diebstahl. Kosten: ab ca. CHF 100-300/Jahr. Tipp: Versicherungssumme = Neuwert aller BesitztÃ¼mer.'},
-  {keywords:['rechtsschutz nÃ¶tig','brauche rechtsschutz','rechtsschutz sinnvoll'],answer:'Eine Rechtsschutzversicherung Ã¼bernimmt Anwalts- und Gerichtskosten bei Streitigkeiten. Sinnvoll bei: Mietstreitigkeiten, Arbeitsrecht, VerkehrsunfÃ¤llen, Nachbarschaftskonflikten. Kosten: ab ca. CHF 150-300/Jahr. Achtung: Karenzfristen (Wartezeiten) beachten! Nicht versichert: Bereits bestehende StreitfÃ¤lle.'},
-  {keywords:['bonus malus','bonusstufe','praemienstufe'],answer:'Das Bonus-Malus-System in der Autoversicherung: Schadenfreies Fahren senkt Ihre PrÃ¤mienstufe (Bonus), ein Schaden erhÃ¶ht sie (Malus). Stufe 0 = gÃ¼nstigste PrÃ¤mie. Nach einem Schaden kann die PrÃ¤mie um 35-50% steigen. Tipp: Bonusschutz-Zusatz verhindert RÃ¼ckstufung beim ersten Schaden.'},
-  {keywords:['comparis','vergleich','prÃ¤mien vergleichen','anbieter vergleichen'],answer:'Vergleichsportale fÃ¼r Schweizer Versicherungen: comparis.ch (grÃ¶sster Vergleich), priminfo.admin.ch (offiziell fÃ¼r KVG-PrÃ¤mien), moneyland.ch (unabhÃ¤ngig). FÃ¼r KrankenkassenprÃ¤mien ist priminfo.admin.ch am zuverlÃ¤ssigsten, da offiziell vom BAG betrieben.'},
+  {keywords:['hallo','guten tag','hi','hey'],answer:'Guten Tag, Petra! Ich bin Navia, Ihre digitale Versicherungsberaterin. Sie können mir Fragen zu Ihren Policen stellen — z.B. zu Deckungen, Selbstbehalten, Kündigungsfristen oder Schadenmeldungen. Wie kann ich Ihnen helfen?'},
+  // ── ALLGEMEINE SCHWEIZER VERSICHERUNGSFRAGEN ──
+  {keywords:['kvg','grundversicherung','obligatorisch','krankenkassengesetz'],answer:'Die KVG-Grundversicherung ist in der Schweiz obligatorisch. Alle Kassen bieten identische Leistungen — nur die Prämie unterscheidet sich. Modelle: Standard (freie Arztwahl), HMO (Gruppenpraxis), Hausarztmodell, Telmed. Tipp: Bei priminfo.admin.ch können Sie alle Prämien offiziell vergleichen.'},
+  {keywords:['franchise wählen','franchise modell','franchise berechnen','welche franchise'],answer:'Franchisen: CHF 300, 500, 1000, 1500, 2000 oder 2500/Jahr. Faustregel: Wer selten zum Arzt geht → hohe Franchise (spart Prämie). Wer regelmässig Arztkosten hat → tiefe Franchise (CHF 300). Die Ersparnis bei CHF 2500 vs. CHF 300 beträgt ca. CHF 1000-1500/Jahr je nach Kanton.'},
+  {keywords:['prämienverbilligung','ipv','prämienreduktion','subvention'],answer:'Individuelle Prämienverbilligung (IPV): Personen mit bescheidenem Einkommen erhalten kantonale Zuschüsse. Die Berechtigung und Höhe variiert pro Kanton stark. Antrag beim kantonalen Sozialversicherungsamt. Tipp: Auch Familien mit mittlerem Einkommen können berechtigt sein!'},
+  {keywords:['wechseln','krankenkasse wechseln','wechselfrist','kündigung krankenkasse'],answer:'KVG-Grundversicherung: Kündigung bis 30. November für Wechsel per 1. Januar (bei Standardfranchise). Bei höherer Franchise: Kündigung bis 30. Juni möglich für Wechsel per 1. Juli. Neue Kasse muss Sie aufnehmen (Aufnahmepflicht). Zusatzversicherungen: Gesonderte Kündigungsfristen beachten, keine Aufnahmepflicht!'},
+  {keywords:['kvg vvg','unterschied kvg','unterschied versicherung'],answer:'KVG (Krankenversicherungsgesetz): Obligatorische Grundversicherung — Aufnahmepflicht, einheitliche Leistungen, regulierte Prämien. VVG (Versicherungsvertragsgesetz): Freiwillige Zusatzversicherungen und alle anderen Versicherungen — Risikoprüfung, individuelle Leistungen, Ablehnungsrecht des Versicherers.'},
+  {keywords:['säule 3a','3a','dritte säule','vorsorge steuern','steuern sparen'],answer:'Säule 3a (gebundene Vorsorge): Max. CHF 7\'056/Jahr (Angestellte, 2025). Komplett vom steuerbaren Einkommen abziehbar! Auszahlung frühestens 5 Jahre vor AHV-Alter. Anbieter: Banken (Sparkonto) oder Versicherungen (Lebensversicherung). Digitale Anbieter wie VIAC, Frankly, Finpension bieten tiefe Gebühren.'},
+  {keywords:['haftpflicht obligatorisch','brauche haftpflicht','haftpflicht nötig','haftpflicht schweiz'],answer:'Die Privathaftpflicht ist in der Schweiz NICHT obligatorisch, aber dringend empfohlen. Sie deckt Schäden, die Sie Dritten zufügen (Personen-, Sach-, Vermögensschäden). Kosten: ab ca. CHF 70-150/Jahr. Empfohlene Deckung: mind. CHF 5 Mio. Fast jeder Schweizer hat eine — ein Muss!'},
+  {keywords:['hausrat obligatorisch','brauche hausrat','hausrat nötig','hausrat schweiz'],answer:'Die Hausratversicherung ist in den meisten Kantonen NICHT obligatorisch (Ausnahme: teils kantonal für Feuer/Elementar). Sie schützt Ihr Hab und Gut gegen Feuer, Wasser, Einbruch, Diebstahl. Kosten: ab ca. CHF 100-300/Jahr. Tipp: Versicherungssumme = Neuwert aller Besitztümer.'},
+  {keywords:['rechtsschutz nötig','brauche rechtsschutz','rechtsschutz sinnvoll'],answer:'Eine Rechtsschutzversicherung übernimmt Anwalts- und Gerichtskosten bei Streitigkeiten. Sinnvoll bei: Mietstreitigkeiten, Arbeitsrecht, Verkehrsunfällen, Nachbarschaftskonflikten. Kosten: ab ca. CHF 150-300/Jahr. Achtung: Karenzfristen (Wartezeiten) beachten! Nicht versichert: Bereits bestehende Streitfälle.'},
+  {keywords:['bonus malus','bonusstufe','praemienstufe'],answer:'Das Bonus-Malus-System in der Autoversicherung: Schadenfreies Fahren senkt Ihre Prämienstufe (Bonus), ein Schaden erhöht sie (Malus). Stufe 0 = günstigste Prämie. Nach einem Schaden kann die Prämie um 35-50% steigen. Tipp: Bonusschutz-Zusatz verhindert Rückstufung beim ersten Schaden.'},
+  {keywords:['comparis','vergleich','prämien vergleichen','anbieter vergleichen'],answer:'Vergleichsportale für Schweizer Versicherungen: comparis.ch (grösster Vergleich), priminfo.admin.ch (offiziell für KVG-Prämien), moneyland.ch (unabhängig). Für Krankenkassenprämien ist priminfo.admin.ch am zuverlässigsten, da offiziell vom BAG betrieben.'},
 ];
 
 function faqAnswer(msg){
@@ -2295,10 +2295,10 @@ function faqAnswer(msg){
     if(score>bestScore){bestScore=score;best=faq;}
   }
   if(best&&bestScore>3)return best.answer;
-  return 'Diese Frage kann ich im regelbasierten Modus leider nicht beantworten. Bitte wechseln Sie zum LLM-Modus (Claude) fÃ¼r komplexe Fragen, oder formulieren Sie Ihre Frage mit SchlÃ¼sselwÃ¶rtern wie: Hausrat, Haftpflicht, Honda, Rechtsschutz, Krankenkasse, Selbstbehalt, KÃ¼ndigung, Schadenhotline.';
+  return 'Diese Frage kann ich im regelbasierten Modus leider nicht beantworten. Bitte wechseln Sie zum LLM-Modus (Claude) für komplexe Fragen, oder formulieren Sie Ihre Frage mit Schlüsselwörtern wie: Hausrat, Haftpflicht, Honda, Rechtsschutz, Krankenkasse, Selbstbehalt, Kündigung, Schadenhotline.';
 }
 
-// ââ SCHADEN MELDEN âââââââââââââââââââââââââââââââââââââââââââââââââââââââ
+// ── SCHADEN MELDEN ───────────────────────────────────────────────────────
 let _schadenType='', _urgency='', _schadenPage=1;
 
 function selectSchadenType(el,type){
@@ -2325,7 +2325,7 @@ function submitSchaden(){
   // Show selected type in success
   const typeEl=document.querySelector('.schaden-type-card.sel .schaden-type-label');
   const typeName=typeEl?typeEl.textContent:'Ihr Schaden';
-  document.querySelector('.schaden-success-title').textContent='Schadenfall Â«'+typeName+'Â» erfolgreich eingereicht';
+  document.querySelector('.schaden-success-title').textContent='Schadenfall «'+typeName+'» erfolgreich eingereicht';
   document.getElementById('schaden-form-content').style.display='none';
   const success=document.getElementById('schaden-success');
   success.classList.add('show');
@@ -2341,25 +2341,25 @@ function resetSchaden(){
   goSchaden(1);
 }
 
-// ââ FLOATING CHATBOT + GENERAL INSURANCE INTELLIGENCE âââââââââââââââââ
+// ── FLOATING CHATBOT + GENERAL INSURANCE INTELLIGENCE ─────────────────
 // General chatbot for public visitors (non-logged-in)
 let generalChatHistory=[];
 let _fabApiAvailable=null; // null = untested, true/false after first attempt
 const GENERAL_FAQ=[
-  {keywords:['hallo','hi','hey','guten tag','grÃ¼ezi','grÃ¼ss'],answer:'Hallo! ð Willkommen bei Navia. Ich bin Ihre digitale Versicherungsberaterin fÃ¼r die Schweiz. Stellen Sie mir gerne eine Frage zu Krankenkasse, Haftpflicht, Hausrat, Vorsorge oder anderen Versicherungsthemen!'},
-  {keywords:['krankenkasse','grundversicherung','kvg','krankenversicherung'],answer:'Die KVG-Grundversicherung ist in der Schweiz obligatorisch. Alle Schweizer Krankenkassen bieten identische Leistungen â nur die PrÃ¤mie unterscheidet sich. Wechselfrist: jÃ¤hrlich per 30. November (fÃ¼r Standard-Modell) oder 31. MÃ¤rz (bei hÃ¶herer Franchise). Franchise-Optionen: CHF 300, 500, 1\'000, 1\'500, 2\'000, 2\'500. Je hÃ¶her die Franchise, desto tiefer die PrÃ¤mie. Offizielle PrÃ¤mienvergleiche: priminfo.admin.ch'},
-  {keywords:['franchise','selbstbehalt krankenkasse','franchise wÃ¤hlen'],answer:'Franchise-Modelle in der Schweiz: CHF 300 (hÃ¶chste PrÃ¤mie, tiefster Selbstbehalt), CHF 500, CHF 1\'000, CHF 1\'500, CHF 2\'000, CHF 2\'500 (tiefste PrÃ¤mie). Faustregel: Wenn Sie selten zum Arzt gehen â hohe Franchise (CHF 2\'500). Bei regelmÃ¤ssigen Arztterminen â tiefe Franchise (CHF 300/500). Maximaler Selbstbehalt pro Jahr: 10% der Kosten Ã¼ber der Franchise, max. CHF 700.'},
-  {keywords:['haftpflicht','privathaftpflicht'],answer:'Die Privathaftpflicht deckt SchÃ¤den, die Sie Dritten unbeabsichtigt zufÃ¼gen. Nicht obligatorisch, aber dringend empfohlen! Kosten: ab ca. CHF 70â150/Jahr. Empfohlene Deckungssumme: mind. CHF 5 Mio. Bekannte Anbieter: Mobiliar, AXA, Helvetia, Zurich, Generali.'},
-  {keywords:['hausrat','hausratversicherung','einbruch'],answer:'Die Hausratversicherung schÃ¼tzt Ihr Hab und Gut gegen: Feuer, Wasser, Einbruchdiebstahl, ElementarschÃ¤den. In den meisten Kantonen freiwillig. Kosten: ca. CHF 100â300/Jahr. Wichtig: Versicherungssumme = Neuwert aller BesitztÃ¼mer. Tipp: Oft als Kombi mit Privathaftpflicht gÃ¼nstiger.'},
-  {keywords:['auto','fahrzeug','autoversicherung','motorfahrzeug','kasko','vollkasko','teilkasko'],answer:'Pflichtversicherung: Motorfahrzeug-Haftpflicht (obligatorisch). Freiwillig: Teilkasko (Diebstahl, Glasbruch, Hagel, Marderbiss) und Vollkasko (+ selbstverschuldete Kollisionen). Bonus-Malus-System: Schadenfreies Fahren senkt die PrÃ¤mie. Bonusschutz verhindert RÃ¼ckstufung beim ersten Schaden.'},
-  {keywords:['sÃ¤ule 3a','3a','vorsorge','dritte sÃ¤ule','steuern sparen','lebensversicherung'],answer:'SÃ¤ule 3a (gebundene Vorsorge): Max. Einzahlung CHF 7\'056/Jahr (Angestellte). Komplett steuerlich abzugsfÃ¤hig! Auszahlung frÃ¼hestens 5 Jahre vor AHV-Alter. Anbieter: Banken (Sparkonto) oder Versicherungen (Lebensversicherung). Digitale Anbieter wie VIAC, Frankly, Finpension bieten tiefe GebÃ¼hren.'},
-  {keywords:['rechtsschutz','rechtsschutzversicherung','anwalt'],answer:'Rechtsschutzversicherung Ã¼bernimmt Anwalts- und Gerichtskosten bei Streitigkeiten. Bereiche: Privat-RS, Verkehrs-RS, Arbeitsrecht-RS. Kosten: ab CHF 150â300/Jahr. Achtung: Karenzfristen beachten! Nicht versichert: bereits bestehende StreitfÃ¤lle.'},
-  {keywords:['wechseln','krankenkasse wechseln','kÃ¼ndigen','wechselfrist'],answer:'Krankenkasse wechseln: KÃ¼ndigung per 30. November fÃ¼r Standard-/Telmed-Modelle, per 31. MÃ¤rz bei Franchise > CHF 300. Neuer Versicherer muss vorher bestÃ¤tigt werden. Alle Grundversicherer mÃ¼ssen Sie aufnehmen â kein Ablehnungsrecht! Tipp: PrÃ¤mien vergleichen auf priminfo.admin.ch.'},
-  {keywords:['navia','was ist navia','wer bist du','was kannst du'],answer:'Ich bin Navia, Ihre unabhÃ¤ngige digitale Versicherungsberaterin fÃ¼r die Schweiz. ð¨ð­ Ich helfe Ihnen bei: Versicherungsvergleichen, Fragen zu Policen, Optimierungsempfehlungen, allgemeinen Versicherungsfragen. Meine Analyse basiert auf KI-Technologie und berÃ¼cksichtigt Ã¼ber 30 Schweizer Versicherer.'},
-  {keywords:['comparis','vergleich','prÃ¤mien vergleichen'],answer:'NÃ¼tzliche Vergleichsportale: priminfo.admin.ch (offiziell vom BAG, KVG-PrÃ¤mien), comparis.ch (grÃ¶sster Vergleich), moneyland.ch (unabhÃ¤ngig). FÃ¼r KrankenkassenprÃ¤mien ist priminfo.admin.ch am zuverlÃ¤ssigsten.'},
-  {keywords:['kosten','gÃ¼nstig','sparen','teuer','prÃ¤mie'],answer:'Tipps zum PrÃ¤mien sparen: 1) Franchise erhÃ¶hen (bei Krankenkasse), 2) Telmed-/HMO-Modell wÃ¤hlen, 3) JÃ¤hrliche Zahlung statt monatlich (Rabatt), 4) Versicherungen bÃ¼ndeln (Kombi-Rabatte), 5) RegelmÃ¤ssig Angebote vergleichen. Eine unabhÃ¤ngige Analyse kann CHF 500â1\'500/Jahr sparen.'},
-  {keywords:['unfall','unfallversicherung','uvg'],answer:'Unfallversicherung (UVG): Arbeitnehmer ab 8h/Woche sind Ã¼ber den Arbeitgeber versichert (Berufs- UND NichtberufsunfÃ¤lle). Teilzeit unter 8h: nur BerufsunfÃ¤lle versichert â private Unfallversicherung empfohlen. SelbststÃ¤ndige: freiwilliger UVG-Beitritt mÃ¶glich.'},
-  {keywords:['cyber','cyberversicherung','internet','online'],answer:'Cyberversicherung schÃ¼tzt gegen: Online-Betrug, IdentitÃ¤tsdiebstahl, Cybermobbing, Datenverlust, E-Banking-Missbrauch. Kosten: ab ca. CHF 50â100/Jahr. Besonders empfohlen fÃ¼r: Online-Shopper, E-Banking-Nutzer, Familien mit Kindern im Internet.'},
+  {keywords:['hallo','hi','hey','guten tag','grüezi','grüss'],answer:'Hallo! 👋 Willkommen bei Navia. Ich bin Ihre digitale Versicherungsberaterin für die Schweiz. Stellen Sie mir gerne eine Frage zu Krankenkasse, Haftpflicht, Hausrat, Vorsorge oder anderen Versicherungsthemen!'},
+  {keywords:['krankenkasse','grundversicherung','kvg','krankenversicherung'],answer:'Die KVG-Grundversicherung ist in der Schweiz obligatorisch. Alle Schweizer Krankenkassen bieten identische Leistungen — nur die Prämie unterscheidet sich. Wechselfrist: jährlich per 30. November (für Standard-Modell) oder 31. März (bei höherer Franchise). Franchise-Optionen: CHF 300, 500, 1\'000, 1\'500, 2\'000, 2\'500. Je höher die Franchise, desto tiefer die Prämie. Offizielle Prämienvergleiche: priminfo.admin.ch'},
+  {keywords:['franchise','selbstbehalt krankenkasse','franchise wählen'],answer:'Franchise-Modelle in der Schweiz: CHF 300 (höchste Prämie, tiefster Selbstbehalt), CHF 500, CHF 1\'000, CHF 1\'500, CHF 2\'000, CHF 2\'500 (tiefste Prämie). Faustregel: Wenn Sie selten zum Arzt gehen → hohe Franchise (CHF 2\'500). Bei regelmässigen Arztterminen → tiefe Franchise (CHF 300/500). Maximaler Selbstbehalt pro Jahr: 10% der Kosten über der Franchise, max. CHF 700.'},
+  {keywords:['haftpflicht','privathaftpflicht'],answer:'Die Privathaftpflicht deckt Schäden, die Sie Dritten unbeabsichtigt zufügen. Nicht obligatorisch, aber dringend empfohlen! Kosten: ab ca. CHF 70–150/Jahr. Empfohlene Deckungssumme: mind. CHF 5 Mio. Bekannte Anbieter: Mobiliar, AXA, Helvetia, Zurich, Generali.'},
+  {keywords:['hausrat','hausratversicherung','einbruch'],answer:'Die Hausratversicherung schützt Ihr Hab und Gut gegen: Feuer, Wasser, Einbruchdiebstahl, Elementarschäden. In den meisten Kantonen freiwillig. Kosten: ca. CHF 100–300/Jahr. Wichtig: Versicherungssumme = Neuwert aller Besitztümer. Tipp: Oft als Kombi mit Privathaftpflicht günstiger.'},
+  {keywords:['auto','fahrzeug','autoversicherung','motorfahrzeug','kasko','vollkasko','teilkasko'],answer:'Pflichtversicherung: Motorfahrzeug-Haftpflicht (obligatorisch). Freiwillig: Teilkasko (Diebstahl, Glasbruch, Hagel, Marderbiss) und Vollkasko (+ selbstverschuldete Kollisionen). Bonus-Malus-System: Schadenfreies Fahren senkt die Prämie. Bonusschutz verhindert Rückstufung beim ersten Schaden.'},
+  {keywords:['säule 3a','3a','vorsorge','dritte säule','steuern sparen','lebensversicherung'],answer:'Säule 3a (gebundene Vorsorge): Max. Einzahlung CHF 7\'056/Jahr (Angestellte). Komplett steuerlich abzugsfähig! Auszahlung frühestens 5 Jahre vor AHV-Alter. Anbieter: Banken (Sparkonto) oder Versicherungen (Lebensversicherung). Digitale Anbieter wie VIAC, Frankly, Finpension bieten tiefe Gebühren.'},
+  {keywords:['rechtsschutz','rechtsschutzversicherung','anwalt'],answer:'Rechtsschutzversicherung übernimmt Anwalts- und Gerichtskosten bei Streitigkeiten. Bereiche: Privat-RS, Verkehrs-RS, Arbeitsrecht-RS. Kosten: ab CHF 150–300/Jahr. Achtung: Karenzfristen beachten! Nicht versichert: bereits bestehende Streitfälle.'},
+  {keywords:['wechseln','krankenkasse wechseln','kündigen','wechselfrist'],answer:'Krankenkasse wechseln: Kündigung per 30. November für Standard-/Telmed-Modelle, per 31. März bei Franchise > CHF 300. Neuer Versicherer muss vorher bestätigt werden. Alle Grundversicherer müssen Sie aufnehmen — kein Ablehnungsrecht! Tipp: Prämien vergleichen auf priminfo.admin.ch.'},
+  {keywords:['navia','was ist navia','wer bist du','was kannst du'],answer:'Ich bin Navia, Ihre unabhängige digitale Versicherungsberaterin für die Schweiz. 🇨🇭 Ich helfe Ihnen bei: Versicherungsvergleichen, Fragen zu Policen, Optimierungsempfehlungen, allgemeinen Versicherungsfragen. Meine Analyse basiert auf KI-Technologie und berücksichtigt über 30 Schweizer Versicherer.'},
+  {keywords:['comparis','vergleich','prämien vergleichen'],answer:'Nützliche Vergleichsportale: priminfo.admin.ch (offiziell vom BAG, KVG-Prämien), comparis.ch (grösster Vergleich), moneyland.ch (unabhängig). Für Krankenkassenprämien ist priminfo.admin.ch am zuverlässigsten.'},
+  {keywords:['kosten','günstig','sparen','teuer','prämie'],answer:'Tipps zum Prämien sparen: 1) Franchise erhöhen (bei Krankenkasse), 2) Telmed-/HMO-Modell wählen, 3) Jährliche Zahlung statt monatlich (Rabatt), 4) Versicherungen bündeln (Kombi-Rabatte), 5) Regelmässig Angebote vergleichen. Eine unabhängige Analyse kann CHF 500–1\'500/Jahr sparen.'},
+  {keywords:['unfall','unfallversicherung','uvg'],answer:'Unfallversicherung (UVG): Arbeitnehmer ab 8h/Woche sind über den Arbeitgeber versichert (Berufs- UND Nichtberufsunfälle). Teilzeit unter 8h: nur Berufsunfälle versichert → private Unfallversicherung empfohlen. Selbstständige: freiwilliger UVG-Beitritt möglich.'},
+  {keywords:['cyber','cyberversicherung','internet','online'],answer:'Cyberversicherung schützt gegen: Online-Betrug, Identitätsdiebstahl, Cybermobbing, Datenverlust, E-Banking-Missbrauch. Kosten: ab ca. CHF 50–100/Jahr. Besonders empfohlen für: Online-Shopper, E-Banking-Nutzer, Familien mit Kindern im Internet.'},
 ];
 
 function fabFaqAnswer(msg){
@@ -2391,7 +2391,7 @@ function scrollToChatbot(){
   }
 }
 
-// ââ FAB CHATBOT ââ
+// ── FAB CHATBOT ──
 function toggleFabChat(){
   const w=document.getElementById('fab-chat-window');
   if(!w) return;
@@ -2463,10 +2463,10 @@ setFabLoading(false);
     if(faqReply){
       generalChatHistory.push({role:'user',content:msg});
       generalChatHistory.push({role:'assistant',content:faqReply});
-      appendFabMsg('navia',faqReply+'<br><br><span style="font-size:11px;color:var(--muted);font-style:italic">ð¡ Hinweis: Antwort aus dem FAQ-System. FÃ¼r KI-gestÃ¼tzte Antworten nutzen Sie die Seite Ã¼ber claude.ai.</span>');
+      appendFabMsg('navia',faqReply+'<br><br><span style="font-size:11px;color:var(--muted);font-style:italic">💡 Hinweis: Antwort aus dem FAQ-System. Für KI-gestützte Antworten nutzen Sie die Seite über claude.ai.</span>');
     }else{
       generalChatHistory.push({role:'user',content:msg});
-      const fallback='Ich kann diese Frage momentan leider nicht beantworten. Versuchen Sie allgemeine Versicherungsbegriffe wie: Krankenkasse, Franchise, Haftpflicht, Hausrat, Rechtsschutz, Vorsorge 3a, Auto, Unfall.<br><br><span style="font-size:11px;color:var(--muted);font-style:italic">ð¡ Die KI-gestÃ¼tzte Beratung ist verfÃ¼gbar, wenn die Seite Ã¼ber claude.ai ausgefÃ¼hrt wird.</span>';
+      const fallback='Ich kann diese Frage momentan leider nicht beantworten. Versuchen Sie allgemeine Versicherungsbegriffe wie: Krankenkasse, Franchise, Haftpflicht, Hausrat, Rechtsschutz, Vorsorge 3a, Auto, Unfall.<br><br><span style="font-size:11px;color:var(--muted);font-style:italic">💡 Die KI-gestützte Beratung ist verfügbar, wenn die Seite über claude.ai ausgeführt wird.</span>';
       generalChatHistory.push({role:'assistant',content:fallback});
       appendFabMsg('navia',fallback);
     }
@@ -2541,11 +2541,11 @@ function openFullChat(){hideAllSections();document.getElementById("hero").style.
 </script>
 
 
-<div id="analyse-modal" style="display:none;position:fixed;inset:0;z-index:9000;background:rgba(10,22,40,.7);backdrop-filter:blur(4px);align-items:center;justify-content:center"><div style="background:#fff;border-radius:20px;width:min(720px,95vw);max-height:90vh;overflow-y:auto;padding:32px;box-shadow:0 24px 80px rgba(0,0,0,.25)"><div id="analyse-loading" style="text-align:center;padding:40px 0"><div style="font-size:40px;margin-bottom:16px">ð</div><div id="analyse-progress-title" style="font-size:18px;font-weight:700;color:var(--ink);margin-bottom:8px">Analysiere Versicherungsmarkt...</div><div style="font-size:13px;color:var(--ink2);margin-bottom:24px">Vergleiche <span id="analyse-type-label">Versicherung</span> bei 30+ Anbietern</div><div style="background:#f0f0f0;border-radius:100px;height:8px;overflow:hidden;max-width:400px;margin:0 auto"><div id="analyse-bar" style="background:linear-gradient(90deg,var(--gold),#d4a043);height:8px;border-radius:100px;width:0;transition:width .5s ease"></div></div><div id="analyse-steps" style="margin-top:20px;text-align:left;font-size:12px;color:var(--ink2);line-height:2;max-width:400px;margin-left:auto;margin-right:auto"></div></div><div id="analyse-results" style="display:none"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;gap:12px;flex-wrap:wrap"><div><h2 style="margin:0;font-size:20px;font-weight:700" id="analyse-result-title">Analyse</h2><p style="margin:4px 0 0;font-size:13px;color:var(--ink2)">30+ Anbieter verglichen Â· Beste Optionen fÃ¼r Ihr Profil</p></div><button onclick="closeAnalyse()" style="background:none;border:1px solid #ddd;border-radius:8px;padding:6px 14px;cursor:pointer;font-size:13px;flex-shrink:0">â Schliessen</button></div><div id="analyse-recommendation" style="background:linear-gradient(135deg,#1a2e4a,#243855);color:#fff;border-radius:14px;padding:20px;margin-bottom:20px"><div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.6);margin-bottom:6px">â­ Beste Empfehlung fÃ¼r Sie</div><div id="rec-title" style="font-size:17px;font-weight:700;margin-bottom:4px"></div><div id="rec-desc" style="font-size:13px;color:rgba(255,255,255,.8);margin-bottom:12px"></div><div style="display:flex;gap:12px;flex-wrap:wrap"><div id="rec-price" style="background:rgba(255,255,255,.1);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600"></div><div id="rec-savings" style="background:rgba(212,160,67,.2);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--gold)"></div></div></div><div id="analyse-options-list" style="display:flex;flex-direction:column;gap:12px;margin-bottom:20px"></div><div style="display:flex;gap:12px;flex-wrap:wrap"><button onclick="closeAnalyse()" style="flex:1;min-width:120px;padding:12px;border:1px solid #ddd;border-radius:10px;background:#fff;cursor:pointer;font-size:14px">SpÃ¤ter entscheiden</button><button onclick="closeAnalyse()" style="flex:2;min-width:180px;padding:12px;background:var(--gold);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer">Kostenlose Beratung anfragen â</button></div></div></div></div>
+<div id="analyse-modal" style="display:none;position:fixed;inset:0;z-index:9000;background:rgba(10,22,40,.7);backdrop-filter:blur(4px);align-items:center;justify-content:center"><div style="background:#fff;border-radius:20px;width:min(720px,95vw);max-height:90vh;overflow-y:auto;padding:32px;box-shadow:0 24px 80px rgba(0,0,0,.25)"><div id="analyse-loading" style="text-align:center;padding:40px 0"><div style="font-size:40px;margin-bottom:16px">🔍</div><div id="analyse-progress-title" style="font-size:18px;font-weight:700;color:var(--ink);margin-bottom:8px">Analysiere Versicherungsmarkt...</div><div style="font-size:13px;color:var(--ink2);margin-bottom:24px">Vergleiche <span id="analyse-type-label">Versicherung</span> bei 30+ Anbietern</div><div style="background:#f0f0f0;border-radius:100px;height:8px;overflow:hidden;max-width:400px;margin:0 auto"><div id="analyse-bar" style="background:linear-gradient(90deg,var(--gold),#d4a043);height:8px;border-radius:100px;width:0;transition:width .5s ease"></div></div><div id="analyse-steps" style="margin-top:20px;text-align:left;font-size:12px;color:var(--ink2);line-height:2;max-width:400px;margin-left:auto;margin-right:auto"></div></div><div id="analyse-results" style="display:none"><div style="display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:20px;gap:12px;flex-wrap:wrap"><div><h2 style="margin:0;font-size:20px;font-weight:700" id="analyse-result-title">Analyse</h2><p style="margin:4px 0 0;font-size:13px;color:var(--ink2)">30+ Anbieter verglichen · Beste Optionen für Ihr Profil</p></div><button onclick="closeAnalyse()" style="background:none;border:1px solid #ddd;border-radius:8px;padding:6px 14px;cursor:pointer;font-size:13px;flex-shrink:0">✕ Schliessen</button></div><div id="analyse-recommendation" style="background:linear-gradient(135deg,#1a2e4a,#243855);color:#fff;border-radius:14px;padding:20px;margin-bottom:20px"><div style="font-size:11px;text-transform:uppercase;letter-spacing:1px;color:rgba(255,255,255,.6);margin-bottom:6px">⭐ Beste Empfehlung für Sie</div><div id="rec-title" style="font-size:17px;font-weight:700;margin-bottom:4px"></div><div id="rec-desc" style="font-size:13px;color:rgba(255,255,255,.8);margin-bottom:12px"></div><div style="display:flex;gap:12px;flex-wrap:wrap"><div id="rec-price" style="background:rgba(255,255,255,.1);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600"></div><div id="rec-savings" style="background:rgba(212,160,67,.2);border-radius:8px;padding:8px 14px;font-size:13px;font-weight:600;color:var(--gold)"></div></div></div><div id="analyse-options-list" style="display:flex;flex-direction:column;gap:12px;margin-bottom:20px"></div><div style="display:flex;gap:12px;flex-wrap:wrap"><button onclick="closeAnalyse()" style="flex:1;min-width:120px;padding:12px;border:1px solid #ddd;border-radius:10px;background:#fff;cursor:pointer;font-size:14px">Später entscheiden</button><button onclick="closeAnalyse()" style="flex:2;min-width:180px;padding:12px;background:var(--gold);color:#fff;border:none;border-radius:10px;font-size:14px;font-weight:600;cursor:pointer">Kostenlose Beratung anfragen →</button></div></div></div></div>
 <script>
-var _insuranceDB={"Hausratversicherung":{title:"Hausratversicherung",rec:{name:"Helvetia Hausrat Smart",desc:"Optimaler Schutz fÃ¼r Ihren Haushalt â Einbruch, Feuer, Wasser &amp; Naturgefahren",price:"CHF 8.90/Mt.",savings:"â Empfohlen fÃ¼r Mieter"},options:[{name:"Helvetia Hausrat Smart",price:"CHF 8.90/Mt.",cover:"CHF 50'000 Deckung",hl:true,feat:["Einbruch &amp; Diebstahl","Feuer &amp; Wasser","Naturgefahren","Glasbruch opt."]},{name:"AXA Hausrat Basic",price:"CHF 10.50/Mt.",cover:"CHF 60'000",hl:false,feat:["Einbruch &amp; Diebstahl","Feuer &amp; Wasser","Haftpflicht inkl."]},{name:"Zurich Hausrat Komfort",price:"CHF 13.20/Mt.",cover:"CHF 80'000",hl:false,feat:["Naturgefahren","Fahrraddiebstahl","Assistance"]},{name:"Mobiliar Hausrat",price:"CHF 11.80/Mt.",cover:"CHF 65'000",hl:false,feat:["Einbruch &amp; Diebstahl","Feuer &amp; Wasser","GepÃ¤ck"]}]},"Rechtsschutzversicherung":{title:"Rechtsschutzversicherung",rec:{name:"CAP Rechtsschutz Privat",desc:"Privatrechtsschutz fÃ¼r Miet-, Arbeits- und Konsumentenstreitigkeiten",price:"CHF 14.90/Mt.",savings:"â Inkl. Verkehrsrechtsschutz"},options:[{name:"CAP Rechtsschutz Privat",price:"CHF 14.90/Mt.",cover:"Privat + Verkehr",hl:true,feat:["Mietrecht","Arbeitsrecht","Verkehrsrecht","Hotline 24h"]},{name:"DAS Rechtsschutz",price:"CHF 18.50/Mt.",cover:"Privat + Cyber",hl:false,feat:["Alle Bereiche","Cyber-Schutz","Online-Beratung"]},{name:"Helvetia Rechtsschutz",price:"CHF 16.20/Mt.",cover:"Privat + Verkehr",hl:false,feat:["Privatrechtsschutz","Verkehr","Liegenschaft"]},{name:"AXA Rechtsschutz",price:"CHF 21.00/Mt.",cover:"Privat + Straf",hl:false,feat:["Voller Schutz","Strafrecht","Digital"]}]},"Grundversicherung (KVG)":{title:"Grundversicherung (KVG)",rec:{name:"Assura KVG Standard",desc:"GÃ¼nstigste Grundversicherung â gleiche gesetzliche Leistungen wie alle Kassen",price:"CHF 341/Mt.",savings:"ð° Sparpotenzial CHF 39/Mt."},options:[{name:"Assura KVG Standard",price:"CHF 341/Mt.",cover:"Franchise CHF 300",hl:true,feat:["Gesetzliche Leistungen","GÃ¼nstigste PrÃ¤mie","Alle Ãrzte"]},{name:"Groupe Mutuel",price:"CHF 348/Mt.",cover:"Franchise CHF 300",hl:false,feat:["Gesetzliche Leistungen","App-Abrechnung","Digital"]},{name:"KPT KVG Basis",price:"CHF 355/Mt.",cover:"Franchise CHF 300",hl:false,feat:["Gesetzliche Leistungen","Kundenservice","Portal"]},{name:"CSS KVG (aktuell)",price:"CHF 380/Mt.",cover:"Franchise CHF 300",hl:false,feat:["Gesetzliche Leistungen","Aktueller Anbieter",""]}]},"Autoversicherung":{title:"Autoversicherung",rec:{name:"AXA Auto Direkt",desc:"Vollkasko mit gleichem Schutz wie Zurich â online gÃ¼nstiger",price:"CHF 81/Mt.",savings:"ð° Sparpotenzial CHF 8/Mt."},options:[{name:"AXA Auto Direkt",price:"CHF 81/Mt.",cover:"Vollkasko",hl:true,feat:["Vollkasko","24h Pannenhilfe","Freie Werkstatt","Neupreis 3J"]},{name:"TCS Vollkasko",price:"CHF 83/Mt.",cover:"Vollkasko",hl:false,feat:["Vollkasko","TCS Pannenhilfe","Europa"]},{name:"Helvetia Auto",price:"CHF 87/Mt.",cover:"Vollkasko+",hl:false,feat:["Vollkasko","MobilitÃ¤tsgarantie","Mietfahrzeug"]},{name:"Zurich (aktuell)",price:"CHF 89/Mt.",cover:"Vollkasko",hl:false,feat:["Vollkasko","Pannenhilfe","Aktuell"]}]},"Haftpflichtversicherung":{title:"Privathaftpflicht",rec:{name:"AXA Haftpflicht (aktuell)",desc:"Bereits optimal â gutes Preis-Leistungs-VerhÃ¤ltnis",price:"CHF 12/Mt.",savings:"â Bereits optimal"},options:[{name:"AXA Haftpflicht",price:"CHF 12/Mt.",cover:"CHF 5 Mio.",hl:true,feat:["PersonenschÃ¤den","SachschÃ¤den","MietsachschÃ¤den"]},{name:"Helvetia Haftpflicht",price:"CHF 10.50/Mt.",cover:"CHF 3 Mio.",hl:false,feat:["PersonenschÃ¤den","SachschÃ¤den","Tier"]},{name:"Mobiliar Haftpflicht",price:"CHF 11.80/Mt.",cover:"CHF 5 Mio.",hl:false,feat:["Volle Deckung","SchlÃ¼sselverlust","Ehrenamt"]}]},"Zahnzusatzversicherung":{title:"Zahnzusatzversicherung",rec:{name:"SWICA DENTA Sorglos",desc:"60-80% KostenrÃ¼ckerstattung, keine Wartezeit",price:"CHF 24.90/Mt.",savings:"â Beste Leistung/Preis"},options:[{name:"SWICA DENTA Sorglos",price:"CHF 24.90/Mt.",cover:"60-80% RÃ¼ckerstattung",hl:true,feat:["Zahnreinigung 60%","Zahnersatz 60%","KieferorthopÃ¤die","Keine Wartezeit"]},{name:"Helsana SANA Dental",price:"CHF 22.50/Mt.",cover:"50-75%",hl:false,feat:["Zahnreinigung 75%","Zahnersatz 50%","Online"]},{name:"CSS MyFlex Dental",price:"CHF 28.00/Mt.",cover:"bis 80%",hl:false,feat:["Bis 80%","Kinder KFO","Zahnunfall 100%"]}]},"Spitalzusatz":{title:"Spitalzusatz Halbprivat",rec:{name:"Helsana TOP Halbprivat",desc:"Freie Spitalwahl schweizweit, Chefarztbehandlung garantiert",price:"CHF 45.80/Mt.",savings:"â Empfehlung"},options:[{name:"Helsana TOP Halbprivat",price:"CHF 45.80/Mt.",cover:"Ganze Schweiz",hl:true,feat:["Freie Spitalwahl","Chefarztbehandlung","2-Bett-Zimmer","Rooming-in"]},{name:"CSS Zusatz Halbprivat",price:"CHF 49.00/Mt.",cover:"Ganze Schweiz",hl:false,feat:["Freie Spitalwahl","Chefarzt","KomplementÃ¤rmedizin"]},{name:"SWICA Halbprivat",price:"CHF 52.50/Mt.",cover:"CH + EU",hl:false,feat:["Freie Spitalwahl","Chefarzt","EU-SpitÃ¤ler"]}]},"Reiseversicherung":{title:"Reiseversicherung",rec:{name:"Mondial Assistance Komfort",desc:"Annullation, Assistance &amp; GepÃ¤ck weltweit",price:"CHF 95/Jahr",savings:"â Bestes Preis-Leistungs-VerhÃ¤ltnis"},options:[{name:"Mondial Assistance Komfort",price:"CHF 95/Jahr",cover:"Annullation+Assistance",hl:true,feat:["Reiseannullation","24h Assistance","GepÃ¤ck CHF 1000","Reisekrankheit"]},{name:"TCS Reiseversicherung",price:"CHF 89/Jahr",cover:"Assistance+GepÃ¤ck",hl:false,feat:["24h Assistance","Panne Ausland","GepÃ¤ck CHF 1000"]},{name:"AXA Travel Premium",price:"CHF 149/Jahr",cover:"Vollschutz",hl:false,feat:["Annullation CHF 10000","GepÃ¤ck CHF 2000","Cyber"]}]},"Vollanalyse":{title:"Vollanalyse Ihrer Versicherungen",rec:{name:"Gesamtoptimierung empfohlen",desc:"2 LÃ¼cken &amp; CHF 47/Mt. Sparpotenzial gefunden",price:"Sparpotenzial CHF 47/Mt.",savings:"2 LÃ¼cken zu schliessen"},options:[{name:"Hausratversicherung abschliessen",price:"Ab CHF 8.90/Mt.",cover:"Neue Police",hl:true,feat:["LÃ¼cke schliessen","Sofort absicherbar","Online"]},{name:"Grundversicherung wechseln",price:"CHF 341 statt 380",cover:"Sparen CHF 39/Mt.",hl:false,feat:["Zu Assura","Gleiche Leistung","Per 1. Jan"]},{name:"Rechtsschutz abschliessen",price:"Ab CHF 14.90/Mt.",cover:"Neue Police",hl:false,feat:["LÃ¼cke schliessen","Privat + Verkehr","Online"]}]},"Lebensversicherung":{"title":"Lebensversicherung","rec":{"name":"Swiss Life Risk Select","desc":"Todesfall- & InvaliditÃ¤tsschutz fÃ¼r Ihre Familie","price":"CHF 28/Mt.","savings":"â Familienschutz"},"options":[{"name":"Swiss Life Risk Select","price":"CHF 28/Mt.","cover":"CHF 300'000 Todesfall","hl":true,"feat":["Todesfall","InvaliditÃ¤t","Online","Kein Arztzeugnis"]},{"name":"AXA Risiko Leben","price":"CHF 32/Mt.","cover":"CHF 300'000 Todesfall","hl":false,"feat":["Todesfall","Premium-Service"]},{"name":"Zurich Risikoleben","price":"CHF 35/Mt.","cover":"CHF 300'000 Â· InvaliditÃ¤t","hl":false,"feat":["Todesfall","InvaliditÃ¤t","PrÃ¤mienbefreiung"]},{"name":"Helvetia Life Direct","price":"CHF 41/Mt.","cover":"CHF 300'000 Â· Pilger","hl":false,"feat":["Todesfall","Repatriierung","24h"]}]},"Unfallversicherung":{"title":"Unfallversicherung","rec":{"name":"SUVA ErgÃ¤nzung privat","desc":"ErgÃ¤nzt SUVA â Lohnausfall & InvaliditÃ¤t absichern","price":"CHF 18/Mt.","savings":"â LÃ¼cke geschlossen"},"options":[{"name":"SUVA ErgÃ¤nzung privat","price":"CHF 18/Mt.","cover":"100% Lohn bei Unfall","hl":true,"feat":["Lohnausfall","InvaliditÃ¤t","Sport","Weltweit"]},{"name":"Helsana Unfall Plus","price":"CHF 22/Mt.","cover":"100% Lohn Â· Kurkosten","hl":false,"feat":["Lohnausfall","Reha","Weltweit"]},{"name":"Sanitas Unfall Top","price":"CHF 25/Mt.","cover":"CHF 5 Mio. Deckung","hl":false,"feat":["InvaliditÃ¤t","Todesfall","24h"]},{"name":"CSS Unfall Komfort","price":"CHF 29/Mt.","cover":"CHF 5 Mio. Â· Sport","hl":false,"feat":["Sport","Extremsport","Reha"]}]},"Krankentaggeld":{"title":"Krankentaggeld","rec":{"name":"Helsana KTG Premium","desc":"80% Lohn ab Tag 30 bei Krankheit â SelbstÃ¤ndige & Angestellte","price":"CHF 45/Mt.","savings":"â Einkommensschutz"},"options":[{"name":"Helsana KTG Premium","price":"CHF 45/Mt.","cover":"80% Lohn ab Tag 30","hl":true,"feat":["80% Lohn","2 Jahre","Psyche inkl."]},{"name":"CSS KTG Standard","price":"CHF 38/Mt.","cover":"80% Lohn ab Tag 60","hl":false,"feat":["80% Lohn","1 Jahr"]},{"name":"Swica KTG Flex","price":"CHF 52/Mt.","cover":"90% Lohn ab Tag 14","hl":false,"feat":["90% Lohn","3 Jahre","Burn-out"]},{"name":"KPT Taggelder","price":"CHF 41/Mt.","cover":"80% Lohn ab Tag 30","hl":false,"feat":["SelbstÃ¤ndige","Flexibel"]}]},"GebÃ¤udeversicherung":{"title":"GebÃ¤udeversicherung","rec":{"name":"Mobiliar GebÃ¤ude Classic","desc":"Feuer, Wasser & Naturgefahren fÃ¼r Ihr Eigenheim","price":"CHF 35/Mt.","savings":"â Eigenheimschutz"},"options":[{"name":"Mobiliar GebÃ¤ude Classic","price":"CHF 35/Mt.","cover":"CHF 800'000 GebÃ¤udewert","hl":true,"feat":["Feuer","Wasser","Naturgefahren"]},{"name":"Zurich Eigenheim","price":"CHF 38/Mt.","cover":"CHF 800'000 Â· Solar","hl":false,"feat":["Feuer","Solar","Vandalismus"]},{"name":"AXA GebÃ¤ude Smart","price":"CHF 42/Mt.","cover":"CHF 800'000 Â· Smart-Home","hl":false,"feat":["Smart-Home","Feuer","Premium"]},{"name":"Allianz Haus & Grund","price":"CHF 44/Mt.","cover":"CHF 800'000 Â· 24/7","hl":false,"feat":["24/7 Notfall","Feuer","Wasser"]}]},"Veloversicherung":{"title":"Veloversicherung","rec":{"name":"AXA Velo Kasko","desc":"Diebstahl, Unfall & Schaden fÃ¼r E-Bike & Velo","price":"CHF 5/Mt.","savings":"â GÃ¼nstigster Schutz"},"options":[{"name":"AXA Velo Kasko","price":"CHF 5/Mt.","cover":"Diebstahl bis CHF 5'000","hl":true,"feat":["Diebstahl","Unfall","E-Bike","Online"]},{"name":"Helvetia Velo","price":"CHF 7/Mt.","cover":"Diebstahl bis CHF 8'000","hl":false,"feat":["Diebstahl","Reparatur","E-Bike"]},{"name":"Mobiliar Fahrrad","price":"CHF 8/Mt.","cover":"Diebstahl bis CHF 10'000","hl":false,"feat":["Diebstahl","Pannenhilfe"]},{"name":"Zurich Bike Plus","price":"CHF 9/Mt.","cover":"CHF 12'000 Â· Racing","hl":false,"feat":["Racing","Diebstahl","Europa"]}]},"Tierversicherung":{"title":"Tierversicherung","rec":{"name":"Animalia Komfort","desc":"Tierarztkosten bis CHF 12'000/Jahr â keine Selbstbeteiligung","price":"CHF 32/Mt.","savings":"â Volle Kostendeckung"},"options":[{"name":"Animalia Komfort","price":"CHF 32/Mt.","cover":"CHF 12'000/Jahr Tierarzt","hl":true,"feat":["OPs","Medikamente","Notfall"]},{"name":"Agrisano Tier","price":"CHF 24/Mt.","cover":"CHF 8'000/Jahr","hl":false,"feat":["OPs","Medikamente"]},{"name":"Allianz Tierschutz","price":"CHF 38/Mt.","cover":"CHF 15'000/Jahr","hl":false,"feat":["Premium","Reha","Weltweit"]},{"name":"Zurich Pet Basic","price":"CHF 19/Mt.","cover":"CHF 5'000/Jahr","hl":false,"feat":["Notfall","GÃ¼nstiger Einstieg"]}]},"KomplementÃ¤rmedizin":{"title":"KomplementÃ¤rmedizin","rec":{"name":"Swica Optima KoMed","desc":"Akupunktur, Osteopathie, HomÃ¶opathie â 90% Ã¼bernommen","price":"CHF 19/Mt.","savings":"â Beste Leistung/Preis"},"options":[{"name":"Swica Optima KoMed","price":"CHF 19/Mt.","cover":"90% bis CHF 5'000/Jahr","hl":true,"feat":["Akupunktur","Osteopathie","TCM"]},{"name":"Helsana Completa","price":"CHF 22/Mt.","cover":"80% bis CHF 4'000/Jahr","hl":false,"feat":["Akupunktur","Chiropraktik"]},{"name":"CSS MyFlex Balance","price":"CHF 17/Mt.","cover":"70% bis CHF 3'000/Jahr","hl":false,"feat":["GÃ¼nstigster Einstieg"]},{"name":"Sanitas NaturaMed","price":"CHF 25/Mt.","cover":"90% bis CHF 6'000/Jahr","hl":false,"feat":["Premium","Alle Therapeuten"]}]},"Brillen & Optik":{"title":"Brillen & Optik","rec":{"name":"Visana Optic Plus","desc":"CHF 300/Jahr fÃ¼r Brillen, Kontaktlinsen & Laserkorrektur","price":"CHF 8/Mt.","savings":"â Bestes Preis-Leistung"},"options":[{"name":"Visana Optic Plus","price":"CHF 8/Mt.","cover":"CHF 300/Jahr Sehhilfen","hl":true,"feat":["Brille","Kontaktlinsen","Lasik"]},{"name":"Sanitas Viva","price":"CHF 11/Mt.","cover":"CHF 400/Jahr","hl":false,"feat":["Brille","Kontaktlinsen","Lasik"]},{"name":"CSS MyFlex Top","price":"CHF 14/Mt.","cover":"CHF 500/Jahr","hl":false,"feat":["Brille","Sportbrille","Lasik"]},{"name":"KPT Brille Extra","price":"CHF 7/Mt.","cover":"CHF 250/Jahr","hl":false,"feat":["GÃ¼nstigster Einstieg"]}]},"Fitness & PrÃ¤vention":{"title":"Fitness & PrÃ¤vention","rec":{"name":"SWICA Fitness Zusatz","desc":"50% RÃ¼ckerstattung auf Fitnessabo, Yoga & ErnÃ¤hrungsberatung","price":"CHF 12/Mt.","savings":"â Gesundheit fÃ¶rdern"},"options":[{"name":"SWICA Fitness","price":"CHF 12/Mt.","cover":"50% bis CHF 600/Jahr","hl":true,"feat":["Fitness","Yoga","ErnÃ¤hrung"]},{"name":"Helsana Sana Plus","price":"CHF 15/Mt.","cover":"50% bis CHF 800/Jahr","hl":false,"feat":["Fitness","Pilates","Schwimmen"]},{"name":"Sanitas Active","price":"CHF 9/Mt.","cover":"40% bis CHF 400/Jahr","hl":false,"feat":["Fitness","Yoga","GÃ¼nstig"]},{"name":"CSS Active Bonus","price":"CHF 18/Mt.","cover":"60% bis CHF 1'200/Jahr","hl":false,"feat":["Premium","60%","Alle Sportkurse"]}]},"Motorradversicherung":{"title":"Motorradversicherung","rec":{"name":"AXA Motorrad Komfort","desc":"Haftpflicht + Teilkasko fÃ¼r Motorrad & Scooter","price":"CHF 19/Mt.","savings":"â Bestes Preis-Leistung"},"options":[{"name":"AXA Motorrad Komfort","price":"CHF 19/Mt.","cover":"Haftpflicht + Teilkasko","hl":true,"feat":["Haftpflicht","Diebstahl","Pannenhilfe"]},{"name":"Zurich Motorrad","price":"CHF 22/Mt.","cover":"Haftpflicht + Vollkasko","hl":false,"feat":["Vollkasko","Glasbruch","Assistance"]},{"name":"Allianz Moto","price":"CHF 25/Mt.","cover":"Vollkasko + Reiseschutz","hl":false,"feat":["Vollkasko","Ersatzmotorrad"]},{"name":"Helvetia Motorrad","price":"CHF 17/Mt.","cover":"Haftpflicht Basic","hl":false,"feat":["GÃ¼nstig","Saisonal"]}]}};
-function startAnalyse(type){var modal=document.getElementById("analyse-modal");modal.style.display="flex";document.getElementById("analyse-loading").style.display="block";document.getElementById("analyse-results").style.display="none";var lbl=document.getElementById("analyse-type-label");if(lbl)lbl.textContent=type;var bar=document.getElementById("analyse-bar");var stepsEl=document.getElementById("analyse-steps");var titleEl=document.getElementById("analyse-progress-title");var steps=["Profil von Petra Roth geladen...","Vergleiche 30+ Schweizer Versicherer...","PrÃ¼fe PrÃ¤mien fÃ¼r PLZ 6275 Ballwil...","Berechne optimale Deckung...","Analyse abgeschlossen â"];bar.style.width="0";stepsEl.innerHTML="";var idx=0;var iv=setInterval(function(){if(idx<steps.length){stepsEl.innerHTML+=steps[idx]+"<br>";bar.style.width=((idx+1)/steps.length*100)+"%";idx++;}else{clearInterval(iv);titleEl.textContent="Analyse abgeschlossen!";setTimeout(function(){showAnalyseResults(type);},500);}},600);}
-function showAnalyseResults(type){var data=_insuranceDB[type]||_insuranceDB["Vollanalyse"];document.getElementById("analyse-loading").style.display="none";document.getElementById("analyse-results").style.display="block";document.getElementById("analyse-result-title").textContent="Analyse: "+data.title;document.getElementById("rec-title").textContent=data.rec.name;document.getElementById("rec-desc").innerHTML=data.rec.desc;document.getElementById("rec-price").textContent=data.rec.price;document.getElementById("rec-savings").textContent=data.rec.savings;var list=document.getElementById("analyse-options-list");list.innerHTML="";data.options.forEach(function(opt){var c=document.createElement("div");c.style.cssText="border:"+(opt.hl?"2px solid var(--gold)":"1px solid #e8e8e8")+";border-radius:12px;padding:16px;display:flex;align-items:flex-start;gap:12px;background:"+(opt.hl?"#fffbf2":"#fff");c.innerHTML="<div style='flex:1'><div style='font-weight:700;font-size:14px;margin-bottom:4px'>"+opt.name+(opt.hl?" <span style='background:var(--gold);color:#fff;font-size:10px;padding:2px 7px;border-radius:10px'>Empfohlen<\/span>":"")+"<\/div><div style='font-size:12px;color:var(--ink2);margin-bottom:6px'>"+opt.cover+" Â· "+opt.feat.slice(0,3).join(" Â· ")+"<\/div><div style='font-size:15px;font-weight:700;color:"+(opt.hl?"var(--gold)":"var(--ink)")+"'>"+opt.price+"<\/div><\/div><button onclick='closeAnalyse()' style='background:"+(opt.hl?"var(--gold)":"#f0f0f0")+";color:"+(opt.hl?"#fff":"var(--ink)")+";border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0'>Anfragen<\/button>";list.appendChild(c);});}
+var _insuranceDB={"Hausratversicherung":{title:"Hausratversicherung",rec:{name:"Helvetia Hausrat Smart",desc:"Optimaler Schutz für Ihren Haushalt — Einbruch, Feuer, Wasser &amp; Naturgefahren",price:"CHF 8.90/Mt.",savings:"✓ Empfohlen für Mieter"},options:[{name:"Helvetia Hausrat Smart",price:"CHF 8.90/Mt.",cover:"CHF 50'000 Deckung",hl:true,feat:["Einbruch &amp; Diebstahl","Feuer &amp; Wasser","Naturgefahren","Glasbruch opt."]},{name:"AXA Hausrat Basic",price:"CHF 10.50/Mt.",cover:"CHF 60'000",hl:false,feat:["Einbruch &amp; Diebstahl","Feuer &amp; Wasser","Haftpflicht inkl."]},{name:"Zurich Hausrat Komfort",price:"CHF 13.20/Mt.",cover:"CHF 80'000",hl:false,feat:["Naturgefahren","Fahrraddiebstahl","Assistance"]},{name:"Mobiliar Hausrat",price:"CHF 11.80/Mt.",cover:"CHF 65'000",hl:false,feat:["Einbruch &amp; Diebstahl","Feuer &amp; Wasser","Gepäck"]}]},"Rechtsschutzversicherung":{title:"Rechtsschutzversicherung",rec:{name:"CAP Rechtsschutz Privat",desc:"Privatrechtsschutz für Miet-, Arbeits- und Konsumentenstreitigkeiten",price:"CHF 14.90/Mt.",savings:"✓ Inkl. Verkehrsrechtsschutz"},options:[{name:"CAP Rechtsschutz Privat",price:"CHF 14.90/Mt.",cover:"Privat + Verkehr",hl:true,feat:["Mietrecht","Arbeitsrecht","Verkehrsrecht","Hotline 24h"]},{name:"DAS Rechtsschutz",price:"CHF 18.50/Mt.",cover:"Privat + Cyber",hl:false,feat:["Alle Bereiche","Cyber-Schutz","Online-Beratung"]},{name:"Helvetia Rechtsschutz",price:"CHF 16.20/Mt.",cover:"Privat + Verkehr",hl:false,feat:["Privatrechtsschutz","Verkehr","Liegenschaft"]},{name:"AXA Rechtsschutz",price:"CHF 21.00/Mt.",cover:"Privat + Straf",hl:false,feat:["Voller Schutz","Strafrecht","Digital"]}]},"Grundversicherung (KVG)":{title:"Grundversicherung (KVG)",rec:{name:"Assura KVG Standard",desc:"Günstigste Grundversicherung — gleiche gesetzliche Leistungen wie alle Kassen",price:"CHF 341/Mt.",savings:"💰 Sparpotenzial CHF 39/Mt."},options:[{name:"Assura KVG Standard",price:"CHF 341/Mt.",cover:"Franchise CHF 300",hl:true,feat:["Gesetzliche Leistungen","Günstigste Prämie","Alle Ärzte"]},{name:"Groupe Mutuel",price:"CHF 348/Mt.",cover:"Franchise CHF 300",hl:false,feat:["Gesetzliche Leistungen","App-Abrechnung","Digital"]},{name:"KPT KVG Basis",price:"CHF 355/Mt.",cover:"Franchise CHF 300",hl:false,feat:["Gesetzliche Leistungen","Kundenservice","Portal"]},{name:"CSS KVG (aktuell)",price:"CHF 380/Mt.",cover:"Franchise CHF 300",hl:false,feat:["Gesetzliche Leistungen","Aktueller Anbieter",""]}]},"Autoversicherung":{title:"Autoversicherung",rec:{name:"AXA Auto Direkt",desc:"Vollkasko mit gleichem Schutz wie Zurich — online günstiger",price:"CHF 81/Mt.",savings:"💰 Sparpotenzial CHF 8/Mt."},options:[{name:"AXA Auto Direkt",price:"CHF 81/Mt.",cover:"Vollkasko",hl:true,feat:["Vollkasko","24h Pannenhilfe","Freie Werkstatt","Neupreis 3J"]},{name:"TCS Vollkasko",price:"CHF 83/Mt.",cover:"Vollkasko",hl:false,feat:["Vollkasko","TCS Pannenhilfe","Europa"]},{name:"Helvetia Auto",price:"CHF 87/Mt.",cover:"Vollkasko+",hl:false,feat:["Vollkasko","Mobilitätsgarantie","Mietfahrzeug"]},{name:"Zurich (aktuell)",price:"CHF 89/Mt.",cover:"Vollkasko",hl:false,feat:["Vollkasko","Pannenhilfe","Aktuell"]}]},"Haftpflichtversicherung":{title:"Privathaftpflicht",rec:{name:"AXA Haftpflicht (aktuell)",desc:"Bereits optimal — gutes Preis-Leistungs-Verhältnis",price:"CHF 12/Mt.",savings:"✓ Bereits optimal"},options:[{name:"AXA Haftpflicht",price:"CHF 12/Mt.",cover:"CHF 5 Mio.",hl:true,feat:["Personenschäden","Sachschäden","Mietsachschäden"]},{name:"Helvetia Haftpflicht",price:"CHF 10.50/Mt.",cover:"CHF 3 Mio.",hl:false,feat:["Personenschäden","Sachschäden","Tier"]},{name:"Mobiliar Haftpflicht",price:"CHF 11.80/Mt.",cover:"CHF 5 Mio.",hl:false,feat:["Volle Deckung","Schlüsselverlust","Ehrenamt"]}]},"Zahnzusatzversicherung":{title:"Zahnzusatzversicherung",rec:{name:"SWICA DENTA Sorglos",desc:"60-80% Kostenrückerstattung, keine Wartezeit",price:"CHF 24.90/Mt.",savings:"✓ Beste Leistung/Preis"},options:[{name:"SWICA DENTA Sorglos",price:"CHF 24.90/Mt.",cover:"60-80% Rückerstattung",hl:true,feat:["Zahnreinigung 60%","Zahnersatz 60%","Kieferorthopädie","Keine Wartezeit"]},{name:"Helsana SANA Dental",price:"CHF 22.50/Mt.",cover:"50-75%",hl:false,feat:["Zahnreinigung 75%","Zahnersatz 50%","Online"]},{name:"CSS MyFlex Dental",price:"CHF 28.00/Mt.",cover:"bis 80%",hl:false,feat:["Bis 80%","Kinder KFO","Zahnunfall 100%"]}]},"Spitalzusatz":{title:"Spitalzusatz Halbprivat",rec:{name:"Helsana TOP Halbprivat",desc:"Freie Spitalwahl schweizweit, Chefarztbehandlung garantiert",price:"CHF 45.80/Mt.",savings:"✓ Empfehlung"},options:[{name:"Helsana TOP Halbprivat",price:"CHF 45.80/Mt.",cover:"Ganze Schweiz",hl:true,feat:["Freie Spitalwahl","Chefarztbehandlung","2-Bett-Zimmer","Rooming-in"]},{name:"CSS Zusatz Halbprivat",price:"CHF 49.00/Mt.",cover:"Ganze Schweiz",hl:false,feat:["Freie Spitalwahl","Chefarzt","Komplementärmedizin"]},{name:"SWICA Halbprivat",price:"CHF 52.50/Mt.",cover:"CH + EU",hl:false,feat:["Freie Spitalwahl","Chefarzt","EU-Spitäler"]}]},"Reiseversicherung":{title:"Reiseversicherung",rec:{name:"Mondial Assistance Komfort",desc:"Annullation, Assistance &amp; Gepäck weltweit",price:"CHF 95/Jahr",savings:"✓ Bestes Preis-Leistungs-Verhältnis"},options:[{name:"Mondial Assistance Komfort",price:"CHF 95/Jahr",cover:"Annullation+Assistance",hl:true,feat:["Reiseannullation","24h Assistance","Gepäck CHF 1000","Reisekrankheit"]},{name:"TCS Reiseversicherung",price:"CHF 89/Jahr",cover:"Assistance+Gepäck",hl:false,feat:["24h Assistance","Panne Ausland","Gepäck CHF 1000"]},{name:"AXA Travel Premium",price:"CHF 149/Jahr",cover:"Vollschutz",hl:false,feat:["Annullation CHF 10000","Gepäck CHF 2000","Cyber"]}]},"Vollanalyse":{title:"Vollanalyse Ihrer Versicherungen",rec:{name:"Gesamtoptimierung empfohlen",desc:"2 Lücken &amp; CHF 47/Mt. Sparpotenzial gefunden",price:"Sparpotenzial CHF 47/Mt.",savings:"2 Lücken zu schliessen"},options:[{name:"Hausratversicherung abschliessen",price:"Ab CHF 8.90/Mt.",cover:"Neue Police",hl:true,feat:["Lücke schliessen","Sofort absicherbar","Online"]},{name:"Grundversicherung wechseln",price:"CHF 341 statt 380",cover:"Sparen CHF 39/Mt.",hl:false,feat:["Zu Assura","Gleiche Leistung","Per 1. Jan"]},{name:"Rechtsschutz abschliessen",price:"Ab CHF 14.90/Mt.",cover:"Neue Police",hl:false,feat:["Lücke schliessen","Privat + Verkehr","Online"]}]},"Lebensversicherung":{"title":"Lebensversicherung","rec":{"name":"Swiss Life Risk Select","desc":"Todesfall- & Invaliditätsschutz für Ihre Familie","price":"CHF 28/Mt.","savings":"✓ Familienschutz"},"options":[{"name":"Swiss Life Risk Select","price":"CHF 28/Mt.","cover":"CHF 300'000 Todesfall","hl":true,"feat":["Todesfall","Invalidität","Online","Kein Arztzeugnis"]},{"name":"AXA Risiko Leben","price":"CHF 32/Mt.","cover":"CHF 300'000 Todesfall","hl":false,"feat":["Todesfall","Premium-Service"]},{"name":"Zurich Risikoleben","price":"CHF 35/Mt.","cover":"CHF 300'000 · Invalidität","hl":false,"feat":["Todesfall","Invalidität","Prämienbefreiung"]},{"name":"Helvetia Life Direct","price":"CHF 41/Mt.","cover":"CHF 300'000 · Pilger","hl":false,"feat":["Todesfall","Repatriierung","24h"]}]},"Unfallversicherung":{"title":"Unfallversicherung","rec":{"name":"SUVA Ergänzung privat","desc":"Ergänzt SUVA — Lohnausfall & Invalidität absichern","price":"CHF 18/Mt.","savings":"✓ Lücke geschlossen"},"options":[{"name":"SUVA Ergänzung privat","price":"CHF 18/Mt.","cover":"100% Lohn bei Unfall","hl":true,"feat":["Lohnausfall","Invalidität","Sport","Weltweit"]},{"name":"Helsana Unfall Plus","price":"CHF 22/Mt.","cover":"100% Lohn · Kurkosten","hl":false,"feat":["Lohnausfall","Reha","Weltweit"]},{"name":"Sanitas Unfall Top","price":"CHF 25/Mt.","cover":"CHF 5 Mio. Deckung","hl":false,"feat":["Invalidität","Todesfall","24h"]},{"name":"CSS Unfall Komfort","price":"CHF 29/Mt.","cover":"CHF 5 Mio. · Sport","hl":false,"feat":["Sport","Extremsport","Reha"]}]},"Krankentaggeld":{"title":"Krankentaggeld","rec":{"name":"Helsana KTG Premium","desc":"80% Lohn ab Tag 30 bei Krankheit — Selbständige & Angestellte","price":"CHF 45/Mt.","savings":"✓ Einkommensschutz"},"options":[{"name":"Helsana KTG Premium","price":"CHF 45/Mt.","cover":"80% Lohn ab Tag 30","hl":true,"feat":["80% Lohn","2 Jahre","Psyche inkl."]},{"name":"CSS KTG Standard","price":"CHF 38/Mt.","cover":"80% Lohn ab Tag 60","hl":false,"feat":["80% Lohn","1 Jahr"]},{"name":"Swica KTG Flex","price":"CHF 52/Mt.","cover":"90% Lohn ab Tag 14","hl":false,"feat":["90% Lohn","3 Jahre","Burn-out"]},{"name":"KPT Taggelder","price":"CHF 41/Mt.","cover":"80% Lohn ab Tag 30","hl":false,"feat":["Selbständige","Flexibel"]}]},"Gebäudeversicherung":{"title":"Gebäudeversicherung","rec":{"name":"Mobiliar Gebäude Classic","desc":"Feuer, Wasser & Naturgefahren für Ihr Eigenheim","price":"CHF 35/Mt.","savings":"✓ Eigenheimschutz"},"options":[{"name":"Mobiliar Gebäude Classic","price":"CHF 35/Mt.","cover":"CHF 800'000 Gebäudewert","hl":true,"feat":["Feuer","Wasser","Naturgefahren"]},{"name":"Zurich Eigenheim","price":"CHF 38/Mt.","cover":"CHF 800'000 · Solar","hl":false,"feat":["Feuer","Solar","Vandalismus"]},{"name":"AXA Gebäude Smart","price":"CHF 42/Mt.","cover":"CHF 800'000 · Smart-Home","hl":false,"feat":["Smart-Home","Feuer","Premium"]},{"name":"Allianz Haus & Grund","price":"CHF 44/Mt.","cover":"CHF 800'000 · 24/7","hl":false,"feat":["24/7 Notfall","Feuer","Wasser"]}]},"Veloversicherung":{"title":"Veloversicherung","rec":{"name":"AXA Velo Kasko","desc":"Diebstahl, Unfall & Schaden für E-Bike & Velo","price":"CHF 5/Mt.","savings":"✓ Günstigster Schutz"},"options":[{"name":"AXA Velo Kasko","price":"CHF 5/Mt.","cover":"Diebstahl bis CHF 5'000","hl":true,"feat":["Diebstahl","Unfall","E-Bike","Online"]},{"name":"Helvetia Velo","price":"CHF 7/Mt.","cover":"Diebstahl bis CHF 8'000","hl":false,"feat":["Diebstahl","Reparatur","E-Bike"]},{"name":"Mobiliar Fahrrad","price":"CHF 8/Mt.","cover":"Diebstahl bis CHF 10'000","hl":false,"feat":["Diebstahl","Pannenhilfe"]},{"name":"Zurich Bike Plus","price":"CHF 9/Mt.","cover":"CHF 12'000 · Racing","hl":false,"feat":["Racing","Diebstahl","Europa"]}]},"Tierversicherung":{"title":"Tierversicherung","rec":{"name":"Animalia Komfort","desc":"Tierarztkosten bis CHF 12'000/Jahr — keine Selbstbeteiligung","price":"CHF 32/Mt.","savings":"✓ Volle Kostendeckung"},"options":[{"name":"Animalia Komfort","price":"CHF 32/Mt.","cover":"CHF 12'000/Jahr Tierarzt","hl":true,"feat":["OPs","Medikamente","Notfall"]},{"name":"Agrisano Tier","price":"CHF 24/Mt.","cover":"CHF 8'000/Jahr","hl":false,"feat":["OPs","Medikamente"]},{"name":"Allianz Tierschutz","price":"CHF 38/Mt.","cover":"CHF 15'000/Jahr","hl":false,"feat":["Premium","Reha","Weltweit"]},{"name":"Zurich Pet Basic","price":"CHF 19/Mt.","cover":"CHF 5'000/Jahr","hl":false,"feat":["Notfall","Günstiger Einstieg"]}]},"Komplementärmedizin":{"title":"Komplementärmedizin","rec":{"name":"Swica Optima KoMed","desc":"Akupunktur, Osteopathie, Homöopathie — 90% übernommen","price":"CHF 19/Mt.","savings":"✓ Beste Leistung/Preis"},"options":[{"name":"Swica Optima KoMed","price":"CHF 19/Mt.","cover":"90% bis CHF 5'000/Jahr","hl":true,"feat":["Akupunktur","Osteopathie","TCM"]},{"name":"Helsana Completa","price":"CHF 22/Mt.","cover":"80% bis CHF 4'000/Jahr","hl":false,"feat":["Akupunktur","Chiropraktik"]},{"name":"CSS MyFlex Balance","price":"CHF 17/Mt.","cover":"70% bis CHF 3'000/Jahr","hl":false,"feat":["Günstigster Einstieg"]},{"name":"Sanitas NaturaMed","price":"CHF 25/Mt.","cover":"90% bis CHF 6'000/Jahr","hl":false,"feat":["Premium","Alle Therapeuten"]}]},"Brillen & Optik":{"title":"Brillen & Optik","rec":{"name":"Visana Optic Plus","desc":"CHF 300/Jahr für Brillen, Kontaktlinsen & Laserkorrektur","price":"CHF 8/Mt.","savings":"✓ Bestes Preis-Leistung"},"options":[{"name":"Visana Optic Plus","price":"CHF 8/Mt.","cover":"CHF 300/Jahr Sehhilfen","hl":true,"feat":["Brille","Kontaktlinsen","Lasik"]},{"name":"Sanitas Viva","price":"CHF 11/Mt.","cover":"CHF 400/Jahr","hl":false,"feat":["Brille","Kontaktlinsen","Lasik"]},{"name":"CSS MyFlex Top","price":"CHF 14/Mt.","cover":"CHF 500/Jahr","hl":false,"feat":["Brille","Sportbrille","Lasik"]},{"name":"KPT Brille Extra","price":"CHF 7/Mt.","cover":"CHF 250/Jahr","hl":false,"feat":["Günstigster Einstieg"]}]},"Fitness & Prävention":{"title":"Fitness & Prävention","rec":{"name":"SWICA Fitness Zusatz","desc":"50% Rückerstattung auf Fitnessabo, Yoga & Ernährungsberatung","price":"CHF 12/Mt.","savings":"✓ Gesundheit fördern"},"options":[{"name":"SWICA Fitness","price":"CHF 12/Mt.","cover":"50% bis CHF 600/Jahr","hl":true,"feat":["Fitness","Yoga","Ernährung"]},{"name":"Helsana Sana Plus","price":"CHF 15/Mt.","cover":"50% bis CHF 800/Jahr","hl":false,"feat":["Fitness","Pilates","Schwimmen"]},{"name":"Sanitas Active","price":"CHF 9/Mt.","cover":"40% bis CHF 400/Jahr","hl":false,"feat":["Fitness","Yoga","Günstig"]},{"name":"CSS Active Bonus","price":"CHF 18/Mt.","cover":"60% bis CHF 1'200/Jahr","hl":false,"feat":["Premium","60%","Alle Sportkurse"]}]},"Motorradversicherung":{"title":"Motorradversicherung","rec":{"name":"AXA Motorrad Komfort","desc":"Haftpflicht + Teilkasko für Motorrad & Scooter","price":"CHF 19/Mt.","savings":"✓ Bestes Preis-Leistung"},"options":[{"name":"AXA Motorrad Komfort","price":"CHF 19/Mt.","cover":"Haftpflicht + Teilkasko","hl":true,"feat":["Haftpflicht","Diebstahl","Pannenhilfe"]},{"name":"Zurich Motorrad","price":"CHF 22/Mt.","cover":"Haftpflicht + Vollkasko","hl":false,"feat":["Vollkasko","Glasbruch","Assistance"]},{"name":"Allianz Moto","price":"CHF 25/Mt.","cover":"Vollkasko + Reiseschutz","hl":false,"feat":["Vollkasko","Ersatzmotorrad"]},{"name":"Helvetia Motorrad","price":"CHF 17/Mt.","cover":"Haftpflicht Basic","hl":false,"feat":["Günstig","Saisonal"]}]}};
+function startAnalyse(type){var modal=document.getElementById("analyse-modal");modal.style.display="flex";document.getElementById("analyse-loading").style.display="block";document.getElementById("analyse-results").style.display="none";var lbl=document.getElementById("analyse-type-label");if(lbl)lbl.textContent=type;var bar=document.getElementById("analyse-bar");var stepsEl=document.getElementById("analyse-steps");var titleEl=document.getElementById("analyse-progress-title");var steps=["Profil von Petra Roth geladen...","Vergleiche 30+ Schweizer Versicherer...","Prüfe Prämien für PLZ 6275 Ballwil...","Berechne optimale Deckung...","Analyse abgeschlossen ✓"];bar.style.width="0";stepsEl.innerHTML="";var idx=0;var iv=setInterval(function(){if(idx<steps.length){stepsEl.innerHTML+=steps[idx]+"<br>";bar.style.width=((idx+1)/steps.length*100)+"%";idx++;}else{clearInterval(iv);titleEl.textContent="Analyse abgeschlossen!";setTimeout(function(){showAnalyseResults(type);},500);}},600);}
+function showAnalyseResults(type){var data=_insuranceDB[type]||_insuranceDB["Vollanalyse"];document.getElementById("analyse-loading").style.display="none";document.getElementById("analyse-results").style.display="block";document.getElementById("analyse-result-title").textContent="Analyse: "+data.title;document.getElementById("rec-title").textContent=data.rec.name;document.getElementById("rec-desc").innerHTML=data.rec.desc;document.getElementById("rec-price").textContent=data.rec.price;document.getElementById("rec-savings").textContent=data.rec.savings;var list=document.getElementById("analyse-options-list");list.innerHTML="";data.options.forEach(function(opt){var c=document.createElement("div");c.style.cssText="border:"+(opt.hl?"2px solid var(--gold)":"1px solid #e8e8e8")+";border-radius:12px;padding:16px;display:flex;align-items:flex-start;gap:12px;background:"+(opt.hl?"#fffbf2":"#fff");c.innerHTML="<div style='flex:1'><div style='font-weight:700;font-size:14px;margin-bottom:4px'>"+opt.name+(opt.hl?" <span style='background:var(--gold);color:#fff;font-size:10px;padding:2px 7px;border-radius:10px'>Empfohlen<\/span>":"")+"<\/div><div style='font-size:12px;color:var(--ink2);margin-bottom:6px'>"+opt.cover+" · "+opt.feat.slice(0,3).join(" · ")+"<\/div><div style='font-size:15px;font-weight:700;color:"+(opt.hl?"var(--gold)":"var(--ink)")+"'>"+opt.price+"<\/div><\/div><button onclick='closeAnalyse()' style='background:"+(opt.hl?"var(--gold)":"#f0f0f0")+";color:"+(opt.hl?"#fff":"var(--ink)")+";border:none;border-radius:8px;padding:8px 16px;font-size:13px;font-weight:600;cursor:pointer;white-space:nowrap;flex-shrink:0'>Anfragen<\/button>";list.appendChild(c);});}
 function closeAnalyse(){document.getElementById("analyse-modal").style.display="none";}
 </script>
 </body>
